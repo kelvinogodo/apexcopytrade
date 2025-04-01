@@ -10,15 +10,15 @@ const About = () => {
     const navigate = useNavigate()
   return (
       <div className='about-section' id='about'>
-          <div className="videoframe-text-container">
+          <div className="videoframe-text-container" data-aos="fade-up">
           <div className="site-name"><span className="highlight">assets</span></div>
           <span className="landpage-line"></span>
         </div>
         <div className='why-choose-section'>
       <div className="why-choose-us-img-container">
         <div className="videoframe-text-container" data-aos="fade-up">
-                    <h1>Market  <span className="highlight">rates</span></h1>
-                    <p>Grab an overview of global markets including price changes, open, high, low, and close values for selected instruments.</p>
+                <h1>Market  <span className="highlight">rates</span></h1>
+                <p>Grab an overview of global markets including price changes, open, high, low, and close values for selected instruments.</p>
         </div>
         <img src="/Trade-with-our-tools (1).png" alt="" className="mockup" data-aos="fade-up"/>
         </div>

@@ -29,6 +29,7 @@ const Home = () => {
       <About />
       <CryptoNewsContainer />
       <ForexAnalysisSection />
+      <Plan />
         {/* <Roadmap /> */}
         {/* <div className="crypto-chart-container" data-aos="fade-up">
         <div className="price-chartt-section home-chart">

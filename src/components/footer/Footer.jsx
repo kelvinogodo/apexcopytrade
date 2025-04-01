@@ -35,7 +35,7 @@ const Footer = () => {
                 <div className="quicklink-card" data-aos="fade-up">
                       <Link to="/faq">company</Link>
                       <Link to="/about">incoporation certificate</Link>
-                    <Link to="/buybitcoin">policy</Link>
+                    <Link to="/policy">privacy policy</Link>
                 </div>
 
             </div>
@@ -44,7 +44,6 @@ const Footer = () => {
                     <p> copyright &copy; 2022</p>
                 </div>
                 <div className="policy-txt">
-                    <Link to="/policy">privacy policy</Link>
                     <Link to="/policy">terms and condition</Link>
                 </div>
             </div>

@@ -38,8 +38,8 @@ const Copytrade = () => {
                 </button>
 
         </div>
-        <div className="about-img-container" data-aos="fade-up">
-            <img src="/stockedgelogo11.png" className='forex-img '/>
+        <div className="about-page-img">
+            <img src="/web-phone.png" className='forex-img '/>
             </div>
         </div>
     </div>

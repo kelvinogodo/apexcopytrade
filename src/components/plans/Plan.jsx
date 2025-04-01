@@ -8,9 +8,7 @@ const Plan = () => {
       {
         id:1,
         min:'500',
-        max:'4,999',
-        image:'/btc.png',
-        method:'BTC',
+        max:'4,999',      
         type:'starter plan',
         percent:'20',
         duration:'2 day(s)'
@@ -19,9 +17,7 @@ const Plan = () => {
         id:2,
         min:'5,000',
         max:'19,999',
-        image:'/bnb.png',
-        method:'USDT',
-        type:'gold plan',
+        type:'medium plan',
         percent:'35',
         duration:'4 day(s)'
       },
@@ -29,9 +25,7 @@ const Plan = () => {
         id:3,
         min:'20,000',
         max:'49,999',
-        image:'/tron.png',
-        method:'tether(TRC20)',
-        type:'premium plan',
+        type:'classic plan',
         percent:'50',
         duration:'7 day(s)'
       },
@@ -39,32 +33,11 @@ const Plan = () => {
         id:4,
         min:'50,000',
         max:'99,000',
-        image:'/tron.png',
-        method:'tether(TRC20)',
         type:'diamond plan',
         percent:'65',
         duration:'10 day(s)'
       },
-      {
-        id:5,
-        min:'100,000',
-        max:'199,999',
-        image:'/tron.png',
-        method:'tether(TRC20)',
-        type:'VIP plan',
-        percent:'80',
-        duration:'12 day(s)'
-      },
-      {
-        id:6,
-        min:'200,000',
-        max:'5,000,000',
-        image:'/tron.png',
-        method:'tether(TRC20)',
-        type:'real estate plan',
-        percent:'100',
-        duration:'14 day(s)'
-      },
+      
       ])
   return (
     <div className='plan-section'>
@@ -73,85 +46,45 @@ const Plan = () => {
               <p>Here are some carefully currated investment plans, created to ensure maximum return of investment.</p>
       </div>
       <div className="service-gap"></div>
-              <div className="why-choose-us-text-container">
-                  <div className="header" data-aos="fade-up">
-                      <span className="header-line"></span>
-                      <h2>best plans</h2>
-                  </div>
-                  <h1 data-aos="fade-up">select an investment plan</h1>
-                  <p data-aos="fade-up">that suits your investment goal.</p>
-              </div>
               <div className="plan-card-container">
               {
             withdrawMethods.map((withdrawmethod) => (
               <div class="pack-container" key={withdrawmethod.id} data-aos="fade-up">
             <div class="pack-header">
-              <h3>{withdrawmethod.type}</h3>
-              <div class="price-container">
-                {withdrawmethod.percent}
-                <span>%</span>
-              </div>
+                  <h3>{withdrawmethod.type}</h3>
+                  <h2>$ {withdrawmethod.min}</h2>
+                  <button className='plan-card-btn'>
+                    <p>Subscribe</p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="4"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      ></path>
+                    </svg>
+                  </button>
+
             </div>
-            <div>
-              <ul class="lists">
-                <li class="list">
-                  <span>
-                    <svg aria-hidden="true" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4.5 12.75l6 6 9-13.5" stroke-linejoin="round" stroke-linecap="round"></path>
-                    </svg>
-                  </span>
-                  <p>
-                    Instant withdrawal
-                  </p>
-                </li>
-                <li class="list">
-                  <span>
-                    <svg aria-hidden="true" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4.5 12.75l6 6 9-13.5" stroke-linejoin="round" stroke-linecap="round"></path>
-                    </svg>
-                  </span>
-                  <p>
-                    {withdrawmethod.duration} duration
-                  </p>
-                </li>
-                <li class="list">
-                  <span>
-                    <svg aria-hidden="true" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4.5 12.75l6 6 9-13.5" stroke-linejoin="round" stroke-linecap="round"></path>
-                    </svg>
-                  </span>
-                  <p>
-                     referral commission - 10%
-                  </p>
-                </li>
-                <li class="list">
-                  <span>
-                    <svg aria-hidden="true" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4.5 12.75l6 6 9-13.5" stroke-linejoin="round" stroke-linecap="round"></path>
-                    </svg>
-                  </span>
-                  <p>
-                    minimum deposit - ${withdrawmethod.min}
-                  </p>
-                </li>
-                <li class="list">
-                  <span>
-                    <svg aria-hidden="true" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4.5 12.75l6 6 9-13.5" stroke-linejoin="round" stroke-linecap="round"></path>
-                    </svg>
-                  </span>
-                  <p>
-                    maximum deposit - ${withdrawmethod.max}
-                  </p>
-                </li>
-              </ul>
-            </div>
-                <div class="buttons-container" onClick={navigate('/login')}>
-                  <Link to='/login'>
-                    <button type="button">
-                    Invest Now
-                    </button>
-                  </Link>
+                <div className='lot-wrapper'>
+                  <div className="lot-container">
+                      <span className="lot-line"></span><p>Minimum order: 0.1 lot</p>
+                  </div>
+                  <div className="lot-container">
+                      <span className="lot-line"></span><p>Minimum order: 0.1 lot</p>
+                  </div>
+                  <div className="lot-container">
+                      <span className="lot-line"></span><p>Maximum order: 20 lots</p>
+                  </div>
+                  <div className="lot-container">
+                      <span className="lot-line"></span><p>Leverage up to 1:80</p>
+                  </div>
             </div>
           </div>
           ))}

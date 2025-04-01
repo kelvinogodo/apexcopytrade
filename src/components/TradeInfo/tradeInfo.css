@@ -13,18 +13,16 @@
 }
 
 .forex-card {
-    width: 30%;
+    width: 34%;
     background: var(--primary-color);
-    border: 1px solid rgba(70, 123, 255, 0.491);
+    border: 1px solid hsl(0, 0%, 18%);
     display: flex;
     align-items: center;
     justify-content: left;
     backdrop-filter: blur(10px);
     transition: 0.5s ease-in-out;
-    padding: 0px 10px;
+    padding: 40px 10px;
     align-self: flex-start;
-    height: 150px;
-    border-radius: 15px;
 }
 
 .forex-card:hover {
@@ -35,13 +33,14 @@
 .forex-card .img {
     width: 50px;
     height: 50px;
-    margin-left: 10px;
+    margin: 10px;
     border-radius: 10px;
 }
 .forex-card .img svg{
-    font-size: 2.5rem;
+    font-size: 3rem;
+    color: #A7CFDF;
 }
-.forex-card:hover>.img {
+.forex-card:hover >.img {
     transition: 0.5s ease-in-out;
     
 }
