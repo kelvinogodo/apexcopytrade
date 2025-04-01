@@ -25,7 +25,7 @@ const Contact = () => {
 
   return (
     <div className='contact-section' id='contact'>
-        <div className="about-wrapper contact-wrapper">
+        <div className="about-wrapper contact-wrapper" data-aos="fade-up">
         <div className="why-choose-us-text-container about-text contact-p" >
             <div className="header" data-aos="fade-up">
                 <span className="header-line contact-line"></span>
