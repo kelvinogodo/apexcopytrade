@@ -7,15 +7,15 @@ const Mt5Section = () => {
       <div className='about-section mt5-trade-section' id='about'>
           <div className="videoframe-text-container" data-aos="fade-up">
               <h1>explore  <span className="highlight">mt4/mt5 </span></h1>
-              <p>At APEXCOPYTRADE, we provide accurate forex analysis to help investors maximize profits through copy trading. Using MT4 and MT5, our experts analyze the markets with technical and fundamental strategies, identifying high-probability trades. We share real-time signals, market updates, and risk assessments directly through our Telegram channel, allowing investors to copy top-performing trades effortlessly.</p>
+              <p></p>
         </div>
           <div className="about-wrapper copy-trade-wrapper mt5-wrapper">
               
             <div className="why-choose-us-text-container about-text copy-trade-text mt5-text">
                 
-                <h1 data-aos="fade-up" className='copytrade-header'>Advanced <span className="highlight">Trading</span></h1>
+                <h1 data-aos="fade-up" className='copytrade-header'>Advanced Trading</h1>
                 <p data-aos="fade-up">
-                Ready to dive into the world of stocks? Join APEXCOPYTRADE today and embark on an exciting journey toward financial success. Sign up now and gain access to a world of opportunities. With our user-friendly platform, expert analysis, and educational resources, you'll have the tools you need to take control of your financial future. Whether you're looking to grow your investment portfolio, plan for retirement, or simply learn more about the stock market, APEXCOPYTRADE is here to support you every step of the way.
+                At APEXCOPYTRADE, we provide accurate forex analysis to help investors maximize profits through copy trading. Using MT4 and MT5, our experts analyze the markets with technical and fundamental strategies, identifying high-probability trades. We share real-time signals, market updates, and risk assessments directly through our Telegram channel, allowing investors to copy top-performing trades effortlessly.
                   </p>
                   <button className='launch-btn'
                     initial={{y:45, opacity:0}}

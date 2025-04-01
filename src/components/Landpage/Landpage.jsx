@@ -17,9 +17,9 @@ const Landpage = () => {
                   
               >
                   <motion.div className="landpage-header">
-                      <span className="landpage-line"></span>
-                      <div className="site-name"><span className="highlight">apexcopytrade</span></div>
-                      <span className="landpage-line"></span>
+                      <motion.span className="landpage-line"></motion.span>
+                      <motion.div className="site-name"><span className="highlight">apexcopytrade</span></motion.div>
+                      <motion.span className="landpage-line"></motion.span>
                   </motion.div>
                 <motion.h1
                     initial={{y:45, opacity:0}}

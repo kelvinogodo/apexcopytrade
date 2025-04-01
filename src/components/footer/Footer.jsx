@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className='footer'>
         <div className="trusted-patners-section">
-            <h2 data-aos="fade-up">our partners</h2>
+            <h2 data-aos="fade-up">our <span className="highlight">partners</span></h2>
             <div className="trusted-patners-img-container">
                 <img src="/a-xs-light.png" alt="" className="trusted-patener-icon" data-aos="fade-up"/>
                 <img src="/b-xs-light.png" alt="" className="trusted-patener-icon" data-aos="fade-up"/>
@@ -16,9 +16,7 @@ const Footer = () => {
         </div>
         <div className="quicklinks-container">
             <div className="quicklink-card-container">
-                <div className="quicklink-card quick-link-logo-container" data-aos="fade-up">
-                    <img src="/whitelogo (1).png" alt="" className='logo' />
-                </div>
+                
                 <div className="quicklink-card" data-aos="fade-up">
                     <Link to='/'>home</Link>
                       <Link to="/about">about</Link>
@@ -30,7 +28,16 @@ const Footer = () => {
                     <Link to="/buybitcoin">buy bitcoin</Link>
                 </div>
                 <div className="quicklink-card" data-aos="fade-up">
+                      <Link to="/faq">forex</Link>
+                      <Link to="/about">indices</Link>
+                    <Link to="/buybitcoin">heatmaps</Link>
                 </div>
+                <div className="quicklink-card" data-aos="fade-up">
+                      <Link to="/faq">company</Link>
+                      <Link to="/about">incoporation certificate</Link>
+                    <Link to="/buybitcoin">policy</Link>
+                </div>
+
             </div>
             <div className="copyright-container">
                 <div className="copyright-txt">
