@@ -1,8 +1,6 @@
 import React from 'react'
 import './tradeInfo.css'
-import { FcComboChart } from "react-icons/fc";
 import { IoCalendarNumberOutline } from "react-icons/io5";
-import { FcAreaChart } from "react-icons/fc";
 import { TbClockStar } from "react-icons/tb";
 import { GrDocumentPerformance } from "react-icons/gr";
 const TradeInfo = () => {

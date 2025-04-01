@@ -1,178 +1,89 @@
-import React from 'react'
-import './header.css'
-import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
-import { IoHome } from "react-icons/io5";
-import { FaRegEdit } from "react-icons/fa";
-import { FaUserCheck } from "react-icons/fa6";
-import { FaUserGear } from "react-icons/fa6";
-import { FaChartLine } from "react-icons/fa6";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import './header.css';
+
 const Header = () => {
-    const [showModal, setShowModal] = useState(false)
-    const [bgColor, setBgColor] = useState(false)
-    const changeOnScroll = ()=>{
-        if(window.scrollY >= 90){
-            setBgColor(true)
-        }
-        else{
-            setBgColor(false)
-        }
-    }
-    window.addEventListener('scroll', changeOnScroll)
-    const navigate = useNavigate()
-  return (
-    <motion.header className={`${bgColor && 'scroll-color'}`}
-        initial={{ opacity:0}}
-        animate={{opacity:1}}
-        transition={{duration:0.65}}
-    >
-        <div className="logo-container">
-            {/* <img src="/stockedgelogo3.png" alt="company_logo" className='logo' onClick={()=>{
-                navigate('/')
-            }}/> */}
-        </div>
-        <nav>
-            <ul>
-                <li>
-                    <Link to="/">home</Link>
-                    
-                </li>
-                <li>
-                    <Link to="/about">about</Link>
-                    
-                </li>
-                <li>
-                    <Link to="/services">services</Link>
-                    
-                </li>
-                <li>
-                    <Link to="/faq">faqs</Link>
-                    
-                </li>
-                <li>
-                    <Link to="/policy">our policy</Link>
-                    
-                </li>
-                <li>
-                    <Link to="/buybitcoin">buy crypto</Link>
-                    
-                </li>
-            </ul>
-        </nav>
-          <div className="sign-up-btn-container">
+    const [showModal, setShowModal] = useState(false);
+    const [bgColor, setBgColor] = useState(false);
+    const [openDropdown, setOpenDropdown] = useState(null);
 
-            <button className='signup-btn' onClick={()=>{navigate('/login')}}><span>login</span></button>
-        </div>
-        <div class="mobile-menu-container" onClick={()=>{
-            setShowModal(!showModal)
-          }} >  
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-          </div>
-          <div className={`overlay ${showModal ? 'showing-modal' : ''}`} onClick={() => {
-              setShowModal(false)
-          }}>
-                <div class="menu-card">
-                <ul class="list">
-                    <li class="element">
-                    <IoHome />
-                    <Link to='/' class="label">home</Link>
-                    </li>
-                    <li class="element">
-                    <svg
-                        class="lucide lucide-user-round-plus"
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
-                        stroke-width="2"
-                        stroke="#7e8590"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        height="24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path d="M2 21a8 8 0 0 1 13.292-6"></path>
-                        <circle r="5" cy="8" cx="10"></circle>
-                        <path d="M19 16v6"></path>
-                        <path d="M22 19h-6"></path>
-                    </svg>
-                    <Link to='/about' class="label">about</Link>
-                    </li>
-                  </ul>
-                  <ul class="list">
-                    <li class="element">
-                    <FaUserGear />
-                    <Link to='/services' class="label">services</Link>
-                    </li>
+    const changeOnScroll = () => {
+        if (window.scrollY >= 90) {
+            setBgColor(true);
+        } else {
+            setBgColor(false);
+        }
+    };
+    window.addEventListener('scroll', changeOnScroll);
+    const navigate = useNavigate();
+
+    const menuItems = [
+        { name: "home", path: "/", dropdown: [] },
+        { name: "about", path: "/about", dropdown: [] }, // Removed dropdown from about
+        { name: "markets", path: "/markets", dropdown: ["Forex", "Indices", "stocks", "crypto", "metals"] },
+        { name: "analytics", path: "/faq", dropdown: ["General Questions", "Technical Support"] },
+        { name: "company", path: "/policy", dropdown: ["Privacy Policy", "Terms & Conditions"] },
+        { name: "trading", path: "/buybitcoin", dropdown: ["Bitcoin", "Ethereum"] }
+    ];
+
+    return (
+        <motion.header className={`${bgColor && 'scroll-color'}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.65 }}
+        >
+            <div className="logo-container"></div>
+            <nav>
+                <ul>
+                    {menuItems.map((item, index) => (
+                        <li key={index}
+                            className="relative"
+                            onMouseEnter={() => item.dropdown.length > 0 && setOpenDropdown(index)}
+                            onMouseLeave={(e) => {
+                                if (!e.relatedTarget || !e.relatedTarget.closest(".drop-down-container")) {
+                                    setOpenDropdown(null);
+                                }
+                            }}>
+                            <Link to={item.path}>{item.name}</Link>
+                            {openDropdown === index && item.dropdown.length > 0 && (
+                                <div className="drop-down-container"
+                                    onMouseEnter={() => setOpenDropdown(index)}
+                                    onMouseLeave={() => setOpenDropdown(null)}
+                                >
+                                    <div className="drop-wrapper">
+                                        {item.dropdown.map((subItem, subIndex) => (
+                                            <a key={subIndex} href={`/${subItem}`} className="dropdown-link">{subItem}</a>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+                        </li>
+                    ))}
                 </ul>
-                <ul class="list">
-                    <li class="element">
-                    <svg
-                        class="lucide lucide-settings"
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
-                        stroke-width="2"
-                        stroke="#7e8590"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        height="24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                        d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
-                        ></path>
-                        <circle r="3" cy="12" cx="12"></circle>
-                    </svg>
-                    <Link to='/faq' class="label">FAQ</Link>
-                    </li>
-                    <li class="element delete">
-                    <FaChartLine />
-                    <Link to='/buybitcoin' class="label">buy crypto</Link>
-                    </li>
-                </ul>
-                <ul class="list">
-                    <li class="element">
-                    <FaRegEdit />
-                    <Link to='/policy' class="label">policy</Link>
-                    </li>
-                </ul>
-                <ul class="list">
-                    <li class="element">
-                    <svg
-                        class="lucide lucide-user-round-plus"
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
-                        stroke-width="2"
-                        stroke="#7e8590"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        height="24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path d="M2 21a8 8 0 0 1 13.292-6"></path>
-                        <circle r="5" cy="8" cx="10"></circle>
-                        <path d="M19 16v6"></path>
-                        <path d="M22 19h-6"></path>
-                    </svg>
-                    <Link to='/signup' class="label">register</Link>
-                    </li>
-                </ul>
-                <ul class="list">
-                    <li class="element">
-                    <FaUserCheck />
-                    <Link to='/login' class="label">login</Link>
-                    </li>
-                </ul>
+            </nav>
+            <div className="sign-up-btn-container">
+                <button className='signup-btn' onClick={() => { navigate('/login') }}><span>login</span></button>
+            </div>
+            <div className="mobile-menu-container" onClick={() => { setShowModal(!showModal) }}>
+                <div className="line1"></div>
+                <div className="line2"></div>
+                <div className="line3"></div>
+            </div>
+            <div className={`overlay ${showModal ? 'showing-modal' : ''}`} onClick={() => { setShowModal(false); }}>
+                <div className="menu-card">
+                    <ul className="list">
+                        <li className="element"><Link to='/'>home</Link></li>
+                        <li className="element"><Link to='/services'>services</Link></li>
+                        <li className="element"><Link to='/buybitcoin'>buy crypto</Link></li>
+                        <li className="element"><Link to='/policy'>policy</Link></li>
+                        <li className="element"><Link to='/login'>login</Link></li>
+                    </ul>
                 </div>
+            </div>
+        </motion.header>
+    );
+};
 
-              </div>
-    </motion.header>
-  )
-}
-
-export default Header
+export default Header;
