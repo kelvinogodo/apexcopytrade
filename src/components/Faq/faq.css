@@ -34,7 +34,7 @@
     padding: 10px 0px;
     background-color:var(--primary-color);
     margin-top: 30px;
-    border: 1px solid rgba(70, 123, 255, 0.491);
+    border: 1px solid hsl(0, 0%, 18%);
 }
 .question-tab{
     text-transform: capitalize;
@@ -61,7 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(70, 123, 255, 0.491);
+    border: 1px solid hsl(0, 0%, 18%);
     color: white;
     cursor: pointer;
     font-size: 1.2rem;
