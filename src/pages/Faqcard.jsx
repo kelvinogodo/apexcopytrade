@@ -11,6 +11,14 @@ import CountUp from 'react-countup'
 const Faqcard = () => {
   return (
     <div className='why-choose-section'>
+      <div className="why-choose-us-img-container">
+        <div className="videoframe-text-container" data-aos="fade-up">
+                    <h1>Market  <span className="highlight">rates</span></h1>
+                    <p>Grab an overview of global markets including price changes, open, high, low, and close values for selected instruments.</p>
+        </div>
+        <img src="/web-phone.png" alt="" className="mockup" data-aos="fade-up"/>
+        </div>
+      <div className="why-choose-us-card-container">
         <div className="why-choose-us-text-container">
             <div className="header" data-aos="fade-up">
                 <span className="header-line"></span>
@@ -19,8 +27,7 @@ const Faqcard = () => {
             <h1 data-aos="fade-up">best qualities</h1>
             <p data-aos="fade-up">Our Team combines a passion for esports, industry experise & proven record in finance, development, marketing.</p>
         </div>
-        <div className="why-choose-us-card-container">
-            <div class="outer">
+            <div class="outer" data-aos="fade-up">
               <div class="dot"></div>
               <div class="card">
                 <div class="ray"></div>
@@ -32,7 +39,7 @@ const Faqcard = () => {
                 <div class="line rightl"></div>
               </div>
             </div>
-            <div class="outer">
+            <div class="outer" data-aos="fade-up">
               <div class="dot"></div>
               <div class="card">
                 <div class="ray"></div>
@@ -44,7 +51,7 @@ const Faqcard = () => {
                 <div class="line rightl"></div>
               </div>
               </div>
-              <div class="outer">
+              <div class="outer" data-aos="fade-up">
                 <div class="dot"></div>
                 <div class="card">
                   <div class="ray"></div>

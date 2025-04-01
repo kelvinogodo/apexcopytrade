@@ -5,21 +5,23 @@ import { IoWallet } from "react-icons/io5";
 import { BsBarChartFill } from "react-icons/bs";
 const Why = () => {
   return (
-    <div className='why-choose-section'>
-        <div className="why-choose-us-text-container">
+      <div className='why-choose-section'>
+          <div className="why-choose-us-img-container">
+              <div className="videoframe-text-container" data-aos="fade-up">
+                    <h1>Market  <span className="highlight">rates</span></h1>
+                    <p>Grab an overview of global markets including price changes, open, high, low, and close values for selected instruments.</p>
+                </div>
+              <img src="/Comprehensive-features-of-Gryphon-Invest.png" alt="" className="mockup" data-aos="fade-up"/>
+          </div>
+        
+          <div className="why-choose-us-card-container">
+              <div className="why-choose-us-text-container">
             <div className="header" data-aos="fade-up">
                 <span className="header-line"></span>
                 <h2>get started with</h2>
             </div>
             <h1 data-aos="fade-up">stockedgecapital</h1>
             <p data-aos="fade-up">follow these simple steps to start your best investment journey</p>
-        </div>
-          <div className="why-choose-us-card-container">
-            <div className="why-choose-us-card" data-aos="fade-up">
-                <span className="card-counter">01</span>
-                <FaUserPlus />
-                <h2>Create an account</h2>
-                <p>we employ the use of latest reliable and sophisticated technology, to ensure strongly secured, fast and reliable transactions.</p>
             </div>
             <div className="why-choose-us-card" data-aos="fade-up">
                 <span className="card-counter">02</span>

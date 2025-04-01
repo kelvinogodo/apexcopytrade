@@ -10,15 +10,15 @@
   <meta name="keywords" content="bitcoin,trading,crypto,forex,investing,investment,gold,oil">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta itemprop="name" content="stockedgecapital.com">
+  <meta itemprop="name" content="apexcopytrade.com">
   <meta itemprop="description" content="">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="stockedgecapital.com">
+  <meta property="og:title" content="apexcopytrade.com">
   <meta property="og:description" content="A sophisticated copy-trading system designed to help investors grow their profits by replicating expert trades in global markets. Take the next step toward financial success—join us today.">
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="600" />
   <meta property="og:image:height" content="315" />
-  <meta property="og:url" content="https://stockedgecapital.com">
+  <meta property="og:url" content="https://apexcopytrade.com">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="apple-touch-icon" href="/wealtflowlogo1.jpg" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
@@ -71,82 +71,63 @@
       font-family: 'Poppins' !important;
     }
 
-.loading {
- --speed-of-animation: 0.9s;
- --gap: 6px;
- --first-color: #4c86f9;
- --second-color: #49a84c;
- --third-color: #f6bb02;
- --fourth-color: #f6bb02;
- --fifth-color: #2196f3;
- display: flex;
- justify-content: center;
- align-items: center;
- width: 100px;
- gap: 6px;
- height: 100px;
-}
+    /* From Uiverse.io by milley69 */ 
+    .loading svg polyline {
+      fill: none;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
 
-.loading span {
- width: 4px;
- height: 50px;
- background: var(--first-color);
- animation: scale var(--speed-of-animation) ease-in-out infinite;
-}
+    .loading svg polyline#back {
+      fill: none;
+      background: linear-gradient(to right, #42464C 0%, #9FADB0 50%, #4A544D 100%);
+    }
 
-.loading span:nth-child(2) {
- background: var(--second-color);
- animation-delay: -0.8s;
-}
+    .loading svg polyline#front {
+      fill: none;
+      stroke: #ddd;
+      stroke-dasharray: 48, 144;
+      stroke-dashoffset: 192;
+      animation: dash_682 1.4s linear infinite;
+    }
 
-.loading span:nth-child(3) {
- background: var(--third-color);
- animation-delay: -0.7s;
-}
+    @keyframes dash_682 {
+      72.5% {
+        opacity: 0;
+      }
 
-.loading span:nth-child(4) {
- background: var(--fourth-color);
- animation-delay: -0.6s;
-}
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
 
-.loading span:nth-child(5) {
- background: var(--fifth-color);
- animation-delay: -0.5s;
-}
 
-@keyframes scale {
- 0%, 40%, 100% {
-  transform: scaleY(0.05);
- }
-
- 20% {
-  transform: scaleY(1);
- }
-}
   .my-page-loader {
             width: 100%;
             height: 100vh;
             position: fixed;
             z-index: 2000;
-            background-color: rgb(2, 21, 63);
+            background-color: black;
             display:flex;
             align-items: center;
             justify-content: center;
         }
 
   </style>
-  <title>stockedgecapital</title>
+  <title>apexcopytrade</title>
 </head>
 
 <body>
   <div class="my-page-loader" id="this">
+    <!-- From Uiverse.io by milley69 -->
     <div class="loading" id="load">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+      <svg width="64px" height="48px">
+        <polyline points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24" id="back"></polyline>
+        <polyline points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24" id="front"></polyline>
+      </svg>
     </div>
+
   </div>
   <div id="root"></div>
   <div id="google_translate_element">
