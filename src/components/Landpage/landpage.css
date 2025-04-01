@@ -39,8 +39,8 @@
 }
 .landpage-highlight{
   font-family: 'Poppins';
-background: #42464C;
-  background: linear-gradient(to right, #42464C 0%, #9FADB0 50%, #4A544D 100%);
+background: #A7CFDF;
+  background: linear-gradient(to right, #A7CFDF 0%, #23538A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
