@@ -69,10 +69,10 @@ body {
   margin: auto;
 }
 .highlight{
-  background: #42464C;
-    background: linear-gradient(to right, #42464C 0%, #9FADB0 50%, #4A544D 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+background: #A7CFDF;
+  background: linear-gradient(to right, #A7CFDF 0%, #23538A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: 'Poppins', sans-serif;
 }
 :root {
@@ -81,7 +81,7 @@ body {
   --secondary-mild: rgb(18, 18, 18);
   --mild-color: #c7c7c7;
   --dark-mild: rgb(43, 43, 43);
-  --color-variant: rgb(235, 88, 9);
+  --color-variant: #A7CFDF;
   --dark: rgb(31, 30, 88);
 }
 
@@ -149,8 +149,8 @@ button {
 .header h2 {
   font-weight: 400;
   text-transform: uppercase;
-background: #EA543B;
-  background: linear-gradient(to left, #EA543B 0%, #FF881C 50%, #F03E3C 100%);
+background: #A7CFDF;
+  background: linear-gradient(to right, #A7CFDF 0%, #23538A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 1rem;
@@ -160,7 +160,7 @@ background: #EA543B;
   width: 40px;
   margin-right: 10px;
   height: 2px;
-  background: linear-gradient(to left, #EA543B 0%, #FF881C 50%, #F03E3C 100%);
+  background: linear-gradient(to right, #A7CFDF 0%, #23538A 100%);
 }
 
 .why-choose-us-text-container h1 {
