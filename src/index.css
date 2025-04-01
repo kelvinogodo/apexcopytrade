@@ -81,7 +81,7 @@ body {
   --secondary-mild: rgb(18, 18, 18);
   --mild-color: #c7c7c7;
   --dark-mild: rgb(43, 43, 43);
-  --color-variant: rgb(230, 184, 11);
+  --color-variant: rgb(235, 88, 9);
   --dark: rgb(31, 30, 88);
 }
 
@@ -149,7 +149,10 @@ button {
 .header h2 {
   font-weight: 400;
   text-transform: uppercase;
-  color: var(--color-variant);
+background: #EA543B;
+  background: linear-gradient(to left, #EA543B 0%, #FF881C 50%, #F03E3C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 1rem;
 }
 
@@ -157,7 +160,7 @@ button {
   width: 40px;
   margin-right: 10px;
   height: 2px;
-  background-color:var(--color-variant);
+  background: linear-gradient(to left, #EA543B 0%, #FF881C 50%, #F03E3C 100%);
 }
 
 .why-choose-us-text-container h1 {
@@ -165,6 +168,7 @@ button {
   font-weight: 500;
   width: 70%;
   font-size: 2rem;
+  margin: 12px 0px;
 }
 
 .why-choose-us-text-container p {

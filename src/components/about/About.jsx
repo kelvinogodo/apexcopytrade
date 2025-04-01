@@ -20,7 +20,7 @@ const About = () => {
                     <h1>Market  <span className="highlight">rates</span></h1>
                     <p>Grab an overview of global markets including price changes, open, high, low, and close values for selected instruments.</p>
         </div>
-        <img src="/web-phone.png" alt="" className="mockup" data-aos="fade-up"/>
+        <img src="/Trade-with-our-tools (1).png" alt="" className="mockup" data-aos="fade-up"/>
         </div>
       <div className="why-choose-us-card-container">
         <div className="why-choose-us-text-container">
