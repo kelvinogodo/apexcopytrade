@@ -1,12 +1,12 @@
 .mt5-trade-section{
-    padding: 40px 0px 60px 0px;
+    padding: 20px 0px 40px 0px;
 }
 .mt5-img{
     border-radius: 20px;
 }
 .mt5-img img{
     border-radius: 20px;
-    border: 2px solid rgba(70, 123, 255, 0.491);
+    border: 1px solid hsl(0, 0%, 18%);
 }
 @media (max-width: 990px) {
     .mt5-wrapper{
