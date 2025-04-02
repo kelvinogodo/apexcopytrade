@@ -24,24 +24,17 @@ const Home = () => {
       <TeslaWidgetContainer />
       <Faqcard />
       <Why />
-        
-        {/* <TradeInfo /> */}
+      <Plan />
       <About />
+      <Review />
       <CryptoNewsContainer />
       <ForexAnalysisSection />
-      <Plan />
-        {/* <Roadmap /> */}
-        {/* <div className="crypto-chart-container" data-aos="fade-up">
-        <div className="price-chartt-section home-chart">
-            <iframe src="https://widget.coinlib.io/widget?type=chart&theme=light&coin_id=859&pref_coin_id=1505" style={{width:"100%",height:"536px",scrolling:"none",marginWidth:"0",marginHeight:"0", frameBorder:"0", border:"0",lineHeight: '14px'}}></iframe>
-        </div>
-      </div> */}
+      {/* <Roadmap /> */}
       {/* <Copytrade /> */}
-        <Mt5Section />
-        <Review />
-        <Faq />
-        <Contact />
-        <Footer />
+      <Mt5Section />
+      <Faq />
+      <Contact />
+      <Footer />
     </main>
   )
 }

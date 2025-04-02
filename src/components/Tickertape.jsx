@@ -25,7 +25,7 @@ const Tickertape = () => {
       ],
       showSymbolLogo: true,
       isTransparent: false,
-      displayMode: "compact",
+      displayMode: "regular",
       colorTheme: "dark",
       locale: "en"
     });
