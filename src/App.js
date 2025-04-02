@@ -99,7 +99,7 @@ function App() {
               title: `An Investor from ${myArray[Math.floor(Math.random() * num)].country} just withdrew ${myArray[Math.floor(Math.random() * num)].amount}...`
             })
     }, 60000);
-    const route = 'https://stockedgecapitalbackend.vercel.app'
+    const route = 'https://apexcoptrade-backend.vercel.app'
     // const route = 'http://localhost:5000'
   
   return (
