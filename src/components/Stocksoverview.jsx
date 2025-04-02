@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const Stockscreener = () => {
+const Stocksoverview = () => {
   const containerRef = useRef(null);
   const scriptAdded = useRef(false);
 
@@ -15,7 +15,7 @@ const Stockscreener = () => {
         height: "100%",
         defaultColumn: "overview",
         defaultScreen: "most_capitalized",
-        market: "germany",
+        market: "canada",
         showToolbar: true,
         colorTheme: "dark",
         locale: "en",
@@ -33,9 +33,12 @@ const Stockscreener = () => {
     <div className="tradingview-widget-container" ref={containerRef}>
       <div className="tradingview-widget-container__widget"></div>
       <div className="tradingview-widget-copyright">
+        <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+          <span className="blue-text">Track all markets on TradingView</span>
+        </a>
       </div>
     </div>
   );
 };
 
-export default Stockscreener;
+export default Stocksoverview;

@@ -16,7 +16,7 @@ const Buybitcoin = () => {
         </div>
       </section>
       <section className='bitcoin-card-container'>
-        <div className="why-choose-us-text-container">
+        <div className="why-choose-us-text-container buy-bitcoin-text">
             <div className="header" data-aos="fade-up">
                 <span className="header-line"></span>
                 <h2>where to buy</h2>

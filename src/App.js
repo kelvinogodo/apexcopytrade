@@ -34,7 +34,6 @@ import News from './pages/news/News';
 import TechnicalAnalysisPage from './pages/technicalAnalysis/TechnicalAnalysisPage'
 import Heatmaps from './pages/heatmaps/Heatmaps';
 import Watchlist from './pages/watchlist/Watchlist';
-import Terms from './pages/terms&conditions/Terms&condition';
 
 function App() {
    useEffect(() => {
@@ -162,7 +161,6 @@ function App() {
             <Route path='/technical-analysis' element={<TechnicalAnalysisPage />}/>
             <Route path='/heatmaps' element={<Heatmaps />}/>
             <Route path='/watchlists' element={<Watchlist />}/>
-            <Route path='/terms&conditions' element={<Terms />}/>
             <Route path='/copytrade' element={<CopytradePage />}/>
           </Routes>
         </motion.div>

@@ -9,14 +9,8 @@
     background-size: cover;
     padding: 50px 0px;
 }
-.gold-landpage{
-    background-image: url(/public/pexels-michael-steinberg-366551.jpg);
-}
-.real-landpage{
-    background-image: url(/public/pexels-sevenstorm-juhaszimrus-439416.jpg);
-}
-.agrotech-landpage{
-    background-image: url(/public/Invest4Land-Agriculture-Real-Estate-Investment-Investing-Farmland-Farming-Agrobusiness-Investor-Property-Managed-Farmland-Turkey-Spain-Almond-Walnut0.jpg);
+.buy-bitcoin-text{
+    width: 85%;
 }
 .gold-text{
     display: flex;

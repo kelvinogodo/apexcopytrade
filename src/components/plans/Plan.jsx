@@ -42,8 +42,8 @@ const Plan = () => {
   return (
     <div className='plan-section'>
       <div className="videoframe-text-container" data-aos="fade-up">
-              <h1>our  <span className="highlight">investment </span> plans</h1>
-              <p>Here are some carefully currated investment plans, created to ensure maximum return of investment.</p>
+              <h1><span className="highlight">copytrade </span> plans</h1>
+              <p>Here are some carefully currated copytrading plans, created to ensure maximum return of investment.</p>
       </div>
       <div className="service-gap"></div>
               <div className="plan-card-container">

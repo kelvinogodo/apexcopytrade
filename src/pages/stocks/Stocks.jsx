@@ -3,8 +3,7 @@ import './stocks.css'
 import Header from '../../components/Header/Header'
 import Contact from '../../components/contact/Contact'
 import Footer from '../../components/footer/Footer'
-import CryptoOverview from '../../components/CryptoOverview'
-import Futurewidget from '../../components/Futurewidget'
+import Stocksoverview from '../../components/Stocksoverview'
 import Pyplwidget from '../../components/Pyplwidget'
 import { useNavigate } from 'react-router-dom'
 import Stockwidget from '../../components/Stockwidget'
@@ -63,7 +62,7 @@ const Stocks = () => {
                               <h1>stocks Market</h1>
                               <p>This widget displays crypto assets and then sorts them by their market capitalization.</p>
                           </div>
-                          <Futurewidget />
+                          <Stocksoverview />
                       </div>
                       <div className="trading-view-card">
                           <div className="trading-view-card-text-container" >
