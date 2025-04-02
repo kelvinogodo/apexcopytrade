@@ -21,11 +21,11 @@ const Header = () => {
 
     const menuItems = [
         { name: "home", path: "/", dropdown: [] },
-        { name: "about", path: "/about", dropdown: [] }, // Removed dropdown from about
-        { name: "markets", path: "/markets", dropdown: ["Forex","Futures", "Indices", "stocks", "metals"] },
-        { name: "analytics", path: "/faq", dropdown: ["News", "Technical Analysis","Heat Maps","Watchlists"] },
-        { name: "company", path: "/policy", dropdown: ["Privacy Policy", "Terms & Conditions"] },
-        { name: "trading", path: "/buybitcoin", dropdown: ["Buy Crypto", "Copytrade"] }
+        { name: "about", path: "/about", dropdown: [] }, 
+        { name: "markets", path: "/markets", dropdown: ["forex","futures", "indices", "stocks", "metals"] },
+        { name: "analytics", path: "/faq", dropdown: ["news", "technical-analysis","heat-maps","watchlists"] },
+        { name: "company", path: "/policy", dropdown: ["privacy-policy", "terms&conditions"] },
+        { name: "trading", path: "/buy-crypto", dropdown: ["buy-crypto", "copytrade"] }
     ];
 
     return (

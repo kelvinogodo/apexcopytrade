@@ -1,14 +1,10 @@
-import {IoLogoWhatsapp} from 'react-icons/io'
-import { Profiler, useEffect } from 'react';
+import {useEffect } from 'react';
 import { motion,AnimatePresence } from 'framer-motion';
 import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
 import Login from './pages/Login'
 import Home from './pages/Home';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import GoldPage from './pages/GoldPage'
-import RealEsatePage from './pages/Real-EstatePage'
-import AgroTechPage from './pages/AgroTechPage'
 import Swal from 'sweetalert2';
 import Signup from './pages/Signup';
 import Userdashboard from './pages/Userdashboard'
@@ -29,7 +25,7 @@ import Faq from './pages/Faq';
 import Buybitcoin from './pages/Buybitcoin';
 import Policy from './pages/Policy';
 import './App.css'
-import Service from './components/service/Service';
+import CopytradePage from './pages/copytrade/CopytradePage';
 
 function App() {
    useEffect(() => {
@@ -147,23 +143,13 @@ function App() {
             <Route path='/deposit' element={<Deposit route={route}/>}/>
             <Route path='/about' element={<Aboutpage />}/>
             <Route path='/faq' element={<Faq />}/>
-            <Route path='/policy' element={<Policy />}/>
-            <Route path='/buybitcoin' element={<Buybitcoin />}/>
-            <Route path='/goldstock' element={<GoldPage />}/>
-            <Route path='/agrotech' element={<AgroTechPage />}/>
-            <Route path='/realestate' element={<RealEsatePage />}/>
-            <Route path='/services' element={<Service />}/>
+            <Route path='/privacy-policy' element={<Policy />}/>
+            <Route path='/buy-crypto' element={<Buybitcoin />}/>
+            <Route path='/copytrade' element={<CopytradePage />}/>
           </Routes>
         </motion.div>
       </Router>
       </AnimatePresence>
-      {/* <span className="whatsapp-icon">
-        <a href="https://api.whatsapp.com/send?phone=16822969023" target='blank'><IoLogoWhatsapp  /></a> 
-      </span> */}
-      {/* <div className="iframe-container">
-      <iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&amp;theme=dark&amp;pref_coin_id=1505&amp;invert_hover=" style={{width:"100%",height:"536px",scrolling:"none",marginWidth:"0",marginHeight:"0", frameBorder:"0", border:"0",lineHeight: '14px'}}>
-          </iframe>
-      </div> */}
     </>
   );
 }

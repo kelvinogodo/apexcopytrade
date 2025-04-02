@@ -84,6 +84,7 @@ nav ul li a {
     width: 100%;
     padding: 15px 10px;
     font-size: .8rem;
+    text-transform: capitalize;
 }
 .dropdown-link:hover{
     background-color: rgb(37, 37, 37);

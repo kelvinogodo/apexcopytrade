@@ -3,7 +3,6 @@ import Header from '../components/Header/Header'
 import Footer from '../components/footer/Footer'
 import Contact from '../components/contact/Contact'
 import Faq from '../components/Faq/Faq'
-import Roadmap from '../components/roadmap/Roadmap'
 const Faqpage = () => {
   return (
     <main className='landpage'>
