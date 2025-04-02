@@ -8,6 +8,7 @@ import Futurewidget from '../../components/Futurewidget'
 import Pyplwidget from '../../components/Pyplwidget'
 import { useNavigate } from 'react-router-dom'
 import Stockwidget from '../../components/Stockwidget'
+import Stockscreener from '../../components/Stockscreener'
 const Stocks = () => {
   const navigate = useNavigate()
   return (
@@ -69,7 +70,7 @@ const Stocks = () => {
                               <h1>stocks market Screener</h1>
                               <p>Separate the wheat from the chaff with this embeddable Screener – handy for sorting symbols both by fundamental and technical indicators.</p>
                           </div>
-                          <CryptoOverview />
+                          <Stockscreener />
                       </div>
                   </div>
             </section>
