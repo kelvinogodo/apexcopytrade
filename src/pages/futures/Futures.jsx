@@ -1,12 +1,12 @@
 import React from 'react'
 import './futures.css'
-import TradingViewWidget from '../../components/TradingViewWidget'
-import MiniSymbolOverviewWidget from '../../components/MiniSymbolOverviewWidget'
+import Xrpwidget from '../../components/Xrpwidget'
 import Header from '../../components/Header/Header'
 import Contact from '../../components/contact/Contact'
 import Footer from '../../components/footer/Footer'
 import Forexheatmap from '../../components/Forexheatmap'
-import Forexcrossmaps from '../../components/Forexcrossmaps'
+import Futurewidget from '../../components/Futurewidget'
+import Solanawidget from '../../components/Solanawidget'
 import { useNavigate } from 'react-router-dom'
 const Futures = () => {
   const navigate = useNavigate()
@@ -21,16 +21,16 @@ const Futures = () => {
         <div className="forex-hero-section">
           <video src="/widgets-main-video.hvc1.3010a527240f8051d301.mp4" className="forex-page-video" autoPlay='true' loop='true'></video>
           <div className="floating-widget-right">
-              <MiniSymbolOverviewWidget />
+              <Solanawidget />
           </div>
           <div className="floating-widget-left">
-              <TradingViewWidget />
+              <Xrpwidget />
           </div>
           </div>
           <div className='about-section copy-trade-section'>
             <div className="about-wrapper copy-trade-wrapper about-copy-trade-section">
               <div className="about-page-img">
-                <img src="/web-phone.png" className='forex-img ' data-aos="fade-up"/>
+                <img src="/Forex-trading.png" className='forex-img ' data-aos="fade-up"/>
               </div>
               <div className="tesla-widget-text-container" data-aos="fade-up">
                   <h1>futures <span className="highlight">trading</span> </h1>
@@ -54,15 +54,15 @@ const Futures = () => {
         </div>
         <section className='trading-view-forex-section' data-aos="fade-up">
                     <div className="videoframe-text-container">
-                      <h1><span className="highlight">Forex</span> maps </h1>
+                      <h1>crypto <span className="highlight">futures</span> markets </h1>
                     </div>
                   <div className="trading-view-forex-wrapper">
                       <div className="trading-view-card">
                           <div className="trading-view-card-text-container" data-aos="fade-up">
-                              <h1>Forex Cross Rates</h1>
-                              <p>This one allows you to display real-time quotes of selected currencies in comparison to other major currencies.</p>
+                              <h1>Cryptocurrency Market</h1>
+                              <p>This widget displays crypto assets and then sorts them by their market capitalization.</p>
                           </div>
-                          <Forexcrossmaps />
+                          <Futurewidget />
                       </div>
                       <div className="trading-view-card">
                           <div className="trading-view-card-text-container" data-aos="fade-up">

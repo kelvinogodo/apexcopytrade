@@ -19,15 +19,15 @@ const Forex = () => {
         </div>
         <div className="forex-hero-section">
           <video src="/chart-big.hvc1.6af4110d38611a03c3a4.mp4" className="forex-page-video" autoPlay='true' loop='true'></video>
-          <div className="floating-widget-right">
+          <div className="floating-widget-right" data-aos="fade-up">
               <MiniSymbolOverviewWidget />
           </div>
-          <div className="floating-widget-left">
+          <div className="floating-widget-left" data-aos="fade-up">
               <TradingViewWidget />
           </div>
           </div>
           <div className='about-section copy-trade-section'>
-            <div className="about-wrapper copy-trade-wrapper about-copy-trade-section">
+            <div className="about-wrapper copy-trade-wrapper about-copy-trade-section forex-copy-trade-section">
               <div className="about-page-img">
                 <img src="/web-phone.png" className='forex-img ' data-aos="fade-up"/>
               </div>
