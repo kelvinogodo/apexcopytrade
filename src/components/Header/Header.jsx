@@ -54,7 +54,7 @@ const Header = () => {
                                 >
                                     <div className="drop-wrapper">
                                         {item.dropdown.map((subItem, subIndex) => (
-                                            <a key={subIndex} href={`/${subItem}`} className="dropdown-link">{subItem}</a>
+                                            <Link key={subIndex} to={`/${subItem}`} className="dropdown-link">{subItem}</Link>
                                         ))}
                                     </div>
                                 </div>

@@ -165,6 +165,7 @@ function App() {
             <Route path='/heatmaps' element={<Heatmaps />}/>
             <Route path='/watchlists' element={<Watchlist />}/>
             <Route path='/terms&conditions' element={<Terms />}/>
+            <Route path='/copytrade' element={<CopytradePage />}/>
           </Routes>
         </motion.div>
       </Router>

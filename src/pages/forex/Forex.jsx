@@ -4,7 +4,7 @@ const Forex = () => {
     
   return (
     <div className='forex-page-section'>
-        
+        <h1>forex</h1>
     </div>
   )
 }
