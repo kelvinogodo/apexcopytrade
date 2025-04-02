@@ -57,14 +57,14 @@ const Forex = () => {
                     </div>
                   <div className="trading-view-forex-wrapper">
                       <div className="trading-view-card">
-                          <div className="trading-view-card-text-container" data-aos="fade-up">
+                          <div className="trading-view-card-text-container">
                               <h1>Forex Cross Rates</h1>
                               <p>This one allows you to display real-time quotes of selected currencies in comparison to other major currencies.</p>
                           </div>
                           <Forexcrossmaps />
                       </div>
                       <div className="trading-view-card">
-                          <div className="trading-view-card-text-container" data-aos="fade-up">
+                          <div className="trading-view-card-text-container">
                               <h1>Forex Heatmap</h1>
                               <p>Showcase a snapshot of currency market action. This widget lets you spot strong and weak currencies and see how they compare to each other, all in real-time.</p>
                           </div>

@@ -30,7 +30,6 @@ import Forex from './pages/forex/Forex';
 import Indices from './pages/indices/Indices';
 import Futures from './pages/futures/Futures';
 import Stocks from './pages/stocks/Stocks';
-import Metals from './pages/metals/Metals';
 import News from './pages/news/News';
 import TechnicalAnalysisPage from './pages/technicalAnalysis/TechnicalAnalysisPage'
 import Heatmaps from './pages/heatmaps/Heatmaps';
@@ -159,7 +158,6 @@ function App() {
             <Route path='/futures' element={<Futures />}/>
             <Route path='/indices' element={<Indices />}/>
             <Route path='/stocks' element={<Stocks />}/>
-            <Route path='/metals' element={<Metals />}/>
             <Route path='/news' element={<News />}/>
             <Route path='/technical-analysis' element={<TechnicalAnalysisPage />}/>
             <Route path='/heatmaps' element={<Heatmaps />}/>

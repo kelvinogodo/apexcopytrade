@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const Forexheatmap = () => {
+const CryptoOverview = () => {
   const containerRef = useRef(null);
   const scriptAdded = useRef(false);
 
@@ -9,15 +9,16 @@ const Forexheatmap = () => {
       const script = document.createElement("script");
       script.type = "text/javascript";
       script.async = true;
-      script.src = "https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js";
+      script.src = "https://s3.tradingview.com/external-embedding/embed-widget-screener.js";
       script.innerHTML = JSON.stringify({
         width: "100%",
         height: "100%",
-        currencies: ["EUR", "USD", "JPY", "GBP", "CHF", "AUD", "CAD", "NZD", "CNY"],
-        isTransparent: false,
+        defaultColumn: "overview",
+        defaultScreen: "general",
+        market: "crypto",
+        showToolbar: true,
         colorTheme: "dark",
-        locale: "en",
-        backgroundColor: "rgba(0, 0, 0, 1)"
+        locale: "en"
       });
       
       if (containerRef.current) {
@@ -28,7 +29,7 @@ const Forexheatmap = () => {
   }, []);
 
   return (
-    <div className="tradingview-widget-container" ref={containerRef} >
+    <div className="tradingview-widget-container" ref={containerRef}>
       <div className="tradingview-widget-container__widget"></div>
       <div className="tradingview-widget-copyright">
       </div>
@@ -36,4 +37,4 @@ const Forexheatmap = () => {
   );
 };
 
-export default Forexheatmap;
+export default CryptoOverview;

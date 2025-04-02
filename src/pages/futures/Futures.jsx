@@ -4,7 +4,7 @@ import Xrpwidget from '../../components/Xrpwidget'
 import Header from '../../components/Header/Header'
 import Contact from '../../components/contact/Contact'
 import Footer from '../../components/footer/Footer'
-import Forexheatmap from '../../components/Forexheatmap'
+import CryptoOverview from '../../components/CryptoOverview'
 import Futurewidget from '../../components/Futurewidget'
 import Solanawidget from '../../components/Solanawidget'
 import { useNavigate } from 'react-router-dom'
@@ -28,7 +28,7 @@ const Futures = () => {
           </div>
           </div>
           <div className='about-section copy-trade-section'>
-            <div className="about-wrapper copy-trade-wrapper about-copy-trade-section">
+            <div className="about-wrapper copy-trade-wrapper about-copy-trade-section forex-copy-trade-section">
               <div className="about-page-img">
                 <img src="/Forex-trading.png" className='forex-img ' data-aos="fade-up"/>
               </div>
@@ -58,18 +58,18 @@ const Futures = () => {
                     </div>
                   <div className="trading-view-forex-wrapper">
                       <div className="trading-view-card">
-                          <div className="trading-view-card-text-container" data-aos="fade-up">
+                          <div className="trading-view-card-text-container" >
                               <h1>Cryptocurrency Market</h1>
                               <p>This widget displays crypto assets and then sorts them by their market capitalization.</p>
                           </div>
                           <Futurewidget />
                       </div>
                       <div className="trading-view-card">
-                          <div className="trading-view-card-text-container" data-aos="fade-up">
-                              <h1>Forex Heatmap</h1>
-                              <p>Showcase a snapshot of currency market action. This widget lets you spot strong and weak currencies and see how they compare to each other, all in real-time.</p>
+                          <div className="trading-view-card-text-container" >
+                              <h1>Crypto Screener</h1>
+                              <p>Separate the wheat from the chaff with this embeddable Screener – handy for sorting symbols both by fundamental and technical indicators.</p>
                           </div>
-                          <Forexheatmap />
+                          <CryptoOverview />
                       </div>
                   </div>
             </section>

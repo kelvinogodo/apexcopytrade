@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const Forexheatmap = () => {
+const Indicesheatmap = () => {
   const containerRef = useRef(null);
   const scriptAdded = useRef(false);
 
@@ -13,11 +13,21 @@ const Forexheatmap = () => {
       script.innerHTML = JSON.stringify({
         width: "100%",
         height: "100%",
-        currencies: ["EUR", "USD", "JPY", "GBP", "CHF", "AUD", "CAD", "NZD", "CNY"],
-        isTransparent: false,
+        currencies: [
+          "SEK",
+          "ZAR",
+          "MXN",
+          "MYR",
+          "INR",
+          "RUB",
+          "ARS",
+          "CLP",
+          "COP",
+          "UYU"
+        ],
+        isTransparent: true,
         colorTheme: "dark",
-        locale: "en",
-        backgroundColor: "rgba(0, 0, 0, 1)"
+        locale: "en"
       });
       
       if (containerRef.current) {
@@ -28,12 +38,13 @@ const Forexheatmap = () => {
   }, []);
 
   return (
-    <div className="tradingview-widget-container" ref={containerRef} >
+    <div className="tradingview-widget-container" ref={containerRef}>
       <div className="tradingview-widget-container__widget"></div>
       <div className="tradingview-widget-copyright">
+        
       </div>
     </div>
   );
 };
 
-export default Forexheatmap;
+export default Indicesheatmap;
