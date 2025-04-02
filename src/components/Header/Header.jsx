@@ -22,10 +22,10 @@ const Header = () => {
     const menuItems = [
         { name: "home", path: "/", dropdown: [] },
         { name: "about", path: "/about", dropdown: [] }, // Removed dropdown from about
-        { name: "markets", path: "/markets", dropdown: ["Forex", "Indices", "stocks", "crypto", "metals"] },
-        { name: "analytics", path: "/faq", dropdown: ["General Questions", "Technical Support"] },
+        { name: "markets", path: "/markets", dropdown: ["Forex","Futures", "Indices", "stocks", "metals"] },
+        { name: "analytics", path: "/faq", dropdown: ["News", "Technical Analysis","Heat Maps"] },
         { name: "company", path: "/policy", dropdown: ["Privacy Policy", "Terms & Conditions"] },
-        { name: "trading", path: "/buybitcoin", dropdown: ["Bitcoin", "Ethereum"] }
+        { name: "trading", path: "/buybitcoin", dropdown: ["Buy Crypto", "Copytrade"] }
     ];
 
     return (
