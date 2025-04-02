@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './roadmap.css'
+import './forex.css'
 const Forex = () => {
     
   return (

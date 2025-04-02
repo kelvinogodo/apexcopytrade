@@ -26,6 +26,16 @@ import Buybitcoin from './pages/Buybitcoin';
 import Policy from './pages/Policy';
 import './App.css'
 import CopytradePage from './pages/copytrade/CopytradePage';
+import Forex from './pages/forex/Forex';
+import Indices from './pages/indices/Indices';
+import Futures from './pages/futures/Futures';
+import Stocks from './pages/stocks/Stocks';
+import Metals from './pages/metals/Metals';
+import News from './pages/news/News';
+import TechnicalAnalysisPage from './pages/technicalAnalysis/TechnicalAnalysisPage'
+import Heatmaps from './pages/heatmaps/Heatmaps';
+import Watchlist from './pages/watchlist/Watchlist';
+import Terms from './pages/terms&conditions/Terms&condition';
 
 function App() {
    useEffect(() => {
@@ -145,7 +155,16 @@ function App() {
             <Route path='/faq' element={<Faq />}/>
             <Route path='/privacy-policy' element={<Policy />}/>
             <Route path='/buy-crypto' element={<Buybitcoin />}/>
-            <Route path='/copytrade' element={<CopytradePage />}/>
+            <Route path='/forex' element={<Forex />}/>
+            <Route path='/futures' element={<Futures />}/>
+            <Route path='/indices' element={<Indices />}/>
+            <Route path='/stocks' element={<Stocks />}/>
+            <Route path='/metals' element={<Metals />}/>
+            <Route path='/news' element={<News />}/>
+            <Route path='/technical-analysis' element={<TechnicalAnalysisPage />}/>
+            <Route path='/heatmaps' element={<Heatmaps />}/>
+            <Route path='/watchlists' element={<Watchlist />}/>
+            <Route path='/terms&conditions' element={<Terms />}/>
           </Routes>
         </motion.div>
       </Router>
