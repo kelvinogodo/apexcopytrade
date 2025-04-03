@@ -97,7 +97,7 @@ const TradingViewWidget = () => {
   }, []);
 
   return (
-    <div className="tradingview-widget-container" data-aos="fade-up" ref={containerRef}>
+    <div className="tradingview-widget-container" ref={containerRef}>
       <div className="tradingview-widget-container__widget"></div>
       <div className="tradingview-widget-copyright">
         {/* <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
