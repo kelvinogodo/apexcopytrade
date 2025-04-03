@@ -24,7 +24,7 @@ const Header = () => {
         { name: "about", path: "/about", dropdown: [] }, 
         { name: "markets", path: "/markets", dropdown: ["forex","futures", "indices", "stocks"] },
         { name: "analytics", path: "/faq", dropdown: ["news", "technical-analysis","heatmaps","watchlists"] },
-        { name: "company", path: "/policy", dropdown: ["privacy-policy"] },
+        { name: "company", path: "/policy", dropdown: ["privacy-policy","team"] },
         { name: "trading", path: "/buy-crypto", dropdown: ["buy-crypto", "copytrade"] }
     ];
 

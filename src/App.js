@@ -34,7 +34,7 @@ import News from './pages/news/News';
 import TechnicalAnalysisPage from './pages/technicalAnalysis/TechnicalAnalysisPage'
 import Heatmaps from './pages/heatmaps/Heatmaps';
 import Watchlist from './pages/watchlist/Watchlist';
-
+import Team from './pages/team/Team'
 function App() {
    useEffect(() => {
     AOS.init({
@@ -162,6 +162,7 @@ function App() {
             <Route path='/heatmaps' element={<Heatmaps />}/>
             <Route path='/watchlists' element={<Watchlist />}/>
             <Route path='/copytrade' element={<CopytradePage />}/>
+            <Route path='/team' element={<Team />}/>
           </Routes>
         </motion.div>
       </Router>
