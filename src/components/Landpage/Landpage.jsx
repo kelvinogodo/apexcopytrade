@@ -34,11 +34,7 @@ const Landpage = () => {
                 >
                     Providing you the opportunity to copy experts in more than 50 assets for continuous income. 
                 </motion.p>
-                
-              </motion.div>
-              
-          </div>
-          <motion.button className='launch-btn'
+                <motion.button className='launch-btn'
                     initial={{y:45, opacity:0}}
                     animate={{y:0, opacity:1}}
                     transition={{duration:0.65,delay:0.6}}
@@ -48,6 +44,10 @@ const Landpage = () => {
                 >
                     <span>start trading</span>
                 </motion.button>
+              </motion.div>
+              
+          </div>
+          
           <Tickertape />
     </main>
   )

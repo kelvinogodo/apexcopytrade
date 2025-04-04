@@ -37,6 +37,9 @@
     line-height: 40px;
     width: 90%;
 }
+.landpage-text-container button{
+  margin: 40px auto;
+}
 .landpage-highlight{
   font-family: 'Poppins';
 background: #A7CFDF;
@@ -121,12 +124,14 @@ background: #A7CFDF;
       
     .landpage-text-container p {
       margin: 30px 0px;
+      text-align: center;
     }
 
     .landpage-text-container h1 {
       font-size: 3.5rem;
       color: white;
       width: 100%;
+      text-align: center;
     }
   }
   /* @media screen and (max-width: 767px){
