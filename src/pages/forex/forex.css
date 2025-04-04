@@ -55,3 +55,11 @@
     width: 100%;
     margin-bottom: 40px;
 }
+@media screen and (max-width: 767px) {
+    .forex-img-container{
+        width: 100%;
+    }
+    .forex-img{
+        width: 100%;
+    }
+}
