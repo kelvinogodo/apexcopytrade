@@ -129,9 +129,10 @@ background: #A7CFDF;
       }
       
     .landpage-text-container p {
-      margin: 30px 0px;
+      margin: 30px 0px 10px 0px;
       text-align: center;
       width: 100%;
+      /* text-transform: uppercase; */
     }
 
     .landpage-text-container h1 {
@@ -139,6 +140,7 @@ background: #A7CFDF;
       color: white;
       width: 100%;
       text-align: center;
+      text-transform: uppercase;
     }
   }
   /* @media screen and (max-width: 767px){

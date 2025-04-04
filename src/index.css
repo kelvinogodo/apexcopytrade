@@ -189,7 +189,7 @@ background: #A7CFDF;
   font-size: 17px;
   padding: 0.8em 2.3em 0.8em 1.9em;
   color: var(--primary-color);
-  background: var(--color-variant);
+  background: rgb(14, 14, 14);
   border: none;
   letter-spacing: 0.05em;
   border-radius: 10px;
