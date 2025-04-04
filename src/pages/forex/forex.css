@@ -62,4 +62,23 @@
     .forex-img{
         width: 100%;
     }
+    .forex-page-video{
+        display: none;
+    }
+    .floating-widget-left{
+        position: static;
+        width: 100%;
+        overflow: hidden;
+    }
+    .floating-widget-right{
+        position: static;
+        width: 100%;
+        margin: 20px 0px;
+        overflow: hidden;
+    }
+    .forex-hero-section{
+        flex-direction: column;
+        width: 100%;
+        padding: 0px;
+    }
 }

@@ -24,7 +24,7 @@ const Tickertape = () => {
         { description: "US100", proName: "CAPITALCOM:US100" }
       ],
       showSymbolLogo: true,
-      isTransparent: false,
+      isTransparent: true,
       displayMode: "regular",
       colorTheme: "dark",
       locale: "en"

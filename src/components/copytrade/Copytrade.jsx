@@ -39,7 +39,7 @@ const Copytrade = () => {
 
         </div>
         <div className="about-page-img forex-img-container">
-            <img src="/web-phone.png" className='forex-img '/>
+            <img src="/apexlogo6.png" className='forex-img '/>
             </div>
         </div>
     </div>

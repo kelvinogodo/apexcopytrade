@@ -26,5 +26,9 @@
         flex-direction: column-reverse;
         width: 90%;
     }
-    
+    .forex-img{
+    margin-bottom: 40px;
+    object-fit: contain;
+    width: 100%;
+    }
  }

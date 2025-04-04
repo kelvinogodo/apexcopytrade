@@ -12,7 +12,7 @@ import {motion} from 'framer-motion'
 const Aboutpage = () => {
   return (
     <>
-    <main className='landpage'>
+    <main className='about-page-land'>
     <Header />
       <section className='about-landpage my-about'>
         <div className="about-page-text">

@@ -113,6 +113,7 @@ nav ul li a {
     width: 30%;
     overflow: hidden;
     padding-left: 10px;
+    height: 100%;
 }
 
 .logo {
@@ -127,6 +128,7 @@ nav ul li a {
     object-fit: contain;
     cursor: pointer;
     width: 100%;
+    margin-top: 5px;
 }
 
 .mobile-menu-container {
@@ -243,7 +245,7 @@ nav ul li a {
                 .logo-container {
                     width: 90%;
                     overflow: hidden;
-                    margin-left: -90px;
+                    margin-left: -300px;
                     overflow: hidden;
                 }
         
@@ -350,6 +352,9 @@ nav ul li a {
             cursor: pointer;
             width: 100%;
             align-self: flex-start;
+        }
+        .logo-container {
+            margin-left: -90px;
         }
     
 }

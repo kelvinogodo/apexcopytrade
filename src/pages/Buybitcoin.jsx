@@ -7,7 +7,7 @@ import Contact from '../components/contact/Contact'
 const Buybitcoin = () => {
   return (
     <>
-    <main className='landpage '>
+    <main className='buy-crypto-landpage'>
     <Header />
       <section className='about-landpage bitcoin-lanpage'>
         <div className="about-page-text">

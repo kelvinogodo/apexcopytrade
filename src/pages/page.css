@@ -8,11 +8,17 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding: 50px 0px;
+    background-color: var(--primary-color);
+}
+.buy-crypto-landpage{
+    background-color: var(--primary-color);
 }
 .buy-bitcoin-text{
     width: 85%;
 }
-
+.about-page-land{
+    background-color: var(--primary-color);
+}
 .widget-container, .tab-content{
     padding-left: 10px;
 }
@@ -79,7 +85,7 @@
     color:  var(--mild-color);
 }
 .distort-container{
-    padding: 0px !important;
+    padding: 0px;
     background-color: var(--primary-color);
 }
 
@@ -353,8 +359,8 @@
        cursor: pointer;
    }
     .option:hover{
-    background-color: #ddd !important;
-    padding: 5px !important;
+    background-color: #ddd;
+    padding: 5px;
     cursor: pointer;
    }
    .form .input,
@@ -554,10 +560,10 @@
     margin-bottom: 20px;
    }
    .contact-h1{
-    color: white !important;
+    color: white;
    }
    .contact-line{
-    background-color: white !important;
+    background-color: white;
    }
    @media (max-width: 990px) and (min-width: 768px){
     .widget-container{
@@ -614,14 +620,18 @@
         margin: auto;
     }
     .about-intro{
-        padding: 2px 0px !important;
+        padding: 2px 0px ;
     }
     .about-page-text{
-        height: auto !important;
-        padding: 0px !important;
+        height: auto ;
+        padding: 0px ;
     }
     .my-about{
-        height: auto !important;
-        padding: 30px 0px 0px 0px !important;
+        height: auto ;
+        padding: 30px 0px 0px 0px ;
+        background-color: black;
+    }
+    .about-page-land{
+        background-color: black;
     }
    }
