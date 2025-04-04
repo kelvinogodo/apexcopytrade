@@ -243,7 +243,8 @@ nav ul li a {
                 .logo-container {
                     width: 90%;
                     overflow: hidden;
-                    margin-left: -100px;
+                    margin-left: -90px;
+                    overflow: hidden;
                 }
         
                 .logo {
@@ -259,7 +260,7 @@ nav ul li a {
                     height: 80px;
                     object-fit: cover;
                     width: 100%;
-                    margin-left:-50px;
+                    margin-left:-30px;
                 }
                 .menu-card-image-conatiner{
                     width: 100%;

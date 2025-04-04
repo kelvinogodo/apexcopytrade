@@ -35,7 +35,7 @@ const Header = () => {
             transition={{ duration: 0.65 }}
         >
             <div className="logo-container">
-                <img src="/apexlogo1.png" alt="" className='txtlogo'/>
+                <img src="/apexlogo4.png" alt="" className='txtlogo'/>
             </div>
             <nav>
                 <ul>

@@ -8,6 +8,7 @@
 }
 .copy-trade-section{
     padding: 0px;
+    background-color: var(--primary-color);
 }
 .copy-trade-wrapper{
     padding: 0px;
