@@ -117,9 +117,8 @@ background: #A7CFDF;
         font-size: 1rem;
       }
       .launch-btn{
-        margin: 0px 0px 50px 0px;
         align-self: flex-start;
-        margin-left: 30px;
+        margin-left: 20px 0px;
       }
       .landpage-img-container{
         margin-bottom: 50px;
