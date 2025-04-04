@@ -12,35 +12,7 @@
 .buy-bitcoin-text{
     width: 85%;
 }
-.gold-text{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 30px 40px 60px 40px;
-    text-align: left;
-    background-color: white;
-    width: 100%;
-}
-.gold-text h2{
-    font-weight: 500;
-    font-size: 2rem;
-    color: var(--secondary-color);
-}
-.gold-text h3, .gold-text h2{
-    text-align: left;
-    margin: 20px 0px;
-    width: 80%;
-}
-.gold-text p{
-    width: 80%;
-}
-.gold-text small{
-    width: 80%;
-    text-align: left;
-    text-transform: capitalize;
-    color: var(--dark-mild);
-}
+
 .widget-container, .tab-content{
     padding-left: 10px;
 }
@@ -596,6 +568,7 @@
     }
    }
    @media screen and (max-width: 767px){
+   
     .gold-text{
         width: 100%;
     }

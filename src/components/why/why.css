@@ -233,4 +233,10 @@
         margin: 10px 0px;
         width: 100%;
     }
+    .why-choose-section {
+         flex-direction: column;
+     }
+     .why-choose-us-img-container{
+        width: 100%;
+     }
    }

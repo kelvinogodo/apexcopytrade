@@ -63,11 +63,12 @@
         
 }
 
-/* @media screen and (max-width: 767px) {
-    .tesla-widget-wrapper {
-            flex: column;
-        }
-    .tesla-widget-text-container {
+@media screen and (max-width: 767px) {
+    .tesla-widget-chart-container{
         width: 100%;
+        
     }
-} */
+    .tesla-widget-wrapper{
+        padding: 0px;
+    }
+}
