@@ -123,8 +123,10 @@ nav ul li a {
 }
 
 .txtlogo {
-    height: 120px;
+    height: 250px;
     object-fit: contain;
+    cursor: pointer;
+    width: 100%;
 }
 
 .mobile-menu-container {
