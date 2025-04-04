@@ -3,7 +3,6 @@ import './landpage.css'
 import Header from '../Header/Header'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import TypoAnime from '../typo/TypoAnime'
 import Tickertape from '../Tickertape'
 const Landpage = () => {
     const navigate= useNavigate()

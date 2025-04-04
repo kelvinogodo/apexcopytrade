@@ -34,7 +34,9 @@ const Header = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.65 }}
         >
-            <div className="logo-container"></div>
+            <div className="logo-container">
+                <img src="/stockedgelogo3.png" alt="" className='logo'/>
+            </div>
             <nav>
                 <ul>
                     {menuItems.map((item, index) => (
@@ -72,12 +74,16 @@ const Header = () => {
                 <div className="line3"></div>
             </div>
             <div className={`overlay ${showModal ? 'showing-modal' : ''}`} onClick={() => { setShowModal(false); }}>
+
                 <div className="menu-card">
+                    <div className="menu-card-image-conatiner">
+                        <img src="/stockedgelogo3.png" alt="" className='mobile-logo'/> 
+                    </div>
                     <ul className="list">
                         <li className="element"><Link to='/'>home</Link></li>
-                        <li className="element"><Link to='/services'>services</Link></li>
-                        <li className="element"><Link to='/buybitcoin'>buy crypto</Link></li>
-                        <li className="element"><Link to='/policy'>policy</Link></li>
+                        <li className="element"><Link to='/about'>about</Link></li>
+                        <li className="element"><Link to='/buy-crypto'>buy crypto</Link></li>
+                        <li className="element"><Link to='/forex'>forex</Link></li>
                         <li className="element"><Link to='/login'>login</Link></li>
                     </ul>
                 </div>
