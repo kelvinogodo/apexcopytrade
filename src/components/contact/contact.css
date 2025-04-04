@@ -2,8 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px 0px 50px 0px;
-    
+    padding: 50px 0px 50px 0px;   
 }
 .contact-wrapper{
     background: var(--primary-color);
@@ -86,5 +85,8 @@ align-self: flex-start;
     }
     .contact-section{
         padding-bottom: 0px;
+    }
+    .contact-wrapper{
+        width: 100%;
     }
 }
