@@ -7,14 +7,9 @@ const Policy = () => {
   return (
     <>
       
-    <main className='landpage'>
+    <main className='policy-landpage'>
     <Header />
-      <section className='about-landpage policy-lanpage'>
-        <div className="about-page-text">
-          <h3>our company policies</h3>
-          <span className="small-thin-line"></span>
-        </div>
-      </section>
+      
       <div className="policy-container">
         <div className="policy-text-container">
           <h2>Our Policy</h2>
