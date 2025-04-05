@@ -39,7 +39,7 @@ const Header = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.65 }}
         >
-            <div className="logo-container">
+            <div className="logo-container" onClick={navigate('/')}>
                 <img src="/apexlogo4.png" alt="" className='txtlogo'/>
             </div>
             <nav>
@@ -83,7 +83,7 @@ const Header = () => {
                     <MdClose />
                 </div>
                 <div className="menu-card">
-                    <div className="menu-card-image-conatiner">
+                    <div className="menu-card-image-conatiner" onClick={navigate('/')}>
                         <img src="/apexlogo1.png" alt="" className='mobile-logo'/> 
                     </div>
                     <ul className="list">
