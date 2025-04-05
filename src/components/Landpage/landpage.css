@@ -27,7 +27,7 @@
     text-align: center;
 }
 .launch-btn-container{
-  width: 100%;
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,6 +87,7 @@ background: #A7CFDF;
 .launch-btn:hover > .launch-btn span{
   color: var(--mild-color);
 }
+
 @media screen and (max-width: 767px){
 
     .landpage{
