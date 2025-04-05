@@ -2,11 +2,11 @@
     padding: 20px 0px 40px 0px;
 }
 .mt5-img{
-    border-radius: 20px;
+    width: 50%;
 }
 .mt5-img img{
-    border-radius: 20px;
-    border: 1px solid hsl(0, 0%, 18%);
+    width: 100%;
+    object-fit: cover;
 }
 @media (max-width: 990px) {
     .mt5-wrapper{
@@ -14,5 +14,8 @@
     }
     .mt5-text{
         margin-top: 40px;
+    }
+    .mt5-img {
+        width: 100%;
     }
 }

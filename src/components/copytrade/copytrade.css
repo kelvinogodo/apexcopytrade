@@ -13,13 +13,14 @@
 .copy-trade-wrapper{
     padding: 0px;
 }
-.copy-trade-text{
+/* .copy-trade-text{
     align-self: flex-start;
-}
+} */
 .about-page-img{
     width: 45%;
     height: 500px;
     object-fit: cover;
+    align-self: flex-start;
 }
  @media screen and (max-width: 767px){
     .about-copy-trade-section {
