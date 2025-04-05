@@ -185,6 +185,7 @@ nav ul li a {
         width: 100%;
         text-align: left;
         padding: 15px 10px;
+        font-family: "Poppins" !important;
     }
 
     .market-dropdown {
@@ -196,6 +197,7 @@ nav ul li a {
         width: 100%;
         position: relative;
         flex-direction: column;
+        font-family: "Poppins";
     }
     .market-dropdown:hover p{
         background-color: rgb(37, 37, 37);
