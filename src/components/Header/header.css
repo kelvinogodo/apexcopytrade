@@ -225,6 +225,21 @@ nav ul li a {
         transform: rotate(180deg);
         transition: .2s all ease;
     }
+    .overlay-close-btn-container{
+        height: 70px;
+        width: 70px;
+        border-radius: 10px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background-color: black;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #7e8590;
+        font-size: 2rem;
+    }
     .logo-container {
         width: 30%;
         padding-left: 40px;

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import './header.css';
 import { RiArrowDownSLine } from "react-icons/ri";
+import { MdClose } from "react-icons/md";
 const Header = () => {
     const [showModal, setShowModal] = useState(false);
     const [bgColor, setBgColor] = useState(false);
@@ -78,7 +79,9 @@ const Header = () => {
                 <div className="line3"></div>
             </div>
             <div className={`overlay ${showModal ? 'showing-modal' : ''}`} >
-
+                <div className="overlay-close-btn-container" onClick={()=> setShowModal(false)}>
+                    <MdClose />
+                </div>
                 <div className="menu-card">
                     <div className="menu-card-image-conatiner">
                         <img src="/apexlogo1.png" alt="" className='mobile-logo'/> 
