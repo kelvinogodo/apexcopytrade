@@ -3,11 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import './header.css';
-
+import { RiArrowDownSLine } from "react-icons/ri";
 const Header = () => {
     const [showModal, setShowModal] = useState(false);
     const [bgColor, setBgColor] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null);
+    const [showMarkets,setShowMarkets] = useState(false)
+    const [showAnalytics,setShowAnalytics] = useState(false)
+    const [showCompany,setShowCompany] = useState(false)
+    const [showTrading,setShowTrading] = useState(false)
 
     const changeOnScroll = () => {
         if (window.scrollY >= 90) {
@@ -73,7 +77,7 @@ const Header = () => {
                 <div className="line2"></div>
                 <div className="line3"></div>
             </div>
-            <div className={`overlay ${showModal ? 'showing-modal' : ''}`} onClick={() => { setShowModal(false); }}>
+            <div className={`overlay ${showModal ? 'showing-modal' : ''}`} >
 
                 <div className="menu-card">
                     <div className="menu-card-image-conatiner">
@@ -82,35 +86,47 @@ const Header = () => {
                     <ul className="list">
                         <li className="element"><Link to='/'>home</Link></li>
                         <li className="element"><Link to='/about'>about</Link></li>
-                        <div className="market-dropdown">
+                        <div className="market-dropdown" onClick={()=> setShowMarkets(!showMarkets)}>
                             <p>markets</p>
-                            <div className="market-links">
+                            <div className="market-dropdown-svg-container">
+                                <RiArrowDownSLine />
+                            </div>
+                            <div className={`market-links ${showMarkets && 'show-markets'}`}>
                                 <li className="element"><Link to='/forex'>forex</Link></li>
                                 <li className="element"><Link to='/forex'>futures</Link></li>
                                 <li className="element"><Link to='/forex'>indices</Link></li>
                                 <li className="element"><Link to='/forex'>stocks</Link></li>
                             </div>
                         </div>
-                        <div className="market-dropdown">
+                        <div className="market-dropdown" onClick={()=> setShowAnalytics(!showAnalytics)}>
                             <p>analytics</p>
-                            <div className="market-links">
+                            <div className="market-dropdown-svg-container">
+                                <RiArrowDownSLine />
+                            </div>
+                            <div className={`analytics-links ${showAnalytics && 'show-markets'}`}>
                                 <li className="element"><Link to='/forex'>news</Link></li>
                                 <li className="element"><Link to='/forex'>technical analysis</Link></li>
                                 <li className="element"><Link to='/forex'>heatmaps</Link></li>
                                 <li className="element"><Link to='/forex'>watchlists</Link></li>
                             </div>
                         </div>
-                        <div className="market-dropdown">
+                        <div className="market-dropdown" onClick={()=> setShowCompany(!showCompany)}>
                             <p>company</p>
-                            <div className="market-links">
+                            <div className="market-dropdown-svg-container">
+                                <RiArrowDownSLine />
+                            </div>
+                            <div className={`company-links ${showCompany && 'show-markets'}`}>
                                 <li className="element"><Link to='/forex'>privacy policy</Link></li>
                                 <li className="element"><Link to='/forex'>team</Link></li>
                                 <li className="element"><Link to='/forex'>faq</Link></li>
                             </div>
                         </div>
-                        <div className="market-dropdown">
+                        <div className="market-dropdown" onClick={()=> setShowTrading(!showTrading)}>
                             <p>trading</p>
-                            <div className="market-links">
+                            <div className="market-dropdown-svg-container">
+                                <RiArrowDownSLine />
+                            </div>
+                            <div className={`trading-links ${showTrading && 'show-markets'}`}>
                                 <li className="element"><Link to='/forex'>buy crypto</Link></li>
                                 <li className="element"><Link to='/forex'>copytrade</Link></li>
                             </div>
