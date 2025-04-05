@@ -177,6 +177,7 @@ nav ul li a {
             background-color: var(--primary-color);
             height: 0px;
             overflow: hidden;
+            transition: all 0.3s ease-out;
         }
     
     .market-dropdown p {
@@ -220,8 +221,8 @@ nav ul li a {
         justify-content: center;
     }
     .show-markets{
-        height: auto;
-        transition: .5s all ease-in;
+        height: 230px;
+        transition: .2s all ease-in;
     }
     .show-markets .market-dropdown-svg-container svg{
         transform: rotate(180deg);
@@ -347,6 +348,7 @@ nav ul li a {
         top: 0;
         left: 0;
         z-index: 2;
+        background-color: black;
     }
     .menu-card {
         width: 80%;
