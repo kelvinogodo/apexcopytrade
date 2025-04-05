@@ -208,7 +208,7 @@ nav ul li a {
     }
     .market-dropdown-svg-container{
         position: absolute;
-        top: 0;
+        top: 10px;
         right: 0;
         font-size: 2rem;
         color: rgb(97, 97, 97);

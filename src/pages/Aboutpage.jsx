@@ -16,11 +16,11 @@ const Aboutpage = () => {
     <Header />
       <section className='about-landpage my-about'>
         <div className="about-page-text">
-          <motion.div className="landpage-header">
+          {/* <motion.div className="landpage-header">
               <motion.span className="landpage-line"></motion.span>
               <motion.div className="site-name"><span className="highlight"> ABOUT APEXCOPYTRADE</span></motion.div>
               <motion.span className="landpage-line"></motion.span>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
       <Copytrade />

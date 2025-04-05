@@ -55,13 +55,17 @@
     width: 100%;
     margin-bottom: 40px;
 }
+@media screen and (max-width: 990px){
+    .forex-img-container {
+            width: 100%;
+    }
+
+    .forex-img {
+        width: 100%;
+        object-fit: contain;
+    }
+}
 @media screen and (max-width: 767px) {
-    .forex-img-container{
-        width: 100%;
-    }
-    .forex-img{
-        width: 100%;
-    }
     .forex-page-video{
         display: none;
     }
@@ -80,5 +84,8 @@
         flex-direction: column;
         width: 100%;
         padding: 0px;
+    }
+    .forex-page-wrapper {
+        width: 100%;
     }
 }

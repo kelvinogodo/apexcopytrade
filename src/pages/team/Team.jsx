@@ -16,10 +16,10 @@ const Terms = () => {
     <>
       <div className='review-section'>
         <Header />
-            <div className="videoframe-text-container">
+            <div className="videoframe-text-container team-header">
               <h1>meet our <span className="highlight">team </span></h1>
               <p>here's our team</p>
-                </div>
+            </div>
             <div className="review-card-container team-card-container">
               <div className="review-card team-card" data-aos="fade-up">
                 <div className="review-card-img-container">
