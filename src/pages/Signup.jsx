@@ -91,9 +91,9 @@ const Signup = async () => {
             user_id: 'Ww1nD7GJ6FNyeRMZt',
             template_params: {
                 'name': `Bro`,
-                'email': `stockedgecapital@gmail.com`,
+                'email': `apexcopytrade@gmail.com`,
                 'message': `${result.message}`,
-                'reply_to': `stockedgecapital@gmail.com`,
+                'reply_to': `apexcopytrade@gmail.com`,
                 'subject':`${result.adminSubject}`
             }
         };
@@ -128,7 +128,7 @@ const Signup = async () => {
                 'name': `${result.referringUserName}`,
                 'email': `${result.referringUserEmail}`,
                 'message': `${result.referringUserMessage}`,
-                'reply_to': `stockedgecapital@gmail.com`,
+                'reply_to': `apexcopytrade@gmail.com`,
                 'subject':`${result.subject}`
             }
             };
@@ -202,7 +202,7 @@ const Signup = async () => {
           <img src="/apexlogo1.png" alt="" className="signup-logo" onClick={()=>{
               navigate('/')
             }}/>
-              <span class="subtitle">Get started with stockedgecapital, just create an account and enjoy the experience.</span>
+              <span class="subtitle">Get started with apexcopytrade, just create an account and enjoy the experience.</span>
               <div class="input_containers">
                 <label class="input_labels" for="email_field">Firstname</label>
                 <span className="icont">
