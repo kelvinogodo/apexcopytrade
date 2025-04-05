@@ -98,7 +98,7 @@ nav ul li a {
     border: 2px solid var(--mild-color);
     color: var(--mild-color);
     text-transform: capitalize;
-    border-radius: 5rem;
+    border-radius: 10px;
     font-family: 'Poppins';
     cursor: pointer;
     transition: all .5s ease-in-out;
@@ -169,6 +169,39 @@ nav ul li a {
 }
 
 @media screen and (max-width: 990px) {
+    .market-links {
+            width: 80%;
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--primary-color);
+            height: 0px;
+            overflow-y: hidden;
+        }
+    
+        .market-dropdown p {
+            color: var(--mild-color);
+            text-transform: capitalize;
+        }
+    
+        .market-dropdown {
+            display: flex;
+            align-items: center;
+            color: #7e8590;
+            transition: all 0.3s ease-out;
+            padding: 15px 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .market-dropdown:hover {
+            background-color: rgb(37, 37, 37);
+            color: #ffffff;
+            transform: translate(1px, -1px);
+        }
+
+        .market-dropdown:hover a {
+            color: white;
+        }
     .logo-container {
         width: 30%;
         padding-left: 40px;
@@ -176,6 +209,7 @@ nav ul li a {
 
     .menu-container {
         display: flex;
+        position: sticky;
     }
 
     nav {
@@ -269,6 +303,9 @@ nav ul li a {
                     background-color: rgb(37, 37, 37);
                     padding: 20px 0px;
                     align-self: flex-end;
+                    position: sticky;
+                    top: 0;
+                    left: 0;
                 }
                 .menu-card {
                     width: 80%;
@@ -276,11 +313,12 @@ nav ul li a {
                     display: flex;
                     flex-direction: column;
                     gap: 10px;
-                    min-height: 100vh;
                     height: auto;
                     background-color: var(--primary-color);
                     overflow-x: hidden;
-                    
+                    position: sticky;
+                    overflow-y: scroll;
+                    height: 100%;
                 }
         
                 .menu-card .separator {
@@ -296,7 +334,7 @@ nav ul li a {
                 }
                 .element a{
                     color: rgb(214, 214, 214);
-                    text-transform: uppercase;
+                    text-transform: capitalize;
                 }
                 .menu-card .list .element {
                     display: flex;
