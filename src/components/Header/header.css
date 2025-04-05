@@ -226,8 +226,8 @@ nav ul li a {
         transition: .2s all ease;
     }
     .overlay-close-btn-container{
-        height: 70px;
-        width: 70px;
+        height: 60px;
+        width: 60px;
         border-radius: 10px;
         position: absolute;
         top: 5px;
