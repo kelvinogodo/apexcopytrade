@@ -71,12 +71,12 @@
     }
     .floating-widget-left{
         position: static;
-        width: 100%;
+        width: 95%;
         overflow: hidden;
     }
     .floating-widget-right{
         position: static;
-        width: 100%;
+        width: 95%;
         margin: 20px 0px;
         overflow: hidden;
     }
