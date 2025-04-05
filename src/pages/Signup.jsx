@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link,useNavigate } from 'react-router-dom'
-import { FaGlobeAmericas } from 'react-icons/fa'
-import { SlPhone } from 'react-icons/sl'
 import {GrUserAdmin} from 'react-icons/gr'
 import {BiUser} from 'react-icons/bi'
 import {BsEye,BsEyeSlash} from 'react-icons/bs'
@@ -201,7 +199,7 @@ const Signup = async () => {
                       e.preventDefault()
                       Signup()
         }} >
-          <img src="/stockedgelogo5.png" alt="" className="signup-logo" onClick={()=>{
+          <img src="/apexlogo1.png" alt="" className="signup-logo" onClick={()=>{
               navigate('/')
             }}/>
               <span class="subtitle">Get started with stockedgecapital, just create an account and enjoy the experience.</span>

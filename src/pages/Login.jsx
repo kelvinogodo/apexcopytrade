@@ -12,30 +12,30 @@ const Login = ({route}) => {
   const [password,setPassword] = useState()
   const [loader, setLoader] = useState(false)
   const [check,setChecked] =  useState(false)
-  // useEffect(()=>{
-  //   setLoader(true)
-  //   const token = localStorage.getItem('token')
-  //   const checkUser = async()=>{
-  //     if(token !== undefined){
-  //       const req = await fetch(`${route}/api/verify`, {
-  //         headers: {
-  //           'x-access-token': localStorage.getItem('token')
-  //         }
-  //       })
-  //       const res = await req.json()
-  //       setLoader(false)
+  useEffect(()=>{
+    setLoader(true)
+    const token = localStorage.getItem('token')
+    const checkUser = async()=>{
+      if(token !== undefined){
+        const req = await fetch(`${route}/api/verify`, {
+          headers: {
+            'x-access-token': localStorage.getItem('token')
+          }
+        })
+        const res = await req.json()
+        setLoader(false)
          
-  //       console.log(res.status)
-  //       if(res.status === 'ok'){
-  //         navigate('/dashboard')
-  //       }
-  //       else{
-  //         setLoader(false)
-  //       }
-  //     }
-  //   }
-  //   checkUser()
-  // },[])
+        console.log(res.status)
+        if(res.status === 'ok'){
+          navigate('/dashboard')
+        }
+        else{
+          setLoader(false)
+        }
+      }
+    }
+    checkUser()
+  },[])
 
   // sweet alert function 
   const Toast = Swal.mixin({
@@ -127,7 +127,7 @@ const Login = ({route}) => {
                     login()
                     }}>
           <div class="logo_container" onClick={()=>navigate('/')}>
-            <img src="/stockedgelogo5.png" alt="" />
+            <img src="/apexlogo1.png" alt="" />
           </div>
           <div class="title_container">
             <p class="titles">Login to your Account</p>
