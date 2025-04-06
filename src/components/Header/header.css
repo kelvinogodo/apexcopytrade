@@ -378,6 +378,8 @@ nav ul li a {
     .element a{
         color: rgb(214, 214, 214);
         text-transform: capitalize;
+        width: 100%;
+        text-align: left;
     }
     .menu-card .list .element {
         display: flex;
