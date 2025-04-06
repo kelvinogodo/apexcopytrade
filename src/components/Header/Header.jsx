@@ -87,18 +87,18 @@ const Header = () => {
                         <img src="/apexlogo1.png" alt="" className='mobile-logo'/> 
                     </div>
                     <ul className="list">
-                        <li className="element"><Link to='/'>home</Link></li>
-                        <li className="element"><Link to='/about'>about</Link></li>
+                        <li className="element" onClick={navigate('/')}><Link to='/'>home</Link></li>
+                        <li className="element" onClick={navigate('/about')}><Link to='/about'>about</Link></li>
                         <div className="market-dropdown" onClick={()=> setShowMarkets(!showMarkets)}>
                             <p>markets</p>
                             <div className={`market-dropdown-svg-container ${showMarkets && 'rotate'}` }>
                                 <RiArrowDownSLine />
                             </div>
                             <div className={`market-links ${showMarkets && 'show-markets'}`}>
-                                <li className="element"><Link to='/forex'>forex</Link></li>
-                                <li className="element"><Link to='/futures'>futures</Link></li>
-                                <li className="element"><Link to='/indices'>indices</Link></li>
-                                <li className="element"><Link to='/stocks'>stocks</Link></li>
+                                <li className="element" onClick={navigate('/forex')}><Link to='/forex'>forex</Link></li>
+                                <li className="element" onClick={navigate('/futures')}><Link to='/futures'>futures</Link></li>
+                                <li className="element" onClick={navigate('/indices')}><Link to='/indices'>indices</Link></li>
+                                <li className="element" onClick={navigate('/stocks')}><Link to='/stocks'>stocks</Link></li>
                             </div>
                         </div>
                         <div className="market-dropdown" onClick={()=> setShowAnalytics(!showAnalytics)}>
@@ -107,10 +107,10 @@ const Header = () => {
                                 <RiArrowDownSLine />
                             </div>
                             <div className={`analytics-links ${showAnalytics && 'show-markets'}`}>
-                                <li className="element"><Link to='/news'>news</Link></li>
-                                <li className="element"><Link to='/technical-analysis'>technical analysis</Link></li>
-                                <li className="element"><Link to='/heatmaps'>heatmaps</Link></li>
-                                <li className="element"><Link to='/watchlists'>watchlists</Link></li>
+                                <li className="element" onClick={navigate('/news')}><Link to='/news'>news</Link></li>
+                                <li className="element" onClick={navigate('/technical-analysis')}><Link to='/technical-analysis'>technical analysis</Link></li>
+                                <li className="element" onClick={navigate('/heatmaps')}><Link to='/heatmaps'>heatmaps</Link></li>
+                                <li className="element" onClick={navigate('/watchlists')}><Link to='/watchlists'>watchlists</Link></li>
                             </div>
                         </div>
                         <div className="market-dropdown" onClick={()=> setShowCompany(!showCompany)}>
@@ -119,9 +119,9 @@ const Header = () => {
                                 <RiArrowDownSLine />
                             </div>
                             <div className={`company-links ${showCompany && 'show-markets'}`}>
-                                <li className="element"><Link to='/privacy-policy'>privacy policy</Link></li>
-                                <li className="element"><Link to='/team'>team</Link></li>
-                                <li className="element"><Link to='/faq'>faq</Link></li>
+                                <li className="element" onClick={navigate('/privacy-policy')}><Link to='/privacy-policy'>privacy policy</Link></li>
+                                <li className="element" onClick={navigate('/team')}><Link to='/team'>team</Link></li>
+                                <li className="element" onClick={navigate('/faq')}><Link to='/faq'>faq</Link></li>
                             </div>
                         </div>
                         <div className="market-dropdown" onClick={()=> setShowTrading(!showTrading)}>
@@ -130,12 +130,12 @@ const Header = () => {
                                 <RiArrowDownSLine />
                             </div>
                             <div className={`trading-links ${showTrading && 'show-markets'}`}>
-                                <li className="element"><Link to='/buy-crypto'>buy crypto</Link></li>
-                                <li className="element"><Link to='/copytrade'>copytrade</Link></li>
+                                <li className="element" onClick={navigate('/buy-crypto')}><Link to='/buy-crypto'>buy crypto</Link></li>
+                                <li className="element" onClick={navigate('/copytrade')}><Link to='/copytrade'>copytrade</Link></li>
                             </div>
                         </div>
-                        <li className="element"><Link to='/login'>login</Link></li>
-                        <li className="element"><Link to='/signup'>signup</Link></li>
+                        <li className="element" onClick={navigate('/login')}><Link to='/login'>login</Link></li>
+                        <li className="element" onClick={navigate('/signup')}><Link to='/signup'>signup</Link></li>
                     </ul>
                 </div>
             </div>
