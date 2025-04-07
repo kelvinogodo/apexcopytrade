@@ -91,7 +91,7 @@ const Header = () => {
                         <li className="element"><Link to='/about'>about</Link></li>
                         <div className="market-dropdown" >
                             <p onClick={()=> setShowMarkets(!showMarkets)}>markets</p>
-                            <div className={`market-dropdown-svg-container ${showMarkets && 'rotate'}` }>
+                            <div onClick={()=> setShowMarkets(!showMarkets)} className={`market-dropdown-svg-container ${showMarkets && 'rotate'}` }>
                                 <RiArrowDownSLine />
                             </div>
                             <div className={`market-links ${showMarkets && 'show-markets'}`}>
@@ -103,7 +103,7 @@ const Header = () => {
                         </div>
                         <div className="market-dropdown" >
                             <p onClick={()=> setShowAnalytics(!showAnalytics)}>analytics</p>
-                            <div className={`market-dropdown-svg-container ${showAnalytics && 'rotate'}` }>
+                            <div onClick={()=> setShowAnalytics(!showAnalytics)} className={`market-dropdown-svg-container ${showAnalytics && 'rotate'}` }>
                                 <RiArrowDownSLine />
                             </div>
                             <div className={`analytics-links ${showAnalytics && 'show-markets'}`}>
@@ -115,7 +115,7 @@ const Header = () => {
                         </div>
                         <div className="market-dropdown" >
                             <p onClick={()=> setShowCompany(!showCompany)}>company</p>
-                            <div className={`market-dropdown-svg-container ${showCompany && 'rotate'}` }>
+                            <div onClick={()=> setShowCompany(!showCompany)} className={`market-dropdown-svg-container ${showCompany && 'rotate'}` }>
                                 <RiArrowDownSLine />
                             </div>
                             <div className={`company-links ${showCompany && 'show-markets'}`}>
@@ -126,7 +126,7 @@ const Header = () => {
                         </div>
                         <div className="market-dropdown" >
                             <p onClick={()=> setShowTrading(!showTrading)}>trading</p>
-                            <div className={`market-dropdown-svg-container ${showTrading && 'rotate'}` }>
+                            <div onClick={()=> setShowTrading(!showTrading)} className={`market-dropdown-svg-container ${showTrading && 'rotate'}` }>
                                 <RiArrowDownSLine />
                             </div>
                             <div className={`trading-links ${showTrading && 'show-markets'}`}>
