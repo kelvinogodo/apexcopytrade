@@ -154,7 +154,7 @@ const Userdashboardplans = ({route}) => {
 
   return (
     <>
-      <div>
+      <div className='homewrapper'>
       {
           loader && 
             <Loader />

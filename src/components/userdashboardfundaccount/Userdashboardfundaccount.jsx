@@ -75,7 +75,7 @@ const Userdashboardfundaccount = ({route}) => {
   }
   
   return (
-    <>
+    <main className='homewrapper'>
     {!checkoutPage &&
       <div>
       {
@@ -237,7 +237,7 @@ const Userdashboardfundaccount = ({route}) => {
         checkoutPage &&
         <Checkout Active={activeMethod} depositAmount={depositAmount} closepage={close} route={route}/>
     }
-    </> 
+    </main> 
   )
 }
 

@@ -39,7 +39,7 @@ const Userdashboardreferrals = ({route}) => {
       
 },[])
   return (
-    <div>
+    <div className='homewrapper'>
         <Userdashboardheader route={route}/>
         {
         loader && 

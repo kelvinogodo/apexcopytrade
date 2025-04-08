@@ -193,7 +193,7 @@
     justify-content: space-around;
 }
 .silver{
-    color: rgb(70, 123, 255);
+    color: var(--color-variant);
     text-transform: uppercase;
 }
 .rank-container svg{
@@ -208,11 +208,12 @@
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 17px;
+    font-size: 1rem;
     padding: 16px 20px;
     width: 150px;
     transition: all 0.5s;
     cursor: pointer;
+    font-weight: 400;
 }
 
 .user-deposit-btn span {

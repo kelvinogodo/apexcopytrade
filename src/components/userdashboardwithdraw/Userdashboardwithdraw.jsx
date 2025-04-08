@@ -98,7 +98,7 @@ const Userdashboardwithdraw = ({route}) => {
     }
     
   return (
-    <>
+    <div className='homewrapper'>
       {
         loader && 
           <Loader />
@@ -266,7 +266,7 @@ const Userdashboardwithdraw = ({route}) => {
         checkoutPage &&
         <WithdrawReview Active={activeMethod} withdrawAmount={withdrawAmount} closepage={close} route={route} funded={userData.funded}/>
       }
-    </>
+    </div>
   )
 }
 

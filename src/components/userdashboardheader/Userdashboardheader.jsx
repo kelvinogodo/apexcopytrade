@@ -140,7 +140,7 @@ const Userdashboardheader = ({route}) => {
         }
         <aside  className='userdashboard-sidebar'>
               <div className="dashboard-logo-container">
-                  <img src="/apexlogo4.png" alt="" className="dashboard-logo" />
+                  <img src="/apexlogo4.png" alt="" className="dashboard-logo"/>
             </div>
             <div className='dashboard-links-container'>
                   <li className="dashboard-links">

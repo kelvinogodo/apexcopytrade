@@ -34,7 +34,7 @@ const Userdashboardtransactions = ({route}) => {
 
 
   return (
-    <div>
+    <div className='homewrapper'>
       
     <Userdashboardheader route={route}/>
     {
