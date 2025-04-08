@@ -35,6 +35,13 @@ import TechnicalAnalysisPage from './pages/technicalAnalysis/TechnicalAnalysisPa
 import Heatmaps from './pages/heatmaps/Heatmaps';
 import Watchlist from './pages/watchlist/Watchlist';
 import Team from './pages/team/Team'
+import UserdashboardCopytrade from './components/userdashboardCopytrade/UserdashboardCopytrade';
+import UserdashboardKyc from './components/userdashboardKyc/UserdashboardKyc';
+import UserdashboardLiveTrading from './components/userdashboardLiveTrading/UserdashboardLiveTrading';
+import UserdashboardRanking from './components/userdashboardRanking/UserdashboardRanking';
+import UserdashboardSettings from './components/userdasboardSettings/UserdashboardSettings';
+import UserdashboardTraders from './components/userdashboardTraders/UserdashboardTraders';
+
 function App() {
    useEffect(() => {
     AOS.init({
@@ -143,7 +150,7 @@ function App() {
             <Route path='/plans' element={<Userdashboardplans route={route}/>}/>
             <Route path='/transactions' element={<Userdashboardtransactions route={route}/>}/>
             <Route path='/investments' element={<Investments route={route}/>}/>
-            <Route path='/myprofile' element={<Profile route={route}/>}/>
+            <Route path='/settings' element={<Profile route={route}/>}/>
             <Route path='/user/:id' element={<VerifyEmail route={route}/>}/>
             <Route path='/withdrawlogs' element={<WithdrawalLogs route={route}/>}/>
             <Route path='/checkout' element={<Checkout route={route}/>}/>
@@ -163,6 +170,11 @@ function App() {
             <Route path='/watchlists' element={<Watchlist />}/>
             <Route path='/copytrade' element={<CopytradePage />}/>
             <Route path='/team' element={<Team />}/>
+            <Route path='/usercopytrade' element={<UserdashboardCopytrade />}/>
+            <Route path='/traders' element={<UserdashboardTraders />}/>
+            <Route path='/live-trading' element={<UserdashboardTraders />}/>
+            <Route path='/ranking' element={<UserdashboardRanking />}/>
+            <Route path='/kyc' element={<UserdashboardKyc />}/>
           </Routes>
         </motion.div>
       </Router>

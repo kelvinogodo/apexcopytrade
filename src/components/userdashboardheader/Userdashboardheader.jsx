@@ -147,58 +147,52 @@ const Userdashboardheader = ({route}) => {
                       <div className="dashboard-svg-container">
                           <AiOutlineAppstoreAdd />
                       </div>
-                      <Link to='/forex'>home</Link>
+                      <Link to='/dashboard'>home</Link>
                   </li>
                   
                   <li className="dashboard-links">
                       <div className="dashboard-svg-container">
                           <MdAddchart />
                       </div>
-                      <Link to='/futures'>copy traders</Link></li>
+                      <Link to='/traders'>copy traders</Link></li>
                   <li className="dashboard-links">
                       <div className="dashboard-svg-container">
                           <FaRegChartBar />
                       </div>
-                      <Link to='/futures'>copy trading</Link></li>
+                      <Link to='/usercopytrade'>copy trading</Link></li>
                   <li className="dashboard-links">
                       <div className="dashboard-svg-container">
                           <GrLineChart />
                       </div>
-                      <Link to='/futures'>live trading</Link></li>
+                      <Link to='/live-trading'>live trading</Link></li>
                   <li className="dashboard-links">
                       <div className="dashboard-svg-container">
                           <GrTransaction />
                       </div>
-                      <Link to='/indices'>transactions</Link></li>
+                      <Link to='/transactions'>transactions</Link></li>
                     <li className="dashboard-links">
                       <div className="dashboard-svg-container">
                           <FiAward />
                       </div>
-                      <Link to='/stocks'>ranking</Link>
+                      <Link to='/ranking'>ranking</Link>
                     </li>
                     <li className="dashboard-links">
                       <div className="dashboard-svg-container">
                           <AiOutlineSafety />
                       </div>
-                      <Link to='/stocks'>kyc verification</Link>
+                      <Link to='/kyc'>kyc verification</Link>
                     </li>
                     <li className="dashboard-links">
                       <div className="dashboard-svg-container">
                           <AiOutlineSetting />
                       </div>
-                      <Link to='/stocks'>settings</Link>
+                      <Link to='/settings'>settings</Link>
                     </li>
-                    <li className="dashboard-links">
-                      <div className="dashboard-svg-container">
-                          <RiLockPasswordLine />
-                      </div>
-                      <Link to='/stocks'>change password</Link>
-                  </li>
                   <li className="dashboard-links">
                     <div className="dashboard-svg-container">
                         <FiLogOut />
                     </div>
-                    <Link to='/stocks'>logout</Link>
+                    <Link to='/login'>logout</Link>
                 </li>
             </div>
         </aside>
