@@ -6,15 +6,15 @@
     padding: 0px;
     position: sticky;
     flex-direction: column;
-    top: 0;
-    left: 0;
-    z-index: 2;
+    top: 0px;
+    left: 0px;
     height: auto;
     min-height: 100vh;
     background-color: var(--primary-color);
     border-right: 1px dotted #252525;
     align-self: flex-start;
     flex-direction: column;
+    overflow: auto;
 }
 .dashboard-links-container{
     width: 100%;

@@ -2,7 +2,7 @@ import React , {useState,useEffect} from 'react'
 import "./userdashboardheader.css"
 import { Link, useNavigate } from 'react-router-dom'
 import { AiOutlineAppstoreAdd } from "react-icons/ai";
-import { HiMiniChartBarSquare } from "react-icons/hi2";
+import { GrLineChart } from "react-icons/gr";
 import { FiAward } from "react-icons/fi";
 import { GrTransaction } from "react-icons/gr";
 import { MdAddchart } from "react-icons/md";
@@ -14,7 +14,7 @@ import {FiLogOut} from 'react-icons/fi'
 import {AiOutlineClose} from 'react-icons/ai'
 import {GiReceiveMoney} from 'react-icons/gi'
 import {RxDashboard} from 'react-icons/rx'
-import {FaUserFriends} from 'react-icons/fa'
+import {FaUserFriends,FaRegChartBar} from 'react-icons/fa'
 const Userdashboardheader = ({route}) => {
     const navigate = useNavigate()
     const [dropDown,setDropDown] = useState(false)
@@ -154,7 +154,17 @@ const Userdashboardheader = ({route}) => {
                       <div className="dashboard-svg-container">
                           <MdAddchart />
                       </div>
+                      <Link to='/futures'>copy traders</Link></li>
+                  <li className="dashboard-links">
+                      <div className="dashboard-svg-container">
+                          <FaRegChartBar />
+                      </div>
                       <Link to='/futures'>copy trading</Link></li>
+                  <li className="dashboard-links">
+                      <div className="dashboard-svg-container">
+                          <GrLineChart />
+                      </div>
+                      <Link to='/futures'>live trading</Link></li>
                   <li className="dashboard-links">
                       <div className="dashboard-svg-container">
                           <GrTransaction />
@@ -170,7 +180,7 @@ const Userdashboardheader = ({route}) => {
                       <div className="dashboard-svg-container">
                           <AiOutlineSafety />
                       </div>
-                      <Link to='/stocks'>kyc</Link>
+                      <Link to='/stocks'>kyc verification</Link>
                     </li>
                     <li className="dashboard-links">
                       <div className="dashboard-svg-container">
@@ -180,34 +190,16 @@ const Userdashboardheader = ({route}) => {
                     </li>
                     <li className="dashboard-links">
                       <div className="dashboard-svg-container">
-                          <AiOutlineSetting />
+                          <RiLockPasswordLine />
                       </div>
-                      <Link to='/stocks'>settings</Link>
-                    </li>
-                    <li className="dashboard-links">
-                      <div className="dashboard-svg-container">
-                          <AiOutlineSetting />
-                      </div>
-                      <Link to='/stocks'>settings</Link>
-                    </li>
-                    <li className="dashboard-links">
-                      <div className="dashboard-svg-container">
-                          <AiOutlineSetting />
-                      </div>
-                      <Link to='/stocks'>settings</Link>
-                    </li>
-                    <li className="dashboard-links">
-                      <div className="dashboard-svg-container">
-                          <AiOutlineSetting />
-                      </div>
-                      <Link to='/stocks'>settings</Link>
-                    </li>
-                    <li className="dashboard-links">
-                      <div className="dashboard-svg-container">
-                          <AiOutlineSetting />
-                      </div>
-                      <Link to='/stocks'>settings</Link>
-                    </li>
+                      <Link to='/stocks'>change password</Link>
+                  </li>
+                  <li className="dashboard-links">
+                    <div className="dashboard-svg-container">
+                        <FiLogOut />
+                    </div>
+                    <Link to='/stocks'>logout</Link>
+                </li>
             </div>
         </aside>
     </>
