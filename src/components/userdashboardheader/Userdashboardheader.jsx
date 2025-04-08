@@ -1,7 +1,12 @@
 import React , {useState,useEffect} from 'react'
 import "./userdashboardheader.css"
 import { Link, useNavigate } from 'react-router-dom'
-import {BiUser,BiChevronDown} from 'react-icons/bi'
+import { AiOutlineAppstoreAdd } from "react-icons/ai";
+import { HiMiniChartBarSquare } from "react-icons/hi2";
+import { FiAward } from "react-icons/fi";
+import { GrTransaction } from "react-icons/gr";
+import { MdAddchart } from "react-icons/md";
+import { AiOutlineSafety } from "react-icons/ai";
 import {RiLuggageDepositLine} from 'react-icons/ri'
 import {AiOutlineSetting,AiOutlineStock} from 'react-icons/ai'
 import {RiLockPasswordLine} from 'react-icons/ri'
@@ -133,56 +138,78 @@ const Userdashboardheader = ({route}) => {
                 
             </div>
         }
-        <div  className={`userdashboard-header ${bgColor && 'scroll-head'}`}>
-            <div className="userdashboard-logo-container">
-                <img src="/stockedgelogo3.png" alt="" className='logo' onClick={()=>{
-                    navigate('/')
-                }}/>
+        <aside  className='userdashboard-sidebar'>
+              <div className="dashboard-logo-container">
+                  <img src="/apexlogo4.png" alt="" className="dashboard-logo" />
             </div>
-            <nav className='user-header-nav'>
-                <ul>
-                    <li>
-                        <Link to='/dashboard'>dashboard</Link>
+            <div className='dashboard-links-container'>
+                  <li className="dashboard-links">
+                      <div className="dashboard-svg-container">
+                          <AiOutlineAppstoreAdd />
+                      </div>
+                      <Link to='/forex'>home</Link>
+                  </li>
+                  
+                  <li className="dashboard-links">
+                      <div className="dashboard-svg-container">
+                          <MdAddchart />
+                      </div>
+                      <Link to='/futures'>copy trading</Link></li>
+                  <li className="dashboard-links">
+                      <div className="dashboard-svg-container">
+                          <GrTransaction />
+                      </div>
+                      <Link to='/indices'>transactions</Link></li>
+                    <li className="dashboard-links">
+                      <div className="dashboard-svg-container">
+                          <FiAward />
+                      </div>
+                      <Link to='/stocks'>ranking</Link>
                     </li>
-                    <li>
-                        <Link to='/fundwallet'>fundwallet</Link>
+                    <li className="dashboard-links">
+                      <div className="dashboard-svg-container">
+                          <AiOutlineSafety />
+                      </div>
+                      <Link to='/stocks'>kyc</Link>
                     </li>
-                    <li>
-                        <Link to='/plans'>invest</Link>
+                    <li className="dashboard-links">
+                      <div className="dashboard-svg-container">
+                          <AiOutlineSetting />
+                      </div>
+                      <Link to='/stocks'>settings</Link>
                     </li>
-                    <li>
-                        <Link to='/withdraw'>withdrawals</Link>
+                    <li className="dashboard-links">
+                      <div className="dashboard-svg-container">
+                          <AiOutlineSetting />
+                      </div>
+                      <Link to='/stocks'>settings</Link>
                     </li>
-                    <li>
-                        <Link to='/transactions'>transactions</Link>
+                    <li className="dashboard-links">
+                      <div className="dashboard-svg-container">
+                          <AiOutlineSetting />
+                      </div>
+                      <Link to='/stocks'>settings</Link>
                     </li>
-                    <li>
-                        <Link to='/referrals'>referrals</Link>
+                    <li className="dashboard-links">
+                      <div className="dashboard-svg-container">
+                          <AiOutlineSetting />
+                      </div>
+                      <Link to='/stocks'>settings</Link>
                     </li>
-                    <li>
-                        <Link to='/myprofile'>kyc</Link>
+                    <li className="dashboard-links">
+                      <div className="dashboard-svg-container">
+                          <AiOutlineSetting />
+                      </div>
+                      <Link to='/stocks'>settings</Link>
                     </li>
-                    {
-                        userData && userData.promo ? 
-                        <li>
-                             <Link to='/viplan'>vip plan</Link>
-                        </li>
-                        : ''
-                    }
-                </ul>
-            </nav>
-            <div className="header-profile-container" onClick={()=>{
-                setDropDown(true)
-            }}>
-                <span className="user-icon-wrapper">
-                    <BiUser />
-                </span>
-                <p>{userData ? userData.firstname : ''}</p>
-                <span className="arrow-container">
-                    <BiChevronDown />
-                </span>
+                    <li className="dashboard-links">
+                      <div className="dashboard-svg-container">
+                          <AiOutlineSetting />
+                      </div>
+                      <Link to='/stocks'>settings</Link>
+                    </li>
             </div>
-        </div>
+        </aside>
     </>
   )
 }
