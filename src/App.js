@@ -170,11 +170,11 @@ function App() {
             <Route path='/watchlists' element={<Watchlist />}/>
             <Route path='/copytrade' element={<CopytradePage />}/>
             <Route path='/team' element={<Team />}/>
-            <Route path='/usercopytrade' element={<UserdashboardCopytrade />}/>
-            <Route path='/traders' element={<UserdashboardTraders />}/>
-            <Route path='/live-trading' element={<UserdashboardTraders />}/>
-            <Route path='/ranking' element={<UserdashboardRanking />}/>
-            <Route path='/kyc' element={<UserdashboardKyc />}/>
+            <Route path='/usercopytrade' element={<UserdashboardCopytrade route={route} />}/>
+            <Route path='/traders' element={<UserdashboardTraders route={route} />}/>
+            <Route path='/live-trading' element={<UserdashboardTraders route={route} />}/>
+            <Route path='/ranking' element={<UserdashboardRanking route={route}/>}/>
+            <Route path='/kyc' element={<UserdashboardKyc route={route} />}/>
           </Routes>
         </motion.div>
       </Router>

@@ -30,7 +30,8 @@ const Userdashboardtransactions = ({route}) => {
     else{
         navigate('/login')
     }
-  },[])
+  }, [])
+  
 
 
   return (
