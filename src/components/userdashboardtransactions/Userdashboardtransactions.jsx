@@ -2,7 +2,10 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import { useNavigate,Link } from 'react-router-dom'
 import Userdashboardheader from '../userdashboardheader/Userdashboardheader'
-import {AiOutlineArrowLeft} from 'react-icons/ai'
+import { AiOutlineArrowLeft } from 'react-icons/ai'
+import { IoMdNotifications } from "react-icons/io";
+import { FaUserAlt, FaAngleDown } from "react-icons/fa";
+import './userdashboardtransactions.css'
 const Userdashboardtransactions = ({route}) => {
 
   const navigate = useNavigate()
@@ -55,6 +58,25 @@ const Userdashboardtransactions = ({route}) => {
         </div>
       }
       {userData && userData.transaction.length !== 0 ? 
+         <section className='dashboardhomepage'>       
+          <div className="dashboardheaderwrapper">
+            <div className="dashboardheaderwrapper">
+                <div className="header-notification-icon-container">
+                    <IoMdNotifications />
+                </div>
+                <div className="header-username-container">
+                  <h3>Hi, {userData ? userData.firstname : ''}</h3>
+                </div>
+                <div className="header-userprofile-container">
+                  <div className="user-p-icon-container">
+                    <FaUserAlt/>
+                  </div>
+                  <div className="user-p-drop-icon">
+                    <FaAngleDown />
+                  </div>
+                </div>
+              </div>
+          </div>
       <div className="page-swiper-wrapper">
         <div className="floating-btn" onClick={()=>{
         navigate('/fundwallet')
@@ -92,18 +114,36 @@ const Userdashboardtransactions = ({route}) => {
             </tbody>
           </table>
           </div>
+          </div>
+        </section>
+        :
+         <section className='dashboardhomepage'>       
+        <div className="dashboardheaderwrapper">
+          <div className="dashboardheaderwrapper">
+              <div className="header-notification-icon-container">
+                  <IoMdNotifications />
+              </div>
+              <div className="header-username-container">
+                <h3>Hi, {userData ? userData.firstname : ''}</h3>
+              </div>
+              <div className="header-userprofile-container">
+                <div className="user-p-icon-container">
+                  <FaUserAlt/>
+                </div>
+                <div className="user-p-drop-icon">
+                  <FaAngleDown />
+                </div>
+              </div>
+            </div>
         </div>
-      :
-      <div className="page-swiper-wrapper">
-      <div className="failure-page no-referral-page">
-        <img src="/Data_PortabilityPrivacy_BANNER_003.gif" alt="" className='failure-img'/>
+      <div className="empty-page">
+        <img src="/unold_icon1_animation_loop_f.gif" alt="" className='empty-img'/>
         <p>you have not performed any transaction yet</p> 
         <Link to='/fundwallet'>deposit</Link>
-      </div>
-      </div>
+        </div>
+      </section>
       }
-     
-</div>
+  </div>
   )
 }
 

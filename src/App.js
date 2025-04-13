@@ -172,7 +172,7 @@ function App() {
             <Route path='/team' element={<Team />}/>
             <Route path='/usercopytrade' element={<UserdashboardCopytrade route={route} />}/>
             <Route path='/traders' element={<UserdashboardTraders route={route} />}/>
-            <Route path='/live-trading' element={<UserdashboardTraders route={route} />}/>
+            <Route path='/live-trading' element={<UserdashboardLiveTrading route={route} />}/>
             <Route path='/ranking' element={<UserdashboardRanking route={route}/>}/>
             <Route path='/kyc' element={<UserdashboardKyc route={route} />}/>
           </Routes>

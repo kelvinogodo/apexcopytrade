@@ -5,6 +5,8 @@ import Userdashboardheader from '../userdashboardheader/Userdashboardheader';
 import { BsImage } from 'react-icons/bs';
 import { RxUpload } from 'react-icons/rx';
 import Swal from 'sweetalert2';
+import { IoMdNotifications } from "react-icons/io";
+import { FaUserAlt, FaAngleDown } from "react-icons/fa";
 
 const Profile = ({ route }) => {
   const [firstname, setFirstname] = useState('');
@@ -98,8 +100,28 @@ const Profile = ({ route }) => {
   };
 
   return (
-    <div>
+    <div className='homewrapper'>
       <Userdashboardheader route={route} />
+      <section className='dashboardhomepage'>
+        <div className="dashboardheaderwrapper">
+          <div className="dashboardheaderwrapper">
+            <div className="header-notification-icon-container">
+                <IoMdNotifications />
+            </div>
+            <div className="header-username-container">
+              <h3>Hi, {userData ? userData.firstname : ''}</h3>
+            </div>
+            <div className="header-userprofile-container">
+              <div className="user-p-icon-container">
+                <FaUserAlt/>
+              </div>
+              <div className="user-p-drop-icon">
+                <FaAngleDown />
+              </div>
+            </div>
+          </div>
+        </div>
+      
       <div className="profile-page">
         <div className="page-header">
           <h2>Profile Settings</h2>
@@ -157,7 +179,8 @@ const Profile = ({ route }) => {
             <input type="submit" value="Update" className='update-profile-btn' />
           </form>
         </div>
-      </div>
+        </div>
+      </section>
     </div>
   );
 };

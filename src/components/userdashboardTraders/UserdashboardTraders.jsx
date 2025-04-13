@@ -123,7 +123,7 @@ const UserdashboardTraders = ({route}) => {
             <div className="traders-card">
               <div className="trader-card-header">
                 <div className="trader-card-image-container">
-                <img src="/black2.jpg" alt="" className='trader-card-image' />
+                <img src="/gregory-gill-4Bf5LNEPqZ0-unsplash.jpg" alt="" className='trader-card-image' />
                 </div>
                 <div className="trader-card-text-container">
                   <h3 className="trader-name">John Doe</h3>
@@ -147,7 +147,7 @@ const UserdashboardTraders = ({route}) => {
                 </div>
               </div>
             </div>
-
+            
           </div>
         </div>
         </section>

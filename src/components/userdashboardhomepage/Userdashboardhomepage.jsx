@@ -163,7 +163,7 @@ const Userdashboardhomepage = ({route}) => {
                         <span className='clipboard-btn'>
                             <FiLink />
                         </span>
-                        <input type="text" value={userData ? `vertexglobalwealth.com/user/${userData.username ? userData.username : userData.referral}` : ''} ref={clipRef}/>
+                        <input type="text" value={userData ? `www.apexcopytrade.com/user/${userData.username ? userData.username : userData.referral}` : ''} ref={clipRef}/>
                         <span className={`clipboard-btn ${clipBoard ? <MdOutlineDone /> : ''}` } onClick={()=>{
                             copy()
                             setClipBoard(!clipBoard)

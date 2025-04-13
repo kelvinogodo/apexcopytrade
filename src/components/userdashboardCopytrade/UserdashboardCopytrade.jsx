@@ -4,7 +4,10 @@ import Loader from '../Loader'
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { IoMdNotifications } from "react-icons/io";
-import { FaUserAlt,FaAngleDown } from "react-icons/fa";
+import { FaUserAlt, FaAngleDown } from "react-icons/fa";
+import { Link } from 'react-router-dom'
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import './userdashboardcopytrade.css'
 
 const UserdashboardCopytrade = ({route}) => {
   const [loader, setLoader] = useState(false)
@@ -78,6 +81,54 @@ const UserdashboardCopytrade = ({route}) => {
                     </div>
                   </div>
                 </div>
+            </div>
+            <div className="trade-history-container">
+                {userData && userData.transaction.length !== 0 ? 
+                      <div className="page-swiper-wrapper">
+                        <div className="floating-btn" onClick={()=>{
+                        navigate('/fundwallet')
+                      }}>
+                          <AiOutlineArrowLeft />
+                        </div>
+                      <div className="page-header">
+                          <h3>checkout your transaction logs</h3>
+                          <h2>Transaction logs</h2>
+                          <p>we keep track of all your transactions</p>
+                      </div>
+                      <div className="transaction-container no-ref">
+                        <table>
+                            <thead>
+                              <tr>
+                                <td>transaction Id</td>
+                                <td>type</td>
+                                <td>amount</td>
+                                <td>date</td>
+                                <td>balance</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {
+                                userData.transaction.map(refer =>
+                                  <tr>
+                                    <td>{refer.id}</td>
+                                    <td>{refer.type}</td>
+                                    <td>$ {refer.amount} USD</td>
+                                    <td>{refer.date}</td>
+                                    <td>$ {refer.balance} USD</td>
+                                  </tr>
+                                )
+                              }
+                            </tbody>
+                          </table>
+                          </div>
+                        </div>
+                      :
+                        <div className="empty-page">
+                          <img src="/preview.gif" alt="" className='empty-img'/>
+                          <p>you have not performed any transaction yet</p> 
+                          <Link to='/fundwallet'>deposit</Link>
+                        </div>
+                  }
             </div>
           </section>
         </main>  
