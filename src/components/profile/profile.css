@@ -6,6 +6,7 @@
     background-color: rgb(245, 247, 255);
     width: 100%;
     flex-direction: column;
+    border-radius: 20px;
 }
 .profile-form-conatainer{
     width: 90%;

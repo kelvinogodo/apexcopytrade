@@ -7,8 +7,13 @@ import { useNavigate } from 'react-router-dom'
 import { IoMdNotifications } from "react-icons/io";
 import { FaUserAlt, FaAngleDown } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
+import { MdCandlestickChart } from "react-icons/md";
+import { MdOutlineShowChart } from "react-icons/md";
+import { IoIosArrowBack } from "react-icons/io";
 const UserdashboardTraders = ({route}) => {
-    const [loader, setLoader] = useState(false)
+  const [loader, setLoader] = useState(false)
+  const [showTrader, setShowTrader] = useState(false)
+  
       const [userData, setUserData] = useState()
       const navigate = useNavigate()
       
@@ -62,7 +67,6 @@ const UserdashboardTraders = ({route}) => {
        <Userdashboardheader />
         <section className='dashboardhomepage'>
            
-          <div className="dashboardheaderwrapper">
             <div className="dashboardheaderwrapper">
               <div className="header-notification-icon-container">
                   <IoMdNotifications />
@@ -79,77 +83,137 @@ const UserdashboardTraders = ({route}) => {
                 </div>
               </div>
             </div>
-        </div>
-        <div className="traders-showcase">
-          <h2 className="traders-showcase-header">expert traders</h2>
-          <p>choose from the list of our expert traders. Any trader you select would trade and manage your portfolio.</p>
-        </div>
-        <div className="traders-section">
-          <div className="videoframe-text-container treader-header">
-            <h1>select your  <span className="highlight">trader</span></h1>
-            <div className="search-input-container">
-              <span className='search-btn'><FiSearch /></span>
-              <input type="text" placeholder='search for a trader' className='search-input' />
+        {
+          showTrader &&
+          <div className="trader-profile-page">
+              <div className="trader-page-close-btn" onClick={()=> setShowTrader(false)}>
+                <IoIosArrowBack />
+              </div>
+              <div className="trader-profile-container">
+                <div className="trader-profile-card">
+                <div className="trader-card-header">
+                  <div className="trader-card-image-container">
+                  <img src="/black3.jpg" alt="" className='trader-card-image' />
+                  </div>
+                  <div className="trader-card-text-container">
+                    <h3 className="trader-name">John Doe</h3>
+                    <p className="trader-description">nec ligula.</p>
+                  </div>
+                </div>
+                <div className="trader-perfomance-container">
+                  <div className="trader-performance">
+                    <div className="trader-performance-item">
+                      <p className="performance-label">Win Rate</p>
+                      <p className="performance-value"><MdCandlestickChart /> 85%</p>
+                    </div>
+                    <div className="trader-performance-item">
+                      <p className="performance-label">Average Return</p>
+                      <p className="performance-value"><MdOutlineShowChart /> 12%</p>
+                    </div>
+                    <div className="trader-performance-item">
+                      <p className="performance-label">profit Ratio</p>
+                      <p className="performance-value">98%</p>
+                    </div>
+                    <div className="trader-performance-item">
+                      <p className="performance-label">followers </p>
+                      <p className="performance-value"> 503</p>
+                    </div>
+                    <div className="trader-performance-item">
+                      <p className="performance-label">minimum Risk/Reward Ratio </p>
+                      <p className="performance-value">1:5</p>
+                    </div>
+                    <div className="trader-performance-item">
+                      <p className="performance-label">nationality </p>
+                      <p className="performance-value">japanese</p>
+                    </div>
+                    <div className="trader-performance-item">
+                      <p className="performance-label">minimum Trading Capital </p>
+                      <p className="performance-value">$5000</p>
+                    </div>
+                  </div>
+                  <div className="trader-performance-btn-container">
+                    <button className='trader-card-btn'>copy trade</button>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+        }
+        {
+          !showTrader && 
+          <>
+          <div className="traders-showcase">
+            <h2 className="traders-showcase-header">expert traders</h2>
+            <p>choose from the list of our expert traders. Any trader you select would trade and manage your portfolio.</p>
+          </div>
+          <div className="traders-section">
+            <div className="videoframe-text-container treader-header">
+              <h1>select your  <span className="highlight">trader</span></h1>
+              <div className="search-input-container">
+                <span className='search-btn'><FiSearch /></span>
+                <input type="text" placeholder='search for a trader' className='search-input' />
+              </div>
+            </div>
+            <div className="traders-card-container">
+              <div className="traders-card">
+                <div className="trader-card-header">
+                  <div className="trader-card-image-container">
+                  <img src="/black3.jpg" alt="" className='trader-card-image' />
+                  </div>
+                  <div className="trader-card-text-container">
+                    <h3 className="trader-name">John Doe</h3>
+                    <p className="trader-description">nec ligula.</p>
+                  </div>
+                </div>
+                <div className="trader-perfomance-container">
+                  <div className="trader-performance">
+                    <div className="trader-performance-item">
+                      <p className="performance-label">Win Rate</p>
+                      <p className="performance-value"><MdCandlestickChart /> 85%</p>
+                    </div>
+                    <div className="trader-performance-item">
+                      <p className="performance-label">Average Return</p>
+                      <p className="performance-value"><MdOutlineShowChart /> 12%</p>
+                    </div>
+                  </div>
+                  <div className="trader-performance-btn-container">
+                    <button className='trader-card-btn' onClick={()=> setShowTrader(true)}>view profile</button>
+                    <button className='trader-card-btn'>copy trade</button>
+                  </div>
+                </div>
+              </div>
+              <div className="traders-card">
+                <div className="trader-card-header">
+                  <div className="trader-card-image-container">
+                  <img src="/gregory-gill-4Bf5LNEPqZ0-unsplash.jpg" alt="" className='trader-card-image' />
+                  </div>
+                  <div className="trader-card-text-container">
+                    <h3 className="trader-name">John Doe</h3>
+                    <p className="trader-description">nec ligula.</p>
+                  </div>
+                </div>
+                <div className="trader-perfomance-container">
+                  <div className="trader-performance">
+                    <div className="trader-performance-item">
+                      <p className="performance-label">Win Rate</p>
+                      <p className="performance-value"><MdOutlineShowChart />85%</p>
+                    </div>
+                    <div className="trader-performance-item">
+                      <p className="performance-label">Average Return</p>
+                      <p className="performance-value"><MdCandlestickChart /> 12%</p>
+                    </div>
+                  </div>
+                  <div className="trader-performance-btn-container">
+                    <button className='trader-card-btn' onClick={()=> setShowTrader(true)}>view profile</button>
+                    <button className='trader-card-btn'>copy trades</button>
+                  </div>
+                </div>
+              </div>
+              
             </div>
           </div>
-          <div className="traders-card-container">
-            <div className="traders-card">
-              <div className="trader-card-header">
-                <div className="trader-card-image-container">
-                <img src="/black3.jpg" alt="" className='trader-card-image' />
-                </div>
-                <div className="trader-card-text-container">
-                  <h3 className="trader-name">John Doe</h3>
-                  <p className="trader-description">nec ligula.</p>
-                </div>
-              </div>
-              <div className="trader-perfomance-container">
-                <div className="trader-performance">
-                  <div className="trader-performance-item">
-                    <p className="performance-label">Win Rate</p>
-                    <p className="performance-value">85%</p>
-                  </div>
-                  <div className="trader-performance-item">
-                    <p className="performance-label">Average Return</p>
-                    <p className="performance-value">12%</p>
-                  </div>
-                </div>
-                <div className="trader-performance-btn-container">
-                  <button className='trader-card-btn'>view</button>
-                  <button className='trader-card-btn'>copy</button>
-                </div>
-              </div>
-            </div>
-            <div className="traders-card">
-              <div className="trader-card-header">
-                <div className="trader-card-image-container">
-                <img src="/gregory-gill-4Bf5LNEPqZ0-unsplash.jpg" alt="" className='trader-card-image' />
-                </div>
-                <div className="trader-card-text-container">
-                  <h3 className="trader-name">John Doe</h3>
-                  <p className="trader-description">nec ligula.</p>
-                </div>
-              </div>
-              <div className="trader-perfomance-container">
-                <div className="trader-performance">
-                  <div className="trader-performance-item">
-                    <p className="performance-label">Win Rate</p>
-                    <p className="performance-value">85%</p>
-                  </div>
-                  <div className="trader-performance-item">
-                    <p className="performance-label">Average Return</p>
-                    <p className="performance-value">12%</p>
-                  </div>
-                </div>
-                <div className="trader-performance-btn-container">
-                  <button className='trader-card-btn'>view profile</button>
-                  <button className='trader-card-btn'>copy trades</button>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        </div>
+        </>
+        }
         </section>
     </main>  
   )
