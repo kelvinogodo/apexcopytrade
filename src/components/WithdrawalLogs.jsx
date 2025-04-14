@@ -34,7 +34,7 @@ const WithdrawalLogs = ({route}) => {
   return (
     <div>
       
-    <Userdashboardheader route={route}/>
+    {/* <Userdashboardheader route={route}/> */}
     {
         loader && 
           <Loader />
@@ -79,7 +79,12 @@ const WithdrawalLogs = ({route}) => {
           </div>
         </div>
       :
-      <div className="page-swiper-wrapper">
+        <div className="page-swiper-wrapper">
+          <div className="floating-btn" >
+            <Link to='/dashboard'>
+              <AiOutlineArrowLeft />
+            </Link>    
+          </div>
       <div className="failure-page no-referral-page">
         <img src="/view.gif" alt="" className='failure-img'/>
         <p>You have not performed any withdrawals yet. click below to deposit and start transacting.</p>

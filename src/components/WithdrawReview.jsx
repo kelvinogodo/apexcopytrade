@@ -135,7 +135,7 @@ const WithdrawReview = ({Active,withdrawAmount,closepage,route,funded}) => {
     }
   return (
     <div>
-        <Userdashboardheader route={route}/>
+        {/* <Userdashboardheader route={route}/> */}
         {
         loader && 
           <Loader />

@@ -940,7 +940,12 @@ background: #A7CFDF;
   font-size: 1.3rem;
   cursor: pointer;
 }
-
+.floating-btn a{
+  color: rgb(128, 128, 128);
+  align-self: center;
+  margin-top: 50%;
+  margin-bottom: 50%;
+}
 .floating-btn:hover {
   box-shadow: 0px 0px 10px #ddd;
 }

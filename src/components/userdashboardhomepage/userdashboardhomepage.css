@@ -215,6 +215,7 @@
     transition: all 0.5s;
     cursor: pointer;
     font-weight: 400;
+    text-transform: capitalize;
 }
 
 .user-deposit-btn span {

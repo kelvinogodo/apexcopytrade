@@ -1,8 +1,9 @@
 import React from 'react'
-import Userdashboardheader from '../userdashboardheader/Userdashboardheader'
+import {Link} from 'react-router-dom'
 import {FiArrowRight} from 'react-icons/fi'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import {AiOutlineArrowLeft} from 'react-icons/ai'
 import {MdClose} from 'react-icons/md'
 import Swal from 'sweetalert2';
 import WithdrawReview from '../WithdrawReview';
@@ -98,7 +99,7 @@ const Userdashboardwithdraw = ({route}) => {
     }
     
   return (
-    <div className='homewrapper'>
+    <>
       {
         loader && 
           <Loader />
@@ -166,8 +167,12 @@ const Userdashboardwithdraw = ({route}) => {
             </motion.div>
           </AnimatePresence >
           }
-          <Userdashboardheader route={route}/>
-          <div className="page-swiper-wrapper">
+            <div className="page-swiper-wrapper">
+              <div className="floating-btn" >
+                  <Link to='/dashboard'>
+                    <AiOutlineArrowLeft />
+                  </Link>    
+                </div>
               <div className="page-header hi">
                   <h3>Choose an Option</h3>
                   <h2>withdrawal Methods</h2>
@@ -266,7 +271,7 @@ const Userdashboardwithdraw = ({route}) => {
         checkoutPage &&
         <WithdrawReview Active={activeMethod} withdrawAmount={withdrawAmount} closepage={close} route={route} funded={userData.funded}/>
       }
-    </div>
+    </>
   )
 }
 

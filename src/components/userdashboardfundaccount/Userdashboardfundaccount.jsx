@@ -1,10 +1,11 @@
 import React from 'react'
-import Userdashboardheader from '../userdashboardheader/Userdashboardheader'
+import {Link} from 'react-router-dom'
 import {FiArrowRight} from 'react-icons/fi'
 import { motion,AnimatePresence } from 'framer-motion'
 import {MdClose} from 'react-icons/md'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import {AiOutlineArrowLeft} from 'react-icons/ai'
 import Swal from 'sweetalert2'
 // Import Swiper styles
 import "swiper/css";
@@ -75,9 +76,9 @@ const Userdashboardfundaccount = ({route}) => {
   }
   
   return (
-    <main className='homewrapper'>
+    <>
     {!checkoutPage &&
-      <div>
+      <main className="homewrapper">
       {
             showModal &&
           <AnimatePresence 
@@ -135,8 +136,13 @@ const Userdashboardfundaccount = ({route}) => {
             </motion.div>
           </AnimatePresence >
           }
-        <Userdashboardheader route={route}/>
-        <div className="page-swiper-wrapper">
+        
+          <section className="page-swiper-wrapper">
+            <div className="floating-btn" >
+              <Link to='/dashboard'>
+                <AiOutlineArrowLeft />
+              </Link>    
+            </div>
             <div className="page-header">
                 <h3>Choose an Option</h3>
                 <h2>Deposit Methods</h2>
@@ -231,13 +237,13 @@ const Userdashboardfundaccount = ({route}) => {
               deposit history
               <FiArrowRight />
             </button>
-        </div> 
-    </div>}
+        </section> 
+    </main>}
     {
         checkoutPage &&
         <Checkout Active={activeMethod} depositAmount={depositAmount} closepage={close} route={route}/>
     }
-    </main> 
+    </> 
   )
 }
 

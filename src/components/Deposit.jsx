@@ -144,7 +144,7 @@ const Deposit = ({amount,active,close,route}) => {
         loader && 
           <Loader />
       }
-        <Userdashboardheader route={route}/>
+        {/* <Userdashboardheader route={route}/> */}
         <div className="checkout-page">
                 <div className="floating-btn" onClick={()=>{
                     close()

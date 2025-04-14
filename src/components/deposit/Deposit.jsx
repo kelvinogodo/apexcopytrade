@@ -28,9 +28,7 @@ const Deposit = ({route}) => {
       }
     },[])
   return (
-    <div>
-      
-    <Userdashboardheader route={route}/>
+    <main className="homewrapper">
     {
         loader && 
         <Loader />
@@ -84,7 +82,7 @@ const Deposit = ({route}) => {
       </div>
       }
      
-</div>
+</main>
   )
 }
 

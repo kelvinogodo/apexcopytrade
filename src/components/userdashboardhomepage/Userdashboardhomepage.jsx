@@ -94,7 +94,7 @@ const Userdashboardhomepage = ({route}) => {
         </div>
         <div className="notification-dashoboard-container">
           <div className="notification-card">
-            <p>you have not deposited yet click <Link to='deposit'>Here</Link> to make your first deposit</p>
+            <p>you have not deposited yet click <Link to='/fundwallet'>Here</Link> to make your first deposit</p>
             <div className="close-notification-container">
                 <IoCloseSharp />
             </div>
@@ -107,18 +107,18 @@ const Userdashboardhomepage = ({route}) => {
                 Total Balance
               </h2>
               <div className="amount">
-                <h3>$0.00</h3>
+                <h3>${userData ? userData.funded : '0'}.00</h3>
                 <span className="usd-btn">usd</span>
               </div>
             </div>
             <div className="overview-btn-container">
               <div className="deposit-btn-container">
-                <button className='user-deposit-btn'>
+                <Link to='/fundwallet' className='user-deposit-btn'>
                   <span>deposit</span>
-                </button>
-                <button className='user-deposit-btn'>
+                </Link>
+                <Link to='/withdraw' className='user-deposit-btn'>
                   <span>withdraw</span>
-                </button>
+                </Link>
               </div>
               <div className="rank-container">
                 <p>Current Rank : <span className="silver">silver</span></p>
@@ -133,7 +133,7 @@ const Userdashboardhomepage = ({route}) => {
               </div>
               <div className="lower-card-text-container">
                 <h3>total deposit</h3>
-                <p>$0.00</p>
+                <p>${userData ? userData.totaldeposit : '0'}.00</p>
               </div>
             </div>
             <div className="lower-overview-card">
@@ -142,7 +142,7 @@ const Userdashboardhomepage = ({route}) => {
               </div>
               <div className="lower-card-text-container">
                 <h3>total withdrawal</h3>
-                <p>$0.00</p>
+                <p>${userData ? userData.totalwithdraw : '0'}.00</p>
               </div>
             </div>
           </div>
