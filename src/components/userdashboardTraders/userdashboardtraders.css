@@ -97,6 +97,7 @@
     border: 1px solid rgb(31, 69, 150);
     border-radius: 20px;
     padding: 20px;
+    margin: 10px 0px;
 }
 .trader-card-header{
     display: flex;
@@ -184,9 +185,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: rgb(12, 205, 80);
 }
 .performance-value svg{
-    color: rgb(27, 69, 236);
+    
     font-size: 1.5rem;
     margin-right: 10px;
 }
@@ -252,4 +254,7 @@
 .trader-page-close-btn:hover{
     background-color: rgb(21, 21, 21);
     transition: .1s all ease-in-out;
+}
+.trader-card-btn{
+
 }
