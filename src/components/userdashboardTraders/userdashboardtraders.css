@@ -63,21 +63,23 @@
     height: 100%;
     border: none;
     background-color: transparent;
-    border: none;
     padding: 0px 20px;
     outline: 0px;
+    background-color: white;
+    border-radius: 0px 10px 10px 0px;
 }
 .search-btn{
     width: 10%;
     height: 100%;
     color: rgb(31, 69, 150);
     border: none;
-    border-radius: 10px;
+    border-radius: 10px 0px 0px 10px;
     cursor: pointer;
     font-size: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
 }
 .traders-card-container{
     display: flex;
@@ -255,6 +257,25 @@
     background-color: rgb(21, 21, 21);
     transition: .1s all ease-in-out;
 }
-.trader-card-btn{
-
+.active-trader-container{
+    width: 100%;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.active-trader-header{
+    width: 100%;
+    text-align: left;
+}
+.active-trader-card{
+    width: 100%;
+}
+.active-trader-card .trader-card-image-container{
+    height: 100px;
+    width: 100px;
+}
+.active-trader-card .trader-card-text-container{
+    width: 85%;
 }

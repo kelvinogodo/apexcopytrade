@@ -13,7 +13,9 @@ import { IoIosArrowBack } from "react-icons/io";
 const UserdashboardTraders = ({route}) => {
   const [loader, setLoader] = useState(false)
   const [showTrader, setShowTrader] = useState(false)
-  const [activeTrader,setActiveTrader]= useState({})
+  const [activeTrader, setActiveTrader] = useState({})
+  const [search, setSearch] = useState("");
+
   
       const [userData, setUserData] = useState()
       const navigate = useNavigate()
@@ -59,6 +61,7 @@ const UserdashboardTraders = ({route}) => {
       
         getData();
       }, [navigate, route]);
+  
   const traders = [
     {
       id: 1,
@@ -109,6 +112,15 @@ const UserdashboardTraders = ({route}) => {
       traderImage:'fortune-vieyra-QIMjYJSFoXM-unsplash.jpg'
     },
   ]
+
+  //filtered version of traders array
+
+  const filteredTraders = traders.filter(
+  (trader) =>
+    trader.firstname.toLowerCase().includes(search.toLowerCase()) ||
+    trader.lastname.toLowerCase().includes(search.toLowerCase())
+);
+
   return (
     <main className='homewrapper'>
          {
@@ -192,18 +204,57 @@ const UserdashboardTraders = ({route}) => {
           <div className="traders-showcase">
             <h2 className="traders-showcase-header">expert traders</h2>
             <p>choose from the list of our expert traders. Any trader you select would trade and manage your portfolio.</p>
-          </div>
+            </div>
+            {
+              userData && userData.trader ?
+              <div className="active-trader-container">
+              <div className="videoframe-text-container treader-header">
+              <h1>Your current <span className="highlight">trader</span></h1>
+                </div>
+                  <div className="traders-card active-trader-card">
+                  <div className="trader-card-header">
+                    <div className="trader-card-image-container">
+                    <img src={`/blackInvestor.jpeg`} alt="" className='trader-card-image' />
+                    </div>
+                    <div className="trader-card-text-container">
+                      <h3 className="trader-name">Roi</h3>
+                      <p className="trader-description">Jones</p>
+                    </div>
+                  </div>
+                  <div className="trader-perfomance-container">
+                    <div className="trader-performance">
+                      <div className="trader-performance-item">
+                        <p className="performance-label">Win Rate</p>
+                        <p className="performance-value"><MdCandlestickChart /> 90%</p>
+                      </div>
+                          <div className="trader-performance-item">
+                            <p className="performance-label">Average Return</p>
+                            <p className="performance-value"><MdOutlineShowChart /> 75%</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                : ''
+            }
+            
           <div className="traders-section">
             <div className="videoframe-text-container treader-header">
-              <h1>select your  <span className="highlight">trader</span></h1>
+              <h1>choose a <span className="highlight">trader</span></h1>
               <div className="search-input-container">
                 <span className='search-btn'><FiSearch /></span>
-                <input type="text" placeholder='search for a trader' className='search-input' />
+                <input
+                  type="text"
+                  placeholder="search for a trader"
+                  className="search-input"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
               </div>
             </div>
             <div className="traders-card-container">
                 { 
-                  traders.map(trader => 
+                  filteredTraders.map(trader =>
                     <div className="traders-card">
                         <div className="trader-card-header">
                           <div className="trader-card-image-container">
