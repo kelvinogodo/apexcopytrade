@@ -1,11 +1,11 @@
 .kyc-form {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     margin: 40px auto;
     padding: 30px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background: #f9f9f9;
+    background: #f7f7f7;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     font-family: Arial, sans-serif;
 }

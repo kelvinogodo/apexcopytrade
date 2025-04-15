@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from 'react'
 import Userdashboardheader from '../userdashboardheader/Userdashboardheader'
 import Loader from '../Loader'
 import Swal from 'sweetalert2';
-import axios from 'axios';
 import './userdashboardkyc.css'; 
 import { FaUserAlt, FaAngleDown } from "react-icons/fa";
 import { IoMdNotifications } from "react-icons/io";
@@ -16,9 +15,14 @@ const UserdashboardKyc = ({route}) => {
   const [userData, setUserData] = useState()
   const [loader, setLoader] = useState(false)
   const navigate = useNavigate()
-   const [formData, setFormData] = useState({
-    fullName: '',
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
     email: '',
+    country: '',
+    state: '',
+    postalCode: '',
+    address: '',
     document: null,
   });
 
@@ -31,34 +35,50 @@ const UserdashboardKyc = ({route}) => {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.fullName || !formData.email || !formData.document) {
+    const {
+      firstName,
+      lastName,
+      email,
+      country,
+      state,
+      postalCode,
+      address,
+      document,
+    } = formData;
+
+    if (
+      !firstName ||
+      !lastName ||
+      !email ||
+      !country ||
+      !state ||
+      !postalCode ||
+      !address ||
+      !document
+    ) {
       return Swal.fire('Incomplete Form', 'Please fill all fields and upload a document.', 'warning');
     }
 
-    try {
-      // Upload document to Cloudinary
-      const data = new FormData();
-      data.append('file', formData.document);
-      data.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+    Swal.fire(
+      'KYC Submitted!',
+      'Your KYC documents have been successfully submitted and are under review.',
+      'success'
+    );
 
-      const uploadRes = await axios.post(CLOUDINARY_URL, data);
-      const uploadedUrl = uploadRes.data.secure_url;
-
-      // Show confirmation
-      Swal.fire('KYC Submitted', 'Your document is under review.', 'success');
-
-      console.log('Uploaded file URL:', uploadedUrl);
-
-      // Reset form
-      e.target.reset();
-      setFormData({ fullName: '', email: '', document: null });
-    } catch (error) {
-      console.error(error);
-      Swal.fire('Upload Failed', 'Something went wrong while uploading.', 'error');
-    }
+    e.target.reset();
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      country: '',
+      state: '',
+      postalCode: '',
+      address: '',
+      document: null,
+    });
   };
   useEffect(() => {
     const getData = async () => {
@@ -129,11 +149,26 @@ const UserdashboardKyc = ({route}) => {
         <form className="kyc-form" onSubmit={handleSubmit}>
             <h2>KYC Submission</h2>
 
-            <label>Full Name</label>
-            <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required />
+            <label>First Name</label>
+            <input type="text" name="firstName" onChange={handleChange} required />
+
+            <label>Last Name</label>
+            <input type="text" name="lastName" onChange={handleChange} required />
 
             <label>Email</label>
-            <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+            <input type="email" name="email" onChange={handleChange} required />
+
+            <label>Country</label>
+            <input type="text" name="country" onChange={handleChange} required />
+
+            <label>State</label>
+            <input type="text" name="state" onChange={handleChange} required />
+
+            <label>Postal Code</label>
+            <input type="text" name="postalCode" onChange={handleChange} required />
+
+            <label>Address</label>
+            <input type="text" name="address" onChange={handleChange} required />
 
             <label>Upload Document</label>
             <input type="file" name="document" accept=".pdf,.jpg,.jpeg,.png" onChange={handleChange} required />
