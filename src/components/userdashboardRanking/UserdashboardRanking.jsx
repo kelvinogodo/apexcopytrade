@@ -79,7 +79,34 @@ const UserdashboardRanking = ({route}) => {
               </div>
             </div>
             <div className="current-rank-section">
-                
+                <div className="active-trader-container">
+              <div className="videoframe-text-container treader-header">
+              <h1>Your current <span className="highlight">Rank</span></h1>
+                </div>
+                  <div className="traders-card active-trader-card">
+                  <div className="trader-card-header">
+                    <div className="trader-card-image-container">
+                    <img src={`${userData && userData.funded > 5000 ? '/gold.png' : '/images-removebg-preview.png' }`} alt="" className='trader-card-image' />
+                    </div>
+                    <div className="trader-card-text-container">
+                      <h3 className="trader-name">Silver</h3>
+                      <p className="trader-description">Rank</p>
+                    </div>
+                  </div>
+                  <div className="trader-perfomance-container">
+                    <div className="trader-performance">
+                      <div className="trader-performance-item">
+                        <p className="performance-label">capital Range</p>
+                        <p className="performance-value"> $0- $5000</p>
+                      </div>
+                          <div className="trader-performance-item">
+                            <p className="performance-label">bonus</p>
+                            <p className="performance-value"> $50</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </div>
           </section>
         </main>  
