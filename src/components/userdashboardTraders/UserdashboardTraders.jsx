@@ -207,7 +207,7 @@ const UserdashboardTraders = ({route}) => {
             </div>
             {
               userData && userData.trader ?
-              <div className="active-trader-container">
+              <div className="active-trader-container" key={userData._id}>
               <div className="videoframe-text-container treader-header">
               <h1>Your current <span className="highlight">trader</span></h1>
                 </div>

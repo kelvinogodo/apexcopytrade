@@ -79,7 +79,7 @@ const UserdashboardRanking = ({route}) => {
               </div>
             </div>
             <div className="current-rank-section">
-                <div className="active-trader-container">
+              <div className="active-trader-container">
               <div className="videoframe-text-container treader-header">
               <h1>Your current <span className="highlight">Rank</span></h1>
                 </div>
@@ -97,20 +97,77 @@ const UserdashboardRanking = ({route}) => {
                     <div className="trader-performance">
                       <div className="trader-performance-item">
                         <p className="performance-label">capital Range</p>
-                        <p className="performance-value"> $0- $5000</p>
+                        <p className="performance-value my-value"> $0- $5,000</p>
                       </div>
                           <div className="trader-performance-item">
                             <p className="performance-label">bonus</p>
-                            <p className="performance-value"> $50</p>
+                            <p className="performance-value my-value"> $50</p>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-            </div>
-          </section>
-        </main>  
-  )
-}
+                </div>
+                <div className="videoframe-text-container treader-header">
+                  <h1>other <span className="highlight">Ranks</span></h1>
+                </div>
+                <div className="traders-card-container rank-plan-container">
+                    <div className="traders-card">
+                        <div className="trader-card-header">
+                          <div className="trader-card-image-container">
+                          <img src={`/download-removebg-preview (2).png`} alt="" className='trader-card-image' />
+                          </div>
+                          <div className="trader-card-text-container">
+                            <h3 className="trader-name">Gold</h3>
+                            <p className="trader-description">Rank</p>
+                          </div>
+                        </div>
+                        <div className="trader-perfomance-container">
+                          <div className="trader-performance">
+                            <div className="trader-performance-item">
+                        <p className="performance-label">capital Range</p>
+                        <p className="performance-value my-value"> $5,001- $20,000</p>
+                      </div>
+                          <div className="trader-performance-item">
+                            <p className="performance-label">bonus</p>
+                            <p className="performance-value my-value"> $100</p>
+                          </div>
+                          </div>
+                          <div className="trader-performance-btn-container">
+                            <button className='trader-card-btn' onClick={() => {navigate('/fundwallet') }}>upgrade</button>
+                          </div>
+                        </div>
+                      </div>
+                    <div className="traders-card">
+                        <div className="trader-card-header">
+                          <div className="trader-card-image-container">
+                          <img src={`/diamond.png`} alt="" className='trader-card-image' />
+                          </div>
+                          <div className="trader-card-text-container">
+                            <h3 className="trader-name">diamond</h3>
+                            <p className="trader-description">Rank</p>
+                          </div>
+                        </div>
+                        <div className="trader-perfomance-container">
+                          <div className="trader-performance">
+                            <div className="trader-performance-item">
+                        <p className="performance-label">capital Range</p>
+                        <p className="performance-value my-value"> $20,001- $50,000</p>
+                      </div>
+                          <div className="trader-performance-item">
+                            <p className="performance-label">bonus</p>
+                            <p className="performance-value my-value" > $500</p>
+                          </div>
+                          </div>
+                          <div className="trader-performance-btn-container">
+                          <button className='trader-card-btn' onClick={() => {navigate('/fundwallet')}}>upgrade</button>
+                          </div>
+                        </div>
+                      </div>
+              </div>
+            </section>
+          </main>  
+        )
+      }
 
 export default UserdashboardRanking
