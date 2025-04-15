@@ -8,8 +8,6 @@ import { FaUserAlt, FaAngleDown } from "react-icons/fa";
 import { IoMdNotifications } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 
-const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1duesyx3zu/image/upload';
-const CLOUDINARY_UPLOAD_PRESET = 'upload';
 
 const UserdashboardKyc = ({route}) => {
   const [userData, setUserData] = useState()

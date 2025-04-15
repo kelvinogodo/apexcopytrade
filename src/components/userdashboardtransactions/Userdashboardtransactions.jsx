@@ -77,9 +77,9 @@ const Userdashboardtransactions = ({route}) => {
                 </div>
               </div>
           </div>
-      <div className="page-swiper-wrapper">
-        <div className="floating-btn" onClick={()=>{
-        navigate('/fundwallet')
+      <div className="page-swiper-wrapper trans-page">
+        <div className="floating-btn trans-page-float" onClick={()=>{
+        navigate('/dashboard')
       }}>
           <AiOutlineArrowLeft />
         </div>

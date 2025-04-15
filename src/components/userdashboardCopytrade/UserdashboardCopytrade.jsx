@@ -82,26 +82,25 @@ const UserdashboardCopytrade = ({route}) => {
                   </div>
                 </div>
             </div>
-            <div className="trade-history-container">
                 {userData && userData.transaction.length !== 0 ? 
-                      <div className="page-swiper-wrapper">
-                        <div className="floating-btn" onClick={()=>{
-                        navigate('/fundwallet')
+                      <div className="page-swiper-wrapper trans-page">
+                        <div className="floating-btn trans-page-float" onClick={()=>{
+                        navigate('/dashboard')
                       }}>
                           <AiOutlineArrowLeft />
                         </div>
                       <div className="page-header">
-                          <h3>checkout your transaction logs</h3>
-                          <h2>Transaction logs</h2>
-                          <p>we keep track of all your transactions</p>
+                          <h3>checkout your trade logs</h3>
+                          <h2>trade logs</h2>
+                          <p>we keep track of all the trades taken by your trader</p>
                       </div>
                       <div className="transaction-container no-ref">
                         <table>
                             <thead>
                               <tr>
-                                <td>transaction Id</td>
+                                <td>trade pair</td>
                                 <td>type</td>
-                                <td>amount</td>
+                                <td>profit</td>
                                 <td>date</td>
                                 <td>balance</td>
                               </tr>
@@ -110,8 +109,8 @@ const UserdashboardCopytrade = ({route}) => {
                               {
                                 userData.transaction.map(refer =>
                                   <tr>
-                                    <td>{refer.id}</td>
-                                    <td>{refer.type}</td>
+                                    <td>USD/GBP</td>
+                                    <td>Buy</td>
                                     <td>$ {refer.amount} USD</td>
                                     <td>{refer.date}</td>
                                     <td>$ {refer.balance} USD</td>
@@ -129,7 +128,6 @@ const UserdashboardCopytrade = ({route}) => {
                           <Link to='/fundwallet'>deposit</Link>
                         </div>
                   }
-            </div>
           </section>
         </main>  
   )

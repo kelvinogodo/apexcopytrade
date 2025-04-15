@@ -78,6 +78,27 @@ const Userdashboardwithdraw = ({route}) => {
       image:'/solana.png',
       method:'Solana (SOL) ',
     },
+    {
+      id:5,
+      min:10,
+      max:1000000,
+      image:'/dogecoin-logo.png',
+      method:'Dodgecoin ',
+    },
+    {
+      id:6,
+      min:10,
+      max:1000000,
+      image:'/xrp-icon.png',
+      method:'XRP ',
+    },
+    {
+      id:7,
+      min:10,
+      max:1000000,
+      image:'/2844382_ada_cardano_icon.png',
+      method:'Adacoin ',
+    },
   ])
 
     // sweet alert codes 
@@ -168,11 +189,11 @@ const Userdashboardwithdraw = ({route}) => {
           </AnimatePresence >
           }
             <div className="page-swiper-wrapper">
-              <div className="floating-btn" >
-                  <Link to='/dashboard'>
-                    <AiOutlineArrowLeft />
-                  </Link>    
-                </div>
+              <div className="floating-btn" onClick={()=>{
+                    navigate('/dashboard')
+                  }}>
+                <AiOutlineArrowLeft />
+              </div>
               <div className="page-header hi">
                   <h3>Choose an Option</h3>
                   <h2>withdrawal Methods</h2>

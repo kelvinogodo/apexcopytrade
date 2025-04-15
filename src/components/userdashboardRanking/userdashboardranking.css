@@ -1,0 +1,9 @@
+.current-rank-section{
+    width: 90%;
+    height: 400px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}

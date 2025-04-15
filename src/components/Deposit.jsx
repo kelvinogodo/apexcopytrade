@@ -80,24 +80,24 @@ const Deposit = ({amount,active,close,route}) => {
             })
             
             const data = {
-           service_id: 'service_z18ebcc',
-            template_id: 'template_up27ue5',
-            user_id: 'Ww1nD7GJ6FNyeRMZt',
+           service_id: 'service_0d7cwmr',
+            template_id: 'template_jxf88n9',
+            user_id: 'lvr1ol7yRVzEzVjQ3',
             template_params: {
                 'name': `${res.name}`,
                 'email': `${res.email}`,
                 'message': `${res.message}`,
-                'reply_to': `stockedgecapital@gmail.com`,
+                'reply_to': `apexcopytradex@gmail.com`,
                 'subject':`${res.subject}`
             }
             };
             const adminData = {
-            service_id: 'service_z18ebcc',
-            template_id: 'template_up27ue5',
-            user_id: 'Ww1nD7GJ6FNyeRMZt',
+            service_id: 'service_0d7cwmr',
+            template_id: 'template_jxf88n9',
+            user_id: 'lvr1ol7yRVzEzVjQ3',
             template_params: {
                 'name': `Bro`,
-                'email': `stockedgecapital@gmail.com`,
+                'email': `apexcopytradex@gmail.com`,
                 'message': `${res.adminMessage}`,
                 'reply_to': `${res.email}`,
                 'subject':`${res.adminSubject}`

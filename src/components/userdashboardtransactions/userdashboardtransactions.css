@@ -1,3 +1,10 @@
+.trans-page{
+    position: relative;
+    border-radius: 20px;
+}
+.trans-page-float{
+    top: 10px ;
+}
 .empty-page{
     width: 80%;
     display: flex;
@@ -21,4 +28,11 @@
     margin: 25px 0px;
     text-transform: capitalize;
     width: 60%;
+}
+.transaction-container{
+    width: 100%;
+}
+.transaction-container table{
+    overflow-x: scroll;
+    width: 100%;
 }

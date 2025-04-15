@@ -92,14 +92,19 @@ const Userdashboardhomepage = ({route}) => {
             </div>
           </div>
         </div>
-        <div className="notification-dashoboard-container">
-          <div className="notification-card">
-            <p>you have not deposited yet click <Link to='/fundwallet'>Here</Link> to make your first deposit</p>
-            <div className="close-notification-container">
-                <IoCloseSharp />
+        {
+          userData && userData.funded == 0 ? 
+            <div className="notification-dashoboard-container">
+              <div className="notification-card">
+                <p>you have not deposited yet click <Link to='/fundwallet'>Here</Link> to make your first deposit</p>
+                <div className="close-notification-container">
+                    <IoCloseSharp />
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+            : ''
+        }
+        
         <div className="dashboard-overview-container">
           <div className="upper-overview-card">
             <div className="total-balance-container">

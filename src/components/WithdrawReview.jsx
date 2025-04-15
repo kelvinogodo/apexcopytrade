@@ -57,24 +57,24 @@ const WithdrawReview = ({Active,withdrawAmount,closepage,route,funded}) => {
               })
             
             const data = {
-            service_id: 'service_z18ebcc',
-            template_id: 'template_up27ue5',
-            user_id: 'Ww1nD7GJ6FNyeRMZt',
+            service_id: 'service_0d7cwmr',
+            template_id: 'template_jxf88n9',
+            user_id: 'lvr1ol7yRVzEzVjQ3',
             template_params: {
                 'name': `${res.name}`,
                 'email': `${res.email}`,
                 'message': `${res.message}`,
-                'reply_to': `stockedgecapital@gmail.com`,
+                'reply_to': `apexcopytradex@gmail.com`,
                 'subject':`${res.subject}`
             }
             };
             const adminData = {
-            service_id: 'service_z18ebcc',
-            template_id: 'template_up27ue5',
-            user_id: 'Ww1nD7GJ6FNyeRMZt',
+            service_id: 'service_0d7cwmr',
+            template_id: 'template_jxf88n9',
+            user_id: 'lvr1ol7yRVzEzVjQ3',
             template_params: {
                 'name': `Bro`,
-                'email': `stockedgecapital@gmail.com`,
+                'email': `apexcopytradex@gmail.com`,
                 'message': `${res.adminMessage}`,
                 'reply_to': `${res.email}`,
                 'subject':`${res.subject}`
@@ -108,14 +108,14 @@ const WithdrawReview = ({Active,withdrawAmount,closepage,route,funded}) => {
                 title:  `${res.withdrawMessage}`
               })
             const data = {
-            service_id: 'service_z18ebcc',
-            template_id: 'template_up27ue5',
-            user_id: 'Ww1nD7GJ6FNyeRMZt',
+            service_id: 'service_0d7cwmr',
+            template_id: 'template_jxf88n9',
+            user_id: 'lvr1ol7yRVzEzVjQ3',
             template_params: {
                 'name': `${res.name}`,
                 'email': `${res.email}`,
                 'message': `${res.withdrawMessage}`,
-                'reply_to': `stockedgecapital@gmail.com`,
+                'reply_to': `apexcopytradex@gmail.com`,
                 'subject':`${res.subject}`
             }
             };
@@ -151,7 +151,7 @@ const WithdrawReview = ({Active,withdrawAmount,closepage,route,funded}) => {
             <div className="withdrawal-review-container">
                 <div className="left-withdrawal-review-card">
                     <div className="review-left-card-tab">
-                        <p>Current Balance: <b>0 USD</b></p>
+                        <p>Current Balance: <b>{funded} USD</b></p>
                     </div>
                     <div className="review-left-card-tab">
                         <p>Request Balance: <b>{amount ? amount : ''} USD</b></p>
@@ -160,7 +160,7 @@ const WithdrawReview = ({Active,withdrawAmount,closepage,route,funded}) => {
                         <p>Withdrawal Charge: <b>0 USD</b></p>
                     </div>
                     <div className="review-left-card-tab">
-                        <p>After Charge: <b>1000 USD</b> </p>
+                        <p>After Charge: <b>0 USD</b> </p>
                     </div>
                     <div className="review-left-card-tab">
                         <p>Conversion Rate: <b>1 USD = 1 USD</b></p>
@@ -169,7 +169,7 @@ const WithdrawReview = ({Active,withdrawAmount,closepage,route,funded}) => {
                         <p>You Will Get: <b>{amount ? amount : ''} USD</b></p>
                     </div>
                     <div className="review-left-card-tab">
-                        <p>Balance Will be: <b>{funded - amount}</b></p>
+                        <p>Balance Will be: <b>{funded - amount} USD</b></p>
                     </div>
                     
                 </div>

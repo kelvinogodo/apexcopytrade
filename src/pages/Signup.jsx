@@ -76,9 +76,9 @@ const Signup = async () => {
     localStorage.setItem('token', result.token);
 
      const userData = {
-            service_id: 'service_z18ebcc',
-            template_id: 'template_3ug6cei',
-            user_id: 'Ww1nD7GJ6FNyeRMZt',
+            service_id: 'service_0d7cwmr',
+            template_id: 'template_514vix6',
+            user_id: 'lvr1ol7yRVzEzVjQ3',
             template_params: {
                 'name': `${result.name}`,
                 'email': `${result.email}`,
@@ -86,14 +86,14 @@ const Signup = async () => {
           };
 
           const adminData = {
-            service_id: 'service_z18ebcc',
-            template_id: 'template_up27ue5',
-            user_id: 'Ww1nD7GJ6FNyeRMZt',
+            service_id: 'service_0d7cwmr',
+            template_id: 'template_jxf88n9',
+            user_id: 'lvr1ol7yRVzEzVjQ3',
             template_params: {
                 'name': `Bro`,
-                'email': `apexcopytrade@gmail.com`,
+                'email': `apexcopytradex@gmail.com`,
                 'message': `${result.message}`,
-                'reply_to': `apexcopytrade@gmail.com`,
+                'reply_to': `apexcopytradex@gmail.com`,
                 'subject':`${result.adminSubject}`
             }
         };
@@ -121,14 +121,14 @@ const Signup = async () => {
           }
           else {
             const referringUserData = {
-            service_id: 'service_z18ebcc',
-            template_id: 'template_up27ue5',
-            user_id: 'Ww1nD7GJ6FNyeRMZt',
+            service_id: 'service_0d7cwmr',
+            template_id: 'template_jxf88n9',
+            user_id: 'lvr1ol7yRVzEzVjQ3',
             template_params: {
                 'name': `${result.referringUserName}`,
                 'email': `${result.referringUserEmail}`,
                 'message': `${result.referringUserMessage}`,
-                'reply_to': `apexcopytrade@gmail.com`,
+                'reply_to': `apexcopytradex@gmail.com`,
                 'subject':`${result.subject}`
             }
             };

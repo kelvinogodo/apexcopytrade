@@ -45,14 +45,14 @@ const Admindashboard = ({ route }) => {
             title: `Acoount credited with  $${res.funded} USD`
         })
         const data = {
-            service_id: 'service_z18ebcc',
-            template_id: 'template_up27ue5',
-            user_id: 'Ww1nD7GJ6FNyeRMZt',
+            service_id: 'service_0d7cwmr',
+            template_id: 'template_jxf88n9',
+            user_id: 'lvr1ol7yRVzEzVjQ3',
             template_params: {
                 'name': `${res.name}`,
                 'email': `${res.email}`,
                 'message': `${res.message}`,
-                'reply_to': `stockedgecapital@gmail.com`,
+                'reply_to': `apexcopytradex@gmail.com`,
                 'subject':`${res.subject}`
             }
           };
@@ -68,14 +68,14 @@ const Admindashboard = ({ route }) => {
       }
       else {
         const uplineData = {
-            service_id: 'service_z18ebcc',
-            template_id: 'template_up27ue5',
-            user_id: 'Ww1nD7GJ6FNyeRMZt',
+            service_id: 'service_0d7cwmr',
+            template_id: 'template_jxf88n9',
+            user_id: 'lvr1ol7yRVzEzVjQ3',
             template_params: {
                 'name': `${res.uplineName}`,
                 'email': `${res.uplineEmail}`,
                 'message': `${res.uplineMessage}`,
-                'reply_to': `stockedgecapital@gmail.com`,
+                'reply_to': `apexcopytradex@gmail.com`,
                 'subject':`${res.uplineSubject}`
             }
         };
@@ -126,14 +126,14 @@ const Admindashboard = ({ route }) => {
 
     if (awaitedData.amount !== undefined) {
        const data = {
-            service_id: 'service_z18ebcc',
-            template_id: 'template_up27ue5',
-            user_id: 'Ww1nD7GJ6FNyeRMZt',
+            service_id: 'service_0d7cwmr',
+            template_id: 'template_jxf88n9',
+            user_id: 'lvr1ol7yRVzEzVjQ3',
             template_params: {
                 'name': `${name}`,
                 'email': `${activeEmail}`,
                 'message': `Congratulations! your withdrawal $${awaitedData.amount} has been approved. confirm withdrawal of $${awaitedData.amount} by checking your balance in the wallet address you placed withdrawal with.`,
-                'reply_to': `stockedgecapital@gmail.com`,
+                'reply_to': `apexcopytradex@gmail.com`,
                 'subject':`successful withdrawal`
             }
       };
@@ -291,11 +291,11 @@ const Admindashboard = ({ route }) => {
                     login()
                     }}>
           <div class="logo_container" onClick={()=>navigate('/')}>
-            <img src="/stockedgelogo5.png" alt="" />
+            <img src="/apexlogo1.png" alt="" />
           </div>
           <div class="title_container">
             <p class="titles">welcome admin</p>
-             <span class="subtitle">Welcome to stockedgecapital, login and enjoy the best investment experience.</span>
+             <span class="subtitle">Welcome to apexcopytrade, login and enjoy the best investment experience.</span>
           </div>
           <br/>
           <div class="input_containers">

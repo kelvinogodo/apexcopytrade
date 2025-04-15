@@ -56,6 +56,30 @@ const Userdashboardfundaccount = ({route}) => {
       method:'Solana (SOL) ',
       wallet:'48hQsUgcUTKipm6CWLznbLevMG1cVwUne6Hhwbgjmuuh'
     },
+    {
+      id:5,
+      min:500,
+      max:1000,
+      image:'/dogecoin-logo.png',
+      method:'Dodgecoin ',
+      wallet:'48hQsUgcUTKipm6CWLznbLevMG1cVwUne6Hhwbgjmuuh'
+    },
+    {
+      id:6,
+      min:500,
+      max:1000,
+      image:'/xrp-icon.png',
+      method:'XRP ',
+      wallet:'48hQsUgcUTKipm6CWLznbLevMG1cVwUne6Hhwbgjmuuh'
+    },
+    {
+      id:7,
+      min:500,
+      max:1000,
+      image:'/2844382_ada_cardano_icon.png',
+      method:'Adacoin ',
+      wallet:'48hQsUgcUTKipm6CWLznbLevMG1cVwUne6Hhwbgjmuuh'
+    },
   ])
 
   // sweel alert code 
@@ -138,11 +162,11 @@ const Userdashboardfundaccount = ({route}) => {
           }
         
           <section className="page-swiper-wrapper">
-            <div className="floating-btn" >
-              <Link to='/dashboard'>
+            <div className="floating-btn" onClick={()=>{
+                    navigate('/dashboard')
+                  }}>
                 <AiOutlineArrowLeft />
-              </Link>    
-            </div>
+              </div>
             <div className="page-header">
                 <h3>Choose an Option</h3>
                 <h2>Deposit Methods</h2>
