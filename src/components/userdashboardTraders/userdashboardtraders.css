@@ -280,6 +280,12 @@
     width: 85%;
 }
 @media screen and (max-width: 990px) {
+    .active-trader-container{
+        padding: 0px 0px;
+    }
+    .active-trader-card .trader-card-text-container {
+        width: 75%;
+    }
     .trader-profile-page{
         width: 100%;
         padding: 10px;
