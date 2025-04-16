@@ -32,10 +32,8 @@ const UserdashboardTraders = ({route}) => {
     })
   
       const [userData, setUserData] = useState()
-      const navigate = useNavigate()
-      
-      useEffect(() => {
-        const getData = async () => {
+  const navigate = useNavigate()
+  const getData = async () => {
           try {
             setLoader(true);
       
@@ -73,6 +71,7 @@ const UserdashboardTraders = ({route}) => {
           }
         };
       
+      useEffect(() => {
         getData();
       }, [navigate, route]);
   
@@ -149,12 +148,13 @@ const UserdashboardTraders = ({route}) => {
       }),
     })
     const res = await req.json()
-    console.log(res)
+    
     if (res.status === 200) {
       Toast.fire({
       icon: 'success',
       title: `${res.message}`,
       });
+      getData();
       setLoader(false)
     }
     else {
@@ -162,6 +162,7 @@ const UserdashboardTraders = ({route}) => {
       icon: 'error',
       title: `${res.message}`,
       });
+      getData();
       setLoader(false)
     }
   }

@@ -72,11 +72,12 @@ const Userdashboardtransactions = ({route}) => {
                 <div className="header-username-container">
                   <h3>Hi, {userData ? userData.firstname : ''}</h3>
                 </div>
-                <div className="header-userprofile-container">
+                <div className="header-userprofile-container" onClick={() => { setShowMobileDropdown(!showMobileDropdown); }
+                  }>
                   <div className="user-p-icon-container">
                     <FaUserAlt/>
                   </div>
-                  <div className="user-p-drop-icon">
+                  <div className="user-p-drop-icon" >
                   <FaAngleDown />
                 </div>
                   <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
