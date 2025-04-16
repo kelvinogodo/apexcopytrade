@@ -284,7 +284,7 @@
         padding: 0px 0px;
     }
     .active-trader-card .trader-card-text-container {
-        width: 75%;
+        width: 65%;
     }
     .trader-profile-page{
         width: 100%;
@@ -323,7 +323,7 @@
         z-index: 2;
     }
     .trader-card-text-container{
-        width: 70% !important;
+        width: 70%;
     }
     .active-trader-card{
         width: 100%;
