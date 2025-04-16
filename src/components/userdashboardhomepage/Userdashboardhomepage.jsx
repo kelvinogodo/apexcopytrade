@@ -85,6 +85,10 @@ const Userdashboardhomepage = ({route}) => {
         
         <div className="dashboardheaderwrapper">
           <div className="header-notification-icon-container">
+            {
+              showNotification &&
+              <span className="notification-counter">1</span>
+            }
               <IoMdNotifications />
           </div>
           <div className="header-username-container">
