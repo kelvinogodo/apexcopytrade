@@ -10,12 +10,24 @@ import { FiSearch } from "react-icons/fi";
 import { MdCandlestickChart } from "react-icons/md";
 import { MdOutlineShowChart } from "react-icons/md";
 import { IoIosArrowBack } from "react-icons/io";
+import Swal from 'sweetalert2'
 const UserdashboardTraders = ({route}) => {
   const [loader, setLoader] = useState(false)
   const [showTrader, setShowTrader] = useState(false)
   const [activeTrader, setActiveTrader] = useState({})
   const [search, setSearch] = useState("");
 
+  const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
   
       const [userData, setUserData] = useState()
       const navigate = useNavigate()
@@ -121,6 +133,29 @@ const UserdashboardTraders = ({route}) => {
     trader.lastname.toLowerCase().includes(search.toLowerCase())
 );
 
+  const copyTrade = async (trader) => {
+    console.log(trader)
+
+    const req = await fetch(`${route}/api/copytrade`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        'x-access-token': localStorage.getItem('token')
+      },
+      body: JSON.stringify({
+        trader:trader
+      }),
+    })
+    const res = await req.json()
+    console.log(res)
+    if (res.status === 200) {
+      Toast.fire({
+      icon: 'success',
+      title: "Trader successfully added",
+    });
+    }
+  }
+
   return (
     <main className='homewrapper'>
          {
@@ -207,29 +242,29 @@ const UserdashboardTraders = ({route}) => {
             </div>
             {
               userData && userData.trader ?
-              <div className="active-trader-container" key={userData._id}>
+              <div className="active-trader-container">
               <div className="videoframe-text-container treader-header">
               <h1>Your current <span className="highlight">trader</span></h1>
                 </div>
                   <div className="traders-card active-trader-card">
                   <div className="trader-card-header">
                     <div className="trader-card-image-container">
-                    <img src={`/blackInvestor.jpeg`} alt="" className='trader-card-image' />
+                    <img src={`/${userData.trader.traderImage}`} alt="" className='trader-card-image' />
                     </div>
                     <div className="trader-card-text-container">
-                      <h3 className="trader-name">Roi</h3>
-                      <p className="trader-description">Jones</p>
+                      <h3 className="trader-name">{userData.trader.firstname}</h3>
+                      <p className="trader-description">{userData.trader.lastname}</p>
                     </div>
                   </div>
                   <div className="trader-perfomance-container">
                     <div className="trader-performance">
                       <div className="trader-performance-item">
                         <p className="performance-label">Win Rate</p>
-                        <p className="performance-value"><MdCandlestickChart /> 90%</p>
+                        <p className="performance-value"><MdCandlestickChart /> {userData.trader.winRate}</p>
                       </div>
                           <div className="trader-performance-item">
                             <p className="performance-label">Average Return</p>
-                            <p className="performance-value"><MdOutlineShowChart /> 75%</p>
+                            <p className="performance-value"><MdOutlineShowChart /> {userData.trader.averageReturn}</p>
                           </div>
                         </div>
                       </div>
@@ -292,7 +327,7 @@ const UserdashboardTraders = ({route}) => {
                               })
                             setShowTrader(true)
                           }}>view profile</button>
-                          <button className='trader-card-btn' >copy trade</button>
+                          <button className='trader-card-btn' onClick={() =>copyTrade(trader)}>copy trade</button>
                           </div>
                         </div>
                       </div>

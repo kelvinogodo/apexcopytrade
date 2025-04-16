@@ -8,7 +8,11 @@ import {AiOutlineArrowLeft} from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import Loader from '../Loader'
+import { IoMdNotifications } from "react-icons/io";
+import { FaUserAlt, FaAngleDown } from "react-icons/fa";
+import Userdashboardheader from '../userdashboardheader/Userdashboardheader'
 import {MdClose} from 'react-icons/md'
+import AdminHeader from '../AdminHeader'
 const Admindashboard = ({ route }) => {
   
    // sweet alert function 
@@ -429,7 +433,30 @@ const Admindashboard = ({ route }) => {
               </div>
             </div>
             </motion.div>
-        }
+            }
+            <main className='homewrapper'>
+              <AdminHeader />
+         <section className='dashboardhomepage'>
+           
+            <div className="dashboardheaderwrapper">
+              <div className="dashboardheaderwrapper">
+                  <div className="header-notification-icon-container">
+                      <IoMdNotifications />
+                  </div>
+                  <div className="header-username-container">
+                    <h3>Hi, admin</h3>
+                  </div>
+                  <div className="header-userprofile-container">
+                    <div className="user-p-icon-container">
+                      <FaUserAlt/>
+                    </div>
+                    <div className="user-p-drop-icon">
+                      <FaAngleDown />
+                    </div>
+                  </div>
+                </div>
+            </div>
+          
               <div className="floating-btn" onClick={()=>{
                 navigate('/')
                 }}>
@@ -501,7 +528,9 @@ const Admindashboard = ({ route }) => {
                   }
                 </tbody>
               </table>
-              </div>
+                  </div>
+                  
+          
           :
           <div className="page-swiper-wrapper">
           <div className="failure-page no-referral-page">
@@ -510,8 +539,11 @@ const Admindashboard = ({ route }) => {
             <Link to='/'>home</Link>
           </div>
           </div>
-          }
-          </main>
+                  
+                }
+              </section>
+          </main >
+        </main>
         }
           
         </main>
