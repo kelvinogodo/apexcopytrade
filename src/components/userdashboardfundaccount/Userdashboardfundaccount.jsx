@@ -72,14 +72,6 @@ const Userdashboardfundaccount = ({route}) => {
       method:'XRP ',
       wallet:'r4LbCx8a5GfmTeC2k1qfyfZP4B6gdtNnSX'
     },
-    {
-      id:7,
-      min:500,
-      max:1000,
-      image:'/2844382_ada_cardano_icon.png',
-      method:'Adacoin ',
-      wallet:'48hQsUgcUTKipm6CWLznbLevMG1cVwUne6Hhwbgjmuuh'
-    },
   ])
 
   // sweel alert code 

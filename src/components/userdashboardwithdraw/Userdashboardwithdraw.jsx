@@ -92,13 +92,6 @@ const Userdashboardwithdraw = ({route}) => {
       image:'/xrp-icon.png',
       method:'XRP ',
     },
-    {
-      id:7,
-      min:10,
-      max:1000000,
-      image:'/2844382_ada_cardano_icon.png',
-      method:'Adacoin ',
-    },
   ])
 
     // sweet alert codes 
