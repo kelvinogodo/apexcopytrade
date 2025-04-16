@@ -1,9 +1,9 @@
 import React , {useState,useEffect} from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import {useNavigate } from 'react-router-dom'
 import {AiOutlineClose} from 'react-icons/ai'
 import {GiReceiveMoney} from 'react-icons/gi'
 import {RxDashboard} from 'react-icons/rx'
-import { FaUserFriends, FaRegChartBar } from 'react-icons/fa'
+import {  FaRegChartBar } from 'react-icons/fa'
 import { GrLineChart } from "react-icons/gr";
 import { FiAward } from "react-icons/fi";
 import { GrTransaction } from "react-icons/gr";
@@ -13,7 +13,6 @@ import { RiLockPasswordLine } from 'react-icons/ri'
 import {FiLogOut} from 'react-icons/fi'
 const MobileDropdown = ({route,showStatus,closeMenu}) => {
      const navigate = useNavigate()
-        const [dropDown,setDropDown] = useState(false)
         const [userData, setUserData] = useState()
     
         const logout = ()=>{
@@ -59,7 +58,7 @@ const MobileDropdown = ({route,showStatus,closeMenu}) => {
                     </span>
                     <span className="dropdown-user-details">
                         <p className='dropdown-name'>{userData ? userData.firstname : 'john doe'}</p>
-                        <p className='dropdown-email'>{userData ? userData.email : 'kelvinchukwuebuka385#gmail.com'}</p>
+                        <p className='dropdown-email'>{userData ? userData.email : 'johndoe@gmail.com'}</p>
                     </span>
                 </div>
                 
@@ -137,7 +136,6 @@ const MobileDropdown = ({route,showStatus,closeMenu}) => {
                     <FiLogOut />
                     <p>logout</p>
                 </div>
-                
             </div>
             }
         </div>
