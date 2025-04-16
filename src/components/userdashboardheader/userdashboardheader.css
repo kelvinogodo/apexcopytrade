@@ -159,7 +159,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    box-shadow: 0px 0px 1px #ddd;
+    /* box-shadow: 0px 0px 1px #ddd; */
     cursor: pointer;
 }
 .dropdown-tabs p{
@@ -213,7 +213,6 @@
         display: none;
         overflow: hidden;
     }
-    
 }
 @media screen and (max-width: 767px){
     .m-drop-container{
@@ -251,5 +250,8 @@
         object-fit: cover;
         width: 60%;
         height: 100%;
+    }
+    .dropdown-tabs{
+        z-index: 10 ;
     }
 }

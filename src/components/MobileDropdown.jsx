@@ -65,7 +65,7 @@ const MobileDropdown = ({route,showStatus,closeMenu}) => {
                 <div className="dropdown-deposit-container">
                     <h3>total amount</h3>
                     <h2>${userData ? userData.funded : ''} USD</h2>
-                    <p>referral bonus ${userData ? userData.refBonus : ''} USD</p>
+                    <p>Trading Rank :   {userData && userData.funded >= 5000 ? "Gold"   : 'Silver'}</p>
                 </div>
                 <div className="mobile-tabs">
                 <div className="dropdown-tabs" onClick={()=>{
