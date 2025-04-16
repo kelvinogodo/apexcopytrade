@@ -453,6 +453,10 @@
         width: 100%;
         align-items: flex-start;
     }
+    .deposit-btn-container{
+        width: 100%;
+        justify-content: space-between;
+    }
     .lower-overview-card-container{
         flex-direction:column ;
     }

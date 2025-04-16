@@ -8,7 +8,7 @@ import {RiLuggageDepositLine} from 'react-icons/ri'
 import {AiOutlineSetting,AiOutlineStock} from 'react-icons/ai'
 import { RiLockPasswordLine } from 'react-icons/ri'
 import {FiLogOut} from 'react-icons/fi'
-const MobileDropdown = ({route,showStaus}) => {
+const MobileDropdown = ({route,showStatus,closeMenu}) => {
      const navigate = useNavigate()
         const [dropDown,setDropDown] = useState(false)
         const [userData, setUserData] = useState()
@@ -40,12 +40,12 @@ const MobileDropdown = ({route,showStaus}) => {
     return (
   <>
     {
-            showStaus &&
+            showStatus &&
             <div className="drop-down" onBlur={()=>{
-                setDropDown(false)
+                closeMenu()
             }}>
                 <div className="dropdown-tabs" onClick={()=>{
-                   setDropDown(false)
+                   closeMenu()
                 }}>
                     <AiOutlineClose />
                     <p>close</p>

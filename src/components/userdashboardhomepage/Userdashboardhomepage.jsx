@@ -69,6 +69,10 @@ const Userdashboardhomepage = ({route}) => {
 
   getData();
    }, [navigate, route]);
+  
+  const closeMobileMenu = () => {
+    setShowMobileDropdown(false)
+  }
     
   return (
     <main className='homewrapper'>
@@ -90,10 +94,11 @@ const Userdashboardhomepage = ({route}) => {
             <div className="user-p-icon-container">
               <FaUserAlt/>
             </div>
-            <div className="user-p-drop-icon" onClick={()=>{setShowMobileDropdown(!showMobileDropdown)}}>
+            <div className="user-p-drop-icon" onClick={() => { setShowMobileDropdown(!showMobileDropdown); }
+             }>
               <FaAngleDown />
             </div>
-            <MobileDropdown showStatus={showMobileDropdown} route={ route} />
+            <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
           </div>
         </div>
         {
