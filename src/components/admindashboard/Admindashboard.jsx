@@ -479,8 +479,8 @@ const Admindashboard = ({ route }) => {
                 {
                   showUsers && 
                   <>
-                  <div className="floating-btn" onClick={()=>{
-                    navigate('/admin')
+                  <div className="floating-btn admin-floating-btn" onClick={()=>{
+                    navigate('/')
                     }}>
                     <AiOutlineArrowLeft />
                   </div>

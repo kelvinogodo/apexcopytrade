@@ -249,5 +249,8 @@ tbody{
     .user-password{
         width: 100%;
     }
+    .admin-floating-btn{
+        display: none;
+    }
     
 }

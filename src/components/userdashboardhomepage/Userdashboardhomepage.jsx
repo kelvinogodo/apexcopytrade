@@ -86,7 +86,7 @@ const Userdashboardhomepage = ({route}) => {
         <div className="dashboardheaderwrapper">
           <div className="header-notification-icon-container">
             {
-              showNotification &&
+              showNotification && userData && userData.funded === 0 &&
               <span className="notification-counter">1</span>
             }
               <IoMdNotifications />
@@ -138,10 +138,6 @@ const Userdashboardhomepage = ({route}) => {
                   <span>withdraw</span>
                 </Link>
               </div>
-              <div className="rank-container">
-                <p>Current Rank : <span className="silver">silver</span></p>
-                <BsFillAwardFill />
-              </div>
             </div>
           </div>
           <div className="lower-overview-card-container">
@@ -168,7 +164,7 @@ const Userdashboardhomepage = ({route}) => {
         <div className="dashboard-chart-container">
           <TeslaWidget />
         </div>
-        <div className="referral-section">
+        {/* <div className="referral-section">
                 <div className="referral-card1">
                     <div className="referraltext-wrapper">
                         <div className="referral-text-container">
@@ -210,6 +206,36 @@ const Userdashboardhomepage = ({route}) => {
                     </div>
                     <img src="/bar4.png" alt="" className="bar4" />
                 </div>
+            </div> */}
+        <div className="current-rank-section">
+          <div className="active-trader-container">
+          <div className="videoframe-text-container treader-header">
+          <h1>Your current <span className="highlight">Rank</span></h1>
+            </div>
+              <div className="traders-card active-trader-card">
+              <div className="trader-card-header">
+                <div className="trader-card-image-container">
+                <img src={`${userData && userData.funded > 5000 ? '/download-removebg-preview (2).png' : '/images-removebg-preview.png' }`} alt="" className='trader-card-image' />
+                </div>
+                <div className="trader-card-text-container">
+                  <h3 className="trader-name">{`${userData && userData.funded > 5000 ? "gold" : 'silver'}`}</h3>
+                  <p className="trader-description">Rank</p>
+                </div>
+              </div>
+              <div className="trader-perfomance-container">
+                <div className="trader-performance">
+                  <div className="trader-performance-item">
+                    <p className="performance-label">capital Range</p>
+                    <p className="performance-value my-value">{`${userData && userData.funded > 5000 ? "$5001- $20,000" : '$0- $5,000'}`} </p>
+                  </div>
+                      <div className="trader-performance-item">
+                        <p className="performance-label">bonus</p>
+                        <p className="performance-value my-value">{`${userData && userData.funded > 5000 ? "$100" : '$50'}`} </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
     </section>
     </main>
