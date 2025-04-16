@@ -8,10 +8,12 @@ import { FaUserAlt, FaAngleDown } from "react-icons/fa";
 import Livechart from '../Livechart'
 import TickerTape from '../Tickertape'
 import './Userdashboardlivetrading.css'
+import MobileDropdown from '../MobileDropdown'
 
 const UserdashboardLiveTrading = ({route}) => {
     const [loader, setLoader] = useState(false)
-          const [userData, setUserData] = useState()
+  const [userData, setUserData] = useState()
+  const [showMobileDropdown,setShowMobileDropdown] = useState(false)
           const navigate = useNavigate()
           
           useEffect(() => {
@@ -54,7 +56,12 @@ const UserdashboardLiveTrading = ({route}) => {
             };
           
             getData();
-             }, [navigate, route]);
+          }, [navigate, route]);
+  
+  const closeMobileMenu = () => {
+    setShowMobileDropdown(false)
+  }
+  
   return (
     <main className='homewrapper'>
          {
@@ -74,9 +81,11 @@ const UserdashboardLiveTrading = ({route}) => {
                   <div className="user-p-icon-container">
                     <FaUserAlt/>
                   </div>
-                  <div className="user-p-drop-icon">
-                    <FaAngleDown />
-                  </div>
+                  <div className="user-p-drop-icon" onClick={() => { setShowMobileDropdown(!showMobileDropdown); }
+                    }>
+                      <FaAngleDown />
+                    </div>
+                    <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
                 </div>
             </div>
           <TickerTape />

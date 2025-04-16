@@ -11,10 +11,12 @@ import { MdCandlestickChart } from "react-icons/md";
 import { MdOutlineShowChart } from "react-icons/md";
 import { IoIosArrowBack } from "react-icons/io";
 import Swal from 'sweetalert2'
+import MobileDropdown from '../MobileDropdown'
 const UserdashboardTraders = ({route}) => {
   const [loader, setLoader] = useState(false)
   const [showTrader, setShowTrader] = useState(false)
   const [activeTrader, setActiveTrader] = useState({})
+  const [showMobileDropdown,setShowMobileDropdown] = useState(false)
   const [search, setSearch] = useState("");
 
   const Toast = Swal.mixin({
@@ -134,7 +136,7 @@ const UserdashboardTraders = ({route}) => {
 );
 
   const copyTrade = async (trader) => {
-    console.log(trader)
+    setLoader(true)
 
     const req = await fetch(`${route}/api/copytrade`, {
       method: "POST",
@@ -151,11 +153,24 @@ const UserdashboardTraders = ({route}) => {
     if (res.status === 200) {
       Toast.fire({
       icon: 'success',
-      title: "Trader successfully added",
-    });
+      title: `${res.message}`,
+      });
+      setLoader(false)
+    }
+    else {
+      Toast.fire({
+      icon: 'error',
+      title: `${res.message}`,
+      });
+      setLoader(false)
     }
   }
 
+
+  const closeMobileMenu = () => {
+    setShowMobileDropdown(false)
+  }
+  
   return (
     <main className='homewrapper'>
          {
@@ -176,9 +191,11 @@ const UserdashboardTraders = ({route}) => {
                 <div className="user-p-icon-container">
                   <FaUserAlt/>
                 </div>
-                <div className="user-p-drop-icon">
+                <div className="user-p-drop-icon" onClick={() => { setShowMobileDropdown(!showMobileDropdown); }
+                }>
                   <FaAngleDown />
                 </div>
+                <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
               </div>
             </div>
         {
@@ -226,7 +243,7 @@ const UserdashboardTraders = ({route}) => {
                     </div>
                   </div>
                   <div className="trader-performance-btn-container">
-                    <button className='trader-card-btn'>copy trade</button>
+                    <button className='trader-card-btn' onClick={() =>copyTrade(activeTrader)}>copy trade</button>
                   </div>
                 </div>
               </div>

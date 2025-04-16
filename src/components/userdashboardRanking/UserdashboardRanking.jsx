@@ -6,10 +6,12 @@ import { FaUserAlt, FaAngleDown } from "react-icons/fa";
 import { IoMdNotifications } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 import './userdashboardranking.css'
+import MobileDropdown from '../MobileDropdown'
 
 const UserdashboardRanking = ({route}) => {
   const [userData, setUserData] = useState()
   const [loader, setLoader] = useState(false)
+  const [showMobileDropdown,setShowMobileDropdown] = useState(false)
   const navigate = useNavigate()
   
   useEffect(() => {
@@ -54,6 +56,9 @@ const UserdashboardRanking = ({route}) => {
       getData();
   }, [navigate, route]);
   
+  const closeMobileMenu = () => {
+    setShowMobileDropdown(false)
+  }
   return (
    <main className='homewrapper'>
          {
@@ -73,9 +78,11 @@ const UserdashboardRanking = ({route}) => {
                 <div className="user-p-icon-container">
                   <FaUserAlt/>
                 </div>
-                <div className="user-p-drop-icon">
-                  <FaAngleDown />
-                </div>
+                <div className="user-p-drop-icon" onClick={() => { setShowMobileDropdown(!showMobileDropdown); }
+                  }>
+                    <FaAngleDown />
+                  </div>
+                  <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
               </div>
             </div>
             <div className="current-rank-section">

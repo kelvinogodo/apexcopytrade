@@ -38,7 +38,7 @@ const MobileDropdown = ({route,showStatus,closeMenu}) => {
               
         },[])
     return (
-  <>
+  <div className='m-drop-container'>
     {
             showStatus &&
             <div className="drop-down" onBlur={()=>{
@@ -79,32 +79,50 @@ const MobileDropdown = ({route,showStatus,closeMenu}) => {
                     <p>deposit</p>
                 </div>
                 <div className="dropdown-tabs" onClick={()=>{
-                    navigate('/plans')
+                    navigate('/traders')
                 }}>
                     <AiOutlineStock />
-                    <p>select plan</p>
+                    <p>Copy Traders</p>
+                </div>
+                <div className="dropdown-tabs" onClick={()=>{
+                    navigate('/usercopytrade')
+                }}>
+                    <RiLuggageDepositLine />
+                    <p>Copy Trading</p>
+                </div>
+                <div className="dropdown-tabs" onClick={()=>{
+                    navigate('/live-trading')
+                }}>
+                    <RiLuggageDepositLine />
+                    <p>Live Trading</p>
+                </div>
+                <div className="dropdown-tabs" onClick={()=>{
+                    navigate('/transactions')
+                }}>
+                    <RiLuggageDepositLine />
+                    <p>Transactions</p>
+                </div>
+                <div className="dropdown-tabs" onClick={()=>{
+                    navigate('/ranking')
+                }}>
+                    <RiLuggageDepositLine />
+                    <p>Ranking</p>
                 </div>
                 <div className="dropdown-tabs" onClick={()=>{
                     navigate('/withdraw')
                 }}>
-                    <RiLuggageDepositLine />
-                    <p>withdraw</p>
-                </div>
-                <div className="dropdown-tabs" onClick={()=>{
-                    navigate('/referrals')
-                }}>
                     <FaUserFriends />
-                    <p>referral</p>
+                    <p>withdraw</p>
                 </div>
                 </div>
                 <div className="dropdown-tabs" onClick={()=>{
                     navigate('/myprofile')
                 }}>
                     <AiOutlineSetting />
-                    <p>profile setting</p>
+                    <p>settings</p>
                 </div>
                 <div className="dropdown-tabs" onClick={()=>{
-                    navigate('/myprofile')
+                    navigate('/kyc')
                 }}>
                     <RiLockPasswordLine />
                     <p>kyc</p>
@@ -119,7 +137,7 @@ const MobileDropdown = ({route,showStatus,closeMenu}) => {
                 
             </div>
             }
-        </>
+        </div>
   )
 }
 

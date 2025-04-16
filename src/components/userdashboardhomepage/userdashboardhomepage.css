@@ -95,7 +95,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 20px;
+    padding: 0px 5px ;
 }
 .close-notification-container{
     height: 80%;
@@ -413,8 +413,15 @@
 .user-p-drop-icon{
     display: none;
 }
+.user-p-icon-container{
+    align-self: flex-end;
+    margin-left: auto;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
 @media screen and (max-width: 990px) {
-   
+    
     .dashboardhomepage {
         width: 100%;
         position: relative;
@@ -423,12 +430,27 @@
         display: flex;
         cursor: pointer;
     }
+    .user-p-icon-container{
+        margin-left: 0px;
+    }
     .dashboardheaderwrapper{
         position: sticky;
         top: 0px;
         left: 0px;
         background-color: rgb(4, 2, 17);
         border-radius: 5px;
+    }
+    .notification-card {
+        height: 50px;
+        border: 1px dotted rgb(73, 103, 178);
+        padding: 0px 10px;
+    }
+    .close-notification-container{
+        border:1px dotted rgb(73, 103, 178) ;
+    }
+    .header-userprofile-container{
+        background-color: rgb(18, 18, 18);
+        justify-content: space-between;
     }
 }
 
@@ -473,5 +495,9 @@
     .referral-card1{
         width: 100%;
         margin: 15px 0px;
+    }
+    .dashboardheaderwrapper {
+        justify-content: space-between;
+        padding: 30px 0px;
     }
 }

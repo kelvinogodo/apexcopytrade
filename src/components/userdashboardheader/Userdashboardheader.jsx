@@ -7,17 +7,11 @@ import { FiAward } from "react-icons/fi";
 import { GrTransaction } from "react-icons/gr";
 import { MdAddchart } from "react-icons/md";
 import { AiOutlineSafety } from "react-icons/ai";
-import {RiLuggageDepositLine} from 'react-icons/ri'
-import {AiOutlineSetting,AiOutlineStock} from 'react-icons/ai'
-import {RiLockPasswordLine} from 'react-icons/ri'
+import {AiOutlineSetting} from 'react-icons/ai'
 import {FiLogOut} from 'react-icons/fi'
-import {AiOutlineClose} from 'react-icons/ai'
-import {GiReceiveMoney} from 'react-icons/gi'
-import {RxDashboard} from 'react-icons/rx'
-import {FaUserFriends,FaRegChartBar} from 'react-icons/fa'
+import {FaRegChartBar} from 'react-icons/fa'
 const Userdashboardheader = ({route}) => {
     const navigate = useNavigate()
-    const [dropDown,setDropDown] = useState(false)
     const [userData, setUserData] = useState()
 
     const logout = ()=>{

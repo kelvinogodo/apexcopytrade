@@ -280,7 +280,17 @@
     width: 85%;
 }
 @media screen and (max-width: 990px) {
-
+    .trader-profile-page{
+        width: 100%;
+        padding: 10px;
+    }
+    .trader-profile-container{
+        width: 100%;
+        margin: 0px;
+    }
+    .trader-profile-card{
+        width: 100%;
+    }
 
 }
 
@@ -292,6 +302,7 @@
         width: 100%;
         height: 100%;
         background-color: rgba(2, 12, 31, 0.7);
+        z-index: 1;
     }
     .traders-showcase{
         height: auto;

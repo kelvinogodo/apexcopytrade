@@ -213,8 +213,15 @@
         display: none;
         overflow: hidden;
     }
+    
 }
 @media screen and (max-width: 767px){
+    .m-drop-container{
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
     .userdashboard-sidebar{
         display: none;
         overflow: hidden;
@@ -227,6 +234,10 @@
         width: 90%;
         overflow: auto;
         height: 100vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 20;
     }
     .userdashboard-logo-container{
         width: 60%;

@@ -7,11 +7,12 @@ import './userdashboardkyc.css';
 import { FaUserAlt, FaAngleDown } from "react-icons/fa";
 import { IoMdNotifications } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
-
+import MobileDropdown from '../MobileDropdown'
 
 const UserdashboardKyc = ({route}) => {
   const [userData, setUserData] = useState()
   const [loader, setLoader] = useState(false)
+  const [showMobileDropdown,setShowMobileDropdown] = useState(false)
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
     firstName: '',
@@ -118,7 +119,11 @@ const UserdashboardKyc = ({route}) => {
     };
   
     getData();
-     }, [navigate, route]);
+  }, [navigate, route]);
+  
+  const closeMobileMenu = () => {
+    setShowMobileDropdown(false)
+  }
   return (
     <main className='homewrapper'>
          {
@@ -139,9 +144,11 @@ const UserdashboardKyc = ({route}) => {
                         <div className="user-p-icon-container">
                           <FaUserAlt/>
                         </div>
-                        <div className="user-p-drop-icon">
-                          <FaAngleDown />
-                        </div>
+                        <div className="user-p-drop-icon" onClick={() => { setShowMobileDropdown(!showMobileDropdown); }
+                          }>
+                            <FaAngleDown />
+                          </div>
+                          <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
                       </div>
         </div>
         <form className="kyc-form" onSubmit={handleSubmit}>
