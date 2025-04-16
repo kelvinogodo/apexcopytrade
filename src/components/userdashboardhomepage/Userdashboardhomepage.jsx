@@ -14,6 +14,7 @@ import TeslaWidget from '../TeslaWidget'
 import {MdOutlineDone} from 'react-icons/md'
 import {MdOutlineContentCopy} from 'react-icons/md'
 import { FiLink } from 'react-icons/fi'
+import MobileDropdown from '../MobileDropdown';
 
 const Userdashboardhomepage = ({route}) => {
     const navigate = useNavigate()
@@ -21,6 +22,7 @@ const Userdashboardhomepage = ({route}) => {
     const [userData, setUserData] = useState()
   const [loader, setLoader] = useState(false)
   const [showNotification, setShowNotification] = useState(true)
+  const [showMobileDropdown,setShowMobileDropdown] = useState(false)
     const copy = ()=>{
         navigator.clipboard.writeText(clipRef.current.value)
     }
@@ -88,9 +90,10 @@ const Userdashboardhomepage = ({route}) => {
             <div className="user-p-icon-container">
               <FaUserAlt/>
             </div>
-            <div className="user-p-drop-icon">
+            <div className="user-p-drop-icon" onClick={()=>{setShowMobileDropdown(!showMobileDropdown)}}>
               <FaAngleDown />
             </div>
+            <MobileDropdown showStatus={showMobileDropdown} route={ route} />
           </div>
         </div>
         {

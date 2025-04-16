@@ -410,12 +410,26 @@
 .small-card {
     padding: 5px;
 }
+.user-p-drop-icon{
+    display: none;
+}
 @media screen and (max-width: 990px) {
    
     .dashboardhomepage {
-            width: 100%;
-        }
-    
+        width: 100%;
+        position: relative;
+    }
+    .user-p-drop-icon{
+        display: flex;
+        cursor: pointer;
+    }
+    .dashboardheaderwrapper{
+        position: sticky;
+        top: 0px;
+        left: 0px;
+        background-color: rgb(4, 2, 17);
+        border-radius: 5px;
+    }
 }
 
 @media screen and (max-width: 767px) {
