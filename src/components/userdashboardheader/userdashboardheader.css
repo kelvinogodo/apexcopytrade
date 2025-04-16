@@ -44,6 +44,10 @@
     width: 80%;
     font-size: .9rem;
 }
+.dashboard-links p{
+    text-align: left;
+    width: 80%;
+}
 .dashboard-links:hover{
     background-color: rgb(19, 30, 49);
 }

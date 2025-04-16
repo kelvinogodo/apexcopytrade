@@ -1,5 +1,5 @@
 .admin-dash{
-    min-height: 100vh;
+    min-height: auto;
 }
 .credit-form-container{
     width: 85%;
@@ -9,6 +9,14 @@
     align-items: center;
     justify-content: space-between;
     margin: 40px auto
+}
+.admin-page-header{
+    height: auto;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 .admin-page-header h3{
     color: var(--mild-color);

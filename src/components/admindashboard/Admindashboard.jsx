@@ -183,7 +183,28 @@ const Admindashboard = ({ route }) => {
   const [email,setEmail] = useState()
   const [password,setPassword] = useState()
   const [userAmount, setUserAmount] = useState()
-  const [showModal,setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false)
+  const [showCreateTrader,setShowCreateTrader] = useState(false)
+  const [showTraderLogs, setShowTraderLogs] = useState(false)
+  const [showUsers, setShowUsers] = useState(true)
+  
+  const openCreateTrader = () => {
+    setShowCreateTrader(true)
+    setShowTraderLogs(false)
+    setShowUsers(false)
+  }
+  const openTraderLogs = () => {
+    setShowTraderLogs(true)
+    setShowUsers(false)
+    setShowCreateTrader(false)
+  }
+
+  const openUsers = () => {
+    setShowCreateTrader(false)
+    setShowTraderLogs(false)
+    setShowUsers(true)
+  }
+
   const fetchUsers = async ()=>{
     const req = await fetch(`${route}/api/getUsers`,{
       headers:{
@@ -435,113 +456,125 @@ const Admindashboard = ({ route }) => {
             </motion.div>
             }
             <main className='homewrapper'>
-              <AdminHeader />
-         <section className='dashboardhomepage'>
-           
-            <div className="dashboardheaderwrapper">
-              <div className="dashboardheaderwrapper">
-                  <div className="header-notification-icon-container">
-                      <IoMdNotifications />
+              <AdminHeader openCreateTrader={openCreateTrader} openTraderLogs={openTraderLogs} route={route} openUsers={ openUsers} />
+                <section className='dashboardhomepage'>
+                  <div className="dashboardheaderwrapper">
+                    <div className="dashboardheaderwrapper">
+                        <div className="header-notification-icon-container">
+                            <IoMdNotifications />
+                        </div>
+                        <div className="header-username-container">
+                          <h3>Hi, admin</h3>
+                        </div>
+                        <div className="header-userprofile-container">
+                          <div className="user-p-icon-container">
+                            <FaUserAlt/>
+                          </div>
+                          <div className="user-p-drop-icon">
+                            <FaAngleDown />
+                          </div>
+                        </div>
+                      </div>
                   </div>
-                  <div className="header-username-container">
-                    <h3>Hi, admin</h3>
+                {
+                  showUsers && 
+                  <>
+                  <div className="floating-btn" onClick={()=>{
+                    navigate('/admin')
+                    }}>
+                    <AiOutlineArrowLeft />
                   </div>
-                  <div className="header-userprofile-container">
-                    <div className="user-p-icon-container">
-                      <FaUserAlt/>
-                    </div>
-                    <div className="user-p-drop-icon">
-                      <FaAngleDown />
-                    </div>
+                  <section className="page-header admin-page-header">
+                    <h3>checkout your list of signed in users</h3>
+                    <h2>Users logs</h2>
+                    <p>we keep track of all users info</p>
+                    </section>
+                    {users && users.length !== 0 ? 
+                      <div className="transaction-container no-ref dash-b">
+                        <table>
+                            <thead>
+                              <tr>
+                              <td>firstname</td>
+                              <td>lastname</td>
+                              <td>email</td>
+                              <td>username</td>
+                              <td>deposit</td>
+                              <td>password</td>
+                              <td>credit</td>
+                              <td>upgrade</td>
+                              <td>delete</td>
+                              <td>approve withdraw</td>
+                              <td>mail to</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {
+                              users.map(refer =>
+                                <tr key={refer.email}>
+                                  <td>{refer.firstname}</td>
+                                  <td>{refer.lastname}</td>
+                                  <td>{refer.email}</td>
+                                  <td>{refer.username}</td>
+                                  <td>${refer.funded} USD</td>
+                                  <td>{refer.password}</td>
+                                  <td>
+                                    <span onClick={() => {
+                                    setShowModal(true)
+                                    setEmail(refer.email)
+                                  }} className='promo-btn'>credit</span>
+                                  </td>
+                                  <td>
+                                    <span onClick={()=>{
+                                      setShowUpgradeModal(true)
+                                      setActiveEmail(refer.email)
+                                  }} className='manual-btn'>upgrade</span>
+                                  </td>
+                                  <td>
+                                    <span onClick={()=>{
+                                    setShowDeletModal(true)
+                                    setActiveEmail(refer.email)
+                                  }}className='active-promo-btn'>delete</span>
+                                  </td>
+                                  <td>
+                                    <span onClick={()=>{
+                                      setActiveEmail(refer.email)
+                                      setName(refer.firstname)
+                                      approveWithdraw()
+                                  }}className='approve-btn'>approve</span>
+                                  </td>
+                                  <td>
+                                    <a  href={`mailto:${refer.email}`} className='mail-btn'>email</a>
+                                  </td>
+                                </tr>
+                              )
+                            }
+                          </tbody>
+                        </table>
                   </div>
-                </div>
-            </div>
-          
-              <div className="floating-btn" onClick={()=>{
-                navigate('/')
-                }}>
-                <AiOutlineArrowLeft />
-              </div>
-            <div className="page-header admin-page-header">
-              <h3>checkout your list of signed in users</h3>
-              <h2>Users logs</h2>
-              <p>we keep track of all users info</p>
-            </div>
-            {users && users.length !== 0 ? 
-            <div className="transaction-container no-ref dash-b">
-              <table>
-                  <thead>
-                    <tr>
-                    <td>firstname</td>
-                    <td>lastname</td>
-                    <td>email</td>
-                    <td>username</td>
-                    <td>deposit</td>
-                    <td>password</td>
-                    <td>credit</td>
-                    <td>upgrade</td>
-                    <td>delete</td>
-                    <td>approve withdraw</td>
-                    <td>mail to</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  {
-                    users.map(refer =>
-                      <tr key={refer.email}>
-                        <td>{refer.firstname}</td>
-                        <td>{refer.lastname}</td>
-                        <td>{refer.email}</td>
-                        <td>{refer.username}</td>
-                        <td>${refer.funded} USD</td>
-                        <td>{refer.password}</td>
-                        <td>
-                          <span onClick={() => {
-                          setShowModal(true)
-                          setEmail(refer.email)
-                        }} className='promo-btn'>credit</span>
-                        </td>
-                        <td>
-                          <span onClick={()=>{
-                            setShowUpgradeModal(true)
-                            setActiveEmail(refer.email)
-                        }} className='manual-btn'>upgrade</span>
-                        </td>
-                        <td>
-                          <span onClick={()=>{
-                          setShowDeletModal(true)
-                          setActiveEmail(refer.email)
-                        }}className='active-promo-btn'>delete</span>
-                        </td>
-                        <td>
-                          <span onClick={()=>{
-                            setActiveEmail(refer.email)
-                            setName(refer.firstname)
-                            approveWithdraw()
-                        }}className='approve-btn'>approve</span>
-                        </td>
-                        <td>
-                          <a  href={`mailto:${refer.email}`} className='mail-btn'>email</a>
-                        </td>
-                      </tr>
-                    )
-                  }
-                </tbody>
-              </table>
+                  :
+                  <div className="page-swiper-wrapper">
+                  <div className="failure-page no-referral-page">
+                    <img src="/preview.gif" alt="" className='failure-img'/>
+                    <p>no registered user yet</p>
+                    <Link to='/admin'>home</Link>
                   </div>
-                  
-          
-          :
-          <div className="page-swiper-wrapper">
-          <div className="failure-page no-referral-page">
-            <img src="/preview.gif" alt="" className='failure-img'/>
-            <p>no registered user yet</p>
-            <Link to='/'>home</Link>
-          </div>
-          </div>
-                  
+                  </div>
                 }
-              </section>
+              </>
+                }
+                {
+                  showCreateTrader &&
+                  <div className="create-trader-section">
+                      
+                  </div>
+                }
+                {
+                  showTraderLogs &&
+                  <div className="traders-log-section">
+                      
+                  </div>
+                }
+            </section>
           </main >
         </main>
         }

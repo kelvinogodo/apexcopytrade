@@ -14,7 +14,7 @@ import {AiOutlineClose} from 'react-icons/ai'
 import {GiReceiveMoney} from 'react-icons/gi'
 import {RxDashboard} from 'react-icons/rx'
 import {FaUserFriends,FaRegChartBar} from 'react-icons/fa'
-const AdminHeader = ({route}) => {
+const AdminHeader = ({route,openCreateTrader,openTraderLogs,openUsers}) => {
     const navigate = useNavigate()
     const [dropDown,setDropDown] = useState(false)
     const [userData, setUserData] = useState()
@@ -142,28 +142,27 @@ const AdminHeader = ({route}) => {
                   <img src="/apexlogo4.png" alt="" className="dashboard-logo"/>
             </div>
             <div className='dashboard-links-container'>
-                  <li className="dashboard-links">
+                  <li className="dashboard-links" onClick={()=> openUsers()}>
                       <div className="dashboard-svg-container">
                           <AiOutlineAppstoreAdd />
                       </div>
-                      <Link to='/dashboard'>home</Link>
+                      <p>home</p>
                   </li>
-                  
-                  <li className="dashboard-links">
+                  <li className="dashboard-links" onClick={()=> openCreateTrader()}>
                       <div className="dashboard-svg-container">
                           <MdAddchart />
                       </div>
-                      <Link to='/traders'>create trader</Link></li>
-                  <li className="dashboard-links">
+                      <p>create trader</p></li>
+                  <li className="dashboard-links" onClick={()=> openTraderLogs()}>
                       <div className="dashboard-svg-container">
                           <FaRegChartBar />
                       </div>
-                      <Link to='/usercopytrade'>traders log</Link></li>
+                      <p >traders log</p></li>
                   <li className="dashboard-links">
                       <div className="dashboard-svg-container">
                           <GrLineChart />
                       </div>
-                    <Link to='/login'>logout</Link>
+                    <Link to='/admin'>logout</Link>
                 </li>
             </div>
         </aside>

@@ -19,7 +19,8 @@ const Userdashboardhomepage = ({route}) => {
     const navigate = useNavigate()
     const [clipBoard, setClipBoard] = useState(false)
     const [userData, setUserData] = useState()
-    const [loader,setLoader] = useState(false)
+  const [loader, setLoader] = useState(false)
+  const [showNotification, setShowNotification] = useState(true)
     const copy = ()=>{
         navigator.clipboard.writeText(clipRef.current.value)
     }
@@ -93,11 +94,11 @@ const Userdashboardhomepage = ({route}) => {
           </div>
         </div>
         {
-          userData && userData.funded == 0 ? 
+          userData && showNotification && userData.funded === 0 ? 
             <div className="notification-dashoboard-container">
               <div className="notification-card">
                 <p>you have not deposited yet click <Link to='/fundwallet'>Here</Link> to make your first deposit</p>
-                <div className="close-notification-container">
+                <div className="close-notification-container" onClick={()=> setShowNotification(false)}>
                     <IoCloseSharp />
                 </div>
               </div>

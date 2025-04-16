@@ -124,7 +124,7 @@ const UserdashboardCopytrade = ({route}) => {
                       :
                         <div className="empty-page">
                           <img src="/preview.gif" alt="" className='empty-img'/>
-                          <p>you have not performed any transaction yet</p> 
+                          <p>Your Trader has not placed any trades yet. Trades taken by your trader would be displayed here when available.</p> 
                           <Link to='/fundwallet'>deposit</Link>
                         </div>
                   }
