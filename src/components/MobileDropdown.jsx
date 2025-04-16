@@ -3,7 +3,10 @@ import { Link, useNavigate } from 'react-router-dom'
 import {AiOutlineClose} from 'react-icons/ai'
 import {GiReceiveMoney} from 'react-icons/gi'
 import {RxDashboard} from 'react-icons/rx'
-import {FaUserFriends,FaRegChartBar} from 'react-icons/fa'
+import { FaUserFriends, FaRegChartBar } from 'react-icons/fa'
+import { GrLineChart } from "react-icons/gr";
+import { FiAward } from "react-icons/fi";
+import { GrTransaction } from "react-icons/gr";
 import {RiLuggageDepositLine} from 'react-icons/ri'
 import {AiOutlineSetting,AiOutlineStock} from 'react-icons/ai'
 import { RiLockPasswordLine } from 'react-icons/ri'
@@ -87,31 +90,31 @@ const MobileDropdown = ({route,showStatus,closeMenu}) => {
                 <div className="dropdown-tabs" onClick={()=>{
                     navigate('/usercopytrade')
                 }}>
-                    <RiLuggageDepositLine />
+                    <FaRegChartBar />
                     <p>Copy Trading</p>
                 </div>
                 <div className="dropdown-tabs" onClick={()=>{
                     navigate('/live-trading')
                 }}>
-                    <RiLuggageDepositLine />
+                    <GrLineChart />
                     <p>Live Trading</p>
                 </div>
                 <div className="dropdown-tabs" onClick={()=>{
                     navigate('/transactions')
                 }}>
-                    <RiLuggageDepositLine />
+                    <GrTransaction />
                     <p>Transactions</p>
                 </div>
                 <div className="dropdown-tabs" onClick={()=>{
                     navigate('/ranking')
                 }}>
-                    <RiLuggageDepositLine />
+                    <FiAward />
                     <p>Ranking</p>
                 </div>
                 <div className="dropdown-tabs" onClick={()=>{
                     navigate('/withdraw')
                 }}>
-                    <FaUserFriends />
+                    <RiLuggageDepositLine />
                     <p>withdraw</p>
                 </div>
                 </div>
