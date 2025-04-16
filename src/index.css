@@ -1092,13 +1092,18 @@ background: #A7CFDF;
   .crypto-chart-container {
     padding: 0px;
   }
+  .signup-page{
+    height: 100vh;
+  }
 }
 
 @media screen and (max-width: 767px) {
   .home-price-chart-section {
     width: 100%;
   }
-
+  .signup-page{
+    height: 100vh;
+  }
   .crypto-chart-container {
     padding: 0px 0px;
   }
