@@ -441,12 +441,16 @@
         border-radius: 5px;
     }
     .notification-card {
-        height: 50px;
-        border: 1px dotted rgb(73, 103, 178);
-        padding: 0px 10px;
+        border: 2px dotted rgb(73, 103, 178);
+        padding: 10px 10px;
+    }
+    .notification-card p{
+        padding: 15px 10px ;
     }
     .close-notification-container{
-        border:1px dotted rgb(73, 103, 178) ;
+        height: 40px;
+        border:1.5px dotted rgb(73, 103, 178) ;
+        margin: 10px 0px;
     }
     .header-userprofile-container{
         background-color: rgb(18, 18, 18);
@@ -460,6 +464,7 @@
     }
     .notification-card p{
         font-size: .8rem;
+        text-align: left;
     }
     .close-notification-container{
         font-size: 1rem;
@@ -467,6 +472,9 @@
     }
     .upper-overview-card{
         flex-direction: column;
+    }
+    .rank-container{
+        display: none;
     }
     .total-balance-container{
         width: 100%;
@@ -488,13 +496,15 @@
     }
     .referral-section{
         flex-direction: column;
+        padding: 0px;
     }
     .referraltext-wrapper{
         width: 100%;
     }
     .referral-card1{
-        width: 100%;
+        width: 98%;
         margin: 15px 0px;
+        height: auto;
     }
     .dashboardheaderwrapper {
         justify-content: space-between;
