@@ -412,9 +412,9 @@
 }
 @media screen and (max-width: 990px) {
    
-    .dashboardhomepagewrapper {
-        width: 100%;
-    }
+    .dashboardhomepage {
+            width: 100%;
+        }
     
 }
 
