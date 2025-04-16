@@ -118,7 +118,7 @@ const MobileDropdown = ({route,showStatus,closeMenu}) => {
                 </div>
                 </div>
                 <div className="dropdown-tabs" onClick={()=>{
-                    navigate('/myprofile')
+                    navigate('/settings')
                 }}>
                     <AiOutlineSetting />
                     <p>settings</p>

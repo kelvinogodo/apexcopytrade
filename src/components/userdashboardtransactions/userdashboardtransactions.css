@@ -36,3 +36,11 @@
     overflow-x: scroll;
     width: 100%;
 }
+@media screen and (max-width: 990px) {
+    .no-ref{
+        width: 100%;
+    }
+    .empty-page{
+        width: 100%;
+    }
+}

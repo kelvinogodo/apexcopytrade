@@ -7,6 +7,7 @@ import { RxUpload } from 'react-icons/rx';
 import Swal from 'sweetalert2';
 import { IoMdNotifications } from "react-icons/io";
 import { FaUserAlt, FaAngleDown } from "react-icons/fa";
+import MobileDropdown from '../MobileDropdown';
 
 const Profile = ({ route }) => {
   const [firstname, setFirstname] = useState('');
@@ -18,6 +19,7 @@ const Profile = ({ route }) => {
   const [address, setAddress] = useState('');
   const [userData, setUserData] = useState(null);
   const [showImage, setShowImage] = useState();
+  const [showMobileDropdown,setShowMobileDropdown] = useState(false)
 
   const navigate = useNavigate();
   
@@ -99,6 +101,10 @@ const Profile = ({ route }) => {
     }
   };
 
+  const closeMobileMenu = () => {
+    setShowMobileDropdown(false)
+  }
+
   return (
     <div className='homewrapper'>
       <Userdashboardheader route={route} />
@@ -115,9 +121,11 @@ const Profile = ({ route }) => {
               <div className="user-p-icon-container">
                 <FaUserAlt/>
               </div>
-              <div className="user-p-drop-icon">
-                <FaAngleDown />
-              </div>
+              <div className="user-p-drop-icon" onClick={() => { setShowMobileDropdown(!showMobileDropdown); }
+                }>
+                  <FaAngleDown />
+                </div>
+                <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
             </div>
           </div>
         </div>

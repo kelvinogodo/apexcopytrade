@@ -5,12 +5,14 @@ import Userdashboardheader from '../userdashboardheader/Userdashboardheader'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { IoMdNotifications } from "react-icons/io";
 import { FaUserAlt, FaAngleDown } from "react-icons/fa";
+import MobileDropdown from '../MobileDropdown'
 import './userdashboardtransactions.css'
 const Userdashboardtransactions = ({route}) => {
 
   const navigate = useNavigate()
   const [userData, setUserData] = useState()
-  const [loader,setLoader] = useState(false)
+  const [loader, setLoader] = useState(false)
+  const [showMobileDropdown,setShowMobileDropdown] = useState(false)
 
   useEffect(()=>{
     setLoader(true)
@@ -35,7 +37,10 @@ const Userdashboardtransactions = ({route}) => {
     }
   }, [])
   
-
+  const closeMobileMenu = () => {
+    setShowMobileDropdown(false)
+    
+  }
 
   return (
     <div className='homewrapper'>
@@ -72,8 +77,9 @@ const Userdashboardtransactions = ({route}) => {
                     <FaUserAlt/>
                   </div>
                   <div className="user-p-drop-icon">
-                    <FaAngleDown />
-                  </div>
+                  <FaAngleDown />
+                </div>
+                  <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
                 </div>
               </div>
           </div>
