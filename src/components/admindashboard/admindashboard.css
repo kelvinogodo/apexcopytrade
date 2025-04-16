@@ -350,5 +350,19 @@ tbody{
 }
 .admin-trader-card{
     width: 100%;
-    /* background-color: red; */
+    position: relative;
+}
+.admin-trader-card-delete-btn-container{
+    position: absolute;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    top: 20px;
+    right: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+    font-size: 2rem;
+    cursor: pointer;
 }

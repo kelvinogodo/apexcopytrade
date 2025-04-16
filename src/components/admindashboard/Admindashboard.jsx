@@ -15,7 +15,7 @@ import Userdashboardheader from '../userdashboardheader/Userdashboardheader'
 import {MdClose} from 'react-icons/md'
 import AdminHeader from '../AdminHeader'
 import { RxUpload } from 'react-icons/rx'
-import { MdCandlestickChart,MdOutlineShowChart } from 'react-icons/md'
+import { MdCandlestickChart,MdOutlineShowChart,MdDeleteSweep } from 'react-icons/md'
 import {BsImage} from'react-icons/bs'
 const Admindashboard = ({ route }) => {
   
@@ -192,7 +192,8 @@ const Admindashboard = ({ route }) => {
   const [showTraderLogs, setShowTraderLogs] = useState(false)
   const [showUsers, setShowUsers] = useState(true)
   const [showImage, setShowImage] = useState();
-  const [traders,setTraders] = useState([])
+  const [traders, setTraders] = useState([])
+  const [activeTrader, setActiveTrader] = useState()
   
   const openCreateTrader = () => {
     setShowCreateTrader(true)
@@ -298,6 +299,32 @@ const Admindashboard = ({ route }) => {
         title: `you have successfully deleted this user`
       })
       fetchUsers()
+    }else{
+      Toast.fire({
+        icon: 'error',
+        title: `something went wrong`
+      })
+    }
+  }
+
+  const deleteTrader = async(id)=>{
+    const req = await fetch(`${route}/api/deleteTrader`,{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({
+        id:id,
+      })
+    })
+    const res = await req.json()
+    if (res.status === 200) {
+      setShowDeletModal(false)
+      Toast.fire({
+        icon: 'success',
+        title: `you have successfully deleted this trader`
+      })
+      fetchTraders()
     }else{
       Toast.fire({
         icon: 'error',
@@ -767,6 +794,9 @@ const Admindashboard = ({ route }) => {
                         {
                           traders.map(trader => 
                             <div className="traders-card active-trader-card admin-trader-card" key={trader._id}>
+                              <div className="admin-trader-card-delete-btn-container" onClick={()=>{ deleteTrader(trader._id)}}>
+                                <MdDeleteSweep />
+                              </div>
                             <div className="trader-card-header">
                               <div className="trader-card-image-container">
                               <img src={`${trader.traderImage}`} alt="" className='trader-card-image' />
@@ -785,7 +815,10 @@ const Admindashboard = ({ route }) => {
                                 <div className="trader-performance-item">
                                   <p className="performance-label">Average Return</p>
                                   <p className="performance-value"><MdOutlineShowChart /> {trader.averagereturn}</p>
-                                </div>
+                                  </div>
+                                  <div className="trader-performance-btn-container">
+                                    <button className='trader-card-btn' >update Trader's log</button>
+                                  </div>
                               </div>
                               </div>
                             </div>
