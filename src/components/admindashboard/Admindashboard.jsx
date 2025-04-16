@@ -1,6 +1,7 @@
 import React from 'react'
 import './admindashboard.css'
 import Swal from 'sweetalert2'
+import axios from "axios";
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { BsEye,BsEyeSlash } from 'react-icons/bs'
@@ -13,6 +14,9 @@ import { FaUserAlt, FaAngleDown } from "react-icons/fa";
 import Userdashboardheader from '../userdashboardheader/Userdashboardheader'
 import {MdClose} from 'react-icons/md'
 import AdminHeader from '../AdminHeader'
+import { RxUpload } from 'react-icons/rx'
+import { MdCandlestickChart,MdOutlineShowChart } from 'react-icons/md'
+import {BsImage} from'react-icons/bs'
 const Admindashboard = ({ route }) => {
   
    // sweet alert function 
@@ -187,6 +191,8 @@ const Admindashboard = ({ route }) => {
   const [showCreateTrader,setShowCreateTrader] = useState(false)
   const [showTraderLogs, setShowTraderLogs] = useState(false)
   const [showUsers, setShowUsers] = useState(true)
+  const [showImage, setShowImage] = useState();
+  const [traders,setTraders] = useState([])
   
   const openCreateTrader = () => {
     setShowCreateTrader(true)
@@ -204,6 +210,22 @@ const Admindashboard = ({ route }) => {
     setShowTraderLogs(false)
     setShowUsers(true)
   }
+  const fetchTraders = async () => {
+    const req = await fetch(`${route}/api/fetchTraders`,{
+      headers:{
+        'Content-Type':'application/json'
+      }
+    })
+    const res = await req.json()
+    setLoader(false)
+    if(res.status === 200){
+      setTraders(res.traders)
+      console.log(res.traders)
+    }
+    else{
+      setTraders([])
+    }
+  }
 
   const fetchUsers = async ()=>{
     const req = await fetch(`${route}/api/getUsers`,{
@@ -212,6 +234,7 @@ const Admindashboard = ({ route }) => {
       }
     })
     const res = await req.json()
+    
     setLoader(false)
     if(res){
       setUsers(res)
@@ -223,7 +246,8 @@ const Admindashboard = ({ route }) => {
   
   useEffect(()=>{
     setLoader(true)  
-      fetchUsers()
+    fetchUsers()
+    fetchTraders()
   },[])
 
   const upgradeUser = async () => {
@@ -302,6 +326,80 @@ const Admindashboard = ({ route }) => {
         setShowDasboard(true)
       }
   }
+
+
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    winRate: "",
+    averageReturn: "",
+    followers: "",
+    riskRewardRatio: "",
+    nationality: "",
+    minimumCapital: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoader(true)
+    
+    const FormData = {
+      ...formData, traderImage: showImage
+    }
+    try {
+      const response = await axios.post(`${route}/api/createTrader`, FormData);
+
+      console.log("Trader created:", response.data);
+      
+      // Optionally reset form
+      setFormData({
+        firstname: "",
+        lastname: "",
+        winRate: "",
+        averageReturn: "",
+        followers: "",
+        riskRewardRatio: "",
+        nationality: "",
+        minimumCapital: "",
+      });
+      setLoader(false)
+      Toast.fire({
+        icon: 'success',
+        title: `Trader successfully created!`
+      })
+    } catch (error) {
+      // console.error("Error creating trader:", error);
+      setLoader(false)
+      Toast.fire({
+        icon: 'error',
+        title: `Error creating trader:, ${error}`
+      })
+    }
+  };
+
+  const uploadProof = async (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', 'upload');
+    
+    const req = await fetch('https://api.cloudinary.com/v1_1/duesyx3zu/image/upload', {
+      method: 'POST',
+      body: formData,
+    });
+    const res = await req.json();
+    if (res) {
+      setShowImage(res.secure_url);
+    }
+  };
+
   return (
     <main className='login-page admin-dash'>
       {
@@ -565,15 +663,138 @@ const Admindashboard = ({ route }) => {
                 {
                   showCreateTrader &&
                   <div className="create-trader-section">
-                      
+                      <form className="create-trader-form" onSubmit={handleSubmit}>
+                        <div className="profile-picture-upload-container">
+                          <div className="profile-circle">
+                            {showImage ? <img src={showImage} alt="" className='profile-circle-img' /> : <BsImage />}
+                          </div>
+                          <label htmlFor="file-input" className='upload-icon'>
+                            <RxUpload />
+                            <input type="file" accept=".jpg, .png, .svg, .webp, .jpeg" id="file-input" className='proof-input' required onChange={(e) => uploadProof(e.target.files[0])} />
+                          </label>
+                        </div>
+                      <div className="inputForm">
+                        
+                        <input
+                          type="text"
+                          name="firstname"
+                          className="create-trader-input"
+                          placeholder="Enter Trader's First Name"
+                          value={formData.firstname}
+                          onChange={handleChange}
+                        />
+                      </div>
+
+                      <div className="inputForm">
+                        <input
+                          type="text"
+                          name="lastname"
+                          className="create-trader-input"
+                          placeholder="Enter Trader's Second Name"
+                          value={formData.lastname}
+                          onChange={handleChange}
+                        />
+                      </div>
+
+                      <div className="inputForm">
+                        <input
+                          type="text"
+                          name="winRate"
+                          className="create-trader-input"
+                          placeholder="Enter Trader's Win Rate"
+                          value={formData.winRate}
+                          onChange={handleChange}
+                        />
+                      </div>
+
+                      <div className="inputForm">
+                        <input
+                          type="text"
+                          name="avgReturn"
+                          className="create-trader-input"
+                          placeholder="Enter Trader's Average Return"
+                          value={formData.avgReturn}
+                          onChange={handleChange}
+                        />
+                      </div>
+
+                      <div className="inputForm">
+                        <input
+                          type="text"
+                          name="followers"
+                          className="create-trader-input"
+                          placeholder="Enter Number Of Followers"
+                          value={formData.followers}
+                          onChange={handleChange}
+                        />
+                      </div>
+
+                      <div className="inputForm">
+                        <input
+                          type="text"
+                          name="rrRatio"
+                          className="create-trader-input"
+                          placeholder="Enter Trader's Risk Reward Ratio"
+                          value={formData.rrRatio}
+                          onChange={handleChange}
+                        />
+                      </div>
+
+                      <div className="inputForm">
+                        <input
+                          type="text"
+                          name="nationality"
+                          className="create-trader-input"
+                          placeholder="Enter Trader's Nationality"
+                          value={formData.nationality}
+                          onChange={handleChange}
+                        />
+                      </div>
+
+                      <button type="submit" className="submit-btn">
+                        Add Trader
+                      </button>
+                    </form>
                   </div>
                 }
                 {
-                  showTraderLogs &&
+                  showTraderLogs && traders &&
                   <div className="traders-log-section">
-                      
+                    <div className="active-trader-container">
+                      <div className="videoframe-text-container treader-header">
+                      <h1>all <span className="highlight">traders</span></h1>
+                    </div>
+                        {
+                          traders.map(trader => 
+                            <div className="traders-card active-trader-card admin-trader-card" key={trader._id}>
+                            <div className="trader-card-header">
+                              <div className="trader-card-image-container">
+                              <img src={`${trader.traderImage}`} alt="" className='trader-card-image' />
+                              </div>
+                              <div className="trader-card-text-container">
+                                <h3 className="trader-name">{trader.firstname}</h3>
+                                <p className="trader-description">{trader.lastname}</p>
+                              </div>
+                            </div>
+                            <div className="trader-perfomance-container">
+                              <div className="trader-performance">
+                                <div className="trader-performance-item">
+                                  <p className="performance-label">Win Rate</p>
+                                  <p className="performance-value"><MdCandlestickChart /> {trader.profitrate}</p>
+                                </div>
+                                <div className="trader-performance-item">
+                                  <p className="performance-label">Average Return</p>
+                                  <p className="performance-value"><MdOutlineShowChart /> {trader.averagereturn}</p>
+                                </div>
+                              </div>
+                              </div>
+                            </div>
+                           )
+                        }
+                      </div>
                   </div>
                 }
+                
             </section>
           </main >
         </main>
