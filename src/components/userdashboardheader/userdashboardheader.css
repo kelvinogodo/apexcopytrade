@@ -211,8 +211,9 @@
     }
 }
 @media screen and (max-width: 767px){
-    .user-header-nav{
+    .userdashboard-sidebar{
         display: none;
+        overflow: hidden;
     }
     .mobile-tabs{
         width: 100%;

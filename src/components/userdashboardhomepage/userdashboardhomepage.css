@@ -410,16 +410,50 @@
 .small-card {
     padding: 5px;
 }
-@media (max-width: 990px) and (min-width: 768px) {
+@media screen and (max-width: 990px) {
    
     .dashboardhomepagewrapper {
-        width: 90%;
+        width: 100%;
     }
+    
 }
 
 @media screen and (max-width: 767px) {
-    .dashboardhomepagewrapper {
-        width: 95%;
+    .dashboardhomepage {
+        width: 100%;
     }
-
+    .notification-card p{
+        font-size: .8rem;
+    }
+    .close-notification-container{
+        font-size: 1rem;
+        border-radius: 15px;
+    }
+    .upper-overview-card{
+        flex-direction: column;
+    }
+    .total-balance-container{
+        width: 100%;
+    }
+    .overview-btn-container{
+        width: 100%;
+        align-items: flex-start;
+    }
+    .lower-overview-card-container{
+        flex-direction:column ;
+    }
+    .lower-overview-card{
+        width: 100%;
+        margin: 10px 0px;
+    }
+    .referral-section{
+        flex-direction: column;
+    }
+    .referraltext-wrapper{
+        width: 100%;
+    }
+    .referral-card1{
+        width: 100%;
+        margin: 15px 0px;
+    }
 }
