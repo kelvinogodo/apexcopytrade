@@ -93,10 +93,10 @@ const UserdashboardRanking = ({route}) => {
                   <div className="traders-card active-trader-card">
                   <div className="trader-card-header">
                     <div className="trader-card-image-container">
-                    <img src={`${userData && userData.funded > 5000 ? '/gold.png' : '/images-removebg-preview.png' }`} alt="" className='trader-card-image' />
+                    <img src={`${userData && userData.funded > 5000 ? '/download-removebg-preview (2).png' : '/images-removebg-preview.png' }`} alt="" className='trader-card-image' />
                     </div>
                     <div className="trader-card-text-container">
-                      <h3 className="trader-name">Silver</h3>
+                      <h3 className="trader-name">{`${userData && userData.funded > 5000 ? "gold" : 'silver'}`}</h3>
                       <p className="trader-description">Rank</p>
                     </div>
                   </div>
@@ -104,11 +104,11 @@ const UserdashboardRanking = ({route}) => {
                     <div className="trader-performance">
                       <div className="trader-performance-item">
                         <p className="performance-label">capital Range</p>
-                        <p className="performance-value my-value"> $0- $5,000</p>
+                        <p className="performance-value my-value">{`${userData && userData.funded > 5000 ? "$5001- $20,000" : '$0- $5,000'}`}</p>
                       </div>
                           <div className="trader-performance-item">
                             <p className="performance-label">bonus</p>
-                            <p className="performance-value my-value"> $50</p>
+                            <p className="performance-value my-value"> {`${userData && userData.funded > 5000 ? "$100" : '$50'}`}</p>
                           </div>
                         </div>
                       </div>
@@ -118,7 +118,33 @@ const UserdashboardRanking = ({route}) => {
                 <div className="videoframe-text-container treader-header">
                   <h1>other <span className="highlight">Ranks</span></h1>
                 </div>
-                <div className="traders-card-container rank-plan-container">
+        <div className="traders-card-container rank-plan-container">
+          <div className="traders-card">
+                        <div className="trader-card-header">
+                          <div className="trader-card-image-container">
+                          <img src={`/images-removebg-preview.png`} alt="" className='trader-card-image' />
+                          </div>
+                          <div className="trader-card-text-container">
+                            <h3 className="trader-name">silver</h3>
+                            <p className="trader-description">Rank</p>
+                          </div>
+                        </div>
+                        <div className="trader-perfomance-container">
+                          <div className="trader-performance">
+                            <div className="trader-performance-item">
+                        <p className="performance-label">capital Range</p>
+                        <p className="performance-value my-value"> $0- $5,000</p>
+                      </div>
+                          <div className="trader-performance-item">
+                            <p className="performance-label">bonus</p>
+                            <p className="performance-value my-value"> $50</p>
+                          </div>
+                          </div>
+                          <div className="trader-performance-btn-container">
+                            <button className='trader-card-btn' onClick={() => {navigate('/withdraw') }}>downgrade</button>
+                          </div>
+                        </div>
+                      </div>
                     <div className="traders-card">
                         <div className="trader-card-header">
                           <div className="trader-card-image-container">
