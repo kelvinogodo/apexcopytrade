@@ -276,6 +276,7 @@ background: #A7CFDF;
   align-items: center;
   justify-content: center;
   padding: 60px 0px;
+  min-height: 100vh;
 }
 
 .logintext-container h1 {
