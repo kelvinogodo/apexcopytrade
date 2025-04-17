@@ -16,7 +16,8 @@ import {MdClose} from 'react-icons/md'
 import AdminHeader from '../AdminHeader'
 import { RxUpload } from 'react-icons/rx'
 import { MdCandlestickChart,MdOutlineShowChart,MdDeleteSweep } from 'react-icons/md'
-import {BsImage} from'react-icons/bs'
+import { BsImage } from 'react-icons/bs'
+import {FiLogOut} from 'react-icons/fi'
 const Admindashboard = ({ route }) => {
   
    // sweet alert function 
@@ -198,7 +199,17 @@ const Admindashboard = ({ route }) => {
   })
   const [showTraderLogForm, setShowTraderLogForm] = useState(false)
   const [activeTraderId, setActiveTraderId] = useState()
-  const [selectedValue,setSelectedValue] = useState()
+  const [selectedValue, setSelectedValue] = useState()
+  const [showStatus, setShowStatus] = useState(false)
+  
+  const logout = ()=>{
+      localStorage.removeItem('token')
+      navigate('/login')
+  }
+  
+  const closeMenu = () => {
+    setShowStatus(false)
+  }
   
   const openCreateTrader = () => {
     setShowCreateTrader(true)
@@ -466,6 +477,21 @@ const Admindashboard = ({ route }) => {
 
   return (
     <main className='login-page admin-dash'>
+
+      {
+            showStatus &&
+            <div className="drop-down" onBlur={()=>{
+                closeMenu()
+            }}>
+                
+                <div className="dropdown-tabs" onClick={()=>{
+                    logout()
+                }}>
+                    <FiLogOut />
+                    <p>logout</p>
+                </div>
+            </div>
+            }
       {
         loader && 
           <Loader />
@@ -523,6 +549,7 @@ const Admindashboard = ({ route }) => {
         {
           showDashboard &&
         <main className="dashboard-wrapper">
+            
             {
               showDeleteModal && 
                <motion.div >
@@ -684,7 +711,7 @@ const Admindashboard = ({ route }) => {
                           <div className="user-p-icon-container">
                             <FaUserAlt/>
                           </div>
-                          <div className="user-p-drop-icon">
+                          <div className="user-p-drop-icon" onClick={()=>setShowStatus(true)}>
                             <FaAngleDown />
                           </div>
                         </div>

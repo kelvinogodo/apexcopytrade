@@ -95,7 +95,7 @@ const UserdashboardCopytrade = ({route}) => {
        <Userdashboardheader />
          <section className='dashboardhomepage'>
            
-            <div className="dashboardheaderwrapper">
+            
               <div className="dashboardheaderwrapper">
                   <div className="header-notification-icon-container">
                       <IoMdNotifications />
@@ -114,7 +114,6 @@ const UserdashboardCopytrade = ({route}) => {
                     <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
                   </div>
                 </div>
-            </div>
                 {userData && userData.trader.tradehistory.length !== 0 ? 
                       <div className="page-swiper-wrapper trans-page">
                         <div className="floating-btn trans-page-float" onClick={()=>{
