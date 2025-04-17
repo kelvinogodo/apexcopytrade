@@ -318,7 +318,7 @@ const UserdashboardTraders = ({route}) => {
                               nationality: trader.nationality,
                               minimumcapital: trader.minimumcapital,
                               traderImage: trader.traderImage,
-                              traderhistory:trader.traderhistory
+                              tradehistory:trader.tradehistory
                               })
                             setShowTrader(true)
                           }}>view profile</button>
