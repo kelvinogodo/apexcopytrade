@@ -5,7 +5,6 @@ import Login from './pages/Login'
 import Home from './pages/Home';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import Swal from 'sweetalert2';
 import Signup from './pages/Signup';
 import Userdashboard from './pages/Userdashboard'
 import Userdashboardfundaccount from './components/userdashboardfundaccount/Userdashboardfundaccount'
@@ -39,7 +38,6 @@ import UserdashboardCopytrade from './components/userdashboardCopytrade/Userdash
 import UserdashboardKyc from './components/userdashboardKyc/UserdashboardKyc';
 import UserdashboardLiveTrading from './components/userdashboardLiveTrading/UserdashboardLiveTrading';
 import UserdashboardRanking from './components/userdashboardRanking/UserdashboardRanking';
-import UserdashboardSettings from './components/userdasboardSettings/UserdashboardSettings';
 import UserdashboardTraders from './components/userdashboardTraders/UserdashboardTraders';
 
 function App() {
@@ -54,17 +52,6 @@ function App() {
     // duration=1200;
     }, [])
 
-    const Toast = Swal.mixin({
-      toast: true,
-      position: 'bottom',
-      showConfirmButton: false,
-      timer: 3000,
-      timerProgressBar: true,
-      didOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
-      }
-    })
   
     const route = 'https://apexcoptrade-backend.vercel.app'
     // const route = 'http://localhost:5000'
