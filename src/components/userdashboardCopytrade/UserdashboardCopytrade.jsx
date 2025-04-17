@@ -13,8 +13,29 @@ import MobileDropdown from '../MobileDropdown'
 const UserdashboardCopytrade = ({route}) => {
   const [loader, setLoader] = useState(false)
   const [userData, setUserData] = useState()
-  const [showMobileDropdown,setShowMobileDropdown] = useState(false)
+  const [showMobileDropdown, setShowMobileDropdown] = useState(false)
+  const [traders, setTraders] = useState([])
+  const [myTrader, setMyTrader] = useState([])
   const navigate = useNavigate()
+  
+
+  const fetchTraders = async () => {
+    const req = await fetch(`${route}/api/fetchTraders`,{
+      headers:{
+        'Content-Type':'application/json'
+      }
+    })
+    const res = await req.json()
+    setLoader(false)
+    if(res.status === 200){
+      setTraders(res.traders)
+      setMyTrader(traders.filter(trader => trader.firstname === userData.trader.firstname))
+      console.log(myTrader)
+    }
+    else{
+      setTraders([])
+    }
+  }
   
   useEffect(() => {
     const getData = async () => {
@@ -56,6 +77,9 @@ const UserdashboardCopytrade = ({route}) => {
     };
   
     getData();
+    fetchTraders()
+    
+    
   }, [navigate, route]);
   
   const closeMobileMenu = () => {
