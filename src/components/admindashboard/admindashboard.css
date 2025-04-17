@@ -392,3 +392,8 @@ tbody{
     border-color: #007bff;
     outline: none;
 }
+@media screen and (max-width: 767px) {
+    .create-trader-form{
+        width: 100%;
+    }
+}
