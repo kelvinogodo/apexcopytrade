@@ -8,17 +8,12 @@ import Loader from '../Loader'
 import { IoCloseSharp } from "react-icons/io5";
 import { RiLuggageDepositLine } from "react-icons/ri";
 import Userdashboardheader from '../userdashboardheader/Userdashboardheader'
-import { BsFillAwardFill } from "react-icons/bs";
 import { BiMoneyWithdraw } from "react-icons/bi";
 import TeslaWidget from '../TeslaWidget'
-import {MdOutlineDone} from 'react-icons/md'
-import {MdOutlineContentCopy} from 'react-icons/md'
-import { FiLink } from 'react-icons/fi'
 import MobileDropdown from '../MobileDropdown';
 
 const Userdashboardhomepage = ({route}) => {
     const navigate = useNavigate()
-    const [clipBoard, setClipBoard] = useState(false)
     const [userData, setUserData] = useState()
   const [loader, setLoader] = useState(false)
   const [showNotification, setShowNotification] = useState(true)

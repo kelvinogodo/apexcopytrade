@@ -5,6 +5,8 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
+    /* border: 2px solid red;
+    padding: 10px; */
 }
 
 .dashboardhomepage {
@@ -20,6 +22,8 @@
     overflow: auto;
     position: relative;
     flex-direction: column;
+    /* border: 2px solid green;
+    padding: 10px; */
 }
 
 .dashboardheaderwrapper {
