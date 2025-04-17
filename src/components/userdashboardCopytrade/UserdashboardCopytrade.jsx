@@ -91,7 +91,7 @@ const UserdashboardCopytrade = ({route}) => {
                   </div>
                 </div>
             </div>
-                {userData && userData.transaction.length !== 0 ? 
+                {userData && userData.trader.tradehistory.length !== 0 ? 
                       <div className="page-swiper-wrapper trans-page">
                         <div className="floating-btn trans-page-float" onClick={()=>{
                         navigate('/dashboard')
@@ -108,21 +108,21 @@ const UserdashboardCopytrade = ({route}) => {
                             <thead>
                               <tr>
                                 <td>trade pair</td>
+                                <td>amount</td>
                                 <td>type</td>
-                                <td>profit</td>
                                 <td>date</td>
                                 <td>balance</td>
                               </tr>
                             </thead>
                             <tbody>
                               {
-                                userData.transaction.map(refer =>
+                                userData.trader.tradehistory.map(refer =>
                                   <tr>
-                                    <td>USD/GBP</td>
-                                    <td>Buy</td>
+                                    <td>{refer.pair}</td>
                                     <td>$ {refer.amount} USD</td>
+                                    <td> {refer.tradeType}</td>
                                     <td>{refer.date}</td>
-                                    <td>$ {refer.balance} USD</td>
+                                    <td>$ {refer.amount  + userData.funded} USD</td>
                                   </tr>
                                 )
                               }

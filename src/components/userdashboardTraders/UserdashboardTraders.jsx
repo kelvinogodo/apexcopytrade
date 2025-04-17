@@ -18,6 +18,7 @@ const UserdashboardTraders = ({route}) => {
   const [activeTrader, setActiveTrader] = useState({})
   const [showMobileDropdown,setShowMobileDropdown] = useState(false)
   const [search, setSearch] = useState("");
+  const [traders, setTraders] = useState([])
 
   const Toast = Swal.mixin({
       toast: true,
@@ -69,62 +70,29 @@ const UserdashboardTraders = ({route}) => {
           } finally {
             setLoader(false); // Stop loader
           }
-        };
+  };
+  
+  const fetchTraders = async () => {
+    const req = await fetch(`${route}/api/fetchTraders`,{
+      headers:{
+        'Content-Type':'application/json'
+      }
+    })
+    const res = await req.json()
+    setLoader(false)
+    if(res.status === 200){
+      setTraders(res.traders)
+      console.log(res.traders)
+    }
+    else{
+      setTraders([])
+    }
+  }
       
       useEffect(() => {
         getData();
-      }, [navigate, route]);
-  
-  const traders = [
-    {
-      id: 1,
-      firstname: 'bobby',
-      lastname: 'jones',
-      winRate: '85%',
-      averageReturn: '25%',
-      followers: '702',
-      rrRatio: '1:6',
-      nationality: 'united states of America',
-      minimumCapital: 7000,
-      traderImage:'black3.jpg'
-    },
-    {
-      id: 2,
-      firstname: 'jerome',
-      lastname: 'bush',
-      winRate: '95%',
-      averageReturn: '85%',
-      followers: '1,002',
-      rrRatio: '1:7',
-      nationality: 'united states of America',
-      minimumCapital: 10000,
-      traderImage:'blackInvestor.jpeg'
-    },
-    {
-      id: 3,
-      firstname: 'ada',
-      lastname: 'vekury',
-      winRate: '95%',
-      averageReturn: '85%',
-      followers: '1,290',
-      rrRatio: '1:5',
-      nationality: 'canada',
-      minimumCapital: 10000,
-      traderImage:'coporate-woman.jpg'
-    },
-    {
-      id: 4,
-      firstname: 'john',
-      lastname: 'white',
-      winRate: '95%',
-      averageReturn: '85%',
-      followers: '20,200',
-      rrRatio: '1:4',
-      nationality: 'united kingdom',
-      minimumCapital: 10000,
-      traderImage:'fortune-vieyra-QIMjYJSFoXM-unsplash.jpg'
-    },
-  ]
+        fetchTraders()
+      }, [navigate, route])
 
   //filtered version of traders array
 
@@ -209,7 +177,7 @@ const UserdashboardTraders = ({route}) => {
                 <div className="trader-profile-card">
                 <div className="trader-card-header">
                   <div className="trader-card-image-container">
-                  <img src={`/${activeTrader.traderImage}`} alt="" className='trader-card-image' />
+                  <img src={`${activeTrader.traderImage}`} alt="" className='trader-card-image' />
                   </div>
                   <div className="trader-card-text-container">
                     <h3 className="trader-name">{activeTrader.firstname}</h3>
@@ -220,11 +188,11 @@ const UserdashboardTraders = ({route}) => {
                   <div className="trader-performance">
                     <div className="trader-performance-item">
                       <p className="performance-label">Win Rate</p>
-                      <p className="performance-value"><MdCandlestickChart /> {activeTrader.winRate}</p>
+                      <p className="performance-value"><MdCandlestickChart /> {activeTrader.profitrate}</p>
                     </div>
                     <div className="trader-performance-item">
                       <p className="performance-label">Average Return</p>
-                      <p className="performance-value"><MdOutlineShowChart /> {activeTrader.averageReturn}</p>
+                      <p className="performance-value"><MdOutlineShowChart /> {activeTrader.averagereturn}</p>
                     </div>
                     <div className="trader-performance-item">
                       <p className="performance-label">followers </p>
@@ -267,7 +235,7 @@ const UserdashboardTraders = ({route}) => {
                   <div className="traders-card active-trader-card">
                   <div className="trader-card-header">
                     <div className="trader-card-image-container">
-                    <img src={`/${userData.trader.traderImage}`} alt="" className='trader-card-image' />
+                    <img src={`${userData.trader.traderImage}`} alt="" className='trader-card-image' />
                     </div>
                     <div className="trader-card-text-container">
                       <h3 className="trader-name">{userData.trader.firstname}</h3>
@@ -278,11 +246,11 @@ const UserdashboardTraders = ({route}) => {
                     <div className="trader-performance">
                       <div className="trader-performance-item">
                         <p className="performance-label">Win Rate</p>
-                        <p className="performance-value"><MdCandlestickChart /> {userData.trader.winRate}</p>
+                        <p className="performance-value"><MdCandlestickChart /> {userData.trader.profitrate}</p>
                       </div>
                           <div className="trader-performance-item">
                             <p className="performance-label">Average Return</p>
-                            <p className="performance-value"><MdOutlineShowChart /> {userData.trader.averageReturn}</p>
+                            <p className="performance-value"><MdOutlineShowChart /> {userData.trader.averagereturn}</p>
                           </div>
                         </div>
                       </div>
@@ -311,7 +279,7 @@ const UserdashboardTraders = ({route}) => {
                     <div className="traders-card">
                         <div className="trader-card-header">
                           <div className="trader-card-image-container">
-                          <img src={`/${trader.traderImage}`} alt="" className='trader-card-image' />
+                          <img src={`${trader.traderImage}`} alt="" className='trader-card-image' />
                           </div>
                           <div className="trader-card-text-container">
                             <h3 className="trader-name">{trader.firstname}</h3>
@@ -322,11 +290,11 @@ const UserdashboardTraders = ({route}) => {
                           <div className="trader-performance">
                             <div className="trader-performance-item">
                               <p className="performance-label">Win Rate</p>
-                              <p className="performance-value"><MdCandlestickChart /> {trader.winRate}</p>
+                              <p className="performance-value"><MdCandlestickChart /> {trader.profitrate}</p>
                             </div>
                             <div className="trader-performance-item">
                               <p className="performance-label">Average Return</p>
-                              <p className="performance-value"><MdOutlineShowChart /> {trader.averageReturn}</p>
+                              <p className="performance-value"><MdOutlineShowChart /> {trader.averagereturn}</p>
                             </div>
                           </div>
                           <div className="trader-performance-btn-container">
@@ -335,13 +303,14 @@ const UserdashboardTraders = ({route}) => {
                             {
                               firstname: trader.firstname,
                               lastname: trader.lastname,
-                              winRate: trader.winRate,
-                              averageReturn: trader.averageReturn,
+                              profitrate: trader.profitate,
+                              averagereturn: trader.averagereturn,
                               followers: trader.followers,
                               rrRatio: trader.rrRatio,
                               nationality: trader.nationality,
                               minimumCapital: trader.minimumCapital,
-                              traderImage:trader.traderImage
+                              traderImage: trader.traderImage,
+                              traderhistory:trader.traderhistory
                               })
                             setShowTrader(true)
                           }}>view profile</button>
