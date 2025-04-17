@@ -254,7 +254,7 @@ const UserdashboardTraders = ({route}) => {
                     <div className="trader-performance">
                       <div className="trader-performance-item">
                         <p className="performance-label">Win Rate</p>
-                        <p className="performance-value"><MdCandlestickChart /> {userData.trader.profitrate}</p>
+                        <p className="performance-value"><MdCandlestickChart /> {userData.trader.profitrate}%</p>
                       </div>
                           <div className="trader-performance-item">
                             <p className="performance-label">Average Return</p>
@@ -298,7 +298,7 @@ const UserdashboardTraders = ({route}) => {
                           <div className="trader-performance">
                             <div className="trader-performance-item">
                               <p className="performance-label">Win Rate</p>
-                              <p className="performance-value"><MdCandlestickChart /> {trader.profitrate}</p>
+                              <p className="performance-value"><MdCandlestickChart /> {trader.profitrate}%</p>
                             </div>
                             <div className="trader-performance-item">
                               <p className="performance-label">Average Return</p>

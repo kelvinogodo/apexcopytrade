@@ -30,7 +30,7 @@ const UserdashboardCopytrade = ({route}) => {
     if(res.status === 200){
       setTraders(res.traders)
       setMyTrader(traders.filter(trader => trader.firstname === userData.trader.firstname))
-      console.log(myTrader)
+      console.log(`this is my trader ${myTrader}`)
     }
     else{
       setTraders([])
