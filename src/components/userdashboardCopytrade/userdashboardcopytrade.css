@@ -1,14 +1,10 @@
 .profit{
-    background-color: green;
-    color: white !important;
-    text-align: center !important;
-    border-radius: 10px;
+    color: green !important;
+    text-transform: capitalize ;
 }
 .loss{
-    background-color: red;
-    color: white !important;
-    text-align: center !important;
-    border-radius: 10px;
+    color: red !important;
+    text-transform: capitalize ;
 }
 .tr{
     gap: 10px;

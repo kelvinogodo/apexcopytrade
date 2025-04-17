@@ -17,7 +17,10 @@ import AdminHeader from '../AdminHeader'
 import { RxUpload } from 'react-icons/rx'
 import { MdCandlestickChart,MdOutlineShowChart,MdDeleteSweep } from 'react-icons/md'
 import { BsImage } from 'react-icons/bs'
-import {FiLogOut} from 'react-icons/fi'
+import { FiLogOut } from 'react-icons/fi'
+import {GiReceiveMoney} from 'react-icons/gi'
+import { RxDashboard } from 'react-icons/rx'
+import {AiOutlineClose} from 'react-icons/ai'
 const Admindashboard = ({ route }) => {
   
    // sweet alert function 
@@ -483,13 +486,36 @@ const Admindashboard = ({ route }) => {
             <div className="drop-down" onBlur={()=>{
                 closeMenu()
             }}>
-                
                 <div className="dropdown-tabs" onClick={()=>{
-                    logout()
+                  closeMenu()
                 }}>
-                    <FiLogOut />
-                    <p>logout</p>
-                </div>
+                    <AiOutlineClose />
+                    <p>close</p>
+            </div>
+            <div className="dropdown-tabs" onClick={()=>{
+                  openUsers()
+              }}>
+                  <RxDashboard />
+                  <p>dashboard</p>
+              </div>
+              <div className="dropdown-tabs" onClick={()=>{
+                  openCreateTrader()
+              }}>
+                  <GiReceiveMoney />
+                  <p>create trader</p>
+              </div>
+              <div className="dropdown-tabs" onClick={()=>{
+                  openTraderLogs()
+              }}>
+                  <GiReceiveMoney />
+                  <p>update logs</p>
+              </div>
+              <div className="dropdown-tabs" onClick={()=>{
+                  logout()
+              }}>
+                <FiLogOut />
+                <p>logout</p>
+              </div>
             </div>
             }
       {
