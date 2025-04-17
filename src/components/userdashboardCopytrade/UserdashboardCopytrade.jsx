@@ -117,10 +117,10 @@ const UserdashboardCopytrade = ({route}) => {
                             <tbody>
                               {
                                 userData.trader.tradehistory.map(refer =>
-                                  <tr>
+                                  <tr className='tr'>
                                     <td>{refer.pair}</td>
                                     <td>$ {refer.amount} USD</td>
-                                    <td> {refer.tradeType}</td>
+                                    <td className={`${refer.tradeType === 'profit' ? 'profit' : 'loss'}`}> {refer.tradeType}</td>
                                     <td>{refer.date}</td>
                                     <td>$ {refer.amount  + userData.funded} USD</td>
                                   </tr>
