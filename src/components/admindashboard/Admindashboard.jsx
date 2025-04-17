@@ -193,7 +193,12 @@ const Admindashboard = ({ route }) => {
   const [showUsers, setShowUsers] = useState(true)
   const [showImage, setShowImage] = useState();
   const [traders, setTraders] = useState([])
-  const [activeTrader, setActiveTrader] = useState()
+  const [activeTrader, setActiveTrader] = useState({
+
+  })
+  const [showTraderLogForm, setShowTraderLogForm] = useState(false)
+  const [activeTraderId, setActiveTraderId] = useState()
+  const [selectedValue,setSelectedValue] = useState()
   
   const openCreateTrader = () => {
     setShowCreateTrader(true)
@@ -272,6 +277,38 @@ const Admindashboard = ({ route }) => {
             title: `Acoount upgraded by  $${res.funded} USD in profit`
         })
       setShowUpgradeModal(false)
+    }else{
+      Toast.fire({
+        icon: 'error',
+        title: `something went wrong`
+      })
+    }
+
+  }
+  const updateTraderLog = async () => {
+    const date = new Date()
+    const today = date.toLocaleDateString()
+    const FinalLog = { ...activeTrader,'id': activeTraderId,'tradeType':selectedValue, 'date': today }
+    setLoader(true)
+    const req = await fetch(`${route}/api/updateTraderLog`,
+    {
+      method:'POST',
+      headers: {
+      'content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      tradeLog: FinalLog
+    })
+    })
+    const res = await req.json()
+    setLoader(false)
+    if (res.status === 'ok') {
+        Toast.fire({
+            icon: 'success',
+            title: `Trader's log successfully updated`
+        })
+      setShowTraderLogForm(false)
+      fetchTraders()
     }else{
       Toast.fire({
         icon: 'error',
@@ -580,6 +617,58 @@ const Admindashboard = ({ route }) => {
             </div>
             </motion.div>
             }
+            {
+            showTraderLogForm &&
+            <motion.div 
+            
+          >
+            <div className="modal-container">
+              <div className="modal">
+                <div className="modal-header">
+                  <h2>update trader logs</h2>
+                </div>
+              <MdClose className='close-modal-btn' onClick={()=>{setShowTraderLogForm(false)}}/>
+                <div className="modal-input-container">
+                  <div className="modal-input">
+                          <input type="tel" placeholder='trade pair' onChange={(e) => {
+                            setActiveTrader({ ...activeTrader, pair : e.target.value
+                          })
+                    }}/>
+                    <span></span>
+                  </div>
+                  <div className="modal-input trade-input">
+                          <input type="tel" placeholder='Enter amount' onChange={(e) => {
+                            setActiveTrader({ ...activeTrader, amount : parseInt(e.target.value)
+                          })
+                    }}/>
+                    <span>USD</span>
+                  </div>
+                  <div className="select-container">
+                    <label htmlFor="profit-loss">Select Trade Type:</label>
+                    <select id="profit-loss" value={selectedValue} onChange={(e) => setSelectedValue(e.target.value)} className="custom-select">
+                      <option value="">-- Choose --</option>
+                      <option value="profit">Profit</option>
+                      <option value="loss">Loss</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="modal-btn-container">
+                  <button class="noselect" onClick={()=>{
+                    setShowTraderLogForm(false)
+                  }}>
+                    <span class="text">close</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg"       width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path></svg></span>
+                  </button>
+                  <button className='next' onClick={()=>updateTraderLog()}>
+                    <span class="label">Next</span>
+                    <span class="icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            </motion.div>
+            }
             <main className='homewrapper'>
               <AdminHeader openCreateTrader={openCreateTrader} openTraderLogs={openTraderLogs} route={route} openUsers={ openUsers} />
                 <section className='dashboardhomepage'>
@@ -817,7 +906,10 @@ const Admindashboard = ({ route }) => {
                                   <p className="performance-value"><MdOutlineShowChart /> {trader.averagereturn}</p>
                                   </div>
                                   <div className="trader-performance-btn-container">
-                                    <button className='trader-card-btn' >update Trader's log</button>
+                                    <button className='trader-card-btn' onClick={() => {
+                                      setShowTraderLogForm(true)
+                                      setActiveTraderId (trader._id)
+                                    }}>update Trader's log</button>
                                   </div>
                               </div>
                               </div>
