@@ -636,12 +636,4 @@
     .about-page-land{
         background-color: black;
     }
-    .login-page{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .login-wrapper{
-        width: 98% ;
-    }
    }
