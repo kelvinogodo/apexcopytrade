@@ -400,7 +400,7 @@ const Admindashboard = ({ route }) => {
     followers: "",
     riskRewardRatio: "",
     nationality: "",
-    minimumCapital: "",
+    minimumcapital: "",
   });
 
   const handleChange = (e) => {
@@ -863,6 +863,17 @@ const Admindashboard = ({ route }) => {
                           className="create-trader-input"
                           placeholder="Enter Trader's Nationality"
                           value={formData.nationality}
+                          onChange={handleChange}
+                        />
+                        </div>
+                        
+                      <div className="inputForm">
+                        <input
+                          type="number"
+                          name="minimumcapital"
+                          className="create-trader-input"
+                          placeholder="Enter Trader's minimum trading capital"
+                          value={formData.minimumcapital}
                           onChange={handleChange}
                         />
                       </div>

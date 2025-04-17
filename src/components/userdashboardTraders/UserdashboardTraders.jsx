@@ -103,7 +103,8 @@ const UserdashboardTraders = ({route}) => {
 );
 
   const copyTrade = async (trader) => {
-    setLoader(true)
+    if (userData.funded >= trader.minimumcapital) {
+      setLoader(true)
 
     const req = await fetch(`${route}/api/copytrade`, {
       method: "POST",
@@ -132,6 +133,13 @@ const UserdashboardTraders = ({route}) => {
       });
       getData();
       setLoader(false)
+    }
+    }
+    else {
+      Toast.fire({
+      icon: 'error',
+      title: `Capital not Enough to Copy Trade`,
+      });
     }
   }
 
@@ -188,7 +196,7 @@ const UserdashboardTraders = ({route}) => {
                   <div className="trader-performance">
                     <div className="trader-performance-item">
                       <p className="performance-label">Win Rate</p>
-                      <p className="performance-value"><MdCandlestickChart /> {activeTrader.profitrate}</p>
+                      <p className="performance-value"><MdCandlestickChart /> {activeTrader.profitrate}%</p>
                     </div>
                     <div className="trader-performance-item">
                       <p className="performance-label">Average Return</p>
@@ -208,7 +216,7 @@ const UserdashboardTraders = ({route}) => {
                     </div>
                     <div className="trader-performance-item">
                       <p className="performance-label">minimum Trading Capital </p>
-                      <p className="performance-value">{activeTrader.minimumCapital}</p>
+                      <p className="performance-value">{activeTrader.minimumcapital}</p>
                     </div>
                   </div>
                   <div className="trader-performance-btn-container">
@@ -303,12 +311,12 @@ const UserdashboardTraders = ({route}) => {
                             {
                               firstname: trader.firstname,
                               lastname: trader.lastname,
-                              profitrate: trader.profitate,
+                              profitrate: trader.profitrate,
                               averagereturn: trader.averagereturn,
                               followers: trader.followers,
                               rrRatio: trader.rrRatio,
                               nationality: trader.nationality,
-                              minimumCapital: trader.minimumCapital,
+                              minimumcapital: trader.minimumcapital,
                               traderImage: trader.traderImage,
                               traderhistory:trader.traderhistory
                               })
