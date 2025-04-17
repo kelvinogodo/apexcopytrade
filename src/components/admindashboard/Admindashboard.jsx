@@ -529,9 +529,9 @@ const Admindashboard = ({ route }) => {
                     e.preventDefault()
                     login()
                     }}>
-          {/* <div class="logo_container" onClick={()=>navigate('/')}>
+          <div class="logo_container" onClick={()=>navigate('/')}>
             <img src="/apexlogo1.png" alt="" />
-          </div> */}
+          </div>
           <div class="title_container">
             <p class="titles">welcome admin</p>
              <span class="subtitle">Welcome to apexcopytrade, login and enjoy the best investment experience.</span>
@@ -746,11 +746,11 @@ const Admindashboard = ({ route }) => {
                 {
                   showUsers && 
                   <>
-                  {/* <div className="floating-btn admin-floating-btn" onClick={()=>{
+                  <div className="floating-btn admin-floating-btn" onClick={()=>{
                     navigate('/')
                     }}>
                     <AiOutlineArrowLeft />
-                  </div> */}
+                  </div>
                   <section className="page-header admin-page-header">
                     <h3>checkout your list of signed in users</h3>
                     <h2>Users logs</h2>
