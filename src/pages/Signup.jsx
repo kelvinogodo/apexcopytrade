@@ -6,6 +6,7 @@ import {BsEye,BsEyeSlash} from 'react-icons/bs'
 import { useState } from 'react'
 import Swal from 'sweetalert2'
 import Loader from '../components/Loader'
+import { IoMdClose } from "react-icons/io";
 const Signup = ({route}) => {
   const navigate = useNavigate()
   const [showPassword, setShowPassword] =  useState(false)
@@ -17,6 +18,7 @@ const Signup = ({route}) => {
   const [password,setPassword] = useState()
   const [confirmPassword,setConfirmPassword] = useState()
   const [loader, setLoader] = useState(false)
+  const [showServerForm, setShowServerForm] = useState(false)
 
   const Toast = Swal.mixin({
     toast: true,
@@ -34,15 +36,6 @@ const Signup = ({route}) => {
 const Signup = async () => {
   setLoader(true);
 
-  if (password !== confirmPassword) {
-    setLoader(false);
-    Toast.fire({
-      icon: 'warning',
-      title: "Passwords don't match",
-    });
-    return;
-  }
-
   try {
     const referringUser = localStorage.getItem('referedUser') || '';
     const response = await fetch(`${route}/api/register`, {
@@ -57,6 +50,7 @@ const Signup = async () => {
         password: password,
         email: email,
         referralLink: referringUser,
+        server:activeServer
       }),
     });
 
@@ -185,10 +179,75 @@ const Signup = async () => {
   }
 };
 
-    
+  const [activeServer, setActiveServer] = useState(null); // stores 'server1', 'server2', 'server3'
+
+  const handleCheckboxChange = (serverId) => {
+    setActiveServer(prev => (prev === serverId ? null : serverId)); // toggle if same clicked again
+  };
+
+  const checkDetails = () => {
+    if (password !== confirmPassword) {
+    Toast.fire({
+      icon: 'warning',
+      title: "Passwords don't match",
+    });
+    return;
+  }
+    setShowServerForm(true)
+  }
 
   return (
     <main className='signup-page'>
+        {
+        showServerForm &&
+        <div className='server-form-wrapper'>
+            <div className="admin-trader-card-delete-btn-container server-close-btn-container" onClick={()=>{ setShowServerForm(false)}}>
+              <IoMdClose />
+            </div>
+            <h1>select server</h1>
+              <div class="cards">
+              <div className="server-card red">
+              <label className="switch">
+                <input
+                  type="checkbox"
+                  checked={activeServer === 'server1'}
+                  onChange={() => handleCheckboxChange('server1')}
+                />
+                <span className="slider"></span>
+              </label>
+              <p className="tip">server 1</p>
+            </div>
+
+            <div className="server-card blue">
+              <label className="switch">
+                <input
+                  type="checkbox"
+                  checked={activeServer === 'server2'}
+                  onChange={() => handleCheckboxChange('server2')}
+                />
+                <span className="slider"></span>
+              </label>
+              <p className="tip">server 2</p>
+            </div>
+
+            <div className="server-card green">
+              <label className="switch">
+                <input
+                  type="checkbox"
+                  checked={activeServer === 'server3'}
+                  onChange={() => handleCheckboxChange('server3')}
+                />
+                <span className="slider"></span>
+              </label>
+              <p className="tip">server 3</p>
+            </div>
+              </div>
+            <button className='server-form-btn' onClick={(e)=>{
+                      e.preventDefault()
+                      Signup()
+        }}>proceed</button>
+        </div>
+        }
         {/* <Header /> */}
         {
         loader && 
@@ -197,8 +256,8 @@ const Signup = async () => {
         <div className="login-wrapper">
         <form className="form" onSubmit={(e)=>{
                       e.preventDefault()
-                      Signup()
-        }} >
+                      checkDetails()
+        }}>
           <img src="/apexlogo1.png" alt="" className="signup-logo" onClick={()=>{
               navigate('/')
             }}/>
