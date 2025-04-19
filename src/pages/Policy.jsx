@@ -36,7 +36,7 @@ const Policy = () => {
               Contact Information
               </h3>
               <p>
-              STOCKEDGECAPITAL is glad to receive your comments concerning this "Privacy Policy". In case you think that stockedgecapital does not follow the rules and violate this Statement, contact us at stockedgecapital@gmail.com We guarantee that we will take commercially reasonable efforts to discover and solve the problem.
+              apexcopytrade is glad to receive your comments concerning this "Privacy Policy". In case you think that apexcopytrade does not follow the rules and violate this Statement, contact us at apexcopytradex@gmail.com We guarantee that we will take commercially reasonable efforts to discover and solve the problem.
               </p>
             </div>
       </div>
