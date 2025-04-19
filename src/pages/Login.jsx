@@ -116,6 +116,7 @@ const Login = ({route}) => {
 
   return (
     <main className='login-page'>
+    
         {/* <Header /> */}
         {
         loader && 
@@ -175,15 +176,14 @@ const Login = ({route}) => {
                   </div>
                   <button type='submit'>login</button>
           <div class="separator">
-            <hr class="line" />
-            <span>Or</span>
-            <hr class="line" />   
+            <span>Don't have an account?</span>
           </div>
           <Link to="/signup" className="note">create account</Link>
           <Link class="note" to='/policy'>Terms of use &amp; Conditions</Link>
         </form>
         </div>       
-    </main>
+ </main>
+  
   )
 }
 
