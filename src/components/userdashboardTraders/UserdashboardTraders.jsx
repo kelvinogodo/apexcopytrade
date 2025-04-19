@@ -19,7 +19,6 @@ const UserdashboardTraders = ({route}) => {
   const [showMobileDropdown,setShowMobileDropdown] = useState(false)
   const [search, setSearch] = useState("");
   const [traders, setTraders] = useState([])
-  const [myTrader,setMyTrader] = useState()
 
   const Toast = Swal.mixin({
       toast: true,
@@ -33,7 +32,7 @@ const UserdashboardTraders = ({route}) => {
       }
     })
   
-      const [userData, setUserData] = useState()
+      const [userData, setUserData] = useState({})
   const navigate = useNavigate()
   const getData = async () => {
           try {
@@ -83,7 +82,6 @@ const UserdashboardTraders = ({route}) => {
     setLoader(false)
     if(res.status === 200){
       setTraders(res.traders)
-      setMyTrader(res.traders.filter(trader => trader._id === userData.trader))
     }
     else{
       setTraders([])
@@ -101,7 +99,9 @@ const UserdashboardTraders = ({route}) => {
   (trader) =>
     trader.firstname.toLowerCase().includes(search.toLowerCase()) ||
     trader.lastname.toLowerCase().includes(search.toLowerCase())
-);
+  );
+
+  const myTrader = traders.filter((trader) => trader._id === userData.trader)
 
   const copyTrade = async (trader) => {
     if (userData.funded >= trader.minimumcapital) {
@@ -236,8 +236,8 @@ const UserdashboardTraders = ({route}) => {
             <h2 className="traders-showcase-header">expert traders</h2>
             <p>choose from the list of our expert traders. Any trader you select would trade and manage your portfolio.</p>
             </div>
-            {
-              myTrader &&
+            {/* {
+              myTrader && userData &&
                     <div className="active-trader-container">
                       <div className="videoframe-text-container treader-header">
                         <h1>Your current <span className="highlight">trader</span></h1>
@@ -266,7 +266,7 @@ const UserdashboardTraders = ({route}) => {
                         </div>
                       </div>
                     </div>
-            }
+            } */}
             
           <div className="traders-section">
             <div className="videoframe-text-container treader-header">
