@@ -115,7 +115,7 @@ const Login = ({route}) => {
 };
 
   return (
-    <main className='login-page'>
+    <main className='signup-page'>
     
         {/* <Header /> */}
         {
