@@ -1,8 +1,9 @@
 import React from 'react'
 import './why.css'
 import { FaUserPlus } from "react-icons/fa";
-import { IoWallet } from "react-icons/io5";
-import { BsBarChartFill } from "react-icons/bs";
+import { FaChartLine } from "react-icons/fa";
+import { FiPieChart } from "react-icons/fi";
+import { RiLineChartLine } from "react-icons/ri";
 const Why = () => {
   return (
       <div className='why-choose-section'>
@@ -25,13 +26,13 @@ const Why = () => {
             </div>
             <div className="why-choose-us-card" data-aos="fade-up">
                 <span className="card-counter">01</span>
-                <IoWallet />
+                <RiLineChartLine />
                 <h2>Market review</h2>
                 <p>Analyze all trades to select prospective assets and enter/exit positions in time, earning the most.</p>
             </div>
             <div className="why-choose-us-card" data-aos="fade-up">
                 <span className="card-counter">02</span>
-                <BsBarChartFill />
+                <FiPieChart />
                 <h2>Access</h2>
                 <p>Get a global investment experience with all sorts of tools on the stock, foreign exchange and commodity market.</p>
             </div>

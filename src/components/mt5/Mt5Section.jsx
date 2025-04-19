@@ -15,7 +15,7 @@ const Mt5Section = () => {
                 
                 <h1 data-aos="fade-up" className='copytrade-header'>Advanced Trading</h1>
                 <p data-aos="fade-up">
-                At APEXCOPYTRADE, we provide accurate forex analysis to help investors maximize profits through copy trading. Using MT4 and MT5, our experts analyze the markets with technical and fundamental strategies, identifying high-probability trades. We share real-time signals, market updates, and risk assessments directly through our Telegram channel, allowing investors to copy top-performing trades effortlessly.
+                At APEXCOPYTRADE, we provide accurate forex analysis to help investors maximize profits through copy trading. Using MT4 and MT5, our experts analyze the markets with technical and fundamental strategies, identifying high-probability trades. We share real-time signals, market updates, and risk assessments.
                   </p>
                   <button className='launch-btn'
                     initial={{y:45, opacity:0}}

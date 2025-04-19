@@ -5,35 +5,36 @@ import {HiOutlineChevronDown} from 'react-icons/hi'
 const Faq = () => {
     const [faqs,setFaqs] = useState([
         {
-            id:1,
-            active:true,
-            question:'What is APEXCOPYTRADE?',
-            answer:"APEXCOPYTRADE is an online platform that maximizes the slight differences in prices of global forex exchange rate and investment in gold stock, real estate, crude oil and agro-tech to inturn satisfy her clients.",
-        },
-        {
-            id:2,
-            active:false,
-            question:'where does the investment go into?',
-            answer:"APEXCOPYTRADE reinvests the funds generated from this platform, into real estate, gold stock investment, agro-tech industries and oil exploration industries around the world. these industries generate enough revenue to constantly satisfy the client's returns, and keep the company running",
-        },
-        {
-            id:3,
-            active:false,
-            question:'What are the advantages of joining this platform?',
-            answer:'Your account will be managed by a professional financial manager. We monitor the financial markets every day and regularly review your portfolio to ensure that an optimal blend of investments is being used to meet your individual goals. This provides our clients with many benefits, including more time to pursue what really interests them.',
-        },
-        {
-            id:4,
-            active:false,
-            question:'how do i withdraw my profit?',
-            answer:'its as easy as you can possibly imagine, you just have to go to the withdrawal page. select your withdrawal method, enter amount to withdraw, then paste your wallet address and submit. then wait for like 30 minutes after placing withdrawal order and there you go, your wallet address will be credited.',
-        },
-        {
-            id:5,
-            active:false,
-            question:'What cryptocurrencies can I use?',
-            answer:'APEXCOPYTRADE supports at least 3 crypto currencies for transactions which include BTC, USDT, ETHEREUM. We plan on supporting more crypto currencies in the near future.',
-        },
+        id: 1,
+        active: true,
+        question: 'What is APEXCOPYTRADE?',
+        answer: "ApexCopyTrade is a professional copytrading platform that allows users to mirror real-time trades from seasoned, expert traders. It gives you access to global financial markets—like forex, stocks, indices, and crypto—using proven strategies such as scalping, swing trading, and trend following. It's a smart way to grow your portfolio without having to trade manually."
+    },
+    {
+        id: 2,
+        active: false,
+        question: 'Where does the copytrading activity go into?',
+        answer: "All trading activity on ApexCopyTrade is executed by experienced traders in high-liquidity markets such as forex, cryptocurrencies, stock CFDs, and major indices. These markets are carefully selected for their volatility, trading volume, and potential for consistent profits. Our traders utilize advanced technical and fundamental analysis to generate steady returns."
+    },
+    {
+        id: 3,
+        active: false,
+        question: 'What are the advantages of joining this platform?',
+        answer: "When you join ApexCopyTrade, your trades are automatically handled by trading professionals with years of real-market experience. They analyze trends, identify entry/exit points, and execute trades using strategies tailored to current market conditions. You gain all the benefits of expert-level trading without needing to lift a finger."
+    },
+    {
+        id: 4,
+        active: false,
+        question: 'How do I withdraw my profit?',
+        answer: "Withdrawing your profit is fast and user-friendly. Simply go to the withdrawal page, choose your preferred method, input the amount, paste your wallet address, and submit. Your wallet will be credited within approximately 30 minutes. Supported withdrawal methods include BTC, USDT, ETH, SOLANA, XRP, and DOGECOIN."
+    },
+    {
+        id: 5,
+        active: false,
+        question: 'What cryptocurrencies can I use?',
+        answer: "ApexCopyTrade supports a variety of cryptocurrencies for deposits and withdrawals, including Bitcoin (BTC), Tether (USDT), Ethereum (ETH), Solana (SOL), Ripple (XRP), and Dogecoin (DOGE). More options will be added soon to serve you better."
+    }
+
     ])
 
     const dropDown = (id)=>{
