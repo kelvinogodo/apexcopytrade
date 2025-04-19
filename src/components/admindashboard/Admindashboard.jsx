@@ -308,13 +308,14 @@ const Admindashboard = ({ route }) => {
     {
       method:'POST',
       headers: {
-      'content-Type': 'application/json'
+        'content-Type': 'application/json',
     },
     body: JSON.stringify({
       tradeLog: FinalLog
     })
     })
     const res = await req.json()
+    console.log(res)
     setLoader(false)
     if (res.status === 'ok') {
         Toast.fire({

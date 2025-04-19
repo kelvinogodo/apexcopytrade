@@ -105,7 +105,7 @@ const UserdashboardTraders = ({route}) => {
   const copyTrade = async (trader) => {
     if (userData.funded >= trader.minimumcapital) {
       setLoader(true)
-
+      console.log(trader._id)
     const req = await fetch(`${route}/api/copytrade`, {
       method: "POST",
       headers: {
@@ -113,10 +113,11 @@ const UserdashboardTraders = ({route}) => {
         'x-access-token': localStorage.getItem('token')
       },
       body: JSON.stringify({
-        trader:trader
+        trader:trader._id
       }),
     })
-    const res = await req.json()
+      const res = await req.json()
+      
     
     if (res.status === 200) {
       Toast.fire({
