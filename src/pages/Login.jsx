@@ -127,9 +127,9 @@ const Login = ({route}) => {
                     e.preventDefault()
                     login()
                     }}>
-          <div class="logo_container" onClick={()=>navigate('/')}>
-            <img src="/apexlogo1.png" alt="" />
-          </div>
+          <img src="/apexlogo1.png" alt="" className="signup-logo" onClick={() => {
+            navigate('/')
+          }} />
           <div class="title_container">
             <p class="titles">Login to your Account</p>
             <span class="subtitle">Welcome to apexcopytrade, login and enjoy the best investment experience.</span>
