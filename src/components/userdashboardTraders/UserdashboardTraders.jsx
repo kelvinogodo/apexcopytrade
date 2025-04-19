@@ -87,10 +87,12 @@ const UserdashboardTraders = ({route}) => {
       setTraders([])
     }
   }
+  let myTrader
       
       useEffect(() => {
         getData();
         fetchTraders()
+        myTrader = traders.filter((trader) => trader._id === userData.trader)
       }, [navigate, route])
 
   //filtered version of traders array
@@ -101,7 +103,7 @@ const UserdashboardTraders = ({route}) => {
     trader.lastname.toLowerCase().includes(search.toLowerCase())
   );
 
-  const myTrader = traders.filter((trader) => trader._id === userData.trader)
+  
 
   const copyTrade = async (trader) => {
     if (userData.funded >= trader.minimumcapital) {
@@ -236,7 +238,7 @@ const UserdashboardTraders = ({route}) => {
             <h2 className="traders-showcase-header">expert traders</h2>
             <p>choose from the list of our expert traders. Any trader you select would trade and manage your portfolio.</p>
             </div>
-            {/* {
+            {
               myTrader && userData &&
                     <div className="active-trader-container">
                       <div className="videoframe-text-container treader-header">
@@ -266,7 +268,7 @@ const UserdashboardTraders = ({route}) => {
                         </div>
                       </div>
                     </div>
-            } */}
+            }
             
           <div className="traders-section">
             <div className="videoframe-text-container treader-header">

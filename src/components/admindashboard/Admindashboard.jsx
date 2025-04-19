@@ -684,12 +684,49 @@ const Admindashboard = ({ route }) => {
               <MdClose className='close-modal-btn' onClick={()=>{setShowTraderLogForm(false)}}/>
                 <div className="modal-input-container">
                   <div className="modal-input">
-                          <input type="tel" placeholder='trade pair' onChange={(e) => {
-                            setActiveTrader({ ...activeTrader, pair : e.target.value
-                          })
-                    }}/>
-                    <span></span>
+                    <select
+                      onChange={(e) =>
+                        setActiveTrader({ ...activeTrader, pair: e.target.value })
+                      } className='custom-select'
+                    >
+                      <option value="">Select trade pair</option>
+
+                      {/* Forex Pairs */}
+                      <optgroup label="Forex Pairs">
+                        <option value="EUR/USD">EUR/USD</option>
+                        <option value="USD/JPY">USD/JPY</option>
+                        <option value="GBP/USD">GBP/USD</option>
+                        <option value="USD/CHF">USD/CHF</option>
+                        <option value="AUD/USD">AUD/USD</option>
+                        <option value="USD/CAD">USD/CAD</option>
+                        <option value="NZD/USD">NZD/USD</option>
+                      </optgroup>
+
+                      {/* Indices */}
+                      <optgroup label="Indices">
+                        <option value="US30">US30</option>
+                        <option value="NAS100">NAS100</option>
+                        <option value="SPX500">SPX500</option>
+                      </optgroup>
+
+                      {/* Crypto Pairs */}
+                      <optgroup label="Cryptos">
+                        <option value="BTC/USD">BTC/USD</option>
+                        <option value="ETH/USD">ETH/USD</option>
+                        <option value="XRP/USD">XRP/USD</option>
+                      </optgroup>
+
+                      {/* Stocks */}
+                      <optgroup label="Stocks">
+                        <option value="AAPL">AAPL (Apple)</option>
+                        <option value="TSLA">TSLA (Tesla)</option>
+                        <option value="GOOGL">GOOGL (Alphabet)</option>
+                      </optgroup>
+                    </select>
+
+                    {/* <span></span> */}
                   </div>
+
                   <div className="modal-input trade-input">
                           <input type="tel" placeholder='Enter amount' onChange={(e) => {
                             setActiveTrader({ ...activeTrader, amount : parseInt(e.target.value)

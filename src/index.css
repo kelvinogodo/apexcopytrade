@@ -51,7 +51,7 @@ body {
   scroll-behavior: smooth;
   overflow-x: hidden;
   position: relative;
-  background-color: white;
+  background-color: black;
 }
 
 .home-price-chart {
