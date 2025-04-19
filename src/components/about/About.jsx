@@ -29,18 +29,18 @@ const About = () => {
                 <h2>why choose us</h2>
             </div>
             <h1 data-aos="fade-up">best qualities</h1>
-            <p data-aos="fade-up">Our Team combines a passion for esports, industry experise & proven record in finance, development, marketing.</p>
+            <p data-aos="fade-up">Our Team combines a passion for arbitrage,stock,indicesforex and crypto trading, to ensure maximum profit.</p>
         </div>
             <div className="why-choose-us-card" data-aos="fade-up">
                             <span className="card-counter">02</span>
                             <IoWallet />
                             <h2>Make a deposit</h2>
-                            <p>your investments are very much upgradeable at any point you want to. we provide our clients the ability to scale up their investments.</p>
+                            <p>your trade plans are very much upgradeable at any point you want to. we provide our clients the ability to scale up their investments.</p>
                         </div>
                         <div className="why-choose-us-card" data-aos="fade-up">
                             <span className="card-counter">03</span>
                             <BsBarChartFill />
-                            <h2>Start investing</h2>
+                            <h2>Start trading</h2>
                             <p>We use our advanced experience in arbitrage trading to minimize our clients cost of trade and unnecessary transaction expenses.</p>
                         </div>
         </div>

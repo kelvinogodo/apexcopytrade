@@ -10,32 +10,36 @@ const Plan = () => {
         min:'1000',
         max:'4,999',      
         type:'starter plan',
-        percent:'20',
-        duration:'2 day(s)'
+        minimumOrder:'0.1',
+        maximumOrder: '10',
+        leverage:'1:20'
       },
       {
         id:2,
         min:'5,000',
         max:'19,999',
         type:'medium plan',
-        percent:'35',
-        duration:'4 day(s)'
+        minimumOrder:'0.1',
+        maximumOrder: '15',
+        leverage:'1:50'
       },
       {
         id:3,
         min:'20,000',
         max:'49,999',
         type:'classic plan',
-        percent:'50',
-        duration:'7 day(s)'
+        minimumOrder:'0.1',
+        maximumOrder: '20',
+        leverage:'1:80'
       },
       {
         id:4,
         min:'50,000',
         max:'99,000',
         type:'diamond plan',
-        percent:'65',
-        duration:'10 day(s)'
+        minimumOrder:'0.1',
+        maximumOrder: '25',
+        leverage:'1:100'
       },
       
       ])
@@ -74,16 +78,13 @@ const Plan = () => {
             </div>
                 <div className='lot-wrapper'>
                   <div className="lot-container">
-                      <span className="lot-line"></span><p>Minimum order: 0.1 lot</p>
+                      <span className="lot-line"></span><p>Minimum order: {withdrawmethod.minimumOrder} lots</p>
                   </div>
                   <div className="lot-container">
-                      <span className="lot-line"></span><p>Minimum order: 0.1 lot</p>
+                      <span className="lot-line"></span><p>Maximum order: {withdrawmethod.maximumOrder} lots</p>
                   </div>
                   <div className="lot-container">
-                      <span className="lot-line"></span><p>Maximum order: 20 lots</p>
-                  </div>
-                  <div className="lot-container">
-                      <span className="lot-line"></span><p>Leverage up to 1:80</p>
+                      <span className="lot-line"></span><p>Leverage up to {withdrawmethod.leverage}</p>
                   </div>
             </div>
           </div>

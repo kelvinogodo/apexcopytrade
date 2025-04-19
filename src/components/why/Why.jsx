@@ -9,7 +9,7 @@ const Why = () => {
           <div className="why-choose-us-img-container">
               <div className="videoframe-text-container" data-aos="fade-up">
                     <h1>Market  <span className="highlight">rates</span></h1>
-                    <p>Grab an overview of global markets including price changes, open, high, low, and close values for selected instruments.</p>
+                    <p>comprehensive features</p>
                 </div>
               <img src="/apexmockup10.png" alt="" className="mockup" data-aos="fade-up"/>
           </div>
@@ -18,22 +18,22 @@ const Why = () => {
               <div className="why-choose-us-text-container">
             <div className="header" data-aos="fade-up">
                 <span className="header-line"></span>
-                <h2>get started with</h2>
+                <h2>our comprehensive features</h2>
             </div>
-            <h1 data-aos="fade-up">stockedgecapital</h1>
-            <p data-aos="fade-up">follow these simple steps to start your best investment journey</p>
+            <h1 data-aos="fade-up">apexcopytrade</h1>
+            <p data-aos="fade-up">the following are our comprehensive features.</p>
+            </div>
+            <div className="why-choose-us-card" data-aos="fade-up">
+                <span className="card-counter">01</span>
+                <IoWallet />
+                <h2>Market review</h2>
+                <p>Analyze all trades to select prospective assets and enter/exit positions in time, earning the most.</p>
             </div>
             <div className="why-choose-us-card" data-aos="fade-up">
                 <span className="card-counter">02</span>
-                <IoWallet />
-                <h2>Make a deposit</h2>
-                <p>your investments are very much upgradeable at any point you want to. we provide our clients the ability to scale up their investments.</p>
-            </div>
-            <div className="why-choose-us-card" data-aos="fade-up">
-                <span className="card-counter">03</span>
                 <BsBarChartFill />
-                <h2>Start investing</h2>
-                <p>We use our advanced experience in arbitrage trading to minimize our clients cost of trade and unnecessary transaction expenses.</p>
+                <h2>Access</h2>
+                <p>Get a global investment experience with all sorts of tools on the stock, foreign exchange and commodity market.</p>
             </div>
         </div>
     </div>

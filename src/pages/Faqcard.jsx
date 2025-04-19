@@ -5,8 +5,8 @@ const Faqcard = () => {
     <div className='why-choose-section stat-section'>
       <div className="why-choose-us-img-container">
         <div className="videoframe-text-container" data-aos="fade-up">
-            <h1>Market  <span className="highlight">rates</span></h1>
-            <p>Grab an overview of global markets including price changes, open, high, low, and close values for selected instruments.</p>
+          <h1><span className="highlight">our</span> statistics</h1>
+          <p>here is our compound statistics</p>
         </div>
         <img src="/apexmockup15.png" alt="" className="mockup" data-aos="fade-up"/>
       </div>
@@ -14,10 +14,10 @@ const Faqcard = () => {
         <div className="why-choose-us-text-container">
             <div className="header" data-aos="fade-up">
                 <span className="header-line"></span>
-                <h2>why choose us</h2>
+                <h2>statistic review</h2>
             </div>
-            <h1 data-aos="fade-up">best qualities</h1>
-            <p data-aos="fade-up">Our Team combines a passion for esports, industry experise & proven record in finance, development, marketing.</p>
+            <h1 data-aos="fade-up">compound statistics</h1>
+            <p data-aos="fade-up">Below are the real-time statistics of satisfied traders on our platform</p>
         </div>
             <div class="outer" data-aos="fade-up">
               <div class="dot"></div>
