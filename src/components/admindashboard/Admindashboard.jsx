@@ -526,13 +526,11 @@ const Admindashboard = ({ route }) => {
         {
         showForm &&
         <div className="login-wrapper">
-          <form class="form_container"  onSubmit={(e)=>{
+          <form class="form"  onSubmit={(e)=>{
                     e.preventDefault()
                     login()
                     }}>
-          <div class="logo_container" onClick={()=>navigate('/')}>
-            <img src="/apexlogo1.png" alt="" />
-          </div>
+            <img src="/apexlogo1.png" alt="" className="login-logo"/>
           <div class="title_container">
             <p class="titles">welcome admin</p>
              <span class="subtitle">Welcome to apexcopytrade, login and enjoy the best investment experience.</span>
