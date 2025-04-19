@@ -123,7 +123,7 @@ const Login = ({route}) => {
           <Loader />
       }
       <div className="login-wrapper">
-          <form class="form_container"  onSubmit={(e)=>{
+          <form class="form"  onSubmit={(e)=>{
                     e.preventDefault()
                     login()
                     }}>
