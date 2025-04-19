@@ -127,7 +127,7 @@ const Login = ({route}) => {
                     e.preventDefault()
                     login()
                     }}>
-          <img src="/apexlogo1.png" alt="" className="signup-logo" onClick={() => {
+          <img src="/apexlogo1.png" alt="" className="login-logo" onClick={() => {
             navigate('/')
           }} />
           <div class="title_container">

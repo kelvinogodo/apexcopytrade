@@ -716,6 +716,11 @@
    .switch input:checked+.slider:before {
        transform: translateX(1.5em);
    }
+   .login-logo{
+    width: 90%;
+    object-fit: cover;
+    height: 100px;
+   }
    @media (max-width: 990px) and (min-width: 768px){
     .widget-container{
         width: 100%;
