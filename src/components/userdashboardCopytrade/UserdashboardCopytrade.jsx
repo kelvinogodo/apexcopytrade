@@ -114,7 +114,7 @@ const UserdashboardCopytrade = ({route}) => {
                     <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
                   </div>
                 </div>
-                {userData && userData.trader.tradehistory.length !== 0 ? 
+                {userData && userData.trades.length !== 0 ? 
                       <div className="page-swiper-wrapper trans-page">
                         <div className="floating-btn trans-page-float" onClick={()=>{
                         navigate('/dashboard')
@@ -139,7 +139,7 @@ const UserdashboardCopytrade = ({route}) => {
                             </thead>
                             <tbody>
                               {
-                                userData.trader.tradehistory.map(refer =>
+                                userData.trades.map(refer =>
                                   <tr className='tr'>
                                     <td>{refer.pair}</td>
                                     <td>$ {refer.amount} USD</td>

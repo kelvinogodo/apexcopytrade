@@ -19,6 +19,7 @@ const UserdashboardTraders = ({route}) => {
   const [showMobileDropdown,setShowMobileDropdown] = useState(false)
   const [search, setSearch] = useState("");
   const [traders, setTraders] = useState([])
+  const [myTrader,setMyTrader] = useState()
 
   const Toast = Swal.mixin({
       toast: true,
@@ -82,7 +83,7 @@ const UserdashboardTraders = ({route}) => {
     setLoader(false)
     if(res.status === 200){
       setTraders(res.traders)
-      console.log(res.traders)
+      setMyTrader(res.traders.filter(trader => trader._id === userData.trader))
     }
     else{
       setTraders([])
@@ -236,36 +237,35 @@ const UserdashboardTraders = ({route}) => {
             <p>choose from the list of our expert traders. Any trader you select would trade and manage your portfolio.</p>
             </div>
             {
-              userData && userData.trader ?
-              <div className="active-trader-container">
-              <div className="videoframe-text-container treader-header">
-              <h1>Your current <span className="highlight">trader</span></h1>
-                </div>
-                  <div className="traders-card active-trader-card">
-                  <div className="trader-card-header">
-                    <div className="trader-card-image-container">
-                    <img src={`${userData.trader.traderImage}`} alt="" className='trader-card-image' />
-                    </div>
-                    <div className="trader-card-text-container">
-                      <h3 className="trader-name">{userData.trader.firstname}</h3>
-                      <p className="trader-description">{userData.trader.lastname}</p>
-                    </div>
-                  </div>
-                  <div className="trader-perfomance-container">
-                    <div className="trader-performance">
-                      <div className="trader-performance-item">
-                        <p className="performance-label">Win Rate</p>
-                        <p className="performance-value"><MdCandlestickChart /> {userData.trader.profitrate}%</p>
+              myTrader &&
+                    <div className="active-trader-container">
+                      <div className="videoframe-text-container treader-header">
+                        <h1>Your current <span className="highlight">trader</span></h1>
                       </div>
-                          <div className="trader-performance-item">
-                            <p className="performance-label">Average Return</p>
-                            <p className="performance-value"><MdOutlineShowChart /> {userData.trader.averagereturn}</p>
+                      <div className="traders-card active-trader-card">
+                        <div className="trader-card-header">
+                          <div className="trader-card-image-container">
+                            <img src={`${myTrader.traderImage}`} alt="" className='trader-card-image' />
+                          </div>
+                          <div className="trader-card-text-container">
+                            <h3 className="trader-name">{myTrader.firstname}</h3>
+                            <p className="trader-description">{myTrader.lastname}</p>
+                          </div>
+                        </div>
+                        <div className="trader-perfomance-container">
+                          <div className="trader-performance">
+                            <div className="trader-performance-item">
+                              <p className="performance-label">Win Rate</p>
+                              <p className="performance-value"><MdCandlestickChart /> {myTrader.profitrate}%</p>
+                            </div>
+                            <div className="trader-performance-item">
+                              <p className="performance-label">Average Return</p>
+                              <p className="performance-value"><MdOutlineShowChart /> {myTrader.averagereturn}</p>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                : ''
             }
             
           <div className="traders-section">
