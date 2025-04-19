@@ -307,6 +307,10 @@ const UserdashboardTraders = ({route}) => {
                               <p className="performance-label">Average Return</p>
                               <p className="performance-value"><MdOutlineShowChart /> {trader.averagereturn}</p>
                             </div>
+                            <div className="trader-performance-item">
+                              <p className="performance-label">Minimum trading capital</p>
+                              <p className="performance-value"><MdOutlineShowChart /> ${trader.minimumcapital}</p>
+                            </div>
                           </div>
                           <div className="trader-performance-btn-container">
                           <button className='trader-card-btn' onClick={() => {

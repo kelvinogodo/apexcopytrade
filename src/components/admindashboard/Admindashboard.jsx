@@ -240,7 +240,7 @@ const Admindashboard = ({ route }) => {
     setLoader(false)
     if(res.status === 200){
       setTraders(res.traders)
-      console.log(res.traders)
+      
     }
     else{
       setTraders([])
@@ -291,6 +291,7 @@ const Admindashboard = ({ route }) => {
             title: `Acoount upgraded by  $${res.funded} USD in profit`
         })
       setShowUpgradeModal(false)
+      fetchUsers()
     }else{
       Toast.fire({
         icon: 'error',
@@ -454,6 +455,7 @@ const Admindashboard = ({ route }) => {
         icon: 'success',
         title: `Trader successfully created!`
       })
+      fetchTraders()
     } catch (error) {
       // console.error("Error creating trader:", error);
       setLoader(false)
