@@ -57,7 +57,7 @@ const Plan = () => {
             <div class="pack-header">
                   <h3>{withdrawmethod.type}</h3>
                   <h2>$ {withdrawmethod.min}</h2>
-                  <button className='plan-card-btn'>
+                  <button className='plan-card-btn' onClick={()=>navigate('/signup')}>
                     <p>Subscribe</p>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
