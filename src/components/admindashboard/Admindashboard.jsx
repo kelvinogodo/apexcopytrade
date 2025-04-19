@@ -480,7 +480,7 @@ const Admindashboard = ({ route }) => {
   };
 
   return (
-    <main className='login-page admin-dash'>
+    <main className='admin-dash'>
 
       {
             showStatus &&

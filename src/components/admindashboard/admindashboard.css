@@ -1,5 +1,6 @@
 .admin-dash{
     min-height: auto;
+    width: 100%;
 }
 .credit-form-container{
     width: 85%;
@@ -85,6 +86,7 @@
 }
 .dashboard-wrapper{
     flex-direction: column;
+    background-color: red;
 }
 
 .promo-btn,.manual-btn, .active-promo-btn, .approve-btn,.mail-btn{
