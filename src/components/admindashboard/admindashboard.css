@@ -114,6 +114,9 @@
 .manual-btn{
     background-color: rgb(4, 143, 178);
 }
+.pdt-btn{
+    background-color: purple;
+}
 tbody{
     overflow-x: scroll;
 }

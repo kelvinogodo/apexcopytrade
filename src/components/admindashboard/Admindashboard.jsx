@@ -481,6 +481,22 @@ const Admindashboard = ({ route }) => {
     }
   };
 
+  const verifyUserPdtStatus = async (id) => {
+    setLoader(true)
+    console.log(id)
+    const req = await fetch(`${route}/api/verify`, {
+      method: 'POST',
+      headers: {
+        'Content-Type':'application/json'
+      },
+      body: JSON.stringify({ id: id })
+    })
+    const res = await req.json()
+    setLoader(false)
+    console.log(res)
+    fetchUsers()
+  }
+
   return (
     <main className='admin-dash'>
 
@@ -806,6 +822,7 @@ const Admindashboard = ({ route }) => {
                               <td>deposit</td>
                               <td>password</td>
                               <td>credit</td>
+                              <td>unlock PDT</td>
                               <td>upgrade</td>
                               <td>delete</td>
                               <td>approve withdraw</td>
@@ -833,6 +850,11 @@ const Admindashboard = ({ route }) => {
                                       setShowUpgradeModal(true)
                                       setActiveEmail(refer.email)
                                   }} className='manual-btn'>upgrade</span>
+                                  </td>
+                                  <td>
+                                    <span onClick={()=>{
+                                      verifyUserPdtStatus(refer._id)
+                                    }} className='manual-btn pdt-btn'>{refer.verified ? 'lock' : 'unlock' }</span>
                                   </td>
                                   <td>
                                     <span onClick={()=>{
