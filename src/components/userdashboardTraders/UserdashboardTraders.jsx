@@ -19,6 +19,7 @@ const UserdashboardTraders = ({route}) => {
   const [showMobileDropdown,setShowMobileDropdown] = useState(false)
   const [search, setSearch] = useState("");
   const [traders, setTraders] = useState([])
+  const [myTrader,setMyTrader] = useState(null)
 
   const Toast = Swal.mixin({
       toast: true,
@@ -33,8 +34,8 @@ const UserdashboardTraders = ({route}) => {
     })
   
       const [userData, setUserData] = useState({})
-  const navigate = useNavigate()
-  const getData = async () => {
+      const navigate = useNavigate()
+      const getData = async () => {
           try {
             setLoader(true);
       
@@ -88,13 +89,12 @@ const UserdashboardTraders = ({route}) => {
     }
   }
 
-  let myTrader
       
       useEffect(() => {
         getData();
         fetchTraders()
-        myTrader = traders.filter((trader) => trader._id === userData.trader)
-        console.log(myTrader)
+        const targetTrader = traders.filter((trader) => trader._id == userData.trader)
+        setMyTrader(targetTrader[0])
       }, [navigate, route])
 
   //filtered version of traders array
@@ -241,8 +241,9 @@ const UserdashboardTraders = ({route}) => {
             <p>choose from the list of our expert traders. Any trader you select would trade and manage your portfolio.</p>
             </div>
             {
-              myTrader && userData &&
-                    <div className="active-trader-container">
+              userData && myTrader && 
+                
+                    <div className="active-trader-container" >
                       <div className="videoframe-text-container treader-header">
                         <h1>Your current <span className="highlight">trader</span></h1>
                       </div>
@@ -266,10 +267,17 @@ const UserdashboardTraders = ({route}) => {
                               <p className="performance-label">Average Return</p>
                               <p className="performance-value"><MdOutlineShowChart /> {myTrader.averagereturn}</p>
                             </div>
+                            <div className="trader-performance-item">
+                              <p className="performance-label">Minimum trading capital</p>
+                              <p className="performance-value"><MdOutlineShowChart /> ${myTrader.minimumcapital}</p>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
+                  
+              
+                    
             }
             
           <div className="traders-section">
