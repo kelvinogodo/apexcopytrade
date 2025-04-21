@@ -49,7 +49,7 @@ const Userdashboardwithdraw = ({route}) => {
   const [activeMethod, setActiveMethod] = useState()
   const [checkoutPage,setCheckoutPage] = useState(false)
   const [withdrawAmount,setWithdrawAmount] = useState()
-  const [withdrawMethods,setWithdrawalMethods] = useState([
+  const withdrawMethods = [
     {
       id:1,
       min:10,
@@ -92,7 +92,7 @@ const Userdashboardwithdraw = ({route}) => {
       image:'/xrp-icon.png',
       method:'XRP ',
     },
-  ])
+  ]
 
     // sweet alert codes 
 
@@ -112,6 +112,15 @@ const Userdashboardwithdraw = ({route}) => {
       setCheckoutPage(false)
     }
     
+  
+   const [selectedCrypto, setSelectedCrypto] = useState(null);
+  
+    const handleChange = (e) => {
+      const selectedMethod = e.target.value;
+      const methodDetails = withdrawMethods.find(opt => opt.method === selectedMethod);
+      setSelectedCrypto(methodDetails);
+  };
+  
   return (
     <>
       {
@@ -193,85 +202,39 @@ const Userdashboardwithdraw = ({route}) => {
                   <p>Choose a withdrawal method to withdraw money.</p>
               </div>
               <div className="swiper-container">
-                  <Swiper
-                    slidesPerView={3}
-                    spaceBetween={30}
-                    slidesPerGroup={1}
-                    loop={true}
-                    loopFillGroupWithBlank={true}
-                    navigation={true}
-                    modules={[ Navigation]}
-                    className="mySwiper"
-                  >
-                    {
-                      withdrawMethods.map((withdrawmethod) => (
-                      <SwiperSlide key={withdrawmethod.id} className='my-slide'>
-                      <div className="crypto-card-img-container">
-                        <img src={withdrawmethod.image} alt="" />
-                        <h2>{withdrawmethod.method}</h2>
-                      </div>
-                      <div className="investrange-container">
-                        <div className="investrange-card">
-                          <p>limit:</p>
-                          <p>{withdrawmethod.min} - {withdrawmethod.max} USD</p>
-                        </div>
-                        <div className="investrange-card">
-                          <p>charge</p>
-                          <p>0 USD + 0%</p>
-                        </div>
-                      </div>
-                      <button className="deposit-btn" onClick={()=>{
+                <div className='updated-crypto-container'>
+                  <h2>Select Cryptocurrency</h2>
+                  <select onChange={handleChange} defaultValue="" className='crypto-select'>
+                    <option value="" disabled>Select method</option>
+                    {withdrawMethods.map(opt => (
+                      <option key={opt.id} value={opt.method}>
+                        {opt.method}
+                      </option>
+                    ))}
+                  </select>
+
+                  {selectedCrypto && (
+                  <div className='updated-crypto-card'>
+                    <div className="updated-img-cont">
+                      <img src={selectedCrypto.image} alt={selectedCrypto.method} className='updated-crypto-img' />
+                    </div>
+                    <p><strong>Method:</strong> {selectedCrypto.method}</p>
+                    <p><strong>Minimum withdrawal:</strong> ${selectedCrypto.min}</p>
+                    <button className="deposit-btn updated-btn" onClick={()=>{
                         setActiveMethod({
-                          id:`${withdrawmethod.id}`,
-                          min:`${withdrawmethod.min}`,
-                          max:`${withdrawmethod.max}`,
-                          image:`${withdrawmethod.image}`,
-                          method:`${withdrawmethod.method}`
+                          id:`${selectedCrypto.id}`,
+                          min:`${selectedCrypto.min}`,
+                          max:`${selectedCrypto.max}`,
+                          image:`${selectedCrypto.image}`,
+                          method:`${selectedCrypto.method}`,
+                          wallet:`${selectedCrypto.wallet}`
                         })
                         setShowModal(true)
-                      }}>withdraw</button>
-                    </SwiperSlide>
-                    ))}
-                  </Swiper>
-              </div>
-              <div className="swiper-container mobile-swiper-container">
-                <Swiper
-                  navigation={true}
-                  spaceBetween={30}
-                  modules={[Pagination, Navigation]}
-                  className="mySwiper"
-                >
-                  {
-                      withdrawMethods.map((withdrawmethod) => (
-                      <SwiperSlide key={withdrawmethod.id} className='my-slide'>
-                      <div className="crypto-card-img-container">
-                        <img src={withdrawmethod.image} alt="" />
-                        <h2>{withdrawmethod.method}</h2>
-                      </div>
-                      <div className="investrange-container">
-                        <div className="investrange-card">
-                          <p>limit:</p>
-                          <p>{withdrawmethod.min} - {withdrawmethod.max} USD</p>
-                        </div>
-                        <div className="investrange-card">
-                          <p>charge</p>
-                          <p>0 USD + 0%</p>
-                        </div>
-                      </div>
-                      <button className="deposit-btn" onClick={()=>{
-                        setActiveMethod({
-                          id:`${withdrawmethod.id}`,
-                          min:`${withdrawmethod.min}`,
-                          max:`${withdrawmethod.max}`,
-                          image:`${withdrawmethod.image}`,
-                          method:`${withdrawmethod.method}`,
-                          wallet:`${withdrawmethod.wallet}`
-                        })
-                        setShowModal(true)
-                      }}>withdraw</button>
-                    </SwiperSlide>
-                    ))}
-                </Swiper>
+                      }}>proceed</button>
+                    </div>
+                  )}
+            </div>
+              
             </div>
               <button className="history-btn" onClick={()=>{
                 navigate('/withdrawlogs')
