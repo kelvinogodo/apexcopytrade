@@ -87,12 +87,14 @@ const UserdashboardTraders = ({route}) => {
       setTraders([])
     }
   }
+
   let myTrader
       
       useEffect(() => {
         getData();
         fetchTraders()
         myTrader = traders.filter((trader) => trader._id === userData.trader)
+        console.log(myTrader)
       }, [navigate, route])
 
   //filtered version of traders array

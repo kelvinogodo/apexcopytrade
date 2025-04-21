@@ -29,7 +29,6 @@ const MobileDropdown = ({route,showStatus,closeMenu}) => {
                     })
                     const res = await req.json()
                     setUserData(res)
-                    console.log(res)
                 }
                 
                 getData()

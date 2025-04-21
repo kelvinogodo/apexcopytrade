@@ -9,6 +9,66 @@
     margin-left: auto;
     background-color: white;
 }
+.updated-crypto-container{
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 20px;
+    border-radius: 20px;
+}
+.updated-crypto-container h1{
+    text-transform: capitalize;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+.crypto-select{
+    width: 60%;
+    border: 1px solid var(--dark);
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px 0px;
+}
+.updated-crypto-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    padding: 20px 0px;
+    background-color: white;
+    border-radius: 10px;
+}
+.updated-crypto-card p{
+    color: var(--dark);
+    text-align: left;
+    width: 70%;
+}
+.updated-crypto-card p strong{
+    color: rgb(27, 27, 27);
+}
+.updated-btn{
+    margin-top: 15px;
+    background-color: var(--dark) !important;
+    color: white !important;
+}
+.updated-crypto-img{
+    width: 70%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+.updated-img-cont{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 10px;
+}
 .page-header{
     padding: 30px 0px;
 }
@@ -555,4 +615,49 @@
     .page-swiper-wrapper{
         padding-bottom: 50px;
     }
+        .crypto-select {
+            width: 100%;
+            border: 1px solid var(--dark);
+            outline: none;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 20px 0px;
+        }
+    
+        .updated-crypto-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px 0px;
+            background-color: white;
+            border-radius: 10px;
+        }
+    
+        .updated-crypto-card p {
+            color: var(--dark);
+            text-align: left;
+            width: 80%;
+        }
+    
+        .updated-crypto-card p strong {
+            color: rgb(27, 27, 27);
+        }
+    
+        .updated-btn {
+            width: 80%;
+            margin-top: 20px;
+        }
+    
+        .updated-crypto-img {
+            width: 90%;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+    
+        .updated-img-cont {
+            width: 90%;
+        }
 }

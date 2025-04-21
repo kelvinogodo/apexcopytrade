@@ -1028,14 +1028,19 @@ const Admindashboard = ({ route }) => {
                                 <div className="trader-performance-item">
                                   <p className="performance-label">Average Return</p>
                                   <p className="performance-value"><MdOutlineShowChart /> {trader.averagereturn}</p>
-                                  </div>
-                                  <div className="trader-performance-btn-container">
-                                    <button className='trader-card-btn' onClick={() => {
-                                      setShowTraderLogForm(true)
-                                      setActiveTraderId (trader._id)
-                                    }}>update Trader's log</button>
-                                  </div>
-                              </div>
+                                </div>
+                                <div className="trader-performance-item">
+                                  <p className="performance-label">Average Return</p>
+                                  <p className="performance-value"><MdOutlineShowChart /> {trader.minimumcapital}</p>
+                                </div>
+                                <div className="trader-performance-btn-container">
+                                  <button className='trader-card-btn' onClick={() => {
+                                    setShowTraderLogForm(true)
+                                    setActiveTraderId (trader._id)
+                                  }}>update Trader's log</button>
+                                </div>
+                                </div>
+                                
                               </div>
                             </div>
                            )

@@ -96,23 +96,14 @@
     color: white;
 }
 
-.mobile-swiper-container {
-    display: none;
-}
+
 
 @media (max-width: 990px) and (min-width: 768px) {
     .my-slide {
         width: 100% !important;
     }
 
-    .swiper-container {
-        width: 100%;
-        display: none;
-    }
-
-    .mobile-swiper-container {
-        display: block;
-    }
+    
 }
 
 @media screen and (max-width: 767px) {
@@ -120,13 +111,5 @@
     .my-slide {
         width: 100% !important;
     }
-
-    .swiper-container {
-        width: 100%;
-        display: none;
-    }
-
-    .mobile-swiper-container {
-        display: block;
-    }
+  
 }
