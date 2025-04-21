@@ -89,13 +89,25 @@ const UserdashboardTraders = ({route}) => {
     }
   }
 
-      
       useEffect(() => {
         getData();
         fetchTraders()
-        const targetTrader = traders.filter((trader) => trader._id == userData.trader)
-        setMyTrader(targetTrader[0])
+        
       }, [navigate, route])
+  
+  
+  useEffect(() => {
+    // Run this only when both traders and userData.trader are ready
+    if (traders.length > 0 && userData?.trader) {
+      const target = traders.find(
+        (trader) => trader._id === userData.trader
+      );
+
+      console.log("Filtered trader:", target);
+      setMyTrader(target);
+    }
+  }, [traders, userData]); // dependencies
+
 
   //filtered version of traders array
 
@@ -240,9 +252,7 @@ const UserdashboardTraders = ({route}) => {
             <h2 className="traders-showcase-header">expert traders</h2>
             <p>choose from the list of our expert traders. Any trader you select would trade and manage your portfolio.</p>
             </div>
-            {
-              userData && myTrader && 
-                
+            { myTrader && 
                     <div className="active-trader-container" >
                       <div className="videoframe-text-container treader-header">
                         <h1>Your current <span className="highlight">trader</span></h1>
