@@ -483,6 +483,7 @@
     }
     .dash-empty-img{
         width: 100% !important;
+        object-fit: contain !important;
     }
     .home-empty-page{
         width: 100% !important;
