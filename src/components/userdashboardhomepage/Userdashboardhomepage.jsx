@@ -287,7 +287,7 @@ const Userdashboardhomepage = ({route}) => {
           :
             <div className="empty-page home-empty-page">
               <img src="/preview.gif" alt="" className='empty-img dash-empty-img'/>
-              <p>Your Trader has not placed any trades for your account Today. Trades taken by your trader would be displayed here when available.</p> 
+              <p>Your Trader has not placed any trades for your account Today. Trades taken by your trader  today would be displayed here when available.</p> 
             </div>
       }
     </section>
