@@ -481,6 +481,12 @@
         background-color: rgb(18, 18, 18);
         justify-content: space-between;
     }
+    .dash-empty-img{
+        width: 100% !important;
+    }
+    .home-empty-page{
+        width: 100% !important;
+    }
 }
 
 @media screen and (max-width: 767px) {
