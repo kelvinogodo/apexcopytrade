@@ -447,6 +447,9 @@
 .home-empty-page p{
     color: black;
 }
+.dash-empty-img {
+    object-fit: contain !important;
+}
 @media screen and (max-width: 990px) {
     
     .dashboardhomepage {
