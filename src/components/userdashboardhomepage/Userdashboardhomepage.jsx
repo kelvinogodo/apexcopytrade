@@ -17,11 +17,14 @@ const Userdashboardhomepage = ({route}) => {
     const [userData, setUserData] = useState()
   const [loader, setLoader] = useState(false)
   const [showNotification, setShowNotification] = useState(true)
-  const [showMobileDropdown,setShowMobileDropdown] = useState(false)
+  const [showMobileDropdown, setShowMobileDropdown] = useState(false)
+  const [dailyTrades, setDailyTrades] = useState([])
     const copy = ()=>{
         navigator.clipboard.writeText(clipRef.current.value)
     }
-    const clipRef = useRef(null)
+  const clipRef = useRef(null)
+  const today = new Date().toLocaleDateString()
+  
 
    useEffect(() => {
   const getData = async () => {
@@ -68,6 +71,22 @@ const Userdashboardhomepage = ({route}) => {
   const closeMobileMenu = () => {
     setShowMobileDropdown(false)
   }
+
+  useEffect(() => {
+      // Run this only when both traders and userData.trader are ready
+    if (userData?.trader.length > 0 && userData) {
+        
+        const dailytrades = userData.trades.filter(trade => trade.date === today)
+  
+        console.log("daily trades:", dailytrades);
+        setDailyTrades(dailytrades);
+      }
+    }, [userData]);
+  
+
+  
+
+  
     
   return (
     <main className='homewrapper'>
@@ -156,6 +175,7 @@ const Userdashboardhomepage = ({route}) => {
             </div>
           </div>
         </div>
+        
         <div className="dashboard-chart-container">
           <TeslaWidget />
         </div>
@@ -231,7 +251,45 @@ const Userdashboardhomepage = ({route}) => {
                   </div>
                 </div>
               </div>
+        </div>
+        {userData && dailyTrades.length !== 0 ? 
+          <div className="page-swiper-wrapper trans-page">
+          <div className="page-header">
+              <h3>checkout your Daily trade logs</h3>
+              <h2>Daily trade logs</h2>
+              <p>we keep track of all the trades taken by your trader daily</p>
+          </div>
+          <div className="transaction-container no-ref">
+            <table>
+                <thead>
+                  <tr>
+                    <td>trade pair</td>
+                    <td>amount</td>
+                    <td>type</td>
+                    <td>date</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  {
+                    dailyTrades.map(refer =>
+                      <tr className='tr'>
+                        <td>{refer.pair}</td>
+                        <td>$ {refer.amount} USD</td>
+                        <td className={`${refer.tradeType === 'profit' ? 'profit' : 'loss'}`}> {refer.tradeType}</td>
+                        <td>{refer.date}</td>
+                      </tr>
+                    )
+                  }
+                </tbody>
+              </table>
+              </div>
             </div>
+          :
+            <div className="empty-page">
+              <img src="/preview.gif" alt="" className='empty-img'/>
+              <p>Your Trader has not placed any trades Today. Trades taken by your trader would be displayed here when available.</p> 
+            </div>
+      }
     </section>
     </main>
   )
