@@ -252,7 +252,7 @@ const Userdashboardhomepage = ({route}) => {
                 </div>
               </div>
         </div>
-        {userData && dailyTrades.length !== 0 ? 
+        {/* {userData && dailyTrades ? 
           <div className="page-swiper-wrapper trans-page">
           <div className="page-header">
               <h3>checkout your Daily trade logs</h3>
@@ -289,7 +289,7 @@ const Userdashboardhomepage = ({route}) => {
               <img src="/preview.gif" alt="" className='empty-img dash-empty-img'/>
               <p>Your Trader has not placed any trades for your account Today. Trades taken by your trader  today would be displayed here when available.</p> 
             </div>
-      }
+      } */}
     </section>
     </main>
   )
