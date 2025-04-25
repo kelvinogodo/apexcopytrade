@@ -229,10 +229,6 @@ const UserdashboardTraders = ({route}) => {
                       <p className="performance-value">{activeTrader.rrRatio}</p>
                     </div>
                     <div className="trader-performance-item">
-                      <p className="performance-label">nationality </p>
-                      <p className="performance-value">{activeTrader.nationality}</p>
-                    </div>
-                    <div className="trader-performance-item">
                       <p className="performance-label">minimum Trading Capital </p>
                       <p className="performance-value">{activeTrader.minimumcapital}</p>
                     </div>
