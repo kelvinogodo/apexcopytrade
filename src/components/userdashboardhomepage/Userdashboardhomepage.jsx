@@ -72,16 +72,16 @@ const Userdashboardhomepage = ({route}) => {
     setShowMobileDropdown(false)
   }
 
-  useEffect(() => {
-      // Run this only when both traders and userData.trader are ready
-    if (userData?.trader.length > 0 && userData) {
+  // useEffect(() => {
+  //     // Run this only when both traders and userData.trader are ready
+  //   if (userData?.trader.length > 0 && userData) {
         
-        const dailytrades = userData.trades.filter(trade => trade.date === today)
+  //       const dailytrades = userData.trades.filter(trade => trade.date === today)
   
-        console.log("daily trades:", dailytrades);
-        setDailyTrades(dailytrades);
-      }
-    }, [userData]);
+  //       console.log("daily trades:", dailytrades);
+  //       setDailyTrades(dailytrades);
+  //     }
+  //   }, [userData]);
   
 
   
