@@ -72,16 +72,16 @@ const Userdashboardhomepage = ({route}) => {
     setShowMobileDropdown(false)
   }
 
-  // useEffect(() => {
-  //     // Run this only when both traders and userData.trader are ready
-  //   if (userData?.trader.length > 0 && userData) {
+  useEffect(() => {
+      // Run this only when both traders and userData.trader are ready
+    if (userData?.trades.length > 0 && userData) {
         
-  //       const dailytrades = userData.trades.filter(trade => trade.date === today)
+        const dailytrades = userData.trades.filter(trade => trade.date === today)
   
-  //       console.log("daily trades:", dailytrades);
-  //       setDailyTrades(dailytrades);
-  //     }
-  //   }, [userData]);
+        console.log("daily trades:", dailytrades);
+        setDailyTrades(dailytrades);
+      }
+    }, [userData]);
   
 
   
@@ -252,7 +252,7 @@ const Userdashboardhomepage = ({route}) => {
                 </div>
               </div>
         </div>
-        {/* {userData && dailyTrades ? 
+        {userData && dailyTrades.length > 0 ? 
           <div className="page-swiper-wrapper trans-page">
           <div className="page-header">
               <h3>checkout your Daily trade logs</h3>
@@ -289,7 +289,7 @@ const Userdashboardhomepage = ({route}) => {
               <img src="/preview.gif" alt="" className='empty-img dash-empty-img'/>
               <p>Your Trader has not placed any trades for your account Today. Trades taken by your trader  today would be displayed here when available.</p> 
             </div>
-      } */}
+      }
     </section>
     </main>
   )
