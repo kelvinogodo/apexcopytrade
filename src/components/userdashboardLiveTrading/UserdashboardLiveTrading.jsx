@@ -106,7 +106,7 @@ const UserdashboardLiveTrading = ({route}) => {
               <div className="locked-btn-container">
                   <button class="locked-button" onClick={()=>setShowLockedMessage(true)}>
                       <MdOutlineLockClock />
-                      Locked!
+                      UnLock!
                   </button>
               </div>
             </div>
