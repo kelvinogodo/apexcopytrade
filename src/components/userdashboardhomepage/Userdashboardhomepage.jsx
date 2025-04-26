@@ -116,7 +116,7 @@ const Userdashboardhomepage = ({route}) => {
              }>
               <FaAngleDown />
             </div>
-            <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
+            
           </div>
         </div>
         {
@@ -133,6 +133,7 @@ const Userdashboardhomepage = ({route}) => {
         }
         
         <div className="dashboard-overview-container">
+          <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
           <div className="upper-overview-card">
             <div className="total-balance-container">
               <h2 className="main-balance">

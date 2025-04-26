@@ -125,12 +125,13 @@ const Profile = ({ route }) => {
                 }>
                   <FaAngleDown />
                 </div>
-                <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
+                
             </div>
           </div>
         </div>
       
-      <div className="profile-page">
+        <div className="profile-page">
+          <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
         <div className="page-header">
           <h2>Profile Settings</h2>
           <p>Choose an investment plan to start earning immediately</p>
