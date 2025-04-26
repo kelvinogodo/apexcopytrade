@@ -190,7 +190,7 @@ const UserdashboardTraders = ({route}) => {
                 }>
                   <FaAngleDown />
                 </div>
-                <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
+                
               </div>
             </div>
         {
@@ -243,7 +243,8 @@ const UserdashboardTraders = ({route}) => {
         }
         {
           !showTrader && 
-          <>
+          <section className='trader-show-case-wrapper'>
+          <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
           <div className="traders-showcase">
             <h2 className="traders-showcase-header">expert traders</h2>
             <p>choose from the list of our expert traders. Any trader you select would trade and manage your portfolio.</p>
@@ -354,7 +355,7 @@ const UserdashboardTraders = ({route}) => {
               
             </div>
           </div>
-        </>
+        </section>
         }
         </section>
     </main>  
