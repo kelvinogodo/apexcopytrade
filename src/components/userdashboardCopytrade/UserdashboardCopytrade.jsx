@@ -88,11 +88,12 @@ const UserdashboardCopytrade = ({route}) => {
                       }>
                         <FaAngleDown />
                     </div>
-                    <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
+                    
                   </div>
                 </div>
                 {userData && userData.trades.length !== 0 ? 
-                      <div className="page-swiper-wrapper trans-page">
+          <div className="page-swiper-wrapper trans-page">
+            <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
                         <div className="floating-btn trans-page-float" onClick={()=>{
                         navigate('/dashboard')
                       }}>
@@ -130,6 +131,7 @@ const UserdashboardCopytrade = ({route}) => {
                         </div>
                       :
                         <div className="empty-page">
+                          <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
                           <img src="/preview.gif" alt="" className='empty-img dash-empty-img'/>
                           <p>Your Trader has not placed any trades yet. Trades taken by your trader would be displayed here when available.</p> 
                           <Link to='/fundwallet'>deposit</Link>
