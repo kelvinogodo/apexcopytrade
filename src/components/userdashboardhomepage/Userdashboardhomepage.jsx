@@ -253,7 +253,7 @@ const Userdashboardhomepage = ({route}) => {
                 </div>
               </div>
         </div>
-        {userData && dailyTrades.length > 0 ? 
+        {userData && dailyTrades.length !== 0 ? 
           <div className="page-swiper-wrapper trans-page">
           <div className="page-header">
               <h3>checkout your Daily trade logs</h3>
