@@ -413,7 +413,7 @@ const Admindashboard = ({ route }) => {
     firstname: "",
     lastname: "",
     winRate: "",
-    averageReturn: "",
+    avgReturn: "",
     followers: "",
     riskRewardRatio: "",
     nationality: "",
@@ -445,7 +445,7 @@ const Admindashboard = ({ route }) => {
         firstname: "",
         lastname: "",
         winRate: "",
-        averageReturn: "",
+        avgReturn: "",
         followers: "",
         riskRewardRatio: "",
         nationality: "",
@@ -943,7 +943,7 @@ const Admindashboard = ({ route }) => {
                           name="avgReturn"
                           className="create-trader-input"
                           placeholder="Enter Trader's Average Return"
-                          value={formData.averageReturn}
+                          value={formData.avgReturn}
                           onChange={handleChange}
                         />
                       </div>
