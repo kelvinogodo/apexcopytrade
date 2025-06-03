@@ -205,6 +205,7 @@ const Admindashboard = ({ route }) => {
   const [selectedValue, setSelectedValue] = useState()
   const [showStatus, setShowStatus] = useState(false)
   
+  
   const logout = ()=>{
       localStorage.removeItem('token')
       navigate('/login')
@@ -457,7 +458,7 @@ const Admindashboard = ({ route }) => {
       })
       fetchTraders()
     } catch (error) {
-      // console.error("Error creating trader:", error);
+      
       setLoader(false)
       Toast.fire({
         icon: 'error',
@@ -942,7 +943,7 @@ const Admindashboard = ({ route }) => {
                           name="avgReturn"
                           className="create-trader-input"
                           placeholder="Enter Trader's Average Return"
-                          value={formData.avgReturn}
+                          value={formData.averageReturn}
                           onChange={handleChange}
                         />
                       </div>
