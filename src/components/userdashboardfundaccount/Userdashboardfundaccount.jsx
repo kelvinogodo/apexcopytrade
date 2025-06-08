@@ -52,12 +52,20 @@ const Userdashboardfundaccount = ({route}) => {
       id:4,
       min:500,
       max:1000,
+      image:'/usdc-coin.png',
+      method:'USDC (ETH Network) ',
+      wallet:'0xD38978262c7Ea89725Ea06D476Dc8B0D88DeB188'
+    },
+    {
+      id:5,
+      min:500,
+      max:1000,
       image:'/solana.png',
       method:'Solana (SOL) ',
       wallet:'B2WfQ9Tf5uNqotbdsxgqNXn8j7JQNeoSyyZB6CT2i4FR'
     },
     {
-      id:5,
+      id:6,
       min:500,
       max:1000,
       image:'/dogecoin-logo.png',
@@ -65,7 +73,7 @@ const Userdashboardfundaccount = ({route}) => {
       wallet:'DPQgzVrChSKMzBSRYvS6iQP282H2PidgTz'
     },
     {
-      id:6,
+      id:7,
       min:500,
       max:1000,
       image:'/xrp-icon.png',
