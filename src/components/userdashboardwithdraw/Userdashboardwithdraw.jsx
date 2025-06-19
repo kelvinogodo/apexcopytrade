@@ -72,6 +72,13 @@ const Userdashboardwithdraw = ({route}) => {
       method:'tether(TRC20)',
     },
     {
+      id:7,
+      min:10,
+      max:1000000,
+      image:'/usdc-coin.png',
+      method:'USDC (ETH Network)',
+    },
+    {
       id:4,
       min:10,
       max:1000000,
