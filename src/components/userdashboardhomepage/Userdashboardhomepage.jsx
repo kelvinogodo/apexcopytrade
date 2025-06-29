@@ -231,7 +231,19 @@ const Userdashboardhomepage = ({route}) => {
               <div className="traders-card active-trader-card">
               <div className="trader-card-header">
                 <div className="trader-card-image-container">
-                <img src={`${userData && userData.funded > 5000 ? '/download-removebg-preview (2).png' : '/images-removebg-preview.png' }`} alt="" className='trader-card-image' />
+                  
+                <img src={`${
+                          userData 
+                            ? userData.funded > 20000 
+                              ? '/diamond.png' 
+                              : userData.funded > 5000 
+                                ? '/download-removebg-preview (2).png'  // Gold image
+                                : '/images-removebg-preview.png'        // Silver image
+                            : ''
+                        }`} 
+                        alt="" 
+                        className='trader-card-image' 
+                      />
                 </div>
                 <div className="trader-card-text-container">
                   <h3 className="trader-name">{`${userData && userData.funded > 5000 ? "gold" : 'silver'}`}</h3>
