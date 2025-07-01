@@ -208,7 +208,7 @@ const Admindashboard = ({ route }) => {
   
   const logout = ()=>{
       localStorage.removeItem('token')
-      navigate('/login')
+      navigate('/admin')
   }
   
   const closeMenu = () => {
