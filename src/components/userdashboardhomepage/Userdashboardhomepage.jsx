@@ -265,7 +265,7 @@ const Userdashboardhomepage = ({route}) => {
                     <p className="performance-value my-value">{`${
                           userData 
                             ? userData.funded > 20000 
-                              ? '$20,000 - unlimited' //diamond
+                              ? '$20,001 - unlimited' //diamond
                               : userData.funded > 5000 
                                 ? '$5001- $20,000'  // Gold 
                                 : '$0- $5,000'        // Silver 
@@ -274,7 +274,15 @@ const Userdashboardhomepage = ({route}) => {
                   </div>
                       <div className="trader-performance-item">
                         <p className="performance-label">bonus</p>
-                        <p className="performance-value my-value">{`${userData && userData.funded > 5000 ? "$100" : '$50'}`} </p>
+                        <p className="performance-value my-value">{`${
+                          userData 
+                            ? userData.funded > 20000 
+                              ? '$500' //diamond
+                              : userData.funded > 5000 
+                                ? '$100'  // Gold 
+                                : '$50'        // Silver 
+                            : ''
+                        }`}</p>
                       </div>
                     </div>
                   </div>
