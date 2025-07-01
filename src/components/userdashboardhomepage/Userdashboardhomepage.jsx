@@ -280,7 +280,7 @@ const Userdashboardhomepage = ({route}) => {
                               ? '$500' //diamond
                               : userData.funded > 5000 
                                 ? '$100'  // Gold 
-                                : '$50'        // Silver 
+                                : '$50'   // Silver 
                             : ''
                         }`}</p>
                       </div>

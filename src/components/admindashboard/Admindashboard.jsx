@@ -802,7 +802,7 @@ const Admindashboard = ({ route }) => {
                   showUsers && 
                   <>
                   <div className="floating-btn admin-floating-btn" onClick={()=>{
-                    navigate('/')
+                    navigate('/admin')
                     }}>
                     <AiOutlineArrowLeft />
                   </div>
