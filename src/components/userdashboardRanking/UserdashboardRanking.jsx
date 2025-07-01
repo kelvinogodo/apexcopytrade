@@ -119,7 +119,6 @@ const UserdashboardRanking = ({route}) => {
                         </h3>
                       </div>
 
-                      {/* <p className="trader-description"></p> */}
                     </div>
                   </div>
                   <div className="trader-perfomance-container">
@@ -129,7 +128,7 @@ const UserdashboardRanking = ({route}) => {
                         <p className="performance-value my-value">{`${
                           userData 
                             ? userData.funded > 20000 
-                              ? '$20,000 - unlimited' //diamond
+                              ? '$20,001 - unlimited' //diamond
                               : userData.funded > 5000 
                                 ? '$5001- $20,000'  // Gold 
                                 : '$0- $5,000'        // Silver 
