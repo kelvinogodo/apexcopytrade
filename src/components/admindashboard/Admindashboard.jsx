@@ -206,10 +206,10 @@ const Admindashboard = ({ route }) => {
   const [showStatus, setShowStatus] = useState(false)
   
   
-  const logout = ()=>{
-      localStorage.removeItem('token')
-      navigate('/admin')
-  }
+  const logout = () => {
+    localStorage.removeItem('token');
+    navigate('/login');
+  };
   
   const closeMenu = () => {
     setShowStatus(false)
@@ -387,26 +387,54 @@ const Admindashboard = ({ route }) => {
     }
   }
 
-  const login = async()=>{
-    setLoader(true)
-      const req = await fetch(`${route}/api/admin`,{
-        method:'POST',
-        headers:{
-          'Content-Type':'application/json'
-        },
-        body:JSON.stringify({
-          email:email,
-          password:password
-        })
+  // const login = async()=>{
+  //   setLoader(true)
+  //     const req = await fetch(`${route}/api/admin`,{
+  //       method:'POST',
+  //       headers:{
+  //         'Content-Type':'application/json'
+  //       },
+  //       body:JSON.stringify({
+  //         email:email,
+  //         password:password
+  //       })
+  //     })
+  //     const res = await req.json()
+  //     console.log(res)
+  //     setLoader(false)
+  //     if(res.status === 200){
+        
+  //     }
+  // }
+  const login = async () => {
+    setLoader(true);
+    const req = await fetch(`${route}/api/admin`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password
       })
-      const res = await req.json()
-      console.log(res)
-      setLoader(false)
-      if(res.status === 200){
-        SetShowFoarm(false)
-        setShowDasboard(true)
-      }
-  }
+    });
+  
+    const res = await req.json();
+    console.log(res);
+    setLoader(false);
+  
+    if (res.status === 200) {
+      // Save token if available
+      localStorage.setItem('token', res.token || 'admin'); // use res.token if your backend sends one
+      SetShowFoarm(false)
+      setShowDasboard(true) // or whatever your admin route is
+    } else {
+      Toast.fire({
+        icon: 'error',
+        title: 'Invalid credentials'
+      });
+    }
+  };
 
 
   const [formData, setFormData] = useState({
