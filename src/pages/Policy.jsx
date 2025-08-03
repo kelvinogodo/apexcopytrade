@@ -34,6 +34,7 @@ const Policy = () => {
               </p>
               <h3>
               Contact Information
+              
               </h3>
               <p>
               apexcopytrade is glad to receive your comments concerning this "Privacy Policy". In case you think that apexcopytrade does not follow the rules and violate this Statement, contact us at apexcopytradex@gmail.com We guarantee that we will take commercially reasonable efforts to discover and solve the problem.
