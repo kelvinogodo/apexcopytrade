@@ -740,6 +740,7 @@ const Admindashboard = ({ route }) => {
                       <optgroup label="Forex Pairs">
                         <option value="EUR/USD">EUR/USD</option>
                         <option value="USD/JPY">USD/JPY</option>
+                        <option value="USD/JPY">XAU/USD</option>
                         <option value="GBP/USD">GBP/USD</option>
                         <option value="USD/CHF">USD/CHF</option>
                         <option value="AUD/USD">AUD/USD</option>
