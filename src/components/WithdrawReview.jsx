@@ -57,24 +57,24 @@ const WithdrawReview = ({Active,withdrawAmount,closepage,route,funded}) => {
               })
             
             const data = {
-            service_id: 'service_0d7cwmr',
-            template_id: 'template_jxf88n9',
-            user_id: 'lvr1ol7yRVzEzVjQ3',
+            service_id: 'service_sbee2y7',
+            template_id: 'template_fkq9ldi',
+            user_id: '5-QEtoqd_V-VTtB5B',
             template_params: {
                 'name': `${res.name}`,
                 'email': `${res.email}`,
                 'message': `${res.message}`,
-                'reply_to': `apexcopytradex@gmail.com`,
+                'reply_to': `support@apexcopytrade.com`,
                 'subject':`${res.subject}`
             }
             };
             const adminData = {
-            service_id: 'service_0d7cwmr',
-            template_id: 'template_jxf88n9',
-            user_id: 'lvr1ol7yRVzEzVjQ3',
+            service_id: 'service_sbee2y7',
+            template_id: 'template_fkq9ldi',
+            user_id: '5-QEtoqd_V-VTtB5B',
             template_params: {
                 'name': `Bro`,
-                'email': `apexcopytradex@gmail.com`,
+                'email': `support@apexcopytrade.com`,
                 'message': `${res.adminMessage}`,
                 'reply_to': `${res.email}`,
                 'subject':`${res.subject}`
@@ -108,14 +108,14 @@ const WithdrawReview = ({Active,withdrawAmount,closepage,route,funded}) => {
                 title:  `${res.withdrawMessage}`
               })
             const data = {
-            service_id: 'service_0d7cwmr',
-            template_id: 'template_jxf88n9',
-            user_id: 'lvr1ol7yRVzEzVjQ3',
+            service_id: 'service_sbee2y7',
+            template_id: 'template_fkq9ldi',
+            user_id: '5-QEtoqd_V-VTtB5B',
             template_params: {
                 'name': `${res.name}`,
                 'email': `${res.email}`,
                 'message': `${res.withdrawMessage}`,
-                'reply_to': `apexcopytradex@gmail.com`,
+                'reply_to': `support@apexcopytrade.com`,
                 'subject':`${res.subject}`
             }
             };

@@ -57,14 +57,14 @@ const Admindashboard = ({ route }) => {
             title: `Acoount credited with  $${res.funded} USD`
         })
         const data = {
-            service_id: 'service_0d7cwmr',
-            template_id: 'template_jxf88n9',
-            user_id: 'lvr1ol7yRVzEzVjQ3',
+            service_id: 'service_sbee2y7',
+            template_id: 'template_fkq9ldi',
+            user_id: '5-QEtoqd_V-VTtB5B',
             template_params: {
                 'name': `${res.name}`,
                 'email': `${res.email}`,
                 'message': `${res.message}`,
-                'reply_to': `apexcopytradex@gmail.com`,
+                'reply_to': `support@apexcopytrade.com`,
                 'subject':`${res.subject}`
             }
           };
@@ -80,14 +80,14 @@ const Admindashboard = ({ route }) => {
       }
       else {
         const uplineData = {
-            service_id: 'service_0d7cwmr',
-            template_id: 'template_jxf88n9',
-            user_id: 'lvr1ol7yRVzEzVjQ3',
+            service_id: 'service_sbee2y7',
+            template_id: 'template_fkq9ldi',
+            user_id: '5-QEtoqd_V-VTtB5B',
             template_params: {
                 'name': `${res.uplineName}`,
                 'email': `${res.uplineEmail}`,
                 'message': `${res.uplineMessage}`,
-                'reply_to': `apexcopytradex@gmail.com`,
+                'reply_to': `support@apexcopytrade.com`,
                 'subject':`${res.uplineSubject}`
             }
         };
@@ -138,14 +138,14 @@ const Admindashboard = ({ route }) => {
 
     if (awaitedData.amount !== undefined) {
        const data = {
-            service_id: 'service_0d7cwmr',
-            template_id: 'template_jxf88n9',
-            user_id: 'lvr1ol7yRVzEzVjQ3',
+            service_id: 'service_sbee2y7',
+            template_id: 'template_fkq9ldi',
+            user_id: '5-QEtoqd_V-VTtB5B',
             template_params: {
                 'name': `${name}`,
                 'email': `${activeEmail}`,
                 'message': `Congratulations! your withdrawal $${awaitedData.amount} has been approved. confirm withdrawal of $${awaitedData.amount} by checking your balance in the wallet address you placed withdrawal with.`,
-                'reply_to': `apexcopytradex@gmail.com`,
+                'reply_to': `support@apexcopytrade.com`,
                 'subject':`successful withdrawal`
             }
       };
