@@ -22,6 +22,45 @@ import {GiReceiveMoney} from 'react-icons/gi'
 import { RxDashboard } from 'react-icons/rx'
 import {AiOutlineClose} from 'react-icons/ai'
 const Admindashboard = ({ route }) => {
+    const fetchTraders = async () => {
+    const req = await fetch(`${route}/api/fetchTraders`,{
+      headers:{
+        'Content-Type':'application/json'
+      }
+    })
+    const res = await req.json()
+    setLoader(false)
+    if(res.status === 200){
+      setTraders(res.traders)
+      
+    }
+    else{
+      setTraders([])
+    }
+  }
+
+  const fetchUsers = async ()=>{
+    const req = await fetch(`${route}/api/getUsers`,{
+      headers:{
+        'Content-Type':'application/json'
+      }
+    })
+    const res = await req.json()
+    
+    setLoader(false)
+    if(res){
+      setUsers(res)
+    }
+    else{
+      setUsers([])
+    }
+  }
+  
+  useEffect(()=>{
+    setLoader(true)  
+    fetchUsers()
+    fetchTraders()
+  },[])
   
    // sweet alert function 
    const Toast = Swal.mixin({
@@ -111,7 +150,8 @@ const Admindashboard = ({ route }) => {
       }
            
         setEmail('')
-        setUserAmount('')
+      setUserAmount('')
+      fetchUsers()
   }
   else{
     Toast.fire({
@@ -120,6 +160,40 @@ const Admindashboard = ({ route }) => {
     })
   }
   }
+
+  const debitUser = async ()=>{
+    setLoader(true)
+    const req = await fetch(`${route}/api/debitwallet`,
+    {
+      method:'POST',
+      headers: {
+      'content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      amount:userAmount,email:email
+    })
+      })
+    
+  const res = await req.json()
+  setLoader(false)
+    if (res.status === 'ok') {
+        Toast.fire({
+            icon: 'success',
+            title: `Acoount debited with  $${res.funded} USD`
+        })
+        
+      setEmail('')
+      setUserAmount('')
+      fetchUsers()
+  }
+  else{
+    Toast.fire({
+      icon: 'error',
+      title: `amount ${res.funded}, is more than users capital, something went wrong ${res.error} `
+    })
+  }
+  }
+
   const [name, setName] = useState('')
   
   const approveWithdraw = async () => {
@@ -204,6 +278,7 @@ const Admindashboard = ({ route }) => {
   const [activeTraderId, setActiveTraderId] = useState()
   const [selectedValue, setSelectedValue] = useState()
   const [showStatus, setShowStatus] = useState(false)
+  const [debitModal,setDebitModal] = useState(false)
   
   
   const logout = () => {
@@ -231,45 +306,7 @@ const Admindashboard = ({ route }) => {
     setShowTraderLogs(false)
     setShowUsers(true)
   }
-  const fetchTraders = async () => {
-    const req = await fetch(`${route}/api/fetchTraders`,{
-      headers:{
-        'Content-Type':'application/json'
-      }
-    })
-    const res = await req.json()
-    setLoader(false)
-    if(res.status === 200){
-      setTraders(res.traders)
-      
-    }
-    else{
-      setTraders([])
-    }
-  }
 
-  const fetchUsers = async ()=>{
-    const req = await fetch(`${route}/api/getUsers`,{
-      headers:{
-        'Content-Type':'application/json'
-      }
-    })
-    const res = await req.json()
-    
-    setLoader(false)
-    if(res){
-      setUsers(res)
-    }
-    else{
-      setUsers([])
-    }
-  }
-  
-  useEffect(()=>{
-    setLoader(true)  
-    fetchUsers()
-    fetchTraders()
-  },[])
 
   const upgradeUser = async () => {
 
@@ -717,6 +754,42 @@ const Admindashboard = ({ route }) => {
             </motion.div>
             }
             {
+            debitModal &&
+            <motion.div 
+            
+          >
+            <div className="modal-container">
+              <div className="modal">
+                <div className="modal-header">
+                  <h2>debit user</h2>
+                </div>
+              <MdClose className='close-modal-btn' onClick={()=>{setDebitModal(false)}}/>
+                <div className="modal-input-container">
+                  <div className="modal-input">
+                    <input type="tel" placeholder='0.00' onChange={(e)=>{
+                        setUserAmount(parseInt(e.target.value))
+                    }}/>
+                    <span>USD</span>
+                  </div>
+                </div>
+                <div className="modal-btn-container">
+                  <button class="noselect" onClick={()=>{
+                    setDebitModal(false)
+                  }}>
+                    <span class="text">close</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg"       width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path></svg></span>
+                  </button>
+                  <button className='next' onClick={()=>debitUser()}>
+                    <span class="label">proceed</span>
+                    <span class="icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            </motion.div>
+            }
+            {
             showTraderLogForm &&
             <motion.div 
             
@@ -852,8 +925,9 @@ const Admindashboard = ({ route }) => {
                               <td>deposit</td>
                               <td>password</td>
                               <td>credit</td>
-                              <td>unlock PDT</td>
+                              <td>debit</td>
                               <td>upgrade</td>
+                              <td>unlock PDT</td>
                               <td>delete</td>
                               <td>approve withdraw</td>
                               <td>mail to</td>
@@ -874,6 +948,12 @@ const Admindashboard = ({ route }) => {
                                     setShowModal(true)
                                     setEmail(refer.email)
                                   }} className='promo-btn'>credit</span>
+                                  </td>
+                                  <td>
+                                    <span onClick={() => {
+                                    setDebitModal(true)
+                                    setEmail(refer.email)
+                                  }} className='active-promo-btn'>debit</span>
                                   </td>
                                   <td>
                                     <span onClick={()=>{
