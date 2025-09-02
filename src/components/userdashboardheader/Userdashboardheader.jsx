@@ -101,6 +101,12 @@ const Userdashboardheader = ({route}) => {
                           <AiOutlineSetting />
                       </div>
                       <Link to='/settings'>settings</Link>
+                  </li>
+                  <li className="dashboard-links">
+                      <div className="dashboard-svg-container">
+                          <AiOutlineSetting />
+                      </div>
+                      <Link to='/passwordreset'>password reset</Link>
                     </li>
                   <li className="dashboard-links">
                     <div className="dashboard-svg-container">
