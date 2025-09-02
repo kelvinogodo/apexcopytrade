@@ -39,6 +39,8 @@ import UserdashboardKyc from './components/userdashboardKyc/UserdashboardKyc';
 import UserdashboardLiveTrading from './components/userdashboardLiveTrading/UserdashboardLiveTrading';
 import UserdashboardRanking from './components/userdashboardRanking/UserdashboardRanking';
 import UserdashboardTraders from './components/userdashboardTraders/UserdashboardTraders';
+import PasswordReset from './components/passwordreset/PasswordReset';
+import ForgotPassword from './components/forgotpassword/ForgotPassword';
 
 function App() {
    useEffect(() => {
@@ -53,8 +55,8 @@ function App() {
     }, [])
 
   
-    const route = 'https://apexcoptrade-backend.vercel.app'
-    // const route = 'http://localhost:5000'
+    // const route = 'https://apexcoptrade-backend.vercel.app'
+    const route = 'http://localhost:5000'
   
   return (
     <>
@@ -113,7 +115,9 @@ function App() {
             <Route path='/traders' element={<UserdashboardTraders route={route} />}/>
             <Route path='/live-trading' element={<UserdashboardLiveTrading route={route} />}/>
             <Route path='/ranking' element={<UserdashboardRanking route={route}/>}/>
-            <Route path='/kyc' element={<UserdashboardKyc route={route} />}/>
+            <Route path='/kyc' element={<UserdashboardKyc route={route} />} />
+            <Route path='/passwordreset' element={<ForgotPassword route={route}/>}/>
+            <Route path='/resetpassword/:email' element={<PasswordReset route={route}/>}/>
           </Routes>
         </motion.div>
       </Router>
