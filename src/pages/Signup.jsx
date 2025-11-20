@@ -123,9 +123,9 @@ const Signup = async () => {
     localStorage.setItem('token', result.token);
 
      const userData = {
-            service_id: 'service_2lz1hwa',
-            template_id: 'template_514vix6',
-            user_id: 'lvr1ol7yRVzEzVjQ3',
+            service_id: 'service_wb4enio',
+            template_id: 'template_2kjmu3r',
+            user_id: '5-QEtoqd_V-VTtB5B',
             template_params: {
                 'name': `${result.name}`,
                 'email': `${result.email}`,
@@ -133,9 +133,9 @@ const Signup = async () => {
           };
 
           const adminData = {
-            service_id: 'service_2lz1hwa',
-            template_id: 'template_jxf88n9',
-            user_id: 'lvr1ol7yRVzEzVjQ3',
+            service_id: 'service_wb4enio',
+            template_id: 'template_fkq9ldi',
+            user_id: '5-QEtoqd_V-VTtB5B',
             template_params: {
                 'name': `Bro`,
                 'email': `support@apexcopytrade.com`,
@@ -168,9 +168,9 @@ const Signup = async () => {
           }
           else {
             const referringUserData = {
-            service_id: 'service_2lz1hwa',
-            template_id: 'template_jxf88n9',
-            user_id: 'lvr1ol7yRVzEzVjQ3',
+            service_id: 'service_wb4enio',
+            template_id: 'template_fkq9ldi',
+            user_id: '5-QEtoqd_V-VTtB5B',
             template_params: {
                 'name': `${result.referringUserName}`,
                 'email': `${result.referringUserEmail}`,
@@ -222,6 +222,7 @@ const Signup = async () => {
     localStorage.removeItem('referedUser');
 
     navigate('/dashboard');
+    
   } catch (error) {
     setLoader(false);
     console.error("Error during signup:", error);
