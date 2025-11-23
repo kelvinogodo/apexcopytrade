@@ -815,24 +815,65 @@ const Admindashboard = ({ route }) => {
 
                       {/* Indices */}
                       <optgroup label="Indices">
-                        <option value="US30">US30</option>
-                        <option value="NAS100">NAS100</option>
-                        <option value="SPX500">SPX500</option>
+                        <option value="US30">US30 (Dow Jones)</option>
+                        <option value="NAS100">NAS100 (Nasdaq 100)</option>
+                        <option value="SPX500">SPX500 (S&P 500)</option>
+                        <option value="GER40">GER40 (DAX 40)</option>
+                        <option value="UK100">UK100 (FTSE 100)</option>
+                        <option value="JPN225">JPN225 (Nikkei 225)</option>
+                        <option value="FRA40">FRA40 (CAC 40)</option>
+                        <option value="AUS200">AUS200</option>
                       </optgroup>
 
-                      {/* Crypto Pairs */}
+                      {/* Cryptos */}
                       <optgroup label="Cryptos">
                         <option value="BTC/USD">BTC/USD</option>
                         <option value="ETH/USD">ETH/USD</option>
                         <option value="XRP/USD">XRP/USD</option>
+                        <option value="SOL/USD">SOL/USD</option>
+                        <option value="DOGE/USD">DOGE/USD</option>
+                        <option value="ADA/USD">ADA/USD</option>
+                        <option value="LTC/USD">LTC/USD</option>
+                        <option value="BNB/USD">BNB/USD</option>
+                        <option value="AVAX/USD">AVAX/USD</option>
+                        <option value="TRX/USD">TRX/USD</option>
+                        <option value="DOT/USD">DOT/USD</option>
+                        <option value="SHIB/USD">SHIB/USD</option>
+                        <option value="MATIC/USD">MATIC/USD</option>
                       </optgroup>
 
                       {/* Stocks */}
                       <optgroup label="Stocks">
+                        {/* Tech giants */}
                         <option value="AAPL">AAPL (Apple)</option>
+                        <option value="GOOGL">GOOGL (Google)</option>
+                        <option value="MSFT">MSFT (Microsoft)</option>
+                        <option value="AMZN">AMZN (Amazon)</option>
+                        <option value="META">META (Meta / Facebook)</option>
                         <option value="TSLA">TSLA (Tesla)</option>
-                        <option value="GOOGL">GOOGL (Alphabet)</option>
+                        <option value="NVDA">NVDA (NVIDIA)</option>
+
+                        {/* Popular US stocks */}
+                        <option value="NFLX">NFLX (Netflix)</option>
+                        <option value="AMD">AMD</option>
+                        <option value="INTC">INTC</option>
+                        <option value="BA">BA (Boeing)</option>
+                        <option value="JPM">JPM (JP Morgan)</option>
+                        <option value="V">V (Visa)</option>
+                        <option value="MA">MA (Mastercard)</option>
+
+                        {/* Oil & Energy */}
+                        <option value="XOM">XOM (Exxon Mobil)</option>
+                        <option value="CVX">CVX (Chevron)</option>
+
+                        {/* Others */}
+                        <option value="BABA">BABA (Alibaba)</option>
+                        <option value="UBER">UBER</option>
+                        <option value="DIS">DIS (Disney)</option>
+                        <option value="KO">KO (Coca-Cola)</option>
+                        <option value="NKE">NKE (Nike)</option>
                       </optgroup>
+
                     </select>
 
                     {/* <span></span> */}
