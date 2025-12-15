@@ -1,8 +1,9 @@
 import React from 'react'
 import './userdashboardhomepage.css'
-import { FaUserAlt,FaAngleDown } from "react-icons/fa";
+import '../userdashboardtransactions/userdashboardtransactions.css'
+import { FaUserAlt, FaAngleDown } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom'
-import { useState,useEffect,useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { IoMdNotifications } from "react-icons/io";
 import Loader from '../Loader'
 import { IoCloseSharp } from "react-icons/io5";
@@ -12,126 +13,133 @@ import { BiMoneyWithdraw } from "react-icons/bi";
 import TeslaWidget from '../TeslaWidget'
 import MobileDropdown from '../MobileDropdown';
 
-const Userdashboardhomepage = ({route}) => {
-    const navigate = useNavigate()
-    const [userData, setUserData] = useState()
+const Userdashboardhomepage = ({ route }) => {
+  const navigate = useNavigate()
+  const [userData, setUserData] = useState()
   const [loader, setLoader] = useState(false)
   const [showNotification, setShowNotification] = useState(true)
   const [showMobileDropdown, setShowMobileDropdown] = useState(false)
   const [dailyTrades, setDailyTrades] = useState([])
-    const copy = ()=>{
-        navigator.clipboard.writeText(clipRef.current.value)
-    }
+  const copy = () => {
+    navigator.clipboard.writeText(clipRef.current.value)
+  }
   const clipRef = useRef(null)
-  const today = new Date().toLocaleDateString()
-  
+  // Helper to check if a date string is today
+  const isToday = (dateString) => {
+    const date = new Date(dateString);
+    const today = new Date();
+    return date.getDate() === today.getDate() &&
+      date.getMonth() === today.getMonth() &&
+      date.getFullYear() === today.getFullYear();
+  }
 
-   useEffect(() => {
-  const getData = async () => {
-    try {
-      setLoader(true);
 
-      // Check if a token exists
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        setLoader(true);
+
+        // Check if a token exists
         const token = localStorage.getItem('token');
         console.log(token)
-      if (!token) {
-        navigate('/login');
-        return;
+        if (!token) {
+          navigate('/login');
+          return;
+        }
+
+        // Fetch user data from the API
+        const response = await fetch(`${route}/api/getData`, {
+          headers: {
+            'x-access-token': token,
+            'Content-Type': 'application/json',
+          },
+        });
+
+        // Parse the response
+        const data = await response.json();
+
+        // Handle errors from the API
+        if (data.status === 'error') {
+          localStorage.removeItem('token'); // Clear invalid token
+          navigate('/login');
+        } else {
+          setUserData(data); // Set user data
+        }
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+        navigate('/login'); // Navigate to login on failure
+      } finally {
+        setLoader(false); // Stop loader
       }
+    };
 
-      // Fetch user data from the API
-      const response = await fetch(`${route}/api/getData`, {
-        headers: {
-          'x-access-token': token,
-          'Content-Type': 'application/json',
-        },
-      });
+    getData();
+  }, [navigate, route]);
 
-      // Parse the response
-      const data = await response.json();
-
-      // Handle errors from the API
-      if (data.status === 'error') {
-        localStorage.removeItem('token'); // Clear invalid token
-        navigate('/login');
-      } else {
-        setUserData(data); // Set user data
-      }
-    } catch (error) {
-      console.error('Error fetching user data:', error);
-      navigate('/login'); // Navigate to login on failure
-    } finally {
-      setLoader(false); // Stop loader
-    }
-  };
-
-  getData();
-   }, [navigate, route]);
-  
   const closeMobileMenu = () => {
     setShowMobileDropdown(false)
   }
 
   useEffect(() => {
-      // Run this only when both traders and userData.trader are ready
+    // Run this only when both traders and userData.trader are ready
     if (userData?.trades.length > 0 && userData) {
-        
-        const dailytrades = userData.trades.filter(trade => trade.date === today)
-  
-        console.log("daily trades:", dailytrades);
-        setDailyTrades(dailytrades);
-      }
-    }, [userData]);
-  
 
-  
+      const dailytrades = userData.trades.filter(trade => isToday(trade.date))
 
-  
-    
+      console.log("daily trades:", dailytrades);
+      setDailyTrades(dailytrades);
+    }
+  }, [userData]);
+
+
+
+
+
+
   return (
     <main className='homewrapper'>
       {
         loader &&
-          <Loader />
+        <Loader />
       }
-    <Userdashboardheader />
+      <Userdashboardheader />
       <section className='dashboardhomepage'>
-        
+
         <div className="dashboardheaderwrapper">
           <div className="header-notification-icon-container">
             {
               showNotification && userData && userData.funded === 0 &&
               <span className="notification-counter">1</span>
             }
-              <IoMdNotifications />
+            <IoMdNotifications />
           </div>
           <div className="header-username-container">
             <h3>Hi, {userData ? userData.firstname : ''}</h3>
           </div>
           <div className="header-userprofile-container">
             <div className="user-p-icon-container">
-              <FaUserAlt/>
+              <FaUserAlt />
             </div>
             <div className="user-p-drop-icon" onClick={() => { setShowMobileDropdown(!showMobileDropdown); }
-             }>
+            }>
               <FaAngleDown />
             </div>
-            
+
           </div>
         </div>
         {
-          userData && showNotification && userData.funded === 0 ? 
+          userData && showNotification && userData.funded === 0 ?
             <div className="notification-dashoboard-container">
               <div className="notification-card">
                 <p>you have not deposited yet click <Link to='/fundwallet'>Here</Link> to make your first deposit</p>
-                <div className="close-notification-container" onClick={()=> setShowNotification(false)}>
-                    <IoCloseSharp />
+                <div className="close-notification-container" onClick={() => setShowNotification(false)}>
+                  <IoCloseSharp />
                 </div>
               </div>
             </div>
             : ''
         }
-        
+
         <div className="dashboard-overview-container">
           <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
           <div className="upper-overview-card">
@@ -140,7 +148,7 @@ const Userdashboardhomepage = ({route}) => {
                 Total Balance
               </h2>
               <div className="amount">
-                <h3>${userData ? userData.funded : '0'}.00</h3>
+                <h3>${userData ? Math.round(userData.funded).toLocaleString() : '0'}</h3>
                 <span className="usd-btn">usd</span>
               </div>
             </div>
@@ -167,7 +175,7 @@ const Userdashboardhomepage = ({route}) => {
             </div>
             <div className="lower-overview-card">
               <div className="lower-card-icon-container">
-                  <BiMoneyWithdraw />
+                <BiMoneyWithdraw />
               </div>
               <div className="lower-card-text-container">
                 <h3>total withdrawal</h3>
@@ -176,7 +184,7 @@ const Userdashboardhomepage = ({route}) => {
             </div>
           </div>
         </div>
-        
+
         <div className="dashboard-chart-container">
           <TeslaWidget />
         </div>
@@ -225,36 +233,34 @@ const Userdashboardhomepage = ({route}) => {
             </div> */}
         <div className="current-rank-section">
           <div className="active-trader-container">
-          <div className="videoframe-text-container treader-header">
-          <h1>Your current <span className="highlight">Rank</span></h1>
+            <div className="videoframe-text-container treader-header">
+              <h1>Your current <span className="highlight">Rank</span></h1>
             </div>
-              <div className="traders-card active-trader-card">
+            <div className="traders-card active-trader-card">
               <div className="trader-card-header">
                 <div className="trader-card-image-container">
-                  
-                <img src={`${
-                          userData 
-                            ? userData.funded > 20000 
-                              ? '/diamond.png' 
-                              : userData.funded > 5000 
-                                ? '/download-removebg-preview (2).png'  // Gold image
-                                : '/images-removebg-preview.png'        // Silver image
-                            : ''
-                        }`} 
-                        alt="" 
-                        className='trader-card-image' 
-                      />
+
+                  <img src={`${userData
+                    ? userData.funded > 20000
+                      ? '/diamond.png'
+                      : userData.funded > 5000
+                        ? '/download-removebg-preview (2).png'  // Gold image
+                        : '/images-removebg-preview.png'        // Silver image
+                    : ''
+                    }`}
+                    alt=""
+                    className='trader-card-image'
+                  />
                 </div>
                 <div className="trader-card-text-container">
-                  <h3 className="trader-name">{`${
-                          userData 
-                            ? userData.funded > 20000 
-                              ? 'Diamond' 
-                              : userData.funded > 5000 
-                                ? 'gold'  // Gold 
-                                : 'silver'        // Silver 
-                            : ''
-                        }`} </h3>
+                  <h3 className="trader-name">{`${userData
+                    ? userData.funded > 20000
+                      ? 'Diamond'
+                      : userData.funded > 5000
+                        ? 'gold'  // Gold 
+                        : 'silver'        // Silver 
+                    : ''
+                    }`} </h3>
                   <p className="trader-description">Rank</p>
                 </div>
               </div>
@@ -262,42 +268,40 @@ const Userdashboardhomepage = ({route}) => {
                 <div className="trader-performance">
                   <div className="trader-performance-item">
                     <p className="performance-label">capital Range</p>
-                    <p className="performance-value my-value">{`${
-                          userData 
-                            ? userData.funded > 20000 
-                              ? '$20,001 - unlimited' //diamond
-                              : userData.funded > 5000 
-                                ? '$5001- $20,000'  // Gold 
-                                : '$0- $5,000'        // Silver 
-                            : ''
-                        }`}</p>
+                    <p className="performance-value my-value">{`${userData
+                      ? userData.funded > 20000
+                        ? '$20,001 - unlimited' //diamond
+                        : userData.funded > 5000
+                          ? '$5001- $20,000'  // Gold 
+                          : '$0- $5,000'        // Silver 
+                      : ''
+                      }`}</p>
                   </div>
-                      <div className="trader-performance-item">
-                        <p className="performance-label">bonus</p>
-                        <p className="performance-value my-value">{`${
-                          userData 
-                            ? userData.funded > 20000 
-                              ? '$500' //diamond
-                              : userData.funded > 5000 
-                                ? '$100'  // Gold 
-                                : '$50'   // Silver 
-                            : ''
-                        }`}</p>
-                      </div>
-                    </div>
+                  <div className="trader-performance-item">
+                    <p className="performance-label">bonus</p>
+                    <p className="performance-value my-value">{`${userData
+                      ? userData.funded > 20000
+                        ? '$500' //diamond
+                        : userData.funded > 5000
+                          ? '$100'  // Gold 
+                          : '$50'   // Silver 
+                      : ''
+                      }`}</p>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
         </div>
-        {userData && dailyTrades.length !== 0 ? 
+        {userData && dailyTrades.length !== 0 ?
           <div className="page-swiper-wrapper trans-page">
-          <div className="page-header">
+            <div className="page-header">
               <h3>checkout your Daily trade logs</h3>
               <h2>Daily trade logs</h2>
               <p>we keep track of all the trades taken by your trader daily</p>
-          </div>
-          <div className="transaction-container no-ref">
-            <table>
+            </div>
+            <div className="transaction-container no-ref">
+              <table>
                 <thead>
                   <tr>
                     <td>trade pair</td>
@@ -319,15 +323,15 @@ const Userdashboardhomepage = ({route}) => {
                   }
                 </tbody>
               </table>
-              </div>
             </div>
+          </div>
           :
-            <div className="empty-page home-empty-page">
-              <img src="/preview.gif" alt="" className='empty-img dash-empty-img'/>
-              <p>Your Trader has not placed any trades for your account Today. Trades taken by your trader  today would be displayed here when available.</p> 
-            </div>
-      }
-    </section>
+          <div className="empty-page home-empty-page">
+            <img src="/preview.gif" alt="" className='empty-img dash-empty-img' />
+            <p>Your Trader has not placed any trades for your account Today. Trades taken by your trader  today would be displayed here when available.</p>
+          </div>
+        }
+      </section>
     </main>
   )
 }
