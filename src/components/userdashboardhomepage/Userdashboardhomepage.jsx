@@ -315,7 +315,7 @@ const Userdashboardhomepage = ({ route }) => {
                     dailyTrades.map(refer =>
                       <tr className='tr'>
                         <td>{refer.pair}</td>
-                        <td>$ {refer.amount} USD</td>
+                        <td>$ {Number(refer.amount).toFixed(2)} USD</td>
                         <td className={`${refer.tradeType === 'profit' ? 'profit' : 'loss'}`}> {refer.tradeType}</td>
                         <td>{refer.date}</td>
                       </tr>
