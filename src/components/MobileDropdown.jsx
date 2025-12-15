@@ -63,7 +63,7 @@ const MobileDropdown = ({ route, showStatus, closeMenu }) => {
 
                     <div className="dropdown-deposit-container">
                         <h3>total amount</h3>
-                        <h2>${userData ? Math.round(userData.funded).toLocaleString() : ''} USD</h2>
+                        <h2>${userData ? Math.ceil(Number(userData.funded)).toLocaleString() : ''} USD</h2>
                         <p>Trading Rank :   {userData && userData.totaldeposit >= 5000 ? "Gold" : 'Silver'}</p>
                     </div>
                     <div className="mobile-tabs">
