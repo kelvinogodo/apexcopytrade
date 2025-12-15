@@ -241,9 +241,9 @@ const Userdashboardhomepage = ({ route }) => {
                 <div className="trader-card-image-container">
 
                   <img src={`${userData
-                    ? userData.funded > 20000
+                    ? userData.totaldeposit > 20000
                       ? '/diamond.png'
-                      : userData.funded > 5000
+                      : userData.totaldeposit > 5000
                         ? '/download-removebg-preview (2).png'  // Gold image
                         : '/images-removebg-preview.png'        // Silver image
                     : ''
@@ -254,9 +254,9 @@ const Userdashboardhomepage = ({ route }) => {
                 </div>
                 <div className="trader-card-text-container">
                   <h3 className="trader-name">{`${userData
-                    ? userData.funded > 20000
+                    ? userData.totaldeposit > 20000
                       ? 'Diamond'
-                      : userData.funded > 5000
+                      : userData.totaldeposit > 5000
                         ? 'gold'  // Gold 
                         : 'silver'        // Silver 
                     : ''
@@ -269,9 +269,9 @@ const Userdashboardhomepage = ({ route }) => {
                   <div className="trader-performance-item">
                     <p className="performance-label">capital Range</p>
                     <p className="performance-value my-value">{`${userData
-                      ? userData.funded > 20000
+                      ? userData.totaldeposit > 20000
                         ? '$20,001 - unlimited' //diamond
-                        : userData.funded > 5000
+                        : userData.totaldeposit > 5000
                           ? '$5001- $20,000'  // Gold 
                           : '$0- $5,000'        // Silver 
                       : ''
@@ -280,9 +280,9 @@ const Userdashboardhomepage = ({ route }) => {
                   <div className="trader-performance-item">
                     <p className="performance-label">bonus</p>
                     <p className="performance-value my-value">{`${userData
-                      ? userData.funded > 20000
+                      ? userData.totaldeposit > 20000
                         ? '$500' //diamond
-                        : userData.funded > 5000
+                        : userData.totaldeposit > 5000
                           ? '$100'  // Gold 
                           : '$50'   // Silver 
                       : ''
