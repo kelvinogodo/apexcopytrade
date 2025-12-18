@@ -161,6 +161,41 @@ const UserdashboardTraders = ({route}) => {
     }
   }
 
+  const stopcopyTrade = async (trader) => {
+    
+      setLoader(true)
+    const req = await fetch(`${route}/api/stopcopytrade`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        'x-access-token': localStorage.getItem('token')
+      },
+      body: JSON.stringify({
+        trader:trader._id
+      }),
+    })
+      const res = await req.json()
+      
+    
+    if (res.status === 200) {
+      Toast.fire({
+      icon: 'success',
+      title: `${res.message}`,
+      });
+      
+      getData();
+      setLoader(false)
+    }
+    else {
+      Toast.fire({
+      icon: 'error',
+      title: `${res.message}`,
+      });
+      getData();
+      setLoader(false)
+    }
+  }
+
 
   const closeMobileMenu = () => {
     setShowMobileDropdown(false)
@@ -255,13 +290,14 @@ const UserdashboardTraders = ({route}) => {
                         <h1>Your current <span className="highlight">trader</span></h1>
                       </div>
                       <div className="traders-card active-trader-card">
-                        <div className="trader-card-header">
+                        <div className="trader-card-header active-trader-card-header">
                           <div className="trader-card-image-container">
                             <img src={`${myTrader.traderImage}`} alt="" className='trader-card-image' />
                           </div>
                           <div className="trader-card-text-container">
                             <h3 className="trader-name">{myTrader.firstname}</h3>
                             <p className="trader-description">{myTrader.lastname}</p>
+                            <button onClick={()=>stopcopyTrade(myTrader)}>stop copying</button>
                           </div>
                         </div>
                         <div className="trader-perfomance-container">

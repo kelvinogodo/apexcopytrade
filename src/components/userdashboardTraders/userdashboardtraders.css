@@ -277,6 +277,16 @@
     width: 100%;
     text-align: left;
 }
+.active-trader-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.trader-card-text-container button {
+    align-self: flex-start;
+    cursor: pointer;
+}
 .active-trader-card{
     width: 100%;
 }
