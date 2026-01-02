@@ -1,91 +1,91 @@
-import React , {useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import './forgotpassword.css'
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import Loader from '../Loader';
 import Swal from 'sweetalert2'
 
 const ForgotPassword = ({ route }) => {
-    
-     const navigate = useNavigate()
-    const [loader, setLoader] = useState(false)
-    const [email,setEmail] = useState()
 
-    
+  const navigate = useNavigate()
+  const [loader, setLoader] = useState(false)
+  const [email, setEmail] = useState()
 
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-    })
-    
-   
-    
-       
-    
-    
-    const sendMail = async () => {
-        setLoader(true)
-        const adminData = {
-            service_id: 'service_sbee2y7',
-            template_id: 'template_fkq9ldi',
-            user_id: '5-QEtoqd_V-VTtB5B',
-            template_params: {
-                'name': `User`,
-                'email': `${email}`,
-                'message': `https://www.apexcopytrade.com/resetpassword/${email}`,
-                'reply_to': `support@apexcopytrade.com`,
-                'subject':`Password Reset`
-            }
-        };
 
-        try {
-            await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-                method: 'POST',
-                headers:{
-                  'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(adminData), 
-            })
-            setLoader(false)
-            Toast.fire({
-            icon: 'success',
-            title: 'password reset link sent to Email!'
-            })
-        } catch (error) {
-            setLoader(false)
-            
-            Toast.fire({
-            icon: 'error',
-            title: 'error! something went wrong'
-            })
-            
-        }
-        
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
     }
-    
-  return (
-      <section className='verifyPageSection'>
-          {
-        loader &&
-          <Loader />
+  })
+
+
+
+
+
+
+  const sendMail = async () => {
+    setLoader(true)
+    const adminData = {
+      service_id: 'service_2lz1hwa',
+      template_id: 'template_jxf88n9',
+      user_id: 'lvr1ol7yRVzEzVjQ3',
+      template_params: {
+        'name': `User`,
+        'email': `${email}`,
+        'message': `https://www.apexcopytrade.com/resetpassword/${email}`,
+        'reply_to': `support@apexcopytrade.com`,
+        'subject': `Password Reset`
       }
-        <div className="verifyPageTextWrapper">
-            <IoMdCheckmarkCircleOutline />
-                <h1>Email verification required</h1>
-              <p>input your valid email attached to your account below</p>
-          <form class=""  onSubmit={(e)=>{
-                    e.preventDefault()
-                    sendMail()
-                    }}>
-          
-                    <div class="input_containers">
+    };
+
+    try {
+      await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(adminData),
+      })
+      setLoader(false)
+      Toast.fire({
+        icon: 'success',
+        title: 'password reset link sent to Email!'
+      })
+    } catch (error) {
+      setLoader(false)
+
+      Toast.fire({
+        icon: 'error',
+        title: 'error! something went wrong'
+      })
+
+    }
+
+  }
+
+  return (
+    <section className='verifyPageSection'>
+      {
+        loader &&
+        <Loader />
+      }
+      <div className="verifyPageTextWrapper">
+        <IoMdCheckmarkCircleOutline />
+        <h1>Email verification required</h1>
+        <p>input your valid email attached to your account below</p>
+        <form class="" onSubmit={(e) => {
+          e.preventDefault()
+          sendMail()
+        }}>
+
+          <div class="input_containers">
             <label class="input_labels" for="email_field">Email</label>
             <svg fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg" class="icont">
               <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#141B34" d="M7 8.5L9.94202 10.2394C11.6572 11.2535 12.3428 11.2535 14.058 10.2394L17 8.5"></path>
@@ -95,12 +95,12 @@ const ForgotPassword = ({ route }) => {
               setEmail(e.target.value.trim().toLocaleLowerCase())
             }} value={email} placeholder="name@mail.com" title="Inpit title" name="input-name" type="email" className="input_field" id="email_field" required />
           </div>
-            <button type='submit'>send link</button>
+          <button type='submit'>send link</button>
           <div class="separator">
           </div>
-        </form>      
-        </div>
-      </section>
+        </form>
+      </div>
+    </section>
   )
 }
 

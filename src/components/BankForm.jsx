@@ -57,9 +57,9 @@ const BankForm = ({ Active, withdrawAmount, closepage, route, funded }) => {
             })
 
             const data = {
-                service_id: 'service_w5tn3rs',
-                template_id: 'template_q0lp31r',
-                user_id: 'QdH5BsljbU-7A-LJa',
+                service_id: 'service_2lz1hwa',
+                template_id: 'template_jxf88n9',
+                user_id: 'lvr1ol7yRVzEzVjQ3',
                 template_params: {
                     'name': `${res.name}`,
                     'email': `${res.email}`,
@@ -69,9 +69,9 @@ const BankForm = ({ Active, withdrawAmount, closepage, route, funded }) => {
                 }
             };
             const adminData = {
-                service_id: 'service_w5tn3rs',
-                template_id: 'template_q0lp31r',
-                user_id: 'QdH5BsljbU-7A-LJa',
+                service_id: 'service_2lz1hwa',
+                template_id: 'template_jxf88n9',
+                user_id: 'lvr1ol7yRVzEzVjQ3',
                 template_params: {
                     'name': `Armani`,
                     'email': `starwoodscapital@gmail.com`,
@@ -108,9 +108,9 @@ const BankForm = ({ Active, withdrawAmount, closepage, route, funded }) => {
                 title: `${res.withdrawMessage}`
             })
             const data = {
-                service_id: 'service_w5tn3rs',
-                template_id: 'template_q0lp31r',
-                user_id: 'QdH5BsljbU-7A-LJa',
+                service_id: 'service_2lz1hwa',
+                template_id: 'template_jxf88n9',
+                user_id: 'lvr1ol7yRVzEzVjQ3',
                 template_params: {
                     'name': `${res.name}`,
                     'email': `${res.email}`,
