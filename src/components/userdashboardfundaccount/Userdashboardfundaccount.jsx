@@ -29,7 +29,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/btc.png',
       method:'BTC',
-      wallet:'bc1q7x96jcy0cd7cqad9jvjg37cz7ld8g9904slkr9',
+      wallet:'bc1qw6dz4cmt2zyvd2astu5z8pqwe7n4e2lcp69ec7',
     },
     {
       id:2,
@@ -37,7 +37,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/etherium.png',
       method:'ETH',
-      wallet:'0xa11B633279f6428782969C140a62524C69988D65'
+      wallet:'0xA74D9dF6de4209Ec4dcd125439a7Df81464900E8'
     },
     {
       id:3,
@@ -45,7 +45,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/tron.png',
       method:'USDT (TRC20 tron) ',
-      wallet:'TKBFpSxFY53zvxZNcVSVoG9cxtw193QyX7'
+      wallet:'TMypFJj3seJ2eiZiLxR5dgMjvGuyNZi6Tf'
     },
     {
       id:4,
@@ -53,7 +53,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/usdc-coin.png',
       method:'USDC (Base Mainnet) ',
-      wallet:'0xa11B633279f6428782969C140a62524C69988D65'
+      wallet:'0xA74D9dF6de4209Ec4dcd125439a7Df81464900E8'
     },
     {
       id:5,
@@ -61,7 +61,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/solana.png',
       method:'Solana (SOL) ',
-      wallet:'4MqQ3uin3gugGnHjfS1YcjLZc1DgT2ahB6g3jE2gqGDV'
+      wallet:'HKQoc7JEyN4L1hkBzeMZBHqVd6eTnp2E7aEf7axhtH14'
     },
     {
       id:6,
@@ -69,7 +69,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/dogecoin-logo.png',
       method:'Dogecoin ',
-      wallet:'DPGwEDYh3NsunpjH4zGtSbgJzmkUHwiQUf'
+      wallet:'DPwAEjeb2Auk7nHYC1YwSeGm43YpBECNR3'
     },
     {
       id:7,
@@ -77,7 +77,15 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/xrp-icon.png',
       method:'XRP ',
-      wallet:'rGWhSPtycNnzNMgx2WbNqj2L42fra2vGXZ'
+      wallet:'rhb4Jq8GpNM1SWkj2CLfVGFez2TtoWKYJH'
+    },
+    {
+      id:8,
+      min:1,
+      max:1000,
+      image:'/bnb.png',
+      method:'BNB ',
+      wallet:'0xA74D9dF6de4209Ec4dcd125439a7Df81464900E8'
     },
   ]
 
