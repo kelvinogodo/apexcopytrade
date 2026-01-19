@@ -125,7 +125,7 @@ const Signup = ({ route }) => {
       const userData = {
         service_id: 'service_wb4enio',
         template_id: 'template_2kjmu3r',
-        user_id: 'lvr1ol7yRVzEzVjQ3',
+        user_id: '5-QEtoqd_V-VTtB5B',
         template_params: {
           'name': `${result.name}`,
           'email': `${result.email}`,
@@ -135,7 +135,7 @@ const Signup = ({ route }) => {
       const adminData = {
         service_id: 'service_wb4enio',
         template_id: 'template_fkq9ldi',
-        user_id: 'lvr1ol7yRVzEzVjQ3',
+        user_id: '5-QEtoqd_V-VTtB5B',
         template_params: {
           'name': `Bro`,
           'email': `support@apexcopytrade.com`,
@@ -170,7 +170,7 @@ const Signup = ({ route }) => {
         const referringUserData = {
           service_id: 'service_wb4enio',
           template_id: 'template_fkq9ldi',
-          user_id: 'lvr1ol7yRVzEzVjQ3',
+          user_id: '5-QEtoqd_V-VTtB5B',
           template_params: {
             'name': `${result.referringUserName}`,
             'email': `${result.referringUserEmail}`,
