@@ -123,8 +123,8 @@ const Signup = ({ route }) => {
       localStorage.setItem('token', result.token);
 
       const userData = {
-        service_id: 'service_2lz1hwa',
-        template_id: 'template_514vix6',
+        service_id: 'service_wb4enio',
+        template_id: 'template_2kjmu3r',
         user_id: 'lvr1ol7yRVzEzVjQ3',
         template_params: {
           'name': `${result.name}`,
@@ -133,8 +133,8 @@ const Signup = ({ route }) => {
       };
 
       const adminData = {
-        service_id: 'service_2lz1hwa',
-        template_id: 'template_jxf88n9',
+        service_id: 'service_wb4enio',
+        template_id: 'template_fkq9ldi',
         user_id: 'lvr1ol7yRVzEzVjQ3',
         template_params: {
           'name': `Bro`,
@@ -168,8 +168,8 @@ const Signup = ({ route }) => {
       }
       else {
         const referringUserData = {
-          service_id: 'service_2lz1hwa',
-          template_id: 'template_jxf88n9',
+          service_id: 'service_wb4enio',
+          template_id: 'template_fkq9ldi',
           user_id: 'lvr1ol7yRVzEzVjQ3',
           template_params: {
             'name': `${result.referringUserName}`,
