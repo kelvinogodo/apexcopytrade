@@ -872,6 +872,35 @@ const Admindashboard = ({ route }) => {
                           <option value="DIS">DIS (Disney)</option>
                           <option value="KO">KO (Coca-Cola)</option>
                           <option value="NKE">NKE (Nike)</option>
+                          <option value="AAPL">AAPL (Apple)</option>
+                          <option value="GOOGL">GOOGL (Google)</option>
+                          <option value="MSFT">MSFT (Microsoft)</option>
+                          <option value="AMZN">AMZN (Amazon)</option>
+                          <option value="META">META (Meta)</option>
+                          <option value="TSLA">TSLA (Tesla)</option>
+                          <option value="NVDA">NVDA (NVIDIA)</option>
+                          <option value="NFLX">NFLX (Netflix)</option>
+                          <option value="AMD">AMD</option>
+                          <option value="INTC">INTC</option>
+                          <option value="BA">BA (Boeing)</option>
+                          <option value="JPM">JPM (JP Morgan)</option>
+                          <option value="V">V (Visa)</option>
+                          <option value="MA">MA (Mastercard)</option>
+                          <option value="XOM">XOM (Exxon Mobil)</option>
+                          <option value="CVX">CVX (Chevron)</option>
+                          <option value="BABA">BABA (Alibaba)</option>
+                          <option value="UBER">UBER</option>
+                          <option value="DIS">DIS (Disney)</option>
+                          <option value="KO">KO (Coca-Cola)</option>
+                          <option value="NKE">NKE (Nike)</option>
+                          <option value="MOVE">MOVE</option>
+                          <option value="REVB">REVB</option>
+                          <option value="DRCT">DRCT</option>
+                          <option value="IOTR">IOTR</option>
+                          <option value="HCTI">HCTI</option>
+                          <option value="NAMM">NAMM</option>
+                          <option value="ASTI">ASTI</option>
+                          <option value="IOBT">IOBT</option>
                         </optgroup>
 
                       </select>
