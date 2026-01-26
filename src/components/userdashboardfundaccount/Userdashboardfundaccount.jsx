@@ -29,7 +29,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/btc.png',
       method:'BTC',
-      wallet:'bc1qw6dz4cmt2zyvd2astu5z8pqwe7n4e2lcp69ec7',
+      wallet:'bc1q30pv578s309qd8vkweafyp5usr443dtxlknepf',
     },
     {
       id:2,
@@ -37,7 +37,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/etherium.png',
       method:'ETH',
-      wallet:'0xA74D9dF6de4209Ec4dcd125439a7Df81464900E8'
+      wallet:'0x819804a24f614bf0c4a0786383e63872fE82b495'
     },
     {
       id:3,
@@ -45,7 +45,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/tron.png',
       method:'USDT (TRC20 tron) ',
-      wallet:'TMypFJj3seJ2eiZiLxR5dgMjvGuyNZi6Tf'
+      wallet:'TEhvZoPddBi3XnhhHxPsoYPvsiuDKnQK4w'
     },
     {
       id:4,
@@ -53,7 +53,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/usdc-coin.png',
       method:'USDC (Base Mainnet) ',
-      wallet:'0xA74D9dF6de4209Ec4dcd125439a7Df81464900E8'
+      wallet:'0x819804a24f614bf0c4a0786383e63872fE82b495'
     },
     {
       id:5,
@@ -61,7 +61,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/solana.png',
       method:'Solana (SOL) ',
-      wallet:'HKQoc7JEyN4L1hkBzeMZBHqVd6eTnp2E7aEf7axhtH14'
+      wallet:'AVkenbu3Rj71LNqqd1TRFXsdjazrrNYfpEjP2GsRoZoa'
     },
     {
       id:6,
@@ -69,7 +69,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/dogecoin-logo.png',
       method:'Dogecoin ',
-      wallet:'DPwAEjeb2Auk7nHYC1YwSeGm43YpBECNR3'
+      wallet:'DPTtYceEhhsGJaDC5B6bZw2B5A65pZodoS'
     },
     {
       id:7,
@@ -85,7 +85,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/bnb.png',
       method:'BNB ',
-      wallet:'0xA74D9dF6de4209Ec4dcd125439a7Df81464900E8'
+      wallet:'rHBdBr2hQondtvwmVLYMsCjzpNzRo9CiSm'
     },
   ]
 
