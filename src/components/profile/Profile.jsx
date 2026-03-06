@@ -19,10 +19,10 @@ const Profile = ({ route }) => {
   const [address, setAddress] = useState('');
   const [userData, setUserData] = useState(null);
   const [showImage, setShowImage] = useState();
-  const [showMobileDropdown,setShowMobileDropdown] = useState(false)
+  const [showMobileDropdown, setShowMobileDropdown] = useState(false)
 
   const navigate = useNavigate();
-  
+
   const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
@@ -50,6 +50,7 @@ const Profile = ({ route }) => {
         setState(res.state);
         setPhone(res.phonenumber);
         setAddress(res.address);
+        setShowImage(res.profilepicture);
       };
       getData();
     } else {
@@ -61,7 +62,7 @@ const Profile = ({ route }) => {
     const formData = new FormData();
     formData.append('file', file);
     formData.append('upload_preset', 'upload');
-    
+
     const req = await fetch('https://api.cloudinary.com/v1_1/duesyx3zu/image/upload', {
       method: 'POST',
       body: formData,
@@ -112,82 +113,82 @@ const Profile = ({ route }) => {
         <div className="dashboardheaderwrapper">
           <div className="dashboardheaderwrapper">
             <div className="header-notification-icon-container">
-                <IoMdNotifications />
+              <IoMdNotifications />
             </div>
             <div className="header-username-container">
               <h3>Hi, {userData ? userData.firstname : ''}</h3>
             </div>
             <div className="header-userprofile-container">
               <div className="user-p-icon-container">
-                <FaUserAlt/>
+                <FaUserAlt />
               </div>
               <div className="user-p-drop-icon" onClick={() => { setShowMobileDropdown(!showMobileDropdown); }
-                }>
-                  <FaAngleDown />
-                </div>
-                
+              }>
+                <FaAngleDown />
+              </div>
+
             </div>
           </div>
         </div>
-      
+
         <div className="profile-page">
           <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
-        <div className="page-header">
-          <h2>Profile Settings</h2>
-          <p>Choose an investment plan to start earning immediately</p>
-        </div>
-        <div className="profile-form-container">
-          <form className="profile-form" onSubmit={(e) => { e.preventDefault(); updateUserData(); }}>
-            <div className="upper-chamber">
-              <div className="profile-picture-upload-container">
-                <div className="profile-circle">
-                  {showImage ? <img src={showImage} alt="" className='profile-circle-img' /> : <BsImage />}
+          <div className="page-header">
+            <h2>Profile Settings</h2>
+            <p>Choose an investment plan to start earning immediately</p>
+          </div>
+          <div className="profile-form-container">
+            <form className="profile-form" onSubmit={(e) => { e.preventDefault(); updateUserData(); }}>
+              <div className="upper-chamber">
+                <div className="profile-picture-upload-container">
+                  <div className="profile-circle">
+                    {showImage ? <img src={showImage} alt="" className='profile-circle-img' /> : <BsImage />}
+                  </div>
+                  <label htmlFor="file-input" className='upload-icon'>
+                    <RxUpload />
+                    <input type="file" accept=".jpg, .png, .svg, .webp, .jpeg" id="file-input" className='proof-input' onChange={(e) => uploadProof(e.target.files[0])} />
+                  </label>
                 </div>
-                <label htmlFor="file-input" className='upload-icon'>
-                  <RxUpload />
-                  <input type="file" accept=".jpg, .png, .svg, .webp, .jpeg" id="file-input" className='proof-input' required onChange={(e) => uploadProof(e.target.files[0])} />
-                </label>
+                <div className="first-input-container">
+                  <div className="profile-input-container">
+                    <label htmlFor="firstname">First Name</label>
+                    <input type="text" id="firstname" value={firstname} onChange={(e) => setFirstname(e.target.value)} />
+                  </div>
+                  <div className="profile-input-container">
+                    <label htmlFor="lastname">Last Name</label>
+                    <input type="text" id="lastname" value={lastname} onChange={(e) => setLastname(e.target.value)} />
+                  </div>
+                  <div className="profile-input-container">
+                    <label htmlFor="email">Email</label>
+                    <input type="text" id="email" value={userData ? userData.email : ''} readOnly />
+                  </div>
+                  <div className="profile-input-container">
+                    <label htmlFor="phone">Phone Number</label>
+                    <input type="tel" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                  </div>
+                </div>
               </div>
-              <div className="first-input-container">
+              <div className="lower-chamber">
                 <div className="profile-input-container">
-                  <label htmlFor="firstname">First Name</label>
-                  <input type="text" id="firstname" value={firstname} onChange={(e) => setFirstname(e.target.value)} />
+                  <label htmlFor="country">Country</label>
+                  <input type="text" id="country" value={country} onChange={(e) => setCountry(e.target.value)} />
                 </div>
                 <div className="profile-input-container">
-                  <label htmlFor="lastname">Last Name</label>
-                  <input type="text" id="lastname" value={lastname} onChange={(e) => setLastname(e.target.value)} />
+                  <label htmlFor="address">Address</label>
+                  <input type="text" id="address" value={address} onChange={(e) => setAddress(e.target.value)} />
                 </div>
                 <div className="profile-input-container">
-                  <label htmlFor="email">Email</label>
-                  <input type="text" id="email" value={userData ? userData.email : ''} readOnly />
+                  <label htmlFor="state">State</label>
+                  <input type="text" id="state" value={state} onChange={(e) => setState(e.target.value)} />
                 </div>
                 <div className="profile-input-container">
-                  <label htmlFor="phone">Phone Number</label>
-                  <input type="tel" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                  <label htmlFor="zipCode">Zip Code</label>
+                  <input type="text" id="zipCode" value={zipCode} onChange={(e) => setZipCode(e.target.value)} />
                 </div>
               </div>
-            </div>
-            <div className="lower-chamber">
-              <div className="profile-input-container">
-                <label htmlFor="country">Country</label>
-                <input type="text" id="country" value={country} onChange={(e) => setCountry(e.target.value)} />
-              </div>
-              <div className="profile-input-container">
-                <label htmlFor="address">Address</label>
-                <input type="text" id="address" value={address} onChange={(e) => setAddress(e.target.value)} />
-              </div>
-              <div className="profile-input-container">
-                <label htmlFor="state">State</label>
-                <input type="text" id="state" value={state} onChange={(e) => setState(e.target.value)} />
-              </div>
-              <div className="profile-input-container">
-                <label htmlFor="zipCode">Zip Code</label>
-                <input type="text" id="zipCode" value={zipCode} onChange={(e) => setZipCode(e.target.value)} />
-              </div>
-            </div>
-            <input type="submit" value="Update" className='update-profile-btn' />
-          </form>
-        </div>
+              <input type="submit" value="Update" className='update-profile-btn' />
+            </form>
+          </div>
         </div>
       </section>
     </div>
