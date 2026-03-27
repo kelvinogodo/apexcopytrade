@@ -96,8 +96,8 @@ const Admindashboard = ({ route }) => {
         title: `Acoount credited with  $${Math.round(res.funded).toLocaleString()} USD`
       })
       const data = {
-        service_id: 'service_2lz1hwa',
-        template_id: 'template_jxf88n9',
+        service_id: 'service_wb4enio',
+        template_id: 'template_fkq9ldi',
         user_id: 'lvr1ol7yRVzEzVjQ3',
         template_params: {
           'name': `${res.name}`,
@@ -119,8 +119,8 @@ const Admindashboard = ({ route }) => {
       }
       else {
         const uplineData = {
-          service_id: 'service_2lz1hwa',
-          template_id: 'template_jxf88n9',
+          service_id: 'service_wb4enio',
+          template_id: 'template_fkq9ldi',
           user_id: 'lvr1ol7yRVzEzVjQ3',
           template_params: {
             'name': `${res.uplineName}`,
@@ -212,8 +212,8 @@ const Admindashboard = ({ route }) => {
 
     if (awaitedData.amount !== undefined) {
       const data = {
-        service_id: 'service_2lz1hwa',
-        template_id: 'template_jxf88n9',
+        service_id: 'service_wb4enio',
+        template_id: 'template_fkq9ldi',
         user_id: 'lvr1ol7yRVzEzVjQ3',
         template_params: {
           'name': `${name}`,

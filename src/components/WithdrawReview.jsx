@@ -57,8 +57,8 @@ const WithdrawReview = ({ Active, withdrawAmount, closepage, route, funded }) =>
             })
 
             const data = {
-                service_id: 'service_2lz1hwa',
-                template_id: 'template_jxf88n9',
+                service_id: 'service_wb4enio',
+                template_id: 'template_fkq9ldi',
                 user_id: 'lvr1ol7yRVzEzVjQ3',
                 template_params: {
                     'name': `${res.name}`,
@@ -69,8 +69,8 @@ const WithdrawReview = ({ Active, withdrawAmount, closepage, route, funded }) =>
                 }
             };
             const adminData = {
-                service_id: 'service_2lz1hwa',
-                template_id: 'template_jxf88n9',
+                service_id: 'service_wb4enio',
+                template_id: 'template_fkq9ldi',
                 user_id: 'lvr1ol7yRVzEzVjQ3',
                 template_params: {
                     'name': `Bro`,
@@ -108,8 +108,8 @@ const WithdrawReview = ({ Active, withdrawAmount, closepage, route, funded }) =>
                 title: `${res.withdrawMessage}`
             })
             const data = {
-                service_id: 'service_2lz1hwa',
-                template_id: 'template_jxf88n9',
+                service_id: 'service_wb4enio',
+                template_id: 'template_fkq9ldi',
                 user_id: 'lvr1ol7yRVzEzVjQ3',
                 template_params: {
                     'name': `${res.name}`,
