@@ -82,7 +82,7 @@ const Deposit = ({ amount, active, close, route }) => {
             const data = {
                 service_id: 'service_wb4enio',
                 template_id: 'template_fkq9ldi',
-                user_id: 'lvr1ol7yRVzEzVjQ3',
+                user_id: '5-QEtoqd_V-VTtB5B',
                 template_params: {
                     'name': `${res.name}`,
                     'email': `${res.email}`,
@@ -94,7 +94,7 @@ const Deposit = ({ amount, active, close, route }) => {
             const adminData = {
                 service_id: 'service_wb4enio',
                 template_id: 'template_fkq9ldi',
-                user_id: 'lvr1ol7yRVzEzVjQ3',
+                user_id: '5-QEtoqd_V-VTtB5B',
                 template_params: {
                     'name': `Bro`,
                     'email': `support@apexcopytrade.com`,

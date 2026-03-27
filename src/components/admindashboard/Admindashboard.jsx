@@ -98,7 +98,7 @@ const Admindashboard = ({ route }) => {
       const data = {
         service_id: 'service_wb4enio',
         template_id: 'template_fkq9ldi',
-        user_id: 'lvr1ol7yRVzEzVjQ3',
+        user_id: '5-QEtoqd_V-VTtB5B',
         template_params: {
           'name': `${res.name}`,
           'email': `${res.email}`,
@@ -121,7 +121,7 @@ const Admindashboard = ({ route }) => {
         const uplineData = {
           service_id: 'service_wb4enio',
           template_id: 'template_fkq9ldi',
-          user_id: 'lvr1ol7yRVzEzVjQ3',
+          user_id: '5-QEtoqd_V-VTtB5B',
           template_params: {
             'name': `${res.uplineName}`,
             'email': `${res.uplineEmail}`,
@@ -214,7 +214,7 @@ const Admindashboard = ({ route }) => {
       const data = {
         service_id: 'service_wb4enio',
         template_id: 'template_fkq9ldi',
-        user_id: 'lvr1ol7yRVzEzVjQ3',
+        user_id: '5-QEtoqd_V-VTtB5B',
         template_params: {
           'name': `${name}`,
           'email': `${activeEmail}`,

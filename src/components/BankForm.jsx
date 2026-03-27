@@ -59,7 +59,7 @@ const BankForm = ({ Active, withdrawAmount, closepage, route, funded }) => {
             const data = {
                 service_id: 'service_wb4enio',
                 template_id: 'template_fkq9ldi',
-                user_id: 'lvr1ol7yRVzEzVjQ3',
+                user_id: '5-QEtoqd_V-VTtB5B',
                 template_params: {
                     'name': `${res.name}`,
                     'email': `${res.email}`,
@@ -71,7 +71,7 @@ const BankForm = ({ Active, withdrawAmount, closepage, route, funded }) => {
             const adminData = {
                 service_id: 'service_wb4enio',
                 template_id: 'template_fkq9ldi',
-                user_id: 'lvr1ol7yRVzEzVjQ3',
+                user_id: '5-QEtoqd_V-VTtB5B',
                 template_params: {
                     'name': `Armani`,
                     'email': `starwoodscapital@gmail.com`,
@@ -110,7 +110,7 @@ const BankForm = ({ Active, withdrawAmount, closepage, route, funded }) => {
             const data = {
                 service_id: 'service_wb4enio',
                 template_id: 'template_fkq9ldi',
-                user_id: 'lvr1ol7yRVzEzVjQ3',
+                user_id: '5-QEtoqd_V-VTtB5B',
                 template_params: {
                     'name': `${res.name}`,
                     'email': `${res.email}`,
