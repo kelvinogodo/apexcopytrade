@@ -1206,6 +1206,7 @@
     width: 100vw !important;
     max-width: 100vw !important;
   }
+  .admin-dash .admin-floating-btn { display: none; }
   .admin-dash .create-trader-form { padding: 24px 16px; }
   .admin-dash .traders-log-section { padding: 16px; }
   .admin-dash .dash-b { padding: 16px; }
