@@ -951,7 +951,7 @@ const Admindashboard = ({ route }) => {
                     <IoMdNotifications />
                   </div>
                   <div className="header-username-container">
-                    <h3>Hi, admin</h3>
+                    <h3>Hi, <span>admin</span></h3>
                   </div>
                   <div className="header-userprofile-container">
                     <div className="user-p-icon-container">
