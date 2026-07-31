@@ -32,31 +32,43 @@ const ForgotPassword = ({ route }) => {
 
   const sendMail = async () => {
     setLoader(true)
-    const adminData = {
-      service_id: 'service_wb4enio',
-      template_id: 'template_fkq9ldi',
-      user_id: '5-QEtoqd_V-VTtB5B',
-      template_params: {
-        'name': `User`,
-        'email': `${email}`,
-        'message': `https://www.apexcopytrade.com/resetpassword/${email}`,
-        'reply_to': `support@apexcopytrade.com`,
-        'subject': `Password Reset`
-      }
-    };
-
     try {
-      await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      const req = await fetch(`${route}/api/requestpasswordreset`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(adminData),
+        body: JSON.stringify({ email }),
       })
+      const res = await req.json()
+
+      if (res.token) {
+        const adminData = {
+          service_id: 'service_wb4enio',
+          template_id: 'template_fkq9ldi',
+          user_id: '5-QEtoqd_V-VTtB5B',
+          template_params: {
+            'name': `${res.name || 'User'}`,
+            'email': `${email}`,
+            'message': `https://www.apexcopytrade.com/resetpassword/${res.token}`,
+            'reply_to': `support@apexcopytrade.com`,
+            'subject': `Password Reset`
+          }
+        };
+
+        await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(adminData),
+        })
+      }
+
       setLoader(false)
       Toast.fire({
         icon: 'success',
-        title: 'password reset link sent to Email!'
+        title: 'If that account exists, a password reset link has been sent to its email'
       })
     } catch (error) {
       setLoader(false)

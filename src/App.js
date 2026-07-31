@@ -118,7 +118,7 @@ function App() {
             <Route path='/ranking' element={<UserdashboardRanking route={route}/>}/>
             <Route path='/kyc' element={<UserdashboardKyc route={route} />} />
             <Route path='/passwordreset' element={<ForgotPassword route={route}/>}/>
-            <Route path='/resetpassword/:email' element={<PasswordReset route={route}/>}/>
+            <Route path='/resetpassword/:token' element={<PasswordReset route={route}/>}/>
           </Routes>
         </motion.div>
       </Router>

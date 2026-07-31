@@ -10,7 +10,7 @@ import Swal from 'sweetalert2'
 
 const PasswordReset = ({ route }) => {
     const params = useParams()
-    const [email, setEmail] = useState(params.email)
+    const [token] = useState(params.token)
     const [newPassword, setNewPassword] = useState()
     const [confirmPassword, setConfirmPassword] = useState()
     const [showPassword, setShowPassword] = useState()
@@ -32,6 +32,13 @@ const PasswordReset = ({ route }) => {
     
 
     const resetPassword = async () => {
+        if (newPassword !== confirmPassword) {
+            Toast.fire({
+                icon: 'error',
+                title: 'passwords do not match'
+            })
+            return
+        }
         setLoader(true);
         try {
              // Make a POST request using axios
@@ -39,7 +46,7 @@ const PasswordReset = ({ route }) => {
                 `${route}/api/resetpassword`,
                 {
                     newPassword,
-                    email
+                    token
                 },
                 {
                   headers: { 'Content-Type': 'application/json' },
@@ -47,11 +54,18 @@ const PasswordReset = ({ route }) => {
             );
             setLoader(false)
 
-            
-            Toast.fire({
-            icon: 'success',
-            title: 'password successfully reset!'
-            })
+            if (req.data.status === 'ok') {
+                Toast.fire({
+                icon: 'success',
+                title: 'password successfully reset!'
+                })
+                navigate('/login')
+            } else {
+                Toast.fire({
+                icon: 'error',
+                title: req.data.message || 'error! something went wrong'
+                })
+            }
 
         } catch (error) {
             setLoader(false)

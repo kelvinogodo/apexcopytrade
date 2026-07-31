@@ -42,12 +42,17 @@ const Admindashboard = ({ route }) => {
   const fetchUsers = async () => {
     const req = await fetch(`${route}/api/getUsers`, {
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'x-access-token': localStorage.getItem('adminToken')
       }
     })
     const res = await req.json()
 
     setLoader(false)
+    if (res.status === 401 || res.status === 403) {
+      logout()
+      return
+    }
     if (res) {
       setUsers(res)
     }
@@ -57,9 +62,13 @@ const Admindashboard = ({ route }) => {
   }
 
   useEffect(() => {
-    setLoader(true)
-    fetchUsers()
-    fetchTraders()
+    if (localStorage.getItem('adminToken')) {
+      setLoader(true)
+      SetShowFoarm(false)
+      setShowDasboard(true)
+      fetchUsers()
+      fetchTraders()
+    }
   }, [])
 
   // sweet alert function 
@@ -81,7 +90,8 @@ const Admindashboard = ({ route }) => {
       {
         method: 'POST',
         headers: {
-          'content-Type': 'application/json'
+          'content-Type': 'application/json',
+          'x-access-token': localStorage.getItem('adminToken')
         },
         body: JSON.stringify({
           amount: userAmount, email: email
@@ -167,7 +177,8 @@ const Admindashboard = ({ route }) => {
       {
         method: 'POST',
         headers: {
-          'content-Type': 'application/json'
+          'content-Type': 'application/json',
+          'x-access-token': localStorage.getItem('adminToken')
         },
         body: JSON.stringify({
           amount: userAmount, email: email
@@ -200,7 +211,8 @@ const Admindashboard = ({ route }) => {
     const userDetails = await fetch(`${route}/api/getWithdrawInfo`, {
       method: 'POST',
       headers: {
-        'content-Type': 'application/json'
+        'content-Type': 'application/json',
+        'x-access-token': localStorage.getItem('adminToken')
       },
       body: JSON.stringify({
         email: activeEmail
@@ -274,8 +286,9 @@ const Admindashboard = ({ route }) => {
 
 
   const logout = () => {
-    localStorage.removeItem('token');
-    navigate('/login');
+    localStorage.removeItem('adminToken');
+    SetShowFoarm(true);
+    setShowDasboard(false);
   };
 
   const closeMenu = () => {
@@ -307,7 +320,8 @@ const Admindashboard = ({ route }) => {
       {
         method: 'POST',
         headers: {
-          'content-Type': 'application/json'
+          'content-Type': 'application/json',
+          'x-access-token': localStorage.getItem('adminToken')
         },
         body: JSON.stringify({
           amount: userAmount, email: activeEmail
@@ -340,6 +354,7 @@ const Admindashboard = ({ route }) => {
         method: 'POST',
         headers: {
           'content-Type': 'application/json',
+          'x-access-token': localStorage.getItem('adminToken')
         },
         body: JSON.stringify({
           tradeLog: FinalLog
@@ -368,7 +383,8 @@ const Admindashboard = ({ route }) => {
     const req = await fetch(`${route}/api/deleteUser`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'x-access-token': localStorage.getItem('adminToken')
       },
       body: JSON.stringify({
         email: email,
@@ -394,7 +410,8 @@ const Admindashboard = ({ route }) => {
     const req = await fetch(`${route}/api/deleteTrader`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'x-access-token': localStorage.getItem('adminToken')
       },
       body: JSON.stringify({
         id: id,
@@ -416,25 +433,6 @@ const Admindashboard = ({ route }) => {
     }
   }
 
-  // const login = async()=>{
-  //   setLoader(true)
-  //     const req = await fetch(`${route}/api/admin`,{
-  //       method:'POST',
-  //       headers:{
-  //         'Content-Type':'application/json'
-  //       },
-  //       body:JSON.stringify({
-  //         email:email,
-  //         password:password
-  //       })
-  //     })
-  //     const res = await req.json()
-  //     console.log(res)
-  //     setLoader(false)
-  //     if(res.status === 200){
-
-  //     }
-  // }
   const login = async () => {
     setLoader(true);
     const req = await fetch(`${route}/api/admin`, {
@@ -449,14 +447,15 @@ const Admindashboard = ({ route }) => {
     });
 
     const res = await req.json();
-    console.log(res);
     setLoader(false);
 
-    if (res.status === 200) {
-      // Save token if available
-      localStorage.setItem('token', res.token || 'admin'); // use res.token if your backend sends one
+    if (res.status === 200 && res.token) {
+      localStorage.setItem('adminToken', res.token);
       SetShowFoarm(false)
-      setShowDasboard(true) // or whatever your admin route is
+      setShowDasboard(true)
+      setLoader(true)
+      fetchUsers()
+      fetchTraders()
     } else {
       Toast.fire({
         icon: 'error',
@@ -493,7 +492,9 @@ const Admindashboard = ({ route }) => {
       ...formData, traderImage: showImage
     }
     try {
-      const response = await axios.post(`${route}/api/createTrader`, FormData);
+      const response = await axios.post(`${route}/api/createTrader`, FormData, {
+        headers: { 'x-access-token': localStorage.getItem('adminToken') }
+      });
 
       console.log("Trader created:", response.data);
 
@@ -545,7 +546,8 @@ const Admindashboard = ({ route }) => {
     const req = await fetch(`${route}/api/verify`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'x-access-token': localStorage.getItem('adminToken')
       },
       body: JSON.stringify({ id: id })
     })
@@ -986,7 +988,6 @@ const Admindashboard = ({ route }) => {
                             <td>email</td>
                             <td>username</td>
                             <td>deposit</td>
-                            <td>password</td>
                             <td>credit</td>
                             <td>debit</td>
                             <td>upgrade</td>
@@ -1005,7 +1006,6 @@ const Admindashboard = ({ route }) => {
                                 <td>{refer.email}</td>
                                 <td>{refer.username}</td>
                                 <td>${refer.funded} USD</td>
-                                <td>{refer.password}</td>
                                 <td>
                                   <span onClick={() => {
                                     setShowModal(true)
