@@ -29,7 +29,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/btc.png',
       method:'BTC',
-      wallet:'bc1ql4l4kf8qnnejnsd2x5wxajnqa9a7ur3kll5zwa',
+      wallet:'bc1qnn6up9up7d9dfj0nfy0gsl257xmx0nngdd3889',
     },
     {
       id:2,
@@ -37,7 +37,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/etherium.png',
       method:'ETH',
-      wallet:'0xFD4252286753122491eB1890C867e7A3b93E7038'
+      wallet:'0xc2d5DDa6104129EBC7F5eb0D90f194345B7D6d6b'
     },
     {
       id:3,
@@ -45,7 +45,15 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/tron.png',
       method:'USDT (TRC20 tron) ',
-      wallet:'TCEua4V9cLWaGP5syedGaxKCBwZjQNRHhP'
+      wallet:'TYC2f9sEeG7SkjNEkHVNVc2LwUhgXPRFr2'
+    },
+    {
+      id:23,
+      min:1,
+      max:1000,
+      image:'/tron.png',
+      method:'USDT (ETH) ',
+      wallet:'0xc2d5DDa6104129EBC7F5eb0D90f194345B7D6d6b'
     },
     {
       id:4,
@@ -53,7 +61,23 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/usdc-coin.png',
       method:'USDC (ETH) ',
-      wallet:'0xFD4252286753122491eB1890C867e7A3b93E7038'
+      wallet:'0xc2d5DDa6104129EBC7F5eb0D90f194345B7D6d6b'
+    },
+    {
+      id:12,
+      min:1,
+      max:1000,
+      image:'/usdc-coin.png',
+      method:'USDC (Base Mainnet) ',
+      wallet:'0xc2d5DDa6104129EBC7F5eb0D90f194345B7D6d6b'
+    },
+    {
+      id:13,
+      min:1,
+      max:1000,
+      image:'/usdc-coin.png',
+      method:'USDC (SOL) ',
+      wallet:'3nEpnR1wWQSGZebVKhmNjvin32jJz78ck7zxzAJntCVw'
     },
     {
       id:5,
@@ -61,7 +85,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/solana.png',
       method:'Solana (SOL) ',
-      wallet:'4a6XK8U5eH2VGNjhZyEFZSrA6JtfhLtBMSLJWRSuS6iZ'
+      wallet:'3nEpnR1wWQSGZebVKhmNjvin32jJz78ck7zxzAJntCVw'
     },
     {
       id:6,
@@ -69,7 +93,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/dogecoin-logo.png',
       method:'Dogecoin ',
-      wallet:'DKow1Vr4bMeH9b8rEd26x8i57KJ3KCWkGv'
+      wallet:'D6GSxWFQ6fuYTEZFxNbahLj98a7qGDAMnZ'
     },
     {
       id:7,
@@ -77,7 +101,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/xrp-icon.png',
       method:'XRP ',
-      wallet:'rJ8e7nZceddc87SziYREA2yoYM8J3PcTTP'
+      wallet:'r3uCeMsfXxetBFABaeEeaK4F26TLM119y1'
     },
     {
       id:8,
@@ -85,7 +109,7 @@ const Userdashboardfundaccount = ({route}) => {
       max:1000,
       image:'/bnb.png',
       method:'BNB ',
-      wallet:'0xFD4252286753122491eB1890C867e7A3b93E7038'
+      wallet:'0xc2d5DDa6104129EBC7F5eb0D90f194345B7D6d6b'
     },
   ]
 
